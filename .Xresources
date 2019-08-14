@@ -1,0 +1,55 @@
+! === URxvt ===
+
+URxvt.scrollBar: false
+URxvt.font: xft: DejaVu Sans Mono:pixelsize=12
+
+Xft*antialias:          true
+Xft*hinting:            full
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+URxvt*highlightTextColor: #000000
+URxvt*highlightColor: #c1ddff
+
+URxvt*background: #222222
+URxvt*foreground: #c6a57b
+URxvt*color0: #101010
+URxvt*color8: #404040
+URxvt*color1: #953331
+URxvt*color9: #8D4A48
+URxvt*color2: #546A29
+URxvt*color10: #7E9960
+URxvt*color3: #909737
+URxvt*color11: #9CA554
+URxvt*color4: #385E6B
+URxvt*color12: #5C737C
+URxvt*color5: #7F355E
+URxvt*color13: #95618B
+URxvt*color6: #34676F
+URxvt*color14: #5D858A
+URxvt*color7: #dddddd
+URxvt*color15: #dddddd
+
+! === rofi ===
+
+rofi.width: 50
+rofi.lines: 15
+rofi.columns: 1
+rofi.color-enabled: true
+
+! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+rofi.color-window: #2F343F, #2F343F, #1e2529
+rofi.color-normal: #2F343F, #c1c1c1, #2F343F, #383838, #ffffff
+rofi.color-active: #2F343F, #80cbc4, #2F343F, #383838, #80cbc4
+rofi.color-urgent: #2F343F, #ff1844, #2F343F, #383838, #ff1844
+
+rofi.separator-style: none
+rofi.location: 1
+!rofi.padding: 15
+rofi.hide-scrollbar: true
