@@ -42,6 +42,14 @@ markup=none
 
 #command=/home/darteil/.config/i3blocks/scripts/volume-pulseaudio
 
+# Weather
+#
+[weather]
+command=/usr/share/i3blocks/weather
+interval=5
+
+# Volume
+#
 [volume]
 command=/usr/share/i3blocks/volume "1%" pulse
 instance=Master
@@ -61,7 +69,6 @@ command=xset -q|grep LED| awk '{ if (substr ($10,5,1) == 1) print "RU\nRU\n#FFFF
 command=date '+%d/%m/%Y'
 interval=persist
 label=
-
 
 # Time
 #
