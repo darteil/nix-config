@@ -192,6 +192,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 
 exec_always --no-startup-id xrdb /home/darteil/.Xresources
 exec_always --no-startup-id feh --bg-fill /home/darteil/Images/fon.jpg
-exec --no-startup-id dunst
 exec_always --no-startup-id numlockx on
-
+exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id xinput --set-prop 10 'libinput Accel Speed' -0.8
+exec --no-startup-id nvidia-settings --load-config-only
+exec --no-startup-id dunst
