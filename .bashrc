@@ -124,3 +124,4 @@ export PS1="\[\e[32m\]\t\[\e[m\] \[\e[37m\][\[\e[m\]\[\e[37m\]\w\[\e[m\]\[\e[37m
 alias tr='tree -L 1 --dirsfirst -a'
 alias pulserestart='pulseaudio -k; pulseaudio --start'
 alias musplay='tizonia --youtube-audio-playlist https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT'
+alias screen='flameshot gui'
