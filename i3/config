@@ -151,10 +151,12 @@ bar {
     colors {
       background         #2F343F
       statusline         #ffffff
-      active_workspace   #333333 #BF616A #ffffff
-      focused_workspace  #333333 #BF616A #ffffff
+      active_workspace   #333333 #b56a07 #2F343F
+      inactive_workspace #333333 #2F343F #ffffff
+      focused_workspace  #333333 #b56a07 #2F343F
     }
 }
+
 
 bar {
 	id bar-2
@@ -166,8 +168,9 @@ bar {
     colors {
       background         #2F343F
       statusline         #ffffff
-      active_workspace   #333333 #BF616A #ffffff
-      focused_workspace  #333333 #BF616A #ffffff
+      active_workspace   #333333 #b56a07 #2F343F
+      inactive_workspace #333333 #2F343F #ffffff
+      focused_workspace  #333333 #b56a07 #2F343F
     }
 }
 
@@ -178,7 +181,7 @@ client.unfocused        #657b83 #272827 #657b83 #78824B
 client.urgent           #657b83 #272827 #657b83 #78824B
 
 # change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
