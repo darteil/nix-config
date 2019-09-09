@@ -1,14 +1,16 @@
 [global]
-font = System San Francisco Display 8
+font = System San Francisco Display 10
 monitor = 0
 follow = mouse
-geometry = "300x60-20+48"
+geometry = "350x60-20+48"
 indicate_hidden = yes
 shrink = no
-separator_height = 0
 padding = 12
 horizontal_padding = 12
 frame_width = 2
+frame_color = "#ffffff"
+separator_height = 2
+separator_color = frame
 sort = no
 idle_threshold = 120
 line_height = 4
@@ -24,7 +26,7 @@ show_indicators = no
 icon_position = off
 sticky_history = yes
 history_length = 20
-browser = /usr/bin/firefox -new-tab
+browser = /usr/bin/google-chrome -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
@@ -36,19 +38,19 @@ history = ctrl+grave
 context = ctrl+shift+period
 
 [urgency_low]
-timeout = 4
-background = "#2F343F"
-foreground = "#93a1a1"
+timeout = 0
+background = "#272828"
+foreground = "#8bc34a"
 frame_color = "#8bc34a"
 
 [urgency_normal]
-timeout = 8
-background = "#2F343F"
-foreground = "#93a1a1"
-frame_color = "#2F343F"
+timeout = 0
+background = "#272828"
+foreground = "#ffffff"
+frame_color = "#ffffff"
 
 [urgency_critical]
 timeout = 0
-background = "#2F343F"
-foreground = "#93a1a1"
+background = "#272828"
+foreground = "#ff7043"
 frame_color = "#ff7043"
