@@ -149,11 +149,11 @@ bar {
     tray_output none
     output $firstMonitor
     colors {
-      background         #2F343F
+      background         #272828
       statusline         #ffffff
-      active_workspace   #333333 #b56a07 #2F343F
-      inactive_workspace #333333 #2F343F #ffffff
-      focused_workspace  #333333 #b56a07 #2F343F
+      active_workspace   #272828 #b56a07 #272828
+      inactive_workspace #272828 #272828 #ffffff
+      focused_workspace  #333333 #b56a07 #272828
     }
 }
 
@@ -166,11 +166,11 @@ bar {
     tray_output none
     binding_mode_indicator no
     colors {
-      background         #2F343F
+      background         #272828
       statusline         #ffffff
-      active_workspace   #333333 #b56a07 #2F343F
-      inactive_workspace #333333 #2F343F #ffffff
-      focused_workspace  #333333 #b56a07 #2F343F
+      active_workspace   #333333 #b56a07 #272828
+      inactive_workspace #272828 #272828 #ffffff
+      focused_workspace  #333333 #b56a07 #272828
     }
 }
 
