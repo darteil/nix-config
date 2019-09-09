@@ -1,5 +1,5 @@
 ## ~/.dotfiles
 
-![](http://darteil-projects.ru/static/images/screen-desk.png)
+![](http://darteil-projects.ru/static/images/screen-desktop.png)
 
-Nothing special, just my minimal Linux environment settings...
+My minimal Linux environment settings...
