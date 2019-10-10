@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/darteil/.gtkrc-2.0.mine"
-gtk-theme-name="Os-Catalina-gtk"
+gtk-theme-name="Adwaita"
 gtk-icon-theme-name="Arc-Icons"
 gtk-font-name="System San Francisco Display 9"
 gtk-cursor-theme-name="pixelfun3"
