@@ -6,8 +6,8 @@ API_KEY="cf2dd499270aa18684e33563a1ec046b"
 # Check on http://openweathermap.org/find
 CITY_ID="1489425"
 
-URGENT_LOWER=0
-URGENT_HIGHER=30
+#URGENT_LOWER=0
+#URGENT_HIGHER=30
 
 ICON_SUNNY=""
 ICON_CLOUDY=""
@@ -53,7 +53,7 @@ else
   echo ""
 fi
 
-if [[ "${WEATHER_TEMP}" -lt "${URGENT_LOWER}" ]] || [[ "${WEATHER_TEMP}" -gt "${URGENT_HIGHER}" ]]; then
-  exit 33
-fi
+#if [[ "${WEATHER_TEMP}" -lt "${URGENT_LOWER}" ]] || [[ "${WEATHER_TEMP}" -gt "${URGENT_HIGHER}" ]]; then
+  #exit 33
+#fi
 
