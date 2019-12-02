@@ -141,8 +141,7 @@ DEFAULT_COLOR=$'\[\e[m\]'
 GREEN=$'\[\e[32m\]'
 VENV_COLOR=$'\[\033[0;35m\]'
 WHITE=$'\[\e[37m\]'
-export PS1="${DEFAULT_COLOR}┌─ ${GREEN}\t${VENV_COLOR}${VENV} ${WHITE}[\w]${DEFAULT_COLOR}
-└> "
+export PS1="${GREEN}\t${VENV_COLOR}${VENV} ${WHITE}[\w]${DEFAULT_COLOR} :: "
 
 alias tr='tree -L 1 --dirsfirst -a'
 alias pulserestart='pulseaudio -k; pulseaudio --start'
