@@ -6,13 +6,12 @@ font pango:System San Francisco Display 10
 
 floating_modifier $mod
 
-new_window pixel 2
-new_float pixel 2
+default_border pixel 0
 
 hide_edge_borders none
 
 ### Gaps ###
-set $default_gaps_inner 10
+set $default_gaps_inner 5
 set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
@@ -175,20 +174,21 @@ bar {
 }
 
 # class                 border  backgr. text    indicator
-client.focused          #b56a07 #b56a07 #657b83 #78824B
+client.focused          #b56a07 #b56a07 #ffffff #78824B
 client.focused_inactive #657b83 #272827 #657b83 #78824B
 client.unfocused        #657b83 #272827 #657b83 #78824B
 client.urgent           #657b83 #272827 #657b83 #78824B
 
 # change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 exec_always --no-startup-id xrdb /home/darteil/.Xresources
-exec_always --no-startup-id feh --bg-fill /home/darteil/Images/fon.jpg
+exec_always --no-startup-id feh --bg-fill /home/darteil/Images/fon2.jpg --bg-fill /home/darteil/Images/fon3.jpg
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xfce4-power-manager
-exec_always --no-startup-id xinput --set-prop 10 'libinput Accel Speed' -0.8
+exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.8
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
+exec --no-startup-id compton --config ~/.config/compton.conf -b
