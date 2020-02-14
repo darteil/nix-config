@@ -10,6 +10,8 @@ function virtualenv_info(){
     [[ -n "$venv" ]] && echo " (venv:$venv)"
 }
 
+export EDITOR="/usr/bin/subl"
+
 # disable the default virtualenv prompt change
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
