@@ -41,7 +41,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
+  # faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
@@ -59,11 +59,11 @@ tabspaces: 2
 font:
   # The normal (roman) font face to use.
   normal:
-    family: DejaVu Sans Mono
+    family: JetBrains Mono Medium
   bold:
-    family: monospace
+    family: JetBrains Mono Medium
   italic:
-    family: monospace
+    family: JetBrains Mono Medium Italic
 
   # Point size of the font
   size: 10.0
