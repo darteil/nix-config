@@ -185,6 +185,7 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -R
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 bindsym Print exec "flameshot gui"
+bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
 exec_always --no-startup-id xrdb /home/darteil/.Xresources
 exec_always --no-startup-id feh --bg-fill /home/darteil/Images/fon2.jpg --bg-fill /home/darteil/Images/fon3.jpg
