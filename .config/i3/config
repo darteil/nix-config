@@ -184,15 +184,19 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -R
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
+set $HOME /home/darteil
+
 bindsym Print exec "flameshot gui"
 bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
-exec_always --no-startup-id xrdb /home/darteil/.Xresources
-exec_always --no-startup-id feh --bg-fill /home/darteil/Images/fon2.jpg --bg-fill /home/darteil/Images/fon3.jpg
+exec_always --no-startup-id xrdb $HOME/.Xresources
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/fon3.jpg
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.8
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id megasync
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id compton --config $HOME/.config/compton.conf -b
