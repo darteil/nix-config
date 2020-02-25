@@ -28,6 +28,5 @@ WHITE=$'\[\e[37m\]'
 export PS1="${GREEN}\t${VENV_COLOR}${VENV} ${WHITE}[\w]${DEFAULT_COLOR} :: "
 
 alias tr='tree -L 1 --dirsfirst -a'
-alias pulserestart='pulseaudio -k; pulseaudio --start'
 alias musplay='tizonia --youtube-audio-playlist https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT'
 alias screen='flameshot gui'

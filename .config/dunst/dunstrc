@@ -1,8 +1,8 @@
 [global]
-font = System San Francisco Display 10
+font = JetBrains Mono 10
 monitor = 0
-follow = mouse
-geometry = "350x60-20+48"
+follow = none
+geometry = "500x60-20+48"
 indicate_hidden = yes
 shrink = no
 padding = 12
@@ -39,18 +39,18 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 0
-background = "#272828"
-foreground = "#8bc34a"
-frame_color = "#8bc34a"
+frame_color = "#3B7C87"
+foreground = "#a89984"
+background = "#191311"
 
 [urgency_normal]
 timeout = 0
-background = "#272828"
-foreground = "#ffffff"
-frame_color = "#ffffff"
+frame_color = "#5B8234"
+foreground = "#a89984"
+background = "#191311"
 
 [urgency_critical]
 timeout = 0
-background = "#272828"
-foreground = "#ff7043"
-frame_color = "#ff7043"
+frame_color = "#B7472A"
+foreground = "#a89984"
+background = "#191311"
