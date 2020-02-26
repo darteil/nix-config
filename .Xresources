@@ -18,7 +18,7 @@ rofi.color-enabled: true
 
 ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
 rofi.color-window: #272828, #272828, #1e2529
-rofi.color-normal: #272828, #c1c1c1, #272828, #383838, #ffffff
+rofi.color-normal: #272828, #c1c1c1, #272828, #383838, #c35f6b
 rofi.color-active: #272828, #80cbc4, #272828, #383838, #80cbc4
 rofi.color-urgent: #272828, #ff1844, #272828, #383838, #ff1844
 

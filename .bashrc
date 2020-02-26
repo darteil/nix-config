@@ -1,3 +1,7 @@
+function exttar() {
+    tar -zxvf "$1"
+}
+
 function virtualenv_info(){
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -29,4 +33,6 @@ export PS1="${GREEN}\t${VENV_COLOR}${VENV} ${WHITE}[\w]${DEFAULT_COLOR} :: "
 
 alias tr='tree -L 1 --dirsfirst -a'
 alias musplay='tizonia --youtube-audio-playlist https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT'
-alias screen='flameshot gui'
+alias musstream='tizonia --youtube-audio-stream'
+alias tmdef='tmux attach -t default'
+alias mountdata='sudo mount -t ntfs-3g -o ro /dev/sdb1 /media/data'
