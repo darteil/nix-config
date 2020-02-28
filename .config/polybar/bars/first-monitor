@@ -1,0 +1,14 @@
+include-file = ~/.config/polybar/bars/base
+
+font-0 = ShareTechMono-Regular:size=11;2
+font-1 = FontAwesome:size=11;2
+font-2 = siji:pixelsize=11;1
+
+height = 25
+;separator = %{F#444}%{F-}
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-left = i3
+modules-right = xkeyboard pulseaudio date clock

@@ -139,40 +139,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-	id bar-1
-	height 25
-    position top
-    separator_symbol ""
-    status_command i3blocks
-    tray_output none
-    output $firstMonitor
-    colors {
-      background         #272828
-      statusline         #ffffff
-      active_workspace   #272828 #b56a07 #272828
-      inactive_workspace #272828 #272828 #ffffff
-      focused_workspace  #333333 #b56a07 #272828
-    }
-}
-
-
-bar {
-	id bar-2
-	height 25
-    position top
-    output $secondMonitor
-    tray_output none
-    binding_mode_indicator no
-    colors {
-      background         #272828
-      statusline         #ffffff
-      active_workspace   #333333 #b56a07 #272828
-      inactive_workspace #272828 #272828 #ffffff
-      focused_workspace  #333333 #b56a07 #272828
-    }
-}
-
 # class                 border  backgr. text    indicator
 client.focused          #b56a07 #b56a07 #ffffff #78824B
 client.focused_inactive #657b83 #272827 #657b83 #78824B

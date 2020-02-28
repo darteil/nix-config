@@ -6,6 +6,8 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-polybar default &
+polybar first-monitor &
+polybar second-monitor &
+polybar second-monitor-bottom &
 
 echo "Bars launched..."

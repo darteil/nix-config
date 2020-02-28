@@ -1,0 +1,154 @@
+;=====================================================
+;     i3wm
+;=====================================================
+
+[module/i3]
+workspace-label = %index%
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+label-focused = ${self.workspace-label}
+label-unfocused = ${self.workspace-label}
+label-urgent = ${self.workspace-label}
+label-visible = ${self.workspace-label}
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = #e60053
+label-mode-foreground = #3d3c3b
+
+label-visible-padding = 1
+label-urgent-padding = 1
+
+label-focused-foreground = #3d3c3b
+label-focused-background = #efe8d5
+label-focused-padding = 1
+
+label-unfocused-padding = 1
+
+;=====================================================
+;     Keyboard
+;=====================================================
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = <label-layout>
+
+label-layout =  %layout%
+
+;=====================================================
+;     Date, clock
+;=====================================================
+
+[module/date]
+type = internal/date
+label =  %date%
+date = %d/%m/%Y
+interval = 60
+date-alt = %a, %d %B %Y
+
+[module/clock]
+type = internal/date
+label = " %time% "
+time = %H:%M:%S
+interval = 1
+time-alt = %H:%M
+
+;=====================================================
+;     Volume
+;=====================================================
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = #dfbf8e
+
+scroll-up = amixer set Master 2%+
+scroll-down = amixer set Master 2%-
+
+label-muted =  %percentage%%
+label-muted-foreground = #FF0000
+
+;=====================================================
+;     Pulseaudio
+;=====================================================
+
+[module/pulseaudio]
+type = custom/script
+exec = ~/.config/polybar/scripts/pulseaudio-tail.sh
+tail = true
+click-right = exec pavucontrol &
+click-left = ~/.config/polybar/scripts/pulseaudio-tail.sh --mute
+scroll-up = ~/.config/polybar/scripts/pulseaudio-tail.sh --up
+scroll-down = ~/.config/polybar/scripts/pulseaudio-tail.sh --down
+
+;=====================================================
+;     Cpu
+;=====================================================
+
+[module/cpu]
+type = internal/cpu
+format-background = #474747
+format-foreground = #cfc29a
+format-padding = 1
+interval = 0.5
+format = <label><ramp-coreload>
+label = " %percentage:3:3%% "
+ramp-coreload-spacing = 1
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+ramp-coreload-0-foreground = #83a598
+ramp-coreload-1-foreground = #83a598
+ramp-coreload-2-foreground = #ff9900
+ramp-coreload-3-foreground = #ff9900
+ramp-coreload-4-foreground = #ff6600
+ramp-coreload-5-foreground = #ff6600
+ramp-coreload-6-foreground = #fb4934
+ramp-coreload-7-foreground = #fb4934
+
+;=====================================================
+;     Memory
+;=====================================================
+
+[module/memory]
+type = internal/memory
+format-background = #a89984
+format-foreground = #272828
+format-padding = 1
+interval = 3
+format = <label>
+label =  %mb_used%  %mb_free%
+
+;=====================================================
+;     Pulserestart
+;=====================================================
+
+[module/pulserestart]
+type = custom/script
+exec = echo PulseAudioRestart
+label = " %output% "
+format = <label>
+format-background = #999
+format-foreground = #272828
+click-left = ~/.config/polybar/scripts/pulserestart.sh

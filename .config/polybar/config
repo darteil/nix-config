@@ -16,110 +16,16 @@
 ;
 ;==========================================================
 
-[colors]
-background = #272828
-foreground = #dfdfdf
+include-file = ~/.config/polybar/modules
 
-;########################################################################
-;Default Bar
-;########################################################################
+[bar/first-monitor]
+monitor = ${env:MONITOR:HDMI-0}
+include-file = ~/.config/polybar/bars/first-monitor
 
-[bar/default]
+[bar/second-monitor]
 monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 24
-radius = 0.0
-fixed-center = true
+include-file = ~/.config/polybar/bars/second-monitor
 
-bottom = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-;line-color = #272828
-border-size = 0
-;border-color = #fff
-padding-left = 2
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-underline-size = 0
-
-font-0 = Monospace:size=10;3
-font-1 = FontAwesome:size=10;3
-font-2 = siji:pixelsize=10;1
-
-;modules-left = 
-;modules-center = 
-modules-right = demo pulserestart cpu memory
-
-tray-position = left
-tray-padding = 0
-tray-transparent = true
-tray-detached = false
-tray-maxsize = 19
-tray-scale = 1
-
-wm-restack = i3
-override-redirect = false
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-
-;########################################################################
-;Module - Cpu
-;########################################################################
-
-
-[module/cpu]
-type = internal/cpu
-format-background = #474747
-format-foreground = #cfc29a
-format-padding = 1
-interval = 0.5
-format = <label><ramp-coreload>
-label = " %percentage:3:3%% "
-ramp-coreload-spacing = 1
-
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-
-ramp-coreload-0-foreground = #83a598
-ramp-coreload-1-foreground = #83a598
-ramp-coreload-2-foreground = #ff9900
-ramp-coreload-3-foreground = #ff9900
-ramp-coreload-4-foreground = #ff6600
-ramp-coreload-5-foreground = #ff6600
-ramp-coreload-6-foreground = #fb4934
-ramp-coreload-7-foreground = #fb4934
-
-
-;########################################################################
-;Module - Memory
-;########################################################################
-
-[module/memory]
-type = internal/memory
-format-background = #a89984
-format-foreground = #272828
-format-padding = 1
-interval = 3
-format = <label>
-label =  %mb_used%  %mb_free%
-
-[module/pulserestart]
-type = custom/script
-exec = echo PulseAudioRestart
-label = " %output% "
-format = <label>
-format-background = #999
-format-foreground = #272828
-click-left = ~/.config/polybar/scripts/pulserestart.sh
-
+[bar/second-monitor-bottom]
+monitor = ${env:MONITOR:HDMI-1}
+include-file = ~/.config/polybar/bars/second-monitor-bottom
