@@ -1,8 +1,6 @@
 ## :wrench: ~/.dotfiles
 
----
-
-###My minimal Linux environment settings...
+### My minimal Linux environment settings...
 
 Main monitor:
 ![](http://darteil-projects.ru/static/images/screen-desktop.png)
