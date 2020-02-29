@@ -17,10 +17,10 @@ rofi.columns: 1
 rofi.color-enabled: true
 
 ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
-rofi.color-window: #272828, #272828, #1e2529
-rofi.color-normal: #272828, #c1c1c1, #272828, #383838, #c35f6b
-rofi.color-active: #272828, #80cbc4, #272828, #383838, #80cbc4
-rofi.color-urgent: #272828, #ff1844, #272828, #383838, #ff1844
+rofi.color-window: #3d3c3b, #3d3c3b, #1e2529
+rofi.color-normal: #3d3c3b, #c1c1c1, #3d3c3b, #383838, #c35f6b
+rofi.color-active: #3d3c3b, #80cbc4, #3d3c3b, #383838, #80cbc4
+rofi.color-urgent: #3d3c3b, #ff1844, #3d3c3b, #383838, #ff1844
 
 rofi.separator-style: none
 rofi.location: 1
