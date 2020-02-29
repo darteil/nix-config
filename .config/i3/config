@@ -140,10 +140,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
-client.focused          #b56a07 #b56a07 #ffffff #78824B
-client.focused_inactive #657b83 #272827 #657b83 #78824B
-client.unfocused        #657b83 #272827 #657b83 #78824B
-client.urgent           #657b83 #272827 #657b83 #78824B
+client.focused          #efe8d5 #efe8d5 #3d3c3b #78824B
+client.focused_inactive #3d3c3b #3d3c3b #fff #78824B
+client.unfocused        #3d3c3b #3d3c3b #fff #78824B
+client.urgent           #3d3c3b #3d3c3b #fff #78824B
 
 # change volume or toggle mute
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
