@@ -14,11 +14,6 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-label-focused = ${self.workspace-label}
-label-unfocused = ${self.workspace-label}
-label-urgent = ${self.workspace-label}
-label-visible = ${self.workspace-label}
-
 format = <label-state> <label-mode>
 
 label-mode = %mode%
@@ -26,14 +21,34 @@ label-mode-padding = 1
 label-mode-background = #e60053
 label-mode-foreground = #3d3c3b
 
+;
+ws-icon-0 = 1;1 
+ws-icon-1 = 2;2 
+ws-icon-2 = 3;3 
+ws-icon-3 = 4;4 
+ws-icon-4 = 5;5 
+ws-icon-5 = 6;6 
+ws-icon-6 = 7;7 
+ws-icon-7 = 8;8 
+ws-icon-8 = 9;9 
+ws-icon-9 = 10;10 
+
 label-visible-padding = 1
 label-urgent-padding = 1
 
+label-focused = %icon%
 label-focused-foreground = #3d3c3b
 label-focused-background = #efe8d5
 label-focused-padding = 1
 
+label-unfocused = %icon%
 label-unfocused-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = #3d3c3b
+label-urgent-background = #e60053
+
+label-visible = %icon%
 
 ;=====================================================
 ;     Keyboard
@@ -45,7 +60,7 @@ blacklist-0 = num lock
 
 format = <label-layout>
 
-label-layout =  %layout%
+label-layout =  %name%
 
 ;=====================================================
 ;     Date, clock
@@ -87,13 +102,16 @@ label-muted-foreground = #FF0000
 ;=====================================================
 
 [module/pulseaudio]
-type = custom/script
-exec = ~/.config/polybar/scripts/pulseaudio-tail.sh
-tail = true
-click-right = exec pavucontrol &
-click-left = ~/.config/polybar/scripts/pulseaudio-tail.sh --mute
-scroll-up = ~/.config/polybar/scripts/pulseaudio-tail.sh --up
-scroll-down = ~/.config/polybar/scripts/pulseaudio-tail.sh --down
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
+use-ui-max = true
+interval = 5
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+
+label-muted =  ---
+label-muted-foreground = #FF0000
 
 ;=====================================================
 ;     Cpu
@@ -139,16 +157,3 @@ format-padding = 1
 interval = 3
 format = <label>
 label =  %mb_used%  %mb_free%
-
-;=====================================================
-;     Pulserestart
-;=====================================================
-
-[module/pulserestart]
-type = custom/script
-exec = echo PulseAudioRestart
-label = " %output% "
-format = <label>
-format-background = #999
-format-foreground = #272828
-click-left = ~/.config/polybar/scripts/pulserestart.sh
