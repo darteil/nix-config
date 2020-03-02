@@ -1,0 +1,54 @@
+* {
+   font: "Monospace 10";
+   background-color: #3d3c3b;
+}
+
+window {
+   background-color: #3d3c3b;
+   anchor: north west;
+   location: north west;
+   x-offset: 0;
+   y-offset: 0;
+}
+
+message {
+   padding: 6px 10px;
+   background-color: @blackwidget;
+}
+
+prompt {
+   padding: 3px 10px 3px 10px;
+   background-color:  #ed8712;
+   text-color: #3d3c3b;
+}
+
+inputbar {
+   background-color: #fff;
+   spacing: 0px;
+}
+
+entry {
+   padding: 3px 10px 3px 10px;
+   background-color: #3d3c3b;
+   text-color: #fff;
+}
+
+listview {
+   fixed-height: false;
+   dynamic: true;
+   scrollbar: false;
+   spacing: 0px;
+   padding: 5px 5px 3px 5px;
+   background: #3d3c3b;
+}
+
+element {
+   padding: 2px 15px;
+   background-color: #3d3c3b;
+   text-color: #fff;
+}
+
+element selected.normal {
+  background-color: #1e2529;
+  text-color:       #ed8712;
+}
