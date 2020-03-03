@@ -68,6 +68,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+grave move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+grave scratchpad show
+
 set $firstMonitor HDMI-0
 set $secondMonitor HDMI-1
 
