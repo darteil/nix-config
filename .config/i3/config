@@ -138,17 +138,13 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # class                 border  backgr. text    indicator
 client.focused          #f56e3d #efe8d5 #323232 #78824B
 client.focused_inactive #f56e3d #3d3c3b #fff #78824B
 client.unfocused        #f56e3d #3d3c3b #fff #78824B
 client.urgent           #ce2e2e #ce2e2e #fff #78824B
-
-# change volume or toggle mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 set $HOME /home/darteil
 
@@ -161,7 +157,7 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id "i3-msg 'workspace 1'"
+exec --no-startup-id i3-msg workspace 1
 exec --no-startup-id megasync
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
