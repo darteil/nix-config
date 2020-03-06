@@ -3,7 +3,7 @@
 ### My minimal Linux environment settings...
 
 Main monitor:
-![](http://darteil-projects.ru/static/images/screen-desk-1.png)
+![](http://darteil-projects.ru/static/images/main-screen.png)
 
 Secondary monitor:
-![](http://darteil-projects.ru/static/images/screen-desk-2.png)
+![](http://darteil-projects.ru/static/images/secondary-screen.png)
