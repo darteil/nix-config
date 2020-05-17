@@ -15,11 +15,11 @@ Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-startify'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
-echo exists('##CompleteChanged') && exists('*nvim_open_win')
-
+let g:indentLine_char = '¦' 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fixers['typescript'] = ['prettier', 'eslint']
