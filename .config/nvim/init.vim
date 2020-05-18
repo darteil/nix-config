@@ -44,9 +44,10 @@ if (empty($TMUX))
 endif
 
 colorscheme gruvbox 
+set t_Co=256
 let g:gruvbox_termcolors = 256
 set encoding=UTF-8
-" set background=dark
+set background=dark
 set relativenumber
 set rnu
 
