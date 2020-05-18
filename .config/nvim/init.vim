@@ -48,6 +48,8 @@ set t_Co=256
 let g:gruvbox_termcolors = 256
 set encoding=UTF-8
 set background=dark
+set relativenumber
+set rnu
 
 syntax enable
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -102,6 +104,9 @@ let g:lightline = {
       \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
+
+" startify ignore indentLine
+let g:indentLine_fileTypeExclude = [ 'startify' ]
 
 " startify 'Most Recent Files' number
 let g:startify_files_number = 5 
