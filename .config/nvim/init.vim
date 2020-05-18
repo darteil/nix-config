@@ -46,7 +46,7 @@ endif
 colorscheme gruvbox 
 let g:gruvbox_termcolors = 256
 set encoding=UTF-8
-set background=dark
+" set background=dark
 set relativenumber
 set rnu
 
