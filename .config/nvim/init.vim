@@ -54,6 +54,8 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#fnamemod = ':.'
 let g:airline#extensions#tabline#fnamecollapse = 0
 
+autocmd Filetype json let g:indentLine_enabled = 0
+
 colorscheme gruvbox
 set t_Co=256
 let g:gruvbox_termcolors = 256
