@@ -14,7 +14,8 @@ function virtualenv_info(){
     [[ -n "$venv" ]] && echo " (venv:$venv)"
 }
 
-export EDITOR="/usr/bin/subl"
+export VISUAL=nvim;
+export EDITOR=nvim;
 
 # disable the default virtualenv prompt change
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -36,3 +37,5 @@ alias musplay='tizonia --youtube-audio-playlist https://www.youtube.com/playlist
 alias musstream='tizonia --youtube-audio-stream'
 alias tmdef='tmux attach -t default'
 alias mountdata='sudo mount -t ntfs-3g -o ro /dev/sdb1 /media/data'
+alias pulserestart='pulseaudio -k'
+alias fontsreload='sudo fc-cache -f -v'
