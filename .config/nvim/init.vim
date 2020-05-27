@@ -16,6 +16,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/goyo.vim'
+Plug 'sickill/vim-pasta'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -54,6 +58,9 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#fnamemod = ':.'
 let g:airline#extensions#tabline#fnamecollapse = 0
 
+let g:goyo_width = 150
+let g:goyo_linenr = 1
+
 autocmd Filetype json let g:indentLine_enabled = 0
 
 colorscheme gruvbox
@@ -63,6 +70,10 @@ set encoding=UTF-8
 set background=dark
 set relativenumber
 set rnu
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 syntax enable
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -80,10 +91,16 @@ filetype plugin on
 set wildmenu
 set showmatch
 
+nnoremap <SPACE> <Nop>
+let mapleader = ' '
+
 nnoremap <C-c> "+y
 vnoremap <C-c> "+y
 nnoremap <C-v> "+p
 vnoremap <C-v> "+p
+
+nmap <leader>. <c-^>
+nmap <leader>st :Startify<cr>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -95,20 +112,24 @@ function! s:show_documentation()
 endfunction
 
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
-let g:coc_explorer_open_win = 'g:open_float_win_for_coc_explorer'
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\ }
-nmap <space>e :CocCommand explorer --preset floating<CR>
+nmap <space>e :CocCommand explorer<CR>
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-if !has('gui_running')
-  set t_Co=256
-endif
+"coc tab completion
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 
 " startify ignore indentLine
-let g:indentLine_fileTypeExclude = [ 'startify' ]
+let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer' ]
 
 " startify 'Most Recent Files' number
 let g:startify_files_number = 5
