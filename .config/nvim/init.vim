@@ -10,10 +10,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'w0rp/ale'
-Plug 'pangloss/vim-javascript'
-Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'pangloss/vim-javascript', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
+Plug 'peitalin/vim-jsx-typescript', { 'for': ['typescript', 'typescript.tsx'] }
+Plug 'maxmellon/vim-jsx-pretty', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
+
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
@@ -62,6 +64,9 @@ let g:goyo_width = 150
 let g:goyo_linenr = 1
 
 autocmd Filetype json let g:indentLine_enabled = 0
+
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 colorscheme gruvbox
 set t_Co=256
@@ -114,8 +119,10 @@ endfunction
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 nmap <space>e :CocCommand explorer<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nmap <leader>r <Plug>(coc-rename)
+nmap <leader>d <Plug>(coc-definition)
 
-"coc tab completion
+"tab completion
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
