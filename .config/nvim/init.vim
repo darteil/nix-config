@@ -16,6 +16,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'sickill/vim-pasta'
 Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'HerringtonDarkholme/yats.vim', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
 Plug 'pangloss/vim-javascript', { 'for': [ 'javascript' ] }
@@ -27,13 +29,11 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+" Enable true color 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
 autocmd Filetype json let g:indentLine_enabled = 0
@@ -118,6 +118,8 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>d <Plug>(coc-definition)
 
+command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!{node_modules,.git}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 "tab completion
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
@@ -130,8 +132,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-
-let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer' ]
+let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf' ]
 let g:startify_files_number = 5
 let g:startify_session_persistence = 1
 let g:startify_lists = [
