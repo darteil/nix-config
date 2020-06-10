@@ -43,7 +43,9 @@ syntax enable
 colorscheme gruvbox
 set t_Co=256
 let g:gruvbox_termcolors = 256
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
+set signcolumn=yes
+set mouse=n
 set encoding=UTF-8
 set background=dark
 set relativenumber
@@ -91,16 +93,14 @@ let g:ale_fixers['javascript.jsx'] = ['prettier', 'eslint']
 let g:ale_fixers['typescript.tsx'] = ['prettier', 'eslint']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_set_highlights = 1
-let g:ale_sign_error = " "
-let g:ale_sign_warning = " "
-highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
-highlight ALEWarningSign ctermfg=20 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
+let g:ale_sign_error = ""
+let g:ale_sign_warning = ""
 let g:ale_fix_on_save = 1
-let g:airline_powerline_fonts = 1
 
+let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
 let g:airline_symbols.branch = '⎇ '
-let g:airline_symbols.maxlinenr = ' LN'
+let g:airline_symbols.maxlinenr = ' ln'
 let g:airline_symbols.linenr = '☰'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -126,7 +126,6 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
