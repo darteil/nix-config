@@ -1,4 +1,4 @@
-## :wrench: ~/.dotfiles
+## ~/.dotfiles  
 
 ### My minimal Linux environment settings...
 
