@@ -39,3 +39,8 @@ alias tmdef='tmux attach -t default'
 alias mountdata='sudo mount -t ntfs-3g -o ro /dev/sdb1 /media/data'
 alias pulserestart='pulseaudio -k'
 alias fontsreload='sudo fc-cache -f -v'
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{node_modules,.git}"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
