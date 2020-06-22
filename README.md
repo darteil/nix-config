@@ -1,13 +1,13 @@
-## ~/.dotfiles  
+## ~/.dotfiles
 
 ### My minimal Linux environment settings...
 
 Main monitor:
-![](http://darteil-projects.ru/static/images/fon5.jpg)
+![](http://darteil-projects.ru/static/images/d1.png)
 
 Secondary monitor:
-![](http://darteil-projects.ru/static/images/secondary-screen.png)
+![](http://darteil-projects.ru/static/images/d2.png)
 
-### License  
+### License
 
 MIT License, Copyright (c) 2020 Romanov Yuri
