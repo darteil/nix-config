@@ -9,11 +9,10 @@ bottom = true
 module-margin-left = 0
 module-margin-right = 0
 
-modules-right = cpu memory
+modules-right = system-usb-udev cpu memory
 
 tray-position = left
 tray-padding = 2
-tray-transparent = true
 tray-detached = false
 tray-maxsize = 18
 tray-offset-x = 0

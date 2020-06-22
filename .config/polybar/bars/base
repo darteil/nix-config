@@ -1,10 +1,9 @@
 width = 100%
 radius = 0.0
 fixed-center = true
-background = #3d3c3b
-foreground = #fff
+background = #272828
+foreground = #ce9321
 line-size = 0
-border-size = 0
 padding-right = 0
 underline-size = 0
 

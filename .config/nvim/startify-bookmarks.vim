@@ -2,4 +2,5 @@
 let g:startify_bookmarks = [
   \ '~/.config/nvim/init.vim',
   \ '~/.config/nvim/coc-settings.json',
+  \ '/etc/pulse/default.pa',
   \ ]

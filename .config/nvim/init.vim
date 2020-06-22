@@ -29,7 +29,7 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-" Enable true color 
+" Enable true color
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -43,7 +43,7 @@ syntax enable
 colorscheme gruvbox
 set t_Co=256
 let g:gruvbox_termcolors = 256
-let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_dark = 'hard'
 set signcolumn=yes
 set mouse=n
 set encoding=UTF-8
@@ -64,6 +64,9 @@ filetype indent on
 filetype plugin on
 set wildmenu
 set showmatch
+set autoindent
+set undofile
+set undodir=/tmp
 
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
@@ -73,7 +76,6 @@ vnoremap <C-c> "+y
 nnoremap <C-v> "+p
 vnoremap <C-v> "+p
 
-nmap <leader>. <c-^>
 nmap <leader>st :Startify<cr>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -149,4 +151,3 @@ let g:startify_custom_header = [
   \ '  +-+ +-+ +-+ +-+ +-+ +-+ +-+   +-+ +-+   +-+ +-+ +-+ +-+',
   \ '   ',
   \ ]
-
