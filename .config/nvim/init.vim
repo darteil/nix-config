@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
@@ -18,6 +18,7 @@ Plug 'sickill/vim-pasta'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'jlanzarotta/bufexplorer'
 
 Plug 'HerringtonDarkholme/yats.vim', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
 Plug 'pangloss/vim-javascript', { 'for': [ 'javascript' ] }
@@ -25,29 +26,23 @@ Plug 'maxmellon/vim-jsx-pretty', { 'for': [ 'javascript', 'javascript.jsx', 'typ
 
 call plug#end()
 
-if !has('gui_running')
-  set t_Co=256
-endif
-
-" Enable true color
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
 autocmd Filetype json let g:indentLine_enabled = 0
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 syntax enable
-colorscheme gruvbox
 set t_Co=256
-let g:gruvbox_termcolors = 256
-let g:gruvbox_contrast_dark = 'hard'
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+set background=dark
+let g:onedark_terminal_italics = 1
+colorscheme onedark
+
 set signcolumn=yes
 set mouse=n
 set encoding=UTF-8
-set background=dark
 set relativenumber
 set rnu
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -67,14 +62,19 @@ set showmatch
 set autoindent
 set undofile
 set undodir=/tmp
+set nobackup       " This is recommended by coc
+set nowritebackup  " This is recommended by coc
+set clipboard=unnamedplus
+set lcs=trail:·
+set list
 
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
 
-nnoremap <C-c> "+y
-vnoremap <C-c> "+y
-nnoremap <C-v> "+p
-vnoremap <C-v> "+p
+"nnoremap <C-c> "+y
+"vnoremap <C-c> "+y
+"nnoremap <C-v> "+p
+"vnoremap <C-v> "+p
 
 nmap <leader>st :Startify<cr>
 
@@ -95,8 +95,8 @@ let g:ale_fixers['javascript.jsx'] = ['prettier', 'eslint']
 let g:ale_fixers['typescript.tsx'] = ['prettier', 'eslint']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_set_highlights = 1
-let g:ale_sign_error = ""
-let g:ale_sign_warning = ""
+let g:ale_sign_error = ""
+let g:ale_sign_warning = ""
 let g:ale_fix_on_save = 1
 
 let g:airline_powerline_fonts = 1
@@ -110,6 +110,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#fnamemod = ':.'
 let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#parts#ffenc#skip_expected_string='utf-8 unix'
 
 let g:goyo_width = 150
 let g:goyo_linenr = 1
