@@ -2,11 +2,11 @@
 set $mod Mod4
 
 
-font pango:System San Francisco Display 10
+font pango:JetBrains Mono Medium 10
 
 floating_modifier $mod
 
-default_border pixel 2
+default_border pixel 3
 
 hide_edge_borders none
 
@@ -152,12 +152,11 @@ bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 client.background	#272827
 
-client.focused         	#657b83	#272827	#d99f57	#75404b		#75404b
-client.unfocused       	#657b83	#272827	#657b83	#56694d		#56694d
-client.focused_inactive	#657b83	#272827	#657b83	#56694d		#56694d
-client.urgent		#657b83	#272827	#657b83	#56694d		#56694d
-client.placeholder	#657b83	#272827	#657b83	#56694d		#56694d
-
+client.focused         	#ebdbb2	#ebdbb2	#837a6d	#d79921    #d79921
+client.unfocused       	#282828	#282828	#898d90	#659766    #659766
+client.focused_inactive	#458588	#272827	#458588	#659766    #659766
+client.urgent		        #458588	#272827	#458588	#659766    #659766
+client.placeholder	    #458588	#272827	#458588	#659766    #659766
 
 set $HOME /home/darteil
 
@@ -176,5 +175,5 @@ exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
 
-# exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-# exec_always --no-startup-id feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/fon3.jpg
+exec --no-startup-id compton --config $HOME/.config/compton.conf -b
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/fon3.jpg
