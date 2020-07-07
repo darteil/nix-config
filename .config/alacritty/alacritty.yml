@@ -55,15 +55,22 @@ scrolling:
 # change the `it` value in terminfo when altering this setting.
 tabspaces: 2
 
+dpi: 
+  x: 103.0
+  y: 103.0
+
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
   normal:
-    family: JetBrains Mono Medium
+    family: JetBrains Mono
+    style: Medium
   bold:
-    family: JetBrains Mono Medium
+    family: JetBrains Mono
+    style: Bold
   italic:
-    family: JetBrains Mono Medium Italic
+    family: JetBrains Mono 
+    style: Italic
 
   # Point size of the font
   size: 10.0
@@ -84,36 +91,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Color Settings (Gruvbox)
 colors:
+  # Default colors
   primary:
-    background: '#1d2021'
-    foreground: '#ebdbb2'
+    # hard contrast: background = '#f9f5d7'
+    background: '#fbf1c7'
+    # soft contrast: background = '#f2e5bc'
+    foreground: '#3c3836'
 
+  # Normal colors
   normal:
-    black:   '#282828'
+    black:   '#fbf1c7'
     red:     '#cc241d'
     green:   '#98971a'
     yellow:  '#d79921'
     blue:    '#458588'
     magenta: '#b16286'
     cyan:    '#689d6a'
-    white:   '#a89984'
+    white:   '#7c6f64'
 
+  # Bright colors
   bright:
     black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-
-  selection:
-    text: '0xffffff'
-    background: '0xdc3232'
-    white:   '0xffffff'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#3c3836'
 
   # Indexed Colors
   #
@@ -147,7 +153,7 @@ colors:
 #
 # Specifying a `duration` of `0` will disable the visual bell.
 visual_bell:
-  animation: EaseOutExpo
+  animation: EaseOut
   duration: 0
   color: '0xffffff'
 
@@ -233,7 +239,7 @@ key_bindings:
   #- { key: Minus,    mods: Control,       action: DecreaseFontSize }
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
-  - { key: T,        mods: Control, action: SpawnNewInstance                 }
+  #- { key: T,        mods: Control, action: SpawnNewInstance                 }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }

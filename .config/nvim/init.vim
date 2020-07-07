@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'joshdick/onedark.vim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
@@ -19,15 +20,17 @@ Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'ap/vim-css-color'
 
-Plug 'HerringtonDarkholme/yats.vim', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
-Plug 'pangloss/vim-javascript', { 'for': [ 'javascript' ] }
-Plug 'maxmellon/vim-jsx-pretty', { 'for': [ 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
+Plug 'HerringtonDarkholme/yats.vim',
+Plug 'pangloss/vim-javascript',
+Plug 'maxmellon/vim-jsx-pretty',
 
 call plug#end()
 
 autocmd Filetype json let g:indentLine_enabled = 0
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 syntax enable
 set t_Co=256
@@ -36,9 +39,13 @@ if exists('+termguicolors')
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=dark
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+set background=light
+"let g:onedark_terminal_italics = 1
+"colorscheme onedark
+colorscheme gruvbox
+let g:gruvbox_termcolors = 256
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = '0'
 
 set signcolumn=yes
 set mouse=n
@@ -88,6 +95,7 @@ function! s:show_documentation()
 endfunction
 
 let g:indentLine_char = '¦'
+
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fixers['typescript'] = ['prettier', 'eslint']
@@ -95,8 +103,8 @@ let g:ale_fixers['javascript.jsx'] = ['prettier', 'eslint']
 let g:ale_fixers['typescript.tsx'] = ['prettier', 'eslint']
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_set_highlights = 1
-let g:ale_sign_error = ""
-let g:ale_sign_warning = ""
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_fix_on_save = 1
 
 let g:airline_powerline_fonts = 1
