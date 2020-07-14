@@ -1,10 +1,10 @@
 include-file = ~/.config/polybar/bars/base
 
-font-0 = ShareTechMono-Regular:size=11;2
-font-1 = FontAwesome:size=11;2
-font-2 = siji:pixelsize=11;1
+font-0 = Fantasque Sans Mono:weight=bold:size=12;9
+font-1 = FontAwesome:size=11;9
+font-2 = siji:pixelsize=11;9
 
-height = 25
+height = 30
 
 module-margin-left = 1
 module-margin-right = 1

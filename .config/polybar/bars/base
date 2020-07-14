@@ -1,12 +1,10 @@
-width = 100%
 radius = 0.0
-fixed-center = true
-background = #272828
-foreground = #ce9321
-line-size = 0
-padding-right = 0
+fixed-center = false
+background = #00000000
+foreground = #9da769
+padding-right = 1%
+padding-left = 1%
 underline-size = 0
-
 override-redirect = false
 cursor-click = pointer
 cursor-scroll = ns-resize

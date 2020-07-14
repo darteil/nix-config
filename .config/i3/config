@@ -11,10 +11,8 @@ default_border pixel 3
 hide_edge_borders none
 
 ### Gaps ###
-set $default_gaps_inner 7
-set $default_gaps_outer 7
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
+gaps inner 7
+gaps outer 7
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
@@ -147,16 +145,16 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # Theme colors
-# class                 border 	backgr. text    indic.  	child_border
+# class                 border  backgr. text    indic.      child_border
 # My colors
 
-client.background	#272827
+client.background #272827
 
-client.focused         	#ebdbb2	#ebdbb2	#837a6d	#d79921    #d79921
-client.unfocused       	#282828	#282828	#898d90	#659766    #659766
-client.focused_inactive	#458588	#272827	#458588	#659766    #659766
-client.urgent		        #458588	#272827	#458588	#659766    #659766
-client.placeholder	    #458588	#272827	#458588	#659766    #659766
+client.focused           #a5815e #a5815e #243140 #a5815e    #a5815e
+client.unfocused         #282828 #282828 #898d90 #9da769    #9da769
+client.focused_inactive  #458588 #272827 #458588 #9da769    #9da769
+client.urgent            #458588 #272827 #458588 #9da769    #9da769
+client.placeholder       #458588 #272827 #458588 #9da769    #9da769
 
 set $HOME /home/darteil
 
@@ -176,4 +174,4 @@ exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
 
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-exec_always --no-startup-id feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/fon3.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon.jpg --bg-fill $HOME/Images/fon.jpg
