@@ -40,8 +40,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=light
-"let g:onedark_terminal_italics = 1
-"colorscheme onedark
 colorscheme gruvbox
 let g:gruvbox_termcolors = 256
 let g:gruvbox_contrast_dark = 'hard'

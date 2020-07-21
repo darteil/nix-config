@@ -6,17 +6,18 @@ font pango:JetBrains Mono Medium 10
 
 floating_modifier $mod
 
-default_border pixel 3
+default_border pixel 4
+smart_borders on
 
 hide_edge_borders none
 
 ### Gaps ###
-gaps inner 7
-gaps outer 7
+gaps inner 15
+gaps outer 1
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi  -location 2 -show run
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -145,7 +146,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # Theme colors
-# class                 border  backgr. text    indic.      child_border
+# class                  border  backgr. text    indic.     child_border
 # My colors
 
 client.background #272827
@@ -168,10 +169,10 @@ exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id i3-msg workspace 1
-exec --no-startup-id megasync
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 exec_always --no-startup-id feh --bg-fill $HOME/Images/fon.jpg --bg-fill $HOME/Images/fon.jpg

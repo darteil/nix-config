@@ -14,7 +14,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = JetBrains Mono 10
+    font = Fira Code 10
     line_height = 0
     markup = full
     format = "<span foreground='#000'><b>%s %p</b></span>\n%b"

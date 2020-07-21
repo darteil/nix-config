@@ -8,6 +8,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 polybar first-monitor &
 polybar second-monitor &
-polybar second-monitor-bottom &
 
 echo "Bars launched..."

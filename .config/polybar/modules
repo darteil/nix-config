@@ -32,10 +32,10 @@ ws-icon-8 = 9;
 ws-icon-9 = 10;
 
 label-focused = 
-label-focused-foreground = #9da769
+label-focused-foreground = #272a39
 label-focused-padding = 1
 
-label-unfocused = 
+label-unfocused = %icon%
 label-unfocused-padding = 1
 
 label-visible = %icon%

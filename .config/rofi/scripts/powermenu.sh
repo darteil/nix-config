@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme powermenu.rasi -lines 2 -dmenu -p power"
+rofi_command="rofi -theme powermenu.rasi -location 2 -lines 2 -dmenu -p power"
 option_reboot=" reboot"
 option_shutdown=" shutdown"
 
