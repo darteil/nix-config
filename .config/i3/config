@@ -143,7 +143,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh 
 
 # Theme colors
 # class                  border  backgr. text    indic.     child_border
@@ -172,7 +172,6 @@ exec --no-startup-id i3-msg workspace 1
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
-
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-exec_always --no-startup-id feh --bg-fill $HOME/Images/fon.jpg --bg-fill $HOME/Images/fon.jpg
+
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon.jpg --bg-fill $HOME/Images/fon2.jpg
