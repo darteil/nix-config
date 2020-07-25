@@ -2,7 +2,7 @@ include-file = ~/.config/polybar/bars/base
 
 font-0 = Fantasque Sans Mono:weight=bold:size=12;9
 font-1 = FontAwesome:size=11;9
-font-2 = siji:pixelsize=11;9
+font-2 = Weather Icons:size=11;9
 
 width = 100%
 height = 30
@@ -11,4 +11,4 @@ module-margin-left = 1
 module-margin-right = 1
 
 modules-left = i3
-modules-right = xkeyboard pulseaudio date clock
+modules-right = xkeyboard weather pulseaudio date clock
