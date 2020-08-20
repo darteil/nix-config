@@ -3,6 +3,9 @@ env:
   TERM: xterm-256color
 
 window:
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
   # Window dimensions (changes require restart)
   dimensions:
     columns: 0
@@ -54,10 +57,6 @@ scrolling:
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
 # tabspaces: 2
-
-dpi: 
-  x: 103.0
-  y: 103.0
 
 # Font configuration (changes require restart)
 font:
@@ -152,7 +151,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOut
   duration: 0
   color: '0xffffff'
@@ -199,8 +198,6 @@ selection:
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   style: Block

@@ -124,3 +124,4 @@ type = custom/script
 exec = ~/.config/polybar/scripts/openweathermap-forecast.sh
 interval = 600
 label-font = 3
+

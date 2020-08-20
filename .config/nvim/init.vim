@@ -1,4 +1,5 @@
 source ~/.config/nvim/startify-bookmarks.vim
+source ~/.config/nvim/fzf.vim
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -29,6 +30,11 @@ call plug#end()
 
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
@@ -93,19 +99,6 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " Enable spell checking, sp for spell check
 nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
-
-"=================================================
-" FZF settings
-"=================================================
-if has("nvim")
-  au TermOpen * tnoremap <Esc> <c-\><c-n>
-  au FileType fzf tunmap <Esc>
-endif
-
-let g:fzf_layout = { 'window': {'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-
-command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!{node_modules,.git}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 "=================================================
 " Indent Line settings
