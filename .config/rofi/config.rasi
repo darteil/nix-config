@@ -1,10 +1,10 @@
 * {
-   font: "JetBrains Mono 10";
-   background-color: #c6b79d;
+   font: "Roboto 11";
+   background-color: #262626;
 }
 
 window {
-   background-color: #c6b79d;
+   background-color: #262626;
    x-offset: 0;
    y-offset: 200;
 }
@@ -16,19 +16,19 @@ message {
 
 prompt {
    padding: 3px 10px 3px 10px;
-   background-color:  #ed8712;
+   background-color:  #c05805;
    text-color: #272828;
 }
 
 inputbar {
-   background-color: #c6b79d;
+   background-color: #262626;
    spacing: 0px;
 }
 
 entry {
    padding: 3px 10px 3px 10px;
-   background-color: #c6b79d;
-   text-color: #000;
+   background-color: #262626;
+   text-color: #eeeeee;
 }
 
 listview {
@@ -37,16 +37,16 @@ listview {
    scrollbar: false;
    spacing: 0px;
    padding: 5px 5px 3px 5px;
-   background: #c6b79d;
+   background: #262626;
 }
 
 element {
    padding: 2px 15px;
-   background-color: #c6b79d;
-   text-color: #000;
+   background-color: #262626;
+   text-color: #eeeeee;
 }
 
 element selected.normal {
-  background-color: #a5815e;
-  text-color:       #000;
+  background-color: #806641;
+  text-color:       #eeeeee;
 }

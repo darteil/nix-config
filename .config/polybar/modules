@@ -1,49 +1,73 @@
+[color]
+
+;; Active Colors
+bg = #2f343f
+fg = #1C1E20
+fg-alt = #C4C7C5
+mf = #C4C7C5
+ac = #B4BC67
+ 
+;; Bars
+bn = #308634
+bm = #E57C46
+bd = #E24C49
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+;; Colors
+
+red = #EC7875
+pink = #EC6798
+purple = #BE78D1
+blue = #75A4CD
+cyan = #00C7DF
+teal = #00B19F
+green = #61C766
+lime = #B9C244
+yellow = #EBD369
+amber = #EDB83F
+orange = #E57C46
+brown = #AC8476
+grey = #8C8C8C
+indigo = #6C77BB
+blue-gray = #6D8895
+
 ;=====================================================
 ;     i3WM
 ;=====================================================
 
 [module/i3]
-workspace-label = %index%
 type = internal/i3
+
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
+
 enable-click = true
-enable-scroll = false
+enable-scroll = true
+
 wrapping-scroll = false
 reverse-scroll = false
-fuzzy-match = true
 
 format = <label-state> <label-mode>
 
-label-mode = %mode%
-label-mode-foreground = #b08f81
-label-mode-padding = 1
+label-focused = %index%
+label-focused-foreground = #eeeeee
+label-focused-background = #806641
+label-focused-padding = 3
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+label-unfocused = %index%
+label-unfocused-padding = 3
 
-label-focused = 
-label-focused-foreground = #272a39
-label-focused-padding = 1
+label-visible = %index%
+label-visible-padding = 3
 
-label-unfocused = %icon%
-label-unfocused-padding = 1
-
-label-visible = %icon%
-label-visible-padding = 1
-
-label-urgent = 
-label-urgent-foreground = #c4241d
-label-urgent-padding = 1
+label-urgent = %index%
+label-urgent-foreground = #eeeeee
+label-urgent-background = #d13525
+label-urgent-padding = 3
 
 ;=====================================================
 ;     Keyboard
@@ -54,8 +78,11 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format = <label-layout>
-
-label-layout =  %name%
+format-foreground = #111111
+format-background = #cdcdc0
+format-padding = 2
+label-layout-font = 2
+label-layout = "   %name% "
 
 ;=====================================================
 ;     Date, clock
@@ -63,34 +90,25 @@ label-layout =  %name%
 
 [module/date]
 type = internal/date
-label =  %date%
+label = "   %date% "
 date = %d/%m/%Y
 interval = 60
 date-alt = %a, %d %B %Y
 
+format-background = #486824
+format-foreground = #eeeeee
+format-padding = 2
+
 [module/clock]
 type = internal/date
-label = " %time% "
+label = "   %time% "
 time = %H:%M:%S
 interval = 1
 time-alt = %H:%M
 
-;=====================================================
-;     Volume
-;=====================================================
-
-[module/volume]
-type = internal/volume
-
-format-volume = <label-volume>
-label-volume =  %percentage%%
-label-volume-foreground = #dfbf8e
-
-scroll-up = amixer set Master 2%+
-scroll-down = amixer set Master 2%-
-
-label-muted =  %percentage%%
-label-muted-foreground = #FF0000
+format-foreground = #eeeeee
+format-background = #c05805
+format-padding = 2
 
 ;=====================================================
 ;     Pulseaudio
@@ -102,11 +120,21 @@ sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 use-ui-max = true
 interval = 5
 
-format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume-foreground = #eeeeee
+label-volume-background = #626d71
+label-volume-padding = 2
 
-label-muted =  ---
-label-muted-foreground = #FF0000
+format-volume = <label-volume>
+label-volume = "  %percentage%% "
+
+label-muted-background = #d13525
+label-muted-foreground = #eeeeee
+label-muted-padding = 2
+label-muted = "  --- "
+
+;=====================================================
+;     USB
+;=====================================================
 
 [module/system-usb-udev]
 type = custom/script
@@ -114,14 +142,4 @@ exec = ~/.config/polybar/scripts/system-usb-udev.sh
 tail = true
 click-left = ~/.config/polybar/scripts/system-usb-udev.sh &
 ;click-right = ~/.config/polybar/scripts/system-usb-udev.sh --unmount &
-
-;=====================================================
-;     Weather
-;=====================================================
-
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/scripts/openweathermap-forecast.sh
-interval = 600
-label-font = 3
 

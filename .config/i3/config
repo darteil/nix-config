@@ -2,7 +2,7 @@
 set $mod Mod4
 
 
-font pango:JetBrains Mono Medium 10
+font pango:Roboto 10
 
 floating_modifier $mod
 
@@ -166,12 +166,12 @@ bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 exec_always --no-startup-id xrdb $HOME/.Xresources
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xfce4-power-manager
-exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.8
+exec_always --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id i3-msg workspace 1
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
-exec --no-startup-id compton --config $HOME/.config/compton.conf -b
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
-exec_always --no-startup-id feh --bg-fill $HOME/Images/fon.jpg --bg-fill $HOME/Images/fon2.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon1.jpg --bg-fill $HOME/Images/fon2.jpg
