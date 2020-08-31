@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
