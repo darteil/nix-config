@@ -2,7 +2,7 @@
 
 ### Linux environment settings
 
-![](http://darteil-projects.ru/static/images/d1.png)
+![](http://darteil-projects.ru/static/images/w1.png)
 
 ### License
 

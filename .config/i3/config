@@ -15,37 +15,32 @@ hide_edge_borders none
 gaps inner 15
 gaps outer 1
 
-bindsym $mod+Return exec i3-sensible-terminal
+# i3 uses jkl; instead of hjkl -- fix that
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# These are more like the tmux config we will get to later, but are intuitive
+bindsym $mod+apostrophe  split horizontal
+bindsym $mod+quotedbl    split horizontal
+bindsym $mod+minus       split vertical
+
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi  -location 2 -show run
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -164,14 +159,15 @@ bindsym Print exec "flameshot gui"
 bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
 exec_always --no-startup-id xrdb $HOME/.Xresources
-exec_always --no-startup-id numlockx on
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id xbindkeys
+exec --no-startup-id megasync
 exec --no-startup-id i3-msg workspace 1
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
-exec_always --no-startup-id feh --bg-fill $HOME/Images/fon1.jpg --bg-fill $HOME/Images/fon2.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Images/fon3.jpg --bg-fill $HOME/Images/fon2.jpg
