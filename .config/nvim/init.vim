@@ -7,7 +7,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-startify'
@@ -22,6 +21,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'itchyny/vim-gitbranch'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -111,20 +111,21 @@ autocmd Filetype json let g:indentLine_enabled = 0
 "=================================================
 " Airline
 "=================================================
+
 let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
-let g:airline_symbols.branch = '⎇ '
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline#extensions#tabline#fnamemod = ':.'
-let g:airline#extensions#tabline#fnamecollapse = 0
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_z = ''
+let g:airline_section_c = "%{expand('%:~:.')}"
+let g:airline_section_b = '⌥ %{gitbranch#name()}'
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#enabled = 1
 
 "=================================================
 " Goyo

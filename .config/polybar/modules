@@ -1,39 +1,3 @@
-[color]
-
-;; Active Colors
-bg = #2f343f
-fg = #1C1E20
-fg-alt = #C4C7C5
-mf = #C4C7C5
-ac = #B4BC67
- 
-;; Bars
-bn = #308634
-bm = #E57C46
-bd = #E24C49
-
-trans = #00000000
-white = #FFFFFF
-black = #000000
-
-;; Colors
-
-red = #EC7875
-pink = #EC6798
-purple = #BE78D1
-blue = #75A4CD
-cyan = #00C7DF
-teal = #00B19F
-green = #61C766
-lime = #B9C244
-yellow = #EBD369
-amber = #EDB83F
-orange = #E57C46
-brown = #AC8476
-grey = #8C8C8C
-indigo = #6C77BB
-blue-gray = #6D8895
-
 ;=====================================================
 ;     i3WM
 ;=====================================================
@@ -69,6 +33,9 @@ label-urgent-foreground = #eeeeee
 label-urgent-background = #d13525
 label-urgent-padding = 3
 
+label-mode-background = #d13525
+label-mode-padding = 3
+
 ;=====================================================
 ;     Keyboard
 ;=====================================================
@@ -77,12 +44,13 @@ label-urgent-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format = <label-layout>
-format-foreground = #111111
-format-background = #cdcdc0
-format-padding = 2
-label-layout-font = 2
-label-layout = "   %name% "
+format-foreground = #eeeeee
+format-padding = 1
+label-layout = "%{T7} %{T-} %name%"
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = #d13525
 
 ;=====================================================
 ;     Date, clock
@@ -90,25 +58,23 @@ label-layout = "   %name% "
 
 [module/date]
 type = internal/date
-label = "   %date% "
+label = " %{T3} %{T-} %date% "
 date = %d/%m/%Y
 interval = 60
 date-alt = %a, %d %B %Y
 
-format-background = #486824
 format-foreground = #eeeeee
-format-padding = 2
+format-padding = 1
 
 [module/clock]
 type = internal/date
-label = "   %time% "
+label = " %{T7} %{T-} %time% "
 time = %H:%M:%S
 interval = 1
 time-alt = %H:%M
 
 format-foreground = #eeeeee
-format-background = #c05805
-format-padding = 2
+format-padding = 1
 
 ;=====================================================
 ;     Pulseaudio
@@ -121,16 +87,14 @@ use-ui-max = true
 interval = 5
 
 label-volume-foreground = #eeeeee
-label-volume-background = #626d71
-label-volume-padding = 2
+label-volume-padding = 1
 
 format-volume = <label-volume>
-label-volume = "  %percentage%% "
+label-volume = " %{T8} %{T-} %percentage%% "
 
-label-muted-background = #d13525
 label-muted-foreground = #eeeeee
-label-muted-padding = 2
-label-muted = "  --- "
+label-muted-padding = 1
+label-muted = " %{T8} %{T-}--- "
 
 ;=====================================================
 ;     USB
