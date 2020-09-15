@@ -68,10 +68,9 @@ format-padding = 1
 
 [module/clock]
 type = internal/date
-label = " %{T7} %{T-} %time% "
-time = %H:%M:%S
+label = " %{T7} %{T-} %time%"
+time = %H:%M
 interval = 1
-time-alt = %H:%M
 
 format-foreground = #eeeeee
 format-padding = 1
@@ -107,3 +106,13 @@ tail = true
 click-left = ~/.config/polybar/scripts/system-usb-udev.sh &
 ;click-right = ~/.config/polybar/scripts/system-usb-udev.sh --unmount &
 
+
+;=====================================================
+;     Moscow time
+;=====================================================
+
+[module/moscow-time]
+type = custom/script
+exec = ~/.config/polybar/scripts/moscow-time.sh
+tail = true
+interval = 1
