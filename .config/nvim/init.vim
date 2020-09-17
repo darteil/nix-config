@@ -20,8 +20,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/vim-gitbranch'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -50,9 +51,9 @@ endif
 set background=light
 colorscheme gruvbox
 let g:gruvbox_termcolors = 256
-let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = '0'
 
+set linespace=0
 set signcolumn=yes
 set mouse=n
 set encoding=UTF-8
@@ -109,9 +110,17 @@ let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf' ]
 autocmd Filetype json let g:indentLine_enabled = 0
 
 "=================================================
+" Gitgutter
+"=================================================
+let g:gitgutter_sign_added = 'a'
+let g:gitgutter_sign_modified = 'c'
+let g:gitgutter_sign_removed = 'r'
+let g:gitgutter_sign_removed_first_line = 'rf'
+let g:gitgutter_sign_modified_removed = 'cr'
+
+"=================================================
 " Airline
 "=================================================
-
 let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
 let g:airline_left_sep = ''
