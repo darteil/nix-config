@@ -48,8 +48,9 @@ if exists('+termguicolors')
   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=light
+set background=dark
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_invert_selection = '0'
 
@@ -112,6 +113,7 @@ autocmd Filetype json let g:indentLine_enabled = 0
 "=================================================
 " Gitgutter
 "=================================================
+" Use fontawesome icons as signs
 let g:gitgutter_sign_added = 'a'
 let g:gitgutter_sign_modified = 'c'
 let g:gitgutter_sign_removed = 'r'

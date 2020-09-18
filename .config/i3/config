@@ -137,8 +137,11 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
+for_window [class=kitty-floating] floating enable, resize set 800px 500px
+
 bindsym $mod+r mode "resize"
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh 
+bindsym $mod+m exec kitty --class kitty-floating
 
 # Theme colors
 # class                  border  backgr. text    indic.     child_border
@@ -146,16 +149,16 @@ bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 client.background #272827
 
-client.focused           #a5815e #a5815e #243140 #a5815e    #a5815e
-client.unfocused         #282828 #282828 #898d90 #9da769    #9da769
-client.focused_inactive  #458588 #272827 #458588 #9da769    #9da769
-client.urgent            #458588 #272827 #458588 #9da769    #9da769
-client.placeholder       #458588 #272827 #458588 #9da769    #9da769
+client.focused           #9da769 #9da769 #243140 #9da769    #9da769
+client.unfocused         #282828 #282828 #898d90 #a5815e    #a5815e
+client.focused_inactive  #458588 #272827 #458588 #a5815e    #a5815e
+client.urgent            #458588 #272827 #458588 #a5815e    #a5815e
+client.placeholder       #458588 #272827 #458588 #a5815e    #a5815e
 
 set $HOME /home/darteil
 
 bindsym $mod+b exec google-chrome
-bindsym Print exec "flameshot gui"
+bindsym Print exec "flameshot gui"S
 bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
 exec_always --no-startup-id xrdb $HOME/.Xresources
