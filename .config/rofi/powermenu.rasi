@@ -4,5 +4,7 @@
 }
 
 window {
-   y-offset: 200;
+  anchor: north west;
+  location: north west;
+  height: 90;
 }

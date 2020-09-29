@@ -15,22 +15,17 @@ hide_edge_borders none
 gaps inner 15
 gaps outer 1
 
-# i3 uses jkl; instead of hjkl -- fix that
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# These are more like the tmux config we will get to later, but are intuitive
-bindsym $mod+apostrophe  split horizontal
-bindsym $mod+quotedbl    split horizontal
-bindsym $mod+minus       split vertical
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
@@ -137,7 +132,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-for_window [class=kitty-floating] floating enable, resize set 800px 500px
+for_window [class=kitty-floating] floating enable, resize set 800px 500px, move position 0 40
 
 bindsym $mod+r mode "resize"
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh 
@@ -158,7 +153,7 @@ client.placeholder       #458588 #272827 #458588 #a5815e    #a5815e
 set $HOME /home/darteil
 
 bindsym $mod+b exec google-chrome
-bindsym Print exec "flameshot gui"S
+bindsym Print exec "flameshot gui"
 bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
 exec_always --no-startup-id xrdb $HOME/.Xresources

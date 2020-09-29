@@ -4,9 +4,12 @@
 }
 
 window {
+   width: 30em;
+   location: north west;
+   anchor:   north west;
+   y-offset: 4;
+   padding: 0 0 0 5px;
    background-color: #262626;
-   x-offset: 0;
-   y-offset: 200;
 }
 
 message {
@@ -15,7 +18,7 @@ message {
 }
 
 prompt {
-   padding: 3px 10px 3px 10px;
+   padding: 5px 10px 5px 10px;
    background-color:  #c05805;
    text-color: #272828;
 }
@@ -26,7 +29,7 @@ inputbar {
 }
 
 entry {
-   padding: 3px 10px 3px 10px;
+   padding: 5px 10px 5px 10px;
    background-color: #262626;
    text-color: #eeeeee;
 }
