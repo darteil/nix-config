@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'vimwiki/vimwiki'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -107,7 +108,7 @@ nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
 " Indent Line settings
 "=================================================
 let g:indentLine_char = '¦'
-let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf' ]
+let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf', 'vimwiki' ]
 autocmd Filetype json let g:indentLine_enabled = 0
 
 "=================================================
@@ -174,6 +175,12 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+"=================================================
+" Vimwiki
+"=================================================
+let g:vimwiki_list = [{'path': '~/MEGA/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}] 
+let g:instant_markdown_autostart = 0
 
 "=================================================
 " Startify
