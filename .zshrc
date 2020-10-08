@@ -10,19 +10,31 @@ export EDITOR=nvim;
 export NVM_DIR=~/.nvm
  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-oldPS1="$PS1"
-function zle-line-init zle-keymap-select {
-    VIM_NORMAL_PROMPT="%{$fg_bold[yellow]%}[% NOR]%  %{$reset_color%}"
-    VIM_INSERT_PROMPT="%{$fg_bold[green]%}[% INS]%  %{$reset_color%}"
-    PS1="${${KEYMAP/vicmd/$VIM_NORMAL_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}$oldPS1"
-    PS2=$PS1
-    RPS1=""
-    RPS2=""
-    zle reset-prompt
+export KEYTIMEOUT=1
+
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+    [[ $1 = 'block' ]]; then
+  echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+    [[ ${KEYMAP} == viins ]] ||
+    [[ ${KEYMAP} = '' ]] ||
+    [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+
+zle -N zle-keymap-select
+
+zle-line-init() {
+  zle -K viins
+  echo -ne "\e[5 q"
 }
 
 zle -N zle-line-init
-zle -N zle-keymap-select
+echo -ne '\e[5 q'
+preexec() { echo -ne '\e[5 q' ;}
+
 
 alias tr='tree -L 1 --dirsfirst -a'
 alias mus='mpsyt pl "https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT"'
@@ -38,3 +50,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
