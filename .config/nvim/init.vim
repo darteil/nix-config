@@ -23,7 +23,6 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vimwiki/vimwiki'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -175,12 +174,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-"=================================================
-" Vimwiki
-"=================================================
-let g:vimwiki_list = [{'path': '~/MEGA/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}] 
-let g:instant_markdown_autostart = 0
 
 "=================================================
 " Startify
