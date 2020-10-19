@@ -154,7 +154,6 @@ set $HOME /home/darteil
 
 bindsym $mod+b exec google-chrome
 bindsym Print exec "flameshot gui"
-bindsym $mod+n exec "~/.joplin/Joplin.AppImage"
 
 exec_always --no-startup-id xrdb $HOME/.Xresources
 exec_always --no-startup-id xfce4-power-manager
