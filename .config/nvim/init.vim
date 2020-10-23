@@ -23,6 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'psliwka/vim-smoothie'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -107,7 +108,7 @@ nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
 " Indent Line settings
 "=================================================
 let g:indentLine_char = '¦'
-let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf', 'vimwiki' ]
+let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf']
 autocmd Filetype json let g:indentLine_enabled = 0
 
 "=================================================
