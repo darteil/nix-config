@@ -142,13 +142,16 @@ bindsym $mod+m exec kitty --class kitty-floating
 # class                  border  backgr. text    indic.     child_border
 # My colors
 
+set $focused #a5815e
+set $unfocused #9da769
+
 client.background #272827
 
-client.focused           #9da769 #9da769 #243140 #9da769    #9da769
-client.unfocused         #282828 #282828 #898d90 #a5815e    #a5815e
-client.focused_inactive  #458588 #272827 #458588 #a5815e    #a5815e
-client.urgent            #458588 #272827 #458588 #a5815e    #a5815e
-client.placeholder       #458588 #272827 #458588 #a5815e    #a5815e
+client.focused           $focused $focused #243140 $focused    $focused
+client.unfocused         #458588  #282828  #898d90 $unfocused  $unfocused
+client.focused_inactive  #458588  #272827  #458588 $unfocused  $unfocused
+client.urgent            #458588  #272827  #458588 $unfocused  $unfocused
+client.placeholder       #458588  #272827  #458588 $unfocused  $unfocused
 
 set $HOME /home/darteil
 
@@ -166,5 +169,6 @@ exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec --no-startup-id conky
 
 exec_always --no-startup-id feh --bg-fill $HOME/Images/fon3.jpg --bg-fill $HOME/Images/fon2.jpg
