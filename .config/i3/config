@@ -155,7 +155,7 @@ client.placeholder       #458588  #272827  #458588 $unfocused  $unfocused
 
 set $HOME /home/darteil
 
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec google-chrome-stable
 bindsym Print exec "flameshot gui"
 
 exec_always --no-startup-id xrdb $HOME/.Xresources
