@@ -41,6 +41,8 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
 
+
+filextype *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css nvim %f
 fileviewer *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css highlight -O xterm256 -s base16/gruvbox-dark-medium %c
 
 " Pdf
@@ -113,7 +115,7 @@ fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
 
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in feh}
-        \ feh %f,
+        \ gthumb %f,
 
 " OpenRaster
 filextype *.ora
@@ -206,7 +208,7 @@ fileviewer {*.docx},
           \<application/
            \vnd.openxmlformats-officedocument.wordprocessingml.document>
          \ docx2txt.pl %f -
-
+         
 " TuDu files
 filetype *.tudu tudu -f %c
 
@@ -292,3 +294,6 @@ nnoremap <a-i> :sync<cr>
 nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
+
+nnoremap gh :cd ~<cr>
+nnoremap gm :cd /mnt<cr>
