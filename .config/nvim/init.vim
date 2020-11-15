@@ -23,7 +23,8 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'psliwka/vim-smoothie'
+Plug 'vifm/vifm.vim'
+Plug 'yuttie/comfortable-motion.vim'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -54,6 +55,8 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_invert_selection = '0'
+let g:vifm_replace_netrw = 1
+let g:vifm_replace_netrw_cmd = 'Vifm'
 
 set linespace=0
 set signcolumn=yes
@@ -109,6 +112,7 @@ nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
 "=================================================
 let g:indentLine_char = '¦'
 let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf']
+let g:indentLine_bufNameExclude = ['vifm']
 autocmd Filetype json let g:indentLine_enabled = 0
 
 "=================================================
