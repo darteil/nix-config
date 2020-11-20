@@ -25,6 +25,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vifm/vifm.vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
