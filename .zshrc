@@ -2,7 +2,7 @@ export ZSH="/home/darteil/.oh-my-zsh"
 
 ZSH_THEME="my-theme"
 
-plugins=(vi-mode)
+plugins=(vi-mode tmux)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim;
@@ -36,7 +36,7 @@ echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
 
 
-alias tr='tree -L 1 --dirsfirst -a'
+alias ll='lsd -lAhS --blocks permission,group,size,date,name  --date relative --group-dirs first'
 alias mus='mpsyt pl "https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT"'
 alias tmdef='tmux attach -t default'
 alias mountdata='sudo mount -t ntfs-3g /dev/sdb1 /mnt/data'
