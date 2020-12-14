@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vifm/vifm.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'mattn/emmet-vim'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -152,7 +153,7 @@ let g:goyo_linenr = 1
 "=================================================
 " Coc settings
 "=================================================
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp', 'coc-styled-components']
 nmap <space>e :CocCommand explorer<CR>
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <leader>r <Plug>(coc-rename)

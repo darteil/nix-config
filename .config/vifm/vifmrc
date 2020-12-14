@@ -45,6 +45,10 @@ command! reload :write | restart full
 filextype *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css nvim %f
 fileviewer *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css highlight -O xterm256 -s base16/gruvbox-dark-medium %c
 
+" other
+fileviewer *.parts,*.exe,*.db,*.rar,*.7z,*.vhdx,*.sys,*.epub
+        \ file %f
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> file %f
