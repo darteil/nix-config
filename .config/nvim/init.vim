@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vifm/vifm.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -152,6 +153,14 @@ let g:goyo_linenr = 1
 "=================================================
 " Coc settings
 "=================================================
+
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   }
+\ }
+
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp', 'coc-styled-components']
 nmap <space>e :CocCommand explorer<CR>
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -179,6 +188,15 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+nmap <space>e :CocCommand explorer --preset floating<CR>
+
+"=================================================
+" Markdown-preview
+"=================================================
+
+let g:mkdp_browser = 'google-chrome-stable'
+let g:mkdp_page_title = '「Markdown Preview」'
 
 "=================================================
 " Startify
