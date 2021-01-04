@@ -16,17 +16,14 @@
 
 #### Screenshots
 Home
-![](http://darteil-projects.ru/static/images/desktop/main.png)
+![](./images/main.png)
 
-Code Editor
-![](http://darteil-projects.ru/static/images/desktop/code.png)
-
-System info
-![](http://darteil-projects.ru/static/images/desktop/sys.png)
+Code Editor, system info
+![](./images/code-system.png)
 
 Second monitor
-![](http://darteil-projects.ru/static/images/desktop/secondary.png)
+![](./images/second-monitor.png)
 
 #### License
 
-MIT License, Copyright (c) 2020 Romanov Yuri
+MIT License, Copyright (c) 2021 Romanov Yuri
