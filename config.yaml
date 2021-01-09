@@ -1,0 +1,77 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  f_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  f_kitty.conf:
+    src: config/kitty/kitty.conf
+    dst: ~/.config/kitty/kitty.conf
+  d_bat:
+    src: config/bat
+    dst: ~/.config/bat
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  f_picom.conf:
+    src: config/picom/picom.conf
+    dst: ~/.config/picom/picom.conf
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
+  f_vifmrc:
+    src: config/vifm/vifmrc
+    dst: ~/.config/vifm/vifmrc
+  d_fonts:
+    src: fonts
+    dst: ~/.fonts
+  d_pixelfun3:
+    src: icons/pixelfun3
+    dst: ~/.icons/pixelfun3
+  d_custom:
+    src: oh-my-zsh/custom
+    dst: ~/.oh-my-zsh/custom
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+    chmod: '755'
+  f_conkyrc:
+    src: conkyrc
+    dst: ~/.conkyrc
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+profiles:
+  home:
+    dotfiles:
+    - f_config
+    - d_polybar
+    - f_kitty.conf
+    - d_bat
+    - d_dunst
+    - d_nvim
+    - f_picom.conf
+    - d_rofi
+    - f_vifmrc
+    - d_fonts
+    - d_pixelfun3
+    - d_custom
+    - f_xresources
+    - f_conkyrc
+    - f_tmux.conf
+    - f_xinitrc
+    - f_zshrc
