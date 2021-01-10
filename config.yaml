@@ -6,55 +6,72 @@ dotfiles:
   f_config:
     src: config/i3/config
     dst: ~/.config/i3/config
+    link: link
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
+    link: link
   f_kitty.conf:
     src: config/kitty/kitty.conf
     dst: ~/.config/kitty/kitty.conf
+    link: link
   d_bat:
     src: config/bat
     dst: ~/.config/bat
+    link: link
   d_dunst:
     src: config/dunst
     dst: ~/.config/dunst
+    link: link
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+    link: link
   f_picom.conf:
     src: config/picom/picom.conf
     dst: ~/.config/picom/picom.conf
+    link: link
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
+    link: link
   f_vifmrc:
     src: config/vifm/vifmrc
     dst: ~/.config/vifm/vifmrc
+    link: link
   d_fonts:
     src: fonts
     dst: ~/.fonts
+    link: link
   d_pixelfun3:
     src: icons/pixelfun3
     dst: ~/.icons/pixelfun3
+    link: link
   d_custom:
     src: oh-my-zsh/custom
     dst: ~/.oh-my-zsh/custom
+    link: link
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
     chmod: '755'
+    link: link
   f_conkyrc:
     src: conkyrc
     dst: ~/.conkyrc
+    link: link
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+    link: link
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
+    link: link
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
+    link: link
 profiles:
   home:
     dotfiles:
