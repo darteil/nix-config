@@ -23,10 +23,6 @@ dotfiles:
     src: config/dunst
     dst: ~/.config/dunst
     link: link
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
-    link: link
   f_picom.conf:
     src: config/picom/picom.conf
     dst: ~/.config/picom/picom.conf
@@ -46,10 +42,6 @@ dotfiles:
   d_pixelfun3:
     src: icons/pixelfun3
     dst: ~/.icons/pixelfun3
-    link: link
-  d_custom:
-    src: oh-my-zsh/custom
-    dst: ~/.oh-my-zsh/custom
     link: link
   f_xresources:
     src: Xresources
@@ -72,6 +64,26 @@ dotfiles:
     src: zshrc
     dst: ~/.zshrc
     link: link
+  f_coc-settings.json:
+    src: config/nvim/coc-settings.json
+    dst: ~/.config/nvim/coc-settings.json
+    link: link
+  f_fzf.vim:
+    src: config/nvim/fzf.vim
+    dst: ~/.config/nvim/fzf.vim
+    link: link
+  f_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+    link: link
+  f_startify-bookmarks.vim:
+    src: config/nvim/startify-bookmarks.vim
+    dst: ~/.config/nvim/startify-bookmarks.vim
+    link: link
+  f_my-theme.zsh-theme:
+    src: oh-my-zsh/custom/themes/my-theme.zsh-theme
+    dst: ~/.oh-my-zsh/custom/themes/my-theme.zsh-theme
+    link: link
 profiles:
   home:
     dotfiles:
@@ -80,15 +92,18 @@ profiles:
     - f_kitty.conf
     - d_bat
     - d_dunst
-    - d_nvim
     - f_picom.conf
     - d_rofi
     - f_vifmrc
     - d_fonts
     - d_pixelfun3
-    - d_custom
     - f_xresources
     - f_conkyrc
     - f_tmux.conf
     - f_xinitrc
     - f_zshrc
+    - f_coc-settings.json
+    - f_fzf.vim
+    - f_init.vim
+    - f_startify-bookmarks.vim
+    - f_my-theme.zsh-theme
