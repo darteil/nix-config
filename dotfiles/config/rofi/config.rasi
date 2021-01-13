@@ -50,6 +50,10 @@ element {
 }
 
 element selected.normal {
-  background-color: #806641;
-  text-color:       #eeeeee;
+   background-color: #806641;
+   text-color:       #eeeeee;
+}
+
+element-icon {
+   size: 1em;
 }

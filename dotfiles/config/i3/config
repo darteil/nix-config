@@ -29,7 +29,14 @@ bindsym $mod+v split v
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi  -location 2 -show run
+bindsym $mod+d exec \
+  "rofi \
+  -location 2 \
+  -kb-accept-entry 'Return,KP_Enter' \
+  -kb-row-down 'Control+j' \
+  -kb-remove-to-eol '' \
+  -kb-row-up 'Control+k' \
+  -show run"
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
