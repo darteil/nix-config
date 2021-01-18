@@ -26,6 +26,7 @@ Plug 'vifm/vifm.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'szw/vim-maximizer'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -110,6 +111,8 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " Enable spell checking, sp for spell check
 nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
+
+nmap <leader>m :MaximizerToggle!<CR>
 
 "=================================================
 " Indent Line settings
