@@ -22,7 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'itchyny/vim-gitbranch'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vifm/vifm.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -163,6 +162,7 @@ let g:goyo_linenr = 1
 let g:coc_explorer_global_presets = {
 \   'floating': {
 \     'position': 'floating',
+\     'floating-width': '100',
 \     'open-action-strategy': 'sourceWindow',
 \   }
 \ }

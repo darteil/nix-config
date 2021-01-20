@@ -4,7 +4,6 @@
   "explorer.width": 50,
   "explorer.position": "floating",
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.enableVimDevicons": true,
   "explorer.git.icon.status.added": "✚",
   "explorer.git.icon.status.deleted": "✖",
   "explorer.git.icon.status.renamed": "➜",
