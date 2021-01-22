@@ -1,7 +1,3 @@
-
-set millerview
-set milleroptions=lsize:1,csize:2,rsize:3,rpreview:all
-
 set vicmd=nvim
 set syscalls
 

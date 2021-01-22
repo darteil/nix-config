@@ -111,6 +111,10 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 " Enable spell checking, sp for spell check
 nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
 
+" Search files
+nmap <leader>f :Files<CR>
+
+" Maximizer
 nmap <leader>m :MaximizerToggle!<CR>
 
 "=================================================
@@ -171,7 +175,7 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet',
 nmap <space>e :CocCommand explorer<CR>
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <leader>r <Plug>(coc-rename)
-nmap <leader>d <Plug>(coc-definition)
+nmap <leader>gd <Plug>(coc-definition)
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
