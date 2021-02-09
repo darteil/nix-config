@@ -7,7 +7,6 @@ font pango:Roboto 10
 floating_modifier $mod
 
 default_border pixel 4
-smart_borders on
 
 hide_edge_borders none
 
@@ -156,8 +155,8 @@ bindsym $mod+m exec kitty --class kitty-floating
 # class                  border  backgr. text    indic.     child_border
 # My colors
 
-set $focused #a5815e
-set $unfocused #9da769
+set $focused #fe8019
+set $unfocused #689d6a
 
 client.background #272827
 

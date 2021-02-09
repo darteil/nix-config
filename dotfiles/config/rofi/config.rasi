@@ -19,7 +19,7 @@ message {
 
 prompt {
    padding: 5px 10px 5px 10px;
-   background-color:  #c05805;
+   background-color: #fe8019;
    text-color: #272828;
 }
 
