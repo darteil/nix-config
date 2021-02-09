@@ -112,6 +112,11 @@ nmap <leader>f :Files<CR>
 " Maximizer
 nmap <leader>m :MaximizerToggle!<CR>
 
+" BufExplorer
+let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerShowRelativePath=1
+nnoremap <silent> <leader>b :BufExplorer<CR>
+
 "=================================================
 " Indent Line settings
 "=================================================
@@ -194,7 +199,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-nmap <space>e :CocCommand explorer --preset floating<CR>
+nmap <leader>e :CocCommand explorer --preset floating<CR>
 
 "=================================================
 " Markdown-preview
