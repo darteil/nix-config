@@ -43,11 +43,6 @@ dotfiles:
     src: icons/pixelfun3
     dst: ~/.icons/pixelfun3
     link: link
-  f_xresources:
-    src: Xresources
-    dst: ~/.Xresources
-    chmod: '755'
-    link: link
   f_conkyrc:
     src: conkyrc
     dst: ~/.conkyrc
@@ -97,7 +92,6 @@ profiles:
     - f_vifmrc
     - d_fonts
     - d_pixelfun3
-    - f_xresources
     - f_conkyrc
     - f_tmux.conf
     - f_xinitrc

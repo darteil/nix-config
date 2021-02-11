@@ -171,7 +171,6 @@ set $HOME /home/darteil
 bindsym $mod+b exec google-chrome-stable
 bindsym Print exec "flameshot gui"
 
-exec_always --no-startup-id xrdb $HOME/.Xresources
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
