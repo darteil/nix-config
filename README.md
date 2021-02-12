@@ -43,4 +43,4 @@ Second monitor
 
 #### License
 
-MIT License, Copyright (c) 2021 Romanov Yuri
+MIT License, Copyright (c) 2019-2021 Romanov Yuri
