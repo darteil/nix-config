@@ -14,9 +14,9 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Roboto 10
+    font = UbuntuMono Nerd Font Mono 11
     markup = full
-    format = "<span foreground='#000'><b>%s %p</b></span>\n%b"
+    format = "<span foreground='#282828'><b>%s %p [%a]</b></span>\n\n%b"
     alignment = left
     show_age_threshold = 60
     word_wrap = yes
@@ -24,9 +24,9 @@
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = yes
-    icon_position = left
-    max_icon_size = 32
+    show_indicators = no
+    icon_position = off
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
     sticky_history = yes
     history_length = 20
     always_run_script = true
@@ -46,16 +46,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#c6b79d"
-    foreground = "#000"
+    background = "#8ec07c"
+    foreground = "#282828"
     timeout = 0
 
 [urgency_normal]
-    background = "#c6b79d"
-    foreground = "#000"
+    background = "#ebdbb2"
+    foreground = "#282828"
     timeout = 0
 
 [urgency_critical]
-    background = "#d64e4e"
-    foreground = "#000"
+    background = "#fb4934"
+    foreground = "#282828"
     timeout = 0
