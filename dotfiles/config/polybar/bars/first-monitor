@@ -6,4 +6,4 @@ height = 32
 module-margin = 1
 
 modules-left = i3
-modules-right = demo xkeyboard pulseaudio date clock moscow-time
+modules-right = xkeyboard pulseaudio date clock moscow-time menu-power

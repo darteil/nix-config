@@ -116,3 +116,23 @@ type = custom/script
 exec = ~/.config/polybar/scripts/moscow-time.sh
 tail = true
 interval = 1
+
+;=====================================================
+;     Power menu
+;=====================================================
+
+[module/menu-power]
+type = custom/menu
+
+expand-right = true
+
+label-open = "  %{T8} %{T-} "
+label-close = " %{T8} %{T-} "
+label-separator = "  "
+
+menu-0-0 = " %{T8} %{T-} shutdown "
+menu-0-0-exec = shutdown -P now
+
+menu-0-1 = " %{T8} %{T-} restart "
+menu-0-1-exec = shutdown -r now
+
