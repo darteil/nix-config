@@ -21,6 +21,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'szw/vim-maximizer'
+Plug 'unblevable/quick-scope'
 
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
@@ -38,6 +39,18 @@ nnoremap <C-H> <C-W><C-H>
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
+"=================================================
+" QuickScope
+"=================================================
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#5fffff' gui=bold ctermfg=155 cterm=bold
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#d3869b' gui=bold ctermfg=81 cterm=bold
+augroup END
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"=================================================
 
 syntax enable
 set t_Co=256
@@ -173,9 +186,9 @@ let g:coc_explorer_global_presets = {
 
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp', 'coc-styled-components']
 nmap <space>e :CocCommand explorer<CR>
-"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -186,7 +199,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
 
 "tab completion
 inoremap <silent><expr> <TAB>
