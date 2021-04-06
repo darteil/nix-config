@@ -48,10 +48,10 @@ ${font Fira Code:Bold:size=10}CPU ${hr 1}${font}${offset 1}
 
   Temperatures $alignr ${hwmon 2 temp 1}°C ${hwmon 2 temp 2}°C ${hwmon 2 temp 3}°C ${hwmon 2 temp 4}°C
 
-  CPU0: ${cpu cpu0}%${goto 120}${cpubar 7,80 cpu0}${goto 242}CPU4: ${cpu cpu4}%${goto 322}${cpubar 7,80 cpu4}
-  CPU1: ${cpu cpu1}%${goto 120}${cpubar 7,80 cpu1}${goto 242}CPU5: ${cpu cpu5}%${goto 322}${cpubar 7,80 cpu5}
-  CPU2: ${cpu cpu2}%${goto 120}${cpubar 7,80 cpu2}${goto 242}CPU6: ${cpu cpu6}%${goto 322}${cpubar 7,80 cpu6}
-  CPU3: ${cpu cpu3}%${goto 120}${cpubar 7,80 cpu3}${goto 242}CPU7: ${cpu cpu7}%${goto 322}${cpubar 7,80 cpu7}
+  CPU0: ${cpu cpu0}%${goto 108}${cpubar 7,80 cpu0}${goto 235}CPU4: ${cpu cpu4}%${goto 322}${cpubar 7,80 cpu4}
+  CPU1: ${cpu cpu1}%${goto 108}${cpubar 7,80 cpu1}${goto 235}CPU5: ${cpu cpu5}%${goto 322}${cpubar 7,80 cpu5}
+  CPU2: ${cpu cpu2}%${goto 108}${cpubar 7,80 cpu2}${goto 235}CPU6: ${cpu cpu6}%${goto 322}${cpubar 7,80 cpu6}
+  CPU3: ${cpu cpu3}%${goto 108}${cpubar 7,80 cpu3}${goto 235}CPU7: ${cpu cpu7}%${goto 322}${cpubar 7,80 cpu7}
 
 ${font Fira Code:Bold:size=10}Memory ${hr 1}${font}${offset 1}
 
