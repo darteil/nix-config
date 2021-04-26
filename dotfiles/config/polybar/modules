@@ -143,5 +143,5 @@ menu-0-1-exec = shutdown -r now
 [module/update]
 type = custom/script
 exec = pacman -Qu | wc -l
-interval = 5000
+interval = 10
 label = " %{T7} %{T-} %output%"
