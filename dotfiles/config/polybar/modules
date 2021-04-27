@@ -136,12 +136,3 @@ menu-0-0-exec = shutdown -P now
 menu-0-1 = " %{T8} %{T-} restart "
 menu-0-1-exec = shutdown -r now
 
-;=====================================================
-;     Pacman updates
-;=====================================================
-
-[module/update]
-type = custom/script
-exec = pacman -Qu | wc -l
-interval = 10
-label = " %{T7} %{T-} %output%"

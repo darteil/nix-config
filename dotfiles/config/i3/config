@@ -167,7 +167,7 @@ client.placeholder       #458588  #272827  #458588 $unfocused  $unfocused
 
 set $HOME /home/darteil
 
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec vivaldi-stable
 bindsym Print exec "flameshot gui"
 
 exec_always --no-startup-id xfce4-power-manager
