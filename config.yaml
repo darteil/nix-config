@@ -35,10 +35,6 @@ dotfiles:
     src: config/vifm/vifmrc
     dst: ~/.config/vifm/vifmrc
     link: link
-  d_fonts:
-    src: fonts
-    dst: ~/.fonts
-    link: link
   d_pixelfun3:
     src: icons/pixelfun3
     dst: ~/.icons/pixelfun3
@@ -90,7 +86,6 @@ profiles:
     - f_picom.conf
     - d_rofi
     - f_vifmrc
-    - d_fonts
     - d_pixelfun3
     - f_conkyrc
     - f_tmux.conf
