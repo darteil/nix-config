@@ -186,7 +186,6 @@ let g:coc_explorer_global_presets = {
 
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp', 'coc-styled-components']
 nmap <space>e :CocCommand explorer<CR>
-nmap <leader>r <Plug>(coc-rename)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
