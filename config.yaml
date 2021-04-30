@@ -3,10 +3,6 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
-  f_config:
-    src: config/i3/config
-    dst: ~/.config/i3/config
-    link: link
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
@@ -75,10 +71,12 @@ dotfiles:
     src: oh-my-zsh/custom/themes/my-theme.zsh-theme
     dst: ~/.oh-my-zsh/custom/themes/my-theme.zsh-theme
     link: link
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
 profiles:
   home:
     dotfiles:
-    - f_config
     - d_polybar
     - f_kitty.conf
     - d_bat
@@ -96,3 +94,4 @@ profiles:
     - f_init.vim
     - f_startify-bookmarks.vim
     - f_my-theme.zsh-theme
+    - d_i3

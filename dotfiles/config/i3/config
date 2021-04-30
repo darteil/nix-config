@@ -169,6 +169,7 @@ set $HOME /home/darteil
 
 bindsym $mod+b exec vivaldi-stable
 bindsym Print exec "flameshot gui"
+bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.8
