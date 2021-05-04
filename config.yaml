@@ -74,6 +74,7 @@ dotfiles:
   d_i3:
     src: config/i3
     dst: ~/.config/i3
+    link: link
 profiles:
   home:
     dotfiles:
