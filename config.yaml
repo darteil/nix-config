@@ -75,6 +75,10 @@ dotfiles:
     src: config/i3
     dst: ~/.config/i3
     link: link
+  d_mpv:
+    src: config/mpv
+    dst: ~/.config/mpv
+    link: link
 profiles:
   home:
     dotfiles:
@@ -96,3 +100,4 @@ profiles:
     - f_startify-bookmarks.vim
     - f_my-theme.zsh-theme
     - d_i3
+    - d_mpv
