@@ -67,6 +67,11 @@ let g:gruvbox_invert_selection = '0'
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = 'Vifm'
 
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set list
+
 set linespace=0
 set signcolumn=yes
 set mouse=n
@@ -78,11 +83,8 @@ set autoindent
 set number
 set nocompatible
 set hidden
-set tabstop=2
-set softtabstop=2
 set expandtab
 set smarttab
-set shiftwidth=2
 filetype indent on
 filetype plugin on
 set wildmenu
@@ -97,7 +99,6 @@ set updatetime=300
 set shortmess+=c
 set clipboard=unnamedplus
 set lcs=trail:·
-set list
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
@@ -217,7 +218,7 @@ nmap <leader>e :CocCommand explorer --preset floating<CR>
 " Markdown-preview
 "=================================================
 
-let g:mkdp_browser = 'google-chrome-stable'
+let g:mkdp_browser = 'vivaldi-stable'
 let g:mkdp_page_title = '「Markdown Preview」'
 
 "=================================================
