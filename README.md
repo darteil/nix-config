@@ -9,7 +9,7 @@
 | Bar                                 | [polybar](https://github.com/jaagr/polybar)                              |
 | Program Launcher                    | [rofi](https://github.com/DaveDavenport/rofi)                            |
 | Wallpaper Setter                    | [feh](https://github.com/derf/feh)                                       |
-| Web Browser                         | [Google Chrome](https://www.google.com/intl/en_en/chrome/)               |
+| Web Browser                         | [Vivaldi](https://vivaldi.com)               |
 | Code Editor                         | [Nvim](https://neovim.io/)                                               |
 | Shell                               | [zsh](https://www.zsh.org/)                                              |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                |
@@ -28,7 +28,7 @@ cd ~/.dotfiles
 pip3 install --user -r dotdrop/requirements.txt
 
 ./dotdrop/bootstrap.sh
-./dotdrop.sh install --profile=home
+./dotdrop.sh install --profile=default
 ```
 
 #### Screenshots

@@ -80,7 +80,7 @@ dotfiles:
     dst: ~/.config/mpv
     link: link
 profiles:
-  home:
+  default:
     dotfiles:
     - d_polybar
     - f_kitty.conf
