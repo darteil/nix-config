@@ -136,7 +136,7 @@ menu-0-0-exec = shutdown -P now
 menu-0-1 = " restart  "
 menu-0-1-exec = shutdown -r now
 
-format-background = #cc241d
+format-background = #458588
 format-foreground = #ebdbb2
 
 ;=====================================================
