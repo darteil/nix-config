@@ -46,7 +46,7 @@ blacklist-0 = num lock
 
 format-foreground = #eeeeee
 format-padding = 1
-label-layout = "%{T7} %{T-} %name%"
+label-layout = "%{T7} %{T-} %name% "
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -58,7 +58,7 @@ label-indicator-background = #d13525
 
 [module/date]
 type = internal/date
-label = " %{T3} %{T-} %date% "
+label = " %{T3} %{T-} %date%"
 date = %d/%m/%Y
 interval = 60
 date-alt = %a, %d %B %Y
@@ -89,7 +89,7 @@ label-volume-foreground = #eeeeee
 label-volume-padding = 1
 
 format-volume = <label-volume>
-label-volume = " %{T8} %{T-} %percentage%% "
+label-volume = "%{T8} %{T-} %percentage%% "
 
 label-muted-foreground = #eeeeee
 label-muted-padding = 1
@@ -126,13 +126,25 @@ type = custom/menu
 
 expand-right = true
 
-label-open = "  %{T8} %{T-} "
-label-close = " %{T8} %{T-} "
-label-separator = "  "
+label-open = " %{T8}  %{T-} "
+label-close = " %{T8}  %{T-} "
+label-separator = "  "
 
-menu-0-0 = " %{T8} %{T-} shutdown "
+menu-0-0 = " shutdown "
 menu-0-0-exec = shutdown -P now
 
-menu-0-1 = " %{T8} %{T-} restart "
+menu-0-1 = " restart  "
 menu-0-1-exec = shutdown -r now
 
+format-background = #cc241d
+format-foreground = #ebdbb2
+
+;=====================================================
+;     Weather
+;=====================================================
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/scripts/openweather.sh
+interval = 300
+label-font = 9
