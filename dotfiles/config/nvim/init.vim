@@ -178,10 +178,8 @@ let g:goyo_linenr = 1
 "=================================================
 
 let g:coc_explorer_global_presets = {
-\   'floating': {
-\     'position': 'floating',
-\     'floating-width': '100',
-\     'open-action-strategy': 'sourceWindow',
+\   'default': {
+\     'position': 'left',
 \   }
 \ }
 
@@ -212,7 +210,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-nmap <leader>e :CocCommand explorer --preset floating<CR>
+nmap <leader>e :CocCommand explorer --preset default --width 100<CR>
 
 "=================================================
 " Markdown-preview
