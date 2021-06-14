@@ -79,6 +79,12 @@ dotfiles:
     src: config/mpv
     dst: ~/.config/mpv
     link: link
+  f_golang-settings.vim:
+    src: config/nvim/golang-settings.vim
+    dst: ~/.config/nvim/golang-settings.vim
+  f_javascript-settings.vim:
+    src: config/nvim/javascript-settings.vim
+    dst: ~/.config/nvim/javascript-settings.vim
 profiles:
   default:
     dotfiles:
@@ -101,3 +107,5 @@ profiles:
     - f_my-theme.zsh-theme
     - d_i3
     - d_mpv
+    - f_golang-settings.vim
+    - f_javascript-settings.vim
