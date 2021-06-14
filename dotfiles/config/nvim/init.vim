@@ -1,6 +1,9 @@
 source ~/.config/nvim/startify-bookmarks.vim
 source ~/.config/nvim/fzf.vim
 
+"source ~/.config/nvim/golang-settings.vim
+source ~/.config/nvim/javascript-settings.vim
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -10,7 +13,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-startify'
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
@@ -23,9 +25,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 
+" JavaScript
 Plug 'HerringtonDarkholme/yats.vim',
 Plug 'pangloss/vim-javascript',
 Plug 'maxmellon/vim-jsx-pretty',
+
+" Golang
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -64,13 +70,6 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_invert_selection = '0'
-let g:vifm_replace_netrw = 1
-let g:vifm_replace_netrw_cmd = 'Vifm'
-
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set list
 
 set linespace=0
 set signcolumn=yes
@@ -112,7 +111,7 @@ tnoremap <Esc> <C-\><C-n>
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
-  split term://bash
+  split term://zsh
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
@@ -130,14 +129,6 @@ nmap <leader>m :MaximizerToggle!<CR>
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
 nnoremap <silent> <leader>b :BufExplorer<CR>
-
-"=================================================
-" Indent Line settings
-"=================================================
-let g:indentLine_char = '¦'
-let g:indentLine_fileTypeExclude = [ 'startify', 'coc-explorer', 'fzf']
-let g:indentLine_bufNameExclude = ['vifm']
-autocmd Filetype json let g:indentLine_enabled = 0
 
 "=================================================
 " Gitgutter
