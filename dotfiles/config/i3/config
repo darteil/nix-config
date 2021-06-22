@@ -138,19 +138,15 @@ bindsym $mod+r mode "resize"
 bindsym $mod+m exec kitty --class kitty-floating
 
 # Theme colors
-# class                  border  backgr. text    indic.     child_border
-# My colors
 
-set $focused #fe8019
-set $unfocused #689d6a
+# class                 border  bground text    indicator child_border
+client.focused          #FE8019 #FE8019 #243140 #FE8019   #FE8019
+client.focused_inactive #689D6A #689D6A #243140 #689D6A   #689D6A
+client.unfocused        #076678 #BDAE93 #243140 #689D6A   #689D6A
+client.urgent           #2F343A #9D0006 #FFFFFF #9D0006   #9D0006
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-client.background #272827
-
-client.focused           $focused $focused #243140 $focused    $focused
-client.unfocused         #458588  #282828  #898d90 $unfocused  $unfocused
-client.focused_inactive  #458588  #272827  #458588 $unfocused  $unfocused
-client.urgent            #458588  #272827  #458588 $unfocused  $unfocused
-client.placeholder       #458588  #272827  #458588 $unfocused  $unfocused
+client.background       #272827
 
 set $HOME /home/darteil
 
