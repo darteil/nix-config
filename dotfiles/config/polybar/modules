@@ -139,12 +139,3 @@ menu-0-1-exec = shutdown -r now
 format-background = #458588
 format-foreground = #ebdbb2
 
-;=====================================================
-;     Weather
-;=====================================================
-
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/scripts/openweather.sh
-interval = 300
-label-font = 9

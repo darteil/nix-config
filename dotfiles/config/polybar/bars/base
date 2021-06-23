@@ -22,7 +22,5 @@ font-5 = Font Awesome 5 Free Solid:size=11;1
 font-6 = Font Awesome 5 Free Regular:size=11;3
 font-7 = Font Awesome 5 Free Solid:size=11;3
 
-font-8 = Weather Icons:size=11;3
-
 border-size = 4
 border-color = #262626

@@ -66,25 +66,25 @@ filextype {*.djvu},<image/vnd.djvu>
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c,
-       \ {Play using MPlayer}
-       \ mplayer %f,
+        \ {Play using ffplay}
+        \ ffplay -nodisp -autoexit %c,
+        \ {Play using MPlayer}
+        \ mpv %f,
 fileviewer {*.mp3},<audio/mpeg> mp3info
 fileviewer {*.flac},<audio/flac> soxi
 
 " Video
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-          \*.as[fx]},
-         \<video/*>
+        \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+        \*.as[fx]},
+        \<video/*>
         \ {View using mpv}
         \ mpv %f,
 fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-           \*.as[fx]},
-          \<video/*>
-         \ file %f
+        \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+        \*.as[fx]},
+        \<video/*>
+        \ file %f
 
 " Web
 filextype {*.html,*.htm},<text/html>
@@ -105,10 +105,11 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-        \ file %f
-
+        \ kitty +icat --place %pwx%ph@%pxx%py  --silent %c
+        \ %pc
+        \ kitty icat --clear --silent %pd
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        \ {View in feh}
+        \ {View in gthumb}
         \ gthumb %f,
 
 " OpenRaster
