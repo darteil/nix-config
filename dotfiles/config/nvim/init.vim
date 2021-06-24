@@ -105,16 +105,6 @@ let g:netrw_banner = 0
 " open new split panes to right and below
 set splitright
 set splitbelow
-" turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-" open terminal on ctrl+n
-function! OpenTerminal()
-  split term://zsh
-  resize 10
-endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
 
 " Enable spell checking, sp for spell check
 nmap <leader>sp :setlocal spell! spelllang=en_us<CR>
@@ -159,12 +149,6 @@ let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#enabled = 1
 
 "=================================================
-" Goyo
-"=================================================
-let g:goyo_width = 150
-let g:goyo_linenr = 1
-
-"=================================================
 " Coc settings
 "=================================================
 
@@ -174,7 +158,20 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-vimlsp', 'coc-styled-components']
+let g:coc_global_extensions = [
+      \ 'coc-explorer',
+      \ 'coc-tslint-plugin',
+      \ 'coc-tsserver',
+      \ 'coc-emmet',
+      \ 'coc-css',
+      \ 'coc-html',
+      \ 'coc-json',
+      \ 'coc-yank',
+      \ 'coc-prettier',
+      \ 'coc-vimlsp',
+      \ 'coc-styled-components'
+\]
+
 nmap <space>e :CocCommand explorer<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>gd <Plug>(coc-definition)
