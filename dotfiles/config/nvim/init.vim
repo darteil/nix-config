@@ -99,6 +99,10 @@ set shortmess+=c
 set clipboard=unnamedplus
 set lcs=trail:·
 
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
+
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
