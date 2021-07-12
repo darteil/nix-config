@@ -1,12 +1,4 @@
-source ~/.config/nvim/startify-bookmarks.vim
-source ~/.config/nvim/fzf.vim
-
-"source ~/.config/nvim/golang-settings.vim
-source ~/.config/nvim/javascript-settings.vim
-
 call plug#begin('~/.config/nvim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -24,16 +16,24 @@ Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
-
-" JavaScript
-Plug 'HerringtonDarkholme/yats.vim',
-Plug 'pangloss/vim-javascript',
-Plug 'maxmellon/vim-jsx-pretty',
-
-" Golang
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim'
+Plug 'lambdalisue/fern.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 call plug#end()
+
+source ~/.config/nvim/startify-bookmarks.vim
+source ~/.config/nvim/fzf.vim
+
+lua require('lsp-config')
+lua require('compe-config')
+lua require('treesitter-config')
+
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
 
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
@@ -44,19 +44,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-"=================================================
-" QuickScope
-"=================================================
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#5fffff' gui=bold ctermfg=155 cterm=bold
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#d3869b' gui=bold ctermfg=81 cterm=bold
-augroup END
-
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-"=================================================
 
 syntax enable
 set t_Co=256
@@ -66,10 +53,10 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_invert_selection = '0'
+colorscheme gruvbox
 
 set linespace=0
 set signcolumn=yes
@@ -91,8 +78,8 @@ set showmatch
 set autoindent
 set undofile
 set undodir=/tmp
-set nobackup       " This is recommended by coc
-set nowritebackup  " This is recommended by coc
+set nobackup
+set nowritebackup
 set cmdheight=1
 set updatetime=300
 set shortmess+=c
@@ -101,10 +88,13 @@ set lcs=trail:·
 
 set foldmethod=indent
 set nofoldenable
-set foldlevel=1
+set foldlevel=2
+set foldnestmax=10
 
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set list
 
 " open new split panes to right and below
 set splitright
@@ -119,10 +109,61 @@ nmap <leader>f :Files<CR>
 " Maximizer
 nmap <leader>m :MaximizerToggle!<CR>
 
+" Cursor hold
+let g:cursorhold_updatetime = 50
+
 " BufExplorer
 let g:bufExplorerDisableDefaultKeyMapping=1
 let g:bufExplorerShowRelativePath=1
-nnoremap <silent> <leader>b :BufExplorer<CR>
+nnoremap <silent> <leader>b ::BufExplorer<CR>
+
+"=================================================
+" QuickScope
+"=================================================
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#5fffff' gui=bold ctermfg=155 cterm=bold
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#d3869b' gui=bold ctermfg=81 cterm=bold
+augroup END
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"=================================================
+" Fern
+"=================================================
+let g:fern#renderer#default#root_symbol = '~'
+
+function! FernInit() abort
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-expand-collapse)
+        \ fern#smart#leaf(
+        \   "\<Plug>(fern-action-open:select)",
+        \   "\<Plug>(fern-action-expand)",
+        \   "\<Plug>(fern-action-collapse)",
+        \ )
+  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
+
+  nmap <buffer> c <Plug>(fern-action-clipboard-copy)
+  nmap <buffer> p <Plug>(fern-action-clipboard-paste)
+  nmap <buffer> m <Plug>(fern-action-clipboard-move)
+  nmap <buffer> n <Plug>(fern-action-new-file)
+  nmap <buffer> N <Plug>(fern-action-new-dir)
+  nmap <buffer> d <Plug>(fern-action-remove)
+  nmap <buffer> r <Plug>(fern-action-rename)
+  nmap <buffer> . <Plug>(fern-action-hidden-toggle)
+  nmap <buffer> y <Plug>(fern-action-mark:toggle)
+  nmap <buffer> q <Plug>(fern-action-leave)
+  nmap <buffer><nowait> < <Plug>(fern-action-leave)
+  nmap <buffer><nowait> > <Plug>(fern-action-enter)
+endfunction
+
+augroup FernGroup
+  autocmd!
+  autocmd FileType fern call FernInit()
+augroup END
+
+nnoremap <silent> <leader>e :Fern . -reveal=%<CR>
 
 "=================================================
 " Gitgutter
@@ -153,65 +194,6 @@ let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#enabled = 1
 
 "=================================================
-" Coc settings
-"=================================================
-
-let g:coc_explorer_global_presets = {
-\   'default': {
-\     'position': 'left',
-\   }
-\ }
-
-let g:coc_global_extensions = [
-      \ 'coc-explorer',
-      \ 'coc-tslint-plugin',
-      \ 'coc-tsserver',
-      \ 'coc-emmet',
-      \ 'coc-css',
-      \ 'coc-html',
-      \ 'coc-json',
-      \ 'coc-yank',
-      \ 'coc-prettier',
-      \ 'coc-vimlsp',
-      \ 'coc-styled-components'
-\]
-
-nmap <space>e :CocCommand explorer<CR>
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-inoremap <silent><expr> <c-space> coc#refresh()
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-"tab completion
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-nmap <leader>e :CocCommand explorer --preset default --width 100<CR>
-
-"=================================================
-" Markdown-preview
-"=================================================
-
-let g:mkdp_browser = 'vivaldi-stable'
-let g:mkdp_page_title = '「Markdown Preview」'
-
-"=================================================
 " Startify
 "=================================================
 nmap <leader>st :Startify<cr>
@@ -232,3 +214,11 @@ let g:startify_custom_header = [
   \ '  +-+ +-+ +-+ +-+ +-+ +-+ +-+   +-+ +-+   +-+ +-+ +-+ +-+',
   \ '   ',
   \ ]
+
+"=================================================
+" Markdown-preview
+"=================================================
+
+let g:mkdp_browser = 'vivaldi-stable'
+let g:mkdp_page_title = '「Markdown Preview」'
+

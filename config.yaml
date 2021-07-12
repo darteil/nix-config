@@ -51,10 +51,6 @@ dotfiles:
     src: zshrc
     dst: ~/.zshrc
     link: link
-  f_coc-settings.json:
-    src: config/nvim/coc-settings.json
-    dst: ~/.config/nvim/coc-settings.json
-    link: link
   f_fzf.vim:
     src: config/nvim/fzf.vim
     dst: ~/.config/nvim/fzf.vim
@@ -79,12 +75,10 @@ dotfiles:
     src: config/mpv
     dst: ~/.config/mpv
     link: link
-  f_golang-settings.vim:
-    src: config/nvim/golang-settings.vim
-    dst: ~/.config/nvim/golang-settings.vim
-  f_javascript-settings.vim:
-    src: config/nvim/javascript-settings.vim
-    dst: ~/.config/nvim/javascript-settings.vim
+  d_lua:
+    src: config/nvim/lua
+    dst: ~/.config/nvim/lua
+    link: link
 profiles:
   default:
     dotfiles:
@@ -100,12 +94,10 @@ profiles:
     - f_tmux.conf
     - f_xinitrc
     - f_zshrc
-    - f_coc-settings.json
     - f_fzf.vim
     - f_init.vim
     - f_startify-bookmarks.vim
     - f_my-theme.zsh-theme
     - d_i3
     - d_mpv
-    - f_golang-settings.vim
-    - f_javascript-settings.vim
+    - d_lua
