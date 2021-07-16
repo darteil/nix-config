@@ -51,18 +51,6 @@ dotfiles:
     src: zshrc
     dst: ~/.zshrc
     link: link
-  f_fzf.vim:
-    src: config/nvim/fzf.vim
-    dst: ~/.config/nvim/fzf.vim
-    link: link
-  f_init.vim:
-    src: config/nvim/init.vim
-    dst: ~/.config/nvim/init.vim
-    link: link
-  f_startify-bookmarks.vim:
-    src: config/nvim/startify-bookmarks.vim
-    dst: ~/.config/nvim/startify-bookmarks.vim
-    link: link
   f_my-theme.zsh-theme:
     src: oh-my-zsh/custom/themes/my-theme.zsh-theme
     dst: ~/.oh-my-zsh/custom/themes/my-theme.zsh-theme
@@ -75,9 +63,9 @@ dotfiles:
     src: config/mpv
     dst: ~/.config/mpv
     link: link
-  d_lua:
-    src: config/nvim/lua
-    dst: ~/.config/nvim/lua
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
     link: link
 profiles:
   default:
@@ -94,10 +82,7 @@ profiles:
     - f_tmux.conf
     - f_xinitrc
     - f_zshrc
-    - f_fzf.vim
-    - f_init.vim
-    - f_startify-bookmarks.vim
     - f_my-theme.zsh-theme
     - d_i3
     - d_mpv
-    - d_lua
+    - d_nvim
