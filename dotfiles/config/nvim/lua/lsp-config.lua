@@ -1,5 +1,4 @@
 local nvim_lsp = require('lspconfig')
-local protocol = require'vim.lsp.protocol'
 
 require('lspkind').init({
     with_text = true,
@@ -10,7 +9,7 @@ require('lspkind').init({
       Text = '',
       Method = '',
       Function = '',
-      Constructor = '',
+      Constructor = '',
       Variable = '',
       Class = '',
       Interface = 'ﰮ',
