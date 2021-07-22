@@ -9,7 +9,7 @@
 | Bar                                 | [polybar](https://github.com/jaagr/polybar)                              |
 | Program Launcher                    | [rofi](https://github.com/DaveDavenport/rofi)                            |
 | Wallpaper Setter                    | [feh](https://github.com/derf/feh)                                       |
-| Web Browser                         | [Vivaldi](https://vivaldi.com)               |
+| Web Browser                         | [Vivaldi](https://vivaldi.com)                                           |
 | Code Editor                         | [Nvim](https://neovim.io/)                                               |
 | Shell                               | [zsh](https://www.zsh.org/)                                              |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                |
