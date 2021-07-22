@@ -28,7 +28,6 @@ opt.expandtab = true
 opt.smarttab = true
 opt.wildmenu = true
 opt.showmatch = true
-opt.autoindent = true
 opt.undofile = true
 opt.undodir = '/tmp'
 opt.backup = false
