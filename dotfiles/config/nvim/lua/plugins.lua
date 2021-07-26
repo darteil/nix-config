@@ -20,8 +20,8 @@ return require('packer').startup(function()
   use 'antoinemadec/FixCursorHold.nvim'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-  use { 'prettier/vim-prettier',  run = 'npm install' }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons' }
-}
+  use {'prettier/vim-prettier',  run = 'npm install'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
+  use {'jose-elias-alvarez/buftabline.nvim'}
 end)

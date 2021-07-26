@@ -7,6 +7,7 @@ require('fzf-config')
 require('startify-config')
 require('fern-config')
 require('lualine-config')
+require('buftabline-config')
 require('keymappings')
 require('other-config')
 
