@@ -1,6 +1,6 @@
 function Fern_init()
   vim.api.nvim_exec(
-  [[
+    [[
     nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
     nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
 
@@ -16,23 +16,27 @@ function Fern_init()
     nmap <buffer> q <Plug>(fern-action-leave)
     nmap <buffer><nowait> < <Plug>(fern-action-leave)
     nmap <buffer><nowait> > <Plug>(fern-action-enter)
-  ]], false)
+  ]],
+    false
+  )
 end
 
 local function nvim_create_augroups(definitions)
   for group_name, definition in pairs(definitions) do
-    vim.api.nvim_command('augroup '..group_name)
-    vim.api.nvim_command('autocmd!')
-      for _, def in ipairs(definition) do
-        local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
-        vim.api.nvim_command(command)
-      end
-    vim.api.nvim_command('augroup END')
+    vim.api.nvim_command("augroup " .. group_name)
+    vim.api.nvim_command("autocmd!")
+    for _, def in ipairs(definition) do
+      local command = table.concat(vim.tbl_flatten {"autocmd", def}, " ")
+      vim.api.nvim_command(command)
+    end
+    vim.api.nvim_command("augroup END")
   end
 end
 
-nvim_create_augroups({
-  FernGroup = {
-    {"FileType", "fern", [[lua Fern_init()]]};
+nvim_create_augroups(
+  {
+    FernGroup = {
+      {"FileType", "fern", [[lua Fern_init()]]}
+    }
   }
-})
+)

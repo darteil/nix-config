@@ -4,6 +4,6 @@ require("buftabline").setup {
   flags = {
     modified = "+ ",
     not_modifiable = "- ",
-    readonly = "RO ",
-  },
+    readonly = "RO "
+  }
 }

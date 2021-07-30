@@ -1,24 +1,23 @@
-require('plugins')
-require('lsp-config')
-require('compe-config')
-require('treesitter-config')
-require('lua-config')
-require('fzf-config')
-require('startify-config')
-require('fern-config')
-require('lualine-config')
-require('buftabline-config')
-require('keymappings')
-require('other-config')
+require("plugins")
+require("lsp")
+require("compe-config")
+require("treesitter-config")
+require("fzf-config")
+require("startify-config")
+require("fern-config")
+require("lualine-config")
+require("buftabline-config")
+require("keymappings")
+require("other-config")
 
 local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
 
 opt.termguicolors = true
-opt.signcolumn = 'yes'
-opt.mouse = 'n'
-opt.encoding = 'UTF-8'
+opt.signcolumn = "yes"
+opt.mouse = "n"
+opt.encoding = "UTF-8"
 opt.relativenumber = true
 opt.rnu = true
 opt.autoindent = true
@@ -30,16 +29,16 @@ opt.smarttab = true
 opt.wildmenu = true
 opt.showmatch = true
 opt.undofile = true
-opt.undodir = '/tmp'
+opt.undodir = "/tmp"
 opt.backup = false
 opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
-opt.shortmess = 'c'
-opt.clipboard = 'unnamedplus'
-opt.lcs = 'trail:·'
+opt.shortmess = "c"
+opt.clipboard = "unnamedplus"
+opt.lcs = "trail:·"
 
-opt.foldmethod = 'indent'
+opt.foldmethod = "indent"
 opt.foldenable = false
 opt.foldlevel = 2
 opt.foldnestmax = 10
@@ -53,10 +52,9 @@ opt.list = true
 opt.splitright = true
 opt.splitbelow = true
 
-cmd('filetype plugin indent on')
+cmd("filetype plugin indent on")
 
-cmd 'colorscheme gruvbox'
-g.gruvbox_contrast_dark = 'medium'
+cmd "colorscheme gruvbox"
+g.gruvbox_contrast_dark = "medium"
 g.gruvbox_termcolors = 256
-g.gruvbox_invert_selection = '0'
-
+g.gruvbox_invert_selection = "0"
