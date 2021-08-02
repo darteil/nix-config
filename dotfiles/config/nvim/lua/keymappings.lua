@@ -10,8 +10,8 @@ map("n", "<C-l>", "<C-w>l", {silent = true})
 -- Search files
 map("n", "<Leader>f", ":Files<CR>", {noremap = true})
 
--- BufExplorer
-map("n", "<Leader>b", ":BufExplorer<CR>", {noremap = true, silent = true})
+-- Buffers list
+map("n", "<Leader><Tab>", ":b ", {noremap = true})
 
 -- Fern
 map("n", "<Leader>e", ":Fern . -reveal=%<CR>", {noremap = true})

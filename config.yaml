@@ -67,6 +67,10 @@ dotfiles:
     src: config/nvim
     dst: ~/.config/nvim
     link: link
+  f_cheatsheet:
+    src: cheatsheet
+    dst: ~/.cheatsheet
+    link: link
 profiles:
   default:
     dotfiles:
@@ -86,3 +90,4 @@ profiles:
     - d_i3
     - d_mpv
     - d_nvim
+    - f_cheatsheet

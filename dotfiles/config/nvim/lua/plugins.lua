@@ -7,7 +7,6 @@ return require("packer").startup(
     use "jiangmiao/auto-pairs"
     use "alvan/vim-closetag"
     use "mhinz/vim-startify"
-    use "jlanzarotta/bufexplorer"
     use "tpope/vim-surround"
     use "airblade/vim-gitgutter"
     use "christoomey/vim-tmux-navigator"
