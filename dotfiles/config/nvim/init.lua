@@ -7,6 +7,7 @@ require("startify-config")
 require("fern-config")
 require("lualine-config")
 require("buftabline-config")
+require("neoscroll-config")
 require("keymappings")
 require("other-config")
 
