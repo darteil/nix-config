@@ -2,6 +2,7 @@ conky.config = {
     alignment = 'top_left',
     background = true,
     border_width = 0,
+    border_inner_margin = 20,
     cpu_avg_samples = 2,
     default_color = '#d7b377',
     default_outline_color = 'white',
@@ -13,8 +14,8 @@ conky.config = {
     draw_shades = false,
     extra_newline = false,
     font = 'Fira Code:size=9',
-    gap_x = 3390,
-    gap_y = 60,
+    gap_x = 3405,
+    gap_y = 70,
     minimum_height = 5,
     minimum_width = 5,
     net_avg_samples = 2,
@@ -33,7 +34,8 @@ conky.config = {
     use_xft = true,
     own_window_type = 'override',
     own_window = true,
-    own_window_transparent = true,
+    own_window_transparent = false,
+    own_window_colour = '#282828',
     maximum_width = 500,
     color1 = '#458588'
 }
@@ -51,10 +53,10 @@ ${font Fira Code:Bold:size=10}${color1}CPU $color${font}${offset 1}
 
   Temperatures $alignr ${hwmon 2 temp 1}°C ${hwmon 2 temp 2}°C ${hwmon 2 temp 3}°C ${hwmon 2 temp 4}°C
 
-  CPU0: ${cpu cpu0}%${goto 108}${cpubar 7,80 cpu0}${goto 235}CPU4: ${cpu cpu4}%${goto 322}${cpubar 7,80 cpu4}
-  CPU1: ${cpu cpu1}%${goto 108}${cpubar 7,80 cpu1}${goto 235}CPU5: ${cpu cpu5}%${goto 322}${cpubar 7,80 cpu5}
-  CPU2: ${cpu cpu2}%${goto 108}${cpubar 7,80 cpu2}${goto 235}CPU6: ${cpu cpu6}%${goto 322}${cpubar 7,80 cpu6}
-  CPU3: ${cpu cpu3}%${goto 108}${cpubar 7,80 cpu3}${goto 235}CPU7: ${cpu cpu7}%${goto 322}${cpubar 7,80 cpu7}
+  CPU0: ${cpu cpu0}%${goto 125}${cpubar 7,80 cpu0}${goto 255}CPU4: ${cpu cpu4}%${goto 342}${cpubar 7,80 cpu4}
+  CPU1: ${cpu cpu1}%${goto 125}${cpubar 7,80 cpu1}${goto 255}CPU5: ${cpu cpu5}%${goto 342}${cpubar 7,80 cpu5}
+  CPU2: ${cpu cpu2}%${goto 125}${cpubar 7,80 cpu2}${goto 255}CPU6: ${cpu cpu6}%${goto 342}${cpubar 7,80 cpu6}
+  CPU3: ${cpu cpu3}%${goto 125}${cpubar 7,80 cpu3}${goto 255}CPU7: ${cpu cpu7}%${goto 342}${cpubar 7,80 cpu7}
 
 ${font Fira Code:Bold:size=10}${color1}Memory $color${font}${offset 1}
 
