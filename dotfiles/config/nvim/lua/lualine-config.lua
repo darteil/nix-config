@@ -32,7 +32,7 @@ require "lualine".setup {
         icon = "BRANCH:"
       }
     },
-    lualine_c = {"filename"},
+    lualine_c = {{"filetype", icons_enabled = false}},
     lualine_x = {
       {
         "diagnostics",
