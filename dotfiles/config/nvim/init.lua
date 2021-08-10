@@ -1,16 +1,3 @@
-require("plugins")
-require("lsp")
-require("compe-config")
-require("treesitter-config")
-require("fzf-config")
-require("startify-config")
-require("fern-config")
-require("lualine-config")
-require("buftabline-config")
-require("neoscroll-config")
-require("keymappings")
-require("other-config")
-
 local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
@@ -59,3 +46,17 @@ cmd "colorscheme gruvbox"
 g.gruvbox_contrast_dark = "medium"
 g.gruvbox_termcolors = 256
 g.gruvbox_invert_selection = "0"
+
+require("plugins")
+require("lsp")
+require("compe-config")
+require("treesitter-config")
+require("fzf-config")
+require("startify-config")
+require("fern-config")
+require("lualine-config")
+require("buftabline-config")
+require("neoscroll-config")
+require("colorizer-config")
+require("keymappings")
+require("other-config")
