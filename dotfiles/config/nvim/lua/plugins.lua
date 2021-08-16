@@ -20,6 +20,7 @@ return require("packer").startup(
     use "junegunn/fzf.vim"
     use 'karb94/neoscroll.nvim'
     use 'norcalli/nvim-colorizer.lua'
+    use 'jlanzarotta/bufexplorer'
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}

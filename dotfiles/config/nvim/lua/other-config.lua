@@ -3,8 +3,9 @@ local g = vim.g
 -- Cursor hold
 g.cursorhold_updatetime = 100
 
--- BufOnly -- remove all buffers expect the current one
-vim.cmd("command! BufOnly execute '%bdelete|edit #|normal `\"'")
+-- BufExplorer
+g.bufExplorerDisableDefaultKeyMapping = 1
+g.bufExplorerShowRelativePath = 1
 
 -- =================================================
 -- Gitgutter
