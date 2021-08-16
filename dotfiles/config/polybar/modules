@@ -24,9 +24,11 @@ label-focused-padding = 3
 
 label-unfocused = %name%
 label-unfocused-padding = 3
+label-unfocused-background = #665c54
 
 label-visible = %name%
 label-visible-padding = 3
+label-visible-background = #504945
 
 label-urgent = %name%
 label-urgent-foreground = #eeeeee
