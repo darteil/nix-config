@@ -43,10 +43,6 @@ dotfiles:
     src: tmux.conf
     dst: ~/.tmux.conf
     link: link
-  f_xinitrc:
-    src: xinitrc
-    dst: ~/.xinitrc
-    link: link
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
@@ -84,7 +80,6 @@ profiles:
     - d_pixelfun3
     - f_conkyrc
     - f_tmux.conf
-    - f_xinitrc
     - f_zshrc
     - f_my-theme.zsh-theme
     - d_i3

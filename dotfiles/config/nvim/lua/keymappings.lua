@@ -7,14 +7,24 @@ map("n", "<C-j>", "<C-w>j", {silent = true})
 map("n", "<C-k>", "<C-w>k", {silent = true})
 map("n", "<C-l>", "<C-w>l", {silent = true})
 
+-- Moving text
+map("v", "J", ":m '>+1<CR>gv=gv", {noremap = true})
+map("v", "K", ":m '<-2<CR>gv=gv", {noremap = true})
+
 -- Search files
 map("n", "<Leader>f", ":Files<CR>", {noremap = true})
 
 -- BufExplorer
-map("n", "<Leader><Tab>", ":BufExplorer<CR>", {noremap = true})
+map("n", "<Tab>", ":BufExplorer<CR>", {noremap = true})
 
 -- Fern
 map("n", "<Leader>e", ":Fern . -reveal=%<CR>", {noremap = true})
 
 -- Startify
 map("n", "<Leader>st", ":Startify<CR>", {noremap = true})
+
+-- Search in centered
+map("n", "n", "nzz", {noremap = true})
+
+-- TroubleToggle
+map("n", "<Leader>t", ":TroubleToggle<CR>", {noremap = true})

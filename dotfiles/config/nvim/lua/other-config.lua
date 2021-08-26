@@ -7,6 +7,9 @@ g.cursorhold_updatetime = 100
 g.bufExplorerDisableDefaultKeyMapping = 1
 g.bufExplorerShowRelativePath = 1
 
+-- Emmet
+g.user_emmet_leader_key=','
+
 -- =================================================
 -- Gitgutter
 -- =================================================

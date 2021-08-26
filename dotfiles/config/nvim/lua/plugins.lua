@@ -5,7 +5,6 @@ return require("packer").startup(
     use "ryanoasis/vim-devicons"
     use "gruvbox-community/gruvbox"
     use "jiangmiao/auto-pairs"
-    use "alvan/vim-closetag"
     use "mhinz/vim-startify"
     use "tpope/vim-surround"
     use "airblade/vim-gitgutter"
@@ -18,9 +17,11 @@ return require("packer").startup(
     use "antoinemadec/FixCursorHold.nvim"
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
-    use 'karb94/neoscroll.nvim'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'jlanzarotta/bufexplorer'
+    use "karb94/neoscroll.nvim"
+    use "norcalli/nvim-colorizer.lua"
+    use "jlanzarotta/bufexplorer"
+    use "folke/trouble.nvim"
+    use "tpope/vim-fugitive"
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}

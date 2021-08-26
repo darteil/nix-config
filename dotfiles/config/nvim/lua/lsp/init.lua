@@ -30,24 +30,19 @@ map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 map("n", "<space>m", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
--- VirtualText
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
   {
     virtual_text = {
-      prefix = ">>",
+      prefix = "",
       spacing = 4
     },
-    signs = true,
-    update_in_insert = false
+    signs = false,
+    update_in_insert = false,
+    underline = false
   }
 )
-
-vim.fn.sign_define("LspDiagnosticsSignError", {text = "", texthl = "LspDiagnosticsDefaultError"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", texthl = "LspDiagnosticsDefaultWarning"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", texthl = "LspDiagnosticsDefaultInformation"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", texthl = "LspDiagnosticsDefaultHint"})
 
 -- Handle formatting in a smarter way
 -- If the buffer has been edited before formatting has completed, do not try to
