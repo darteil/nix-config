@@ -11,15 +11,6 @@ g.bufExplorerShowRelativePath = 1
 g.user_emmet_leader_key=','
 
 -- =================================================
--- Gitgutter
--- =================================================
-g.gitgutter_sign_added = "a"
-g.gitgutter_sign_modified = "c"
-g.gitgutter_sign_removed = "r"
-g.gitgutter_sign_removed_first_line = "rf"
-g.gitgutter_sign_modified_removed = "cr"
-
--- =================================================
 -- QuickScope
 -- =================================================
 local function nvim_create_augroups(definitions)

@@ -42,10 +42,12 @@ opt.splitbelow = true
 
 cmd("filetype plugin indent on")
 
-cmd "colorscheme gruvbox"
-g.gruvbox_contrast_dark = "medium"
-g.gruvbox_termcolors = 256
-g.gruvbox_invert_selection = "0"
+opt.background = 'dark'
+cmd([[colorscheme gruvbox]])
+
+-- g.gruvbox_contrast_dark = "medium"
+-- g.gruvbox_termcolors = 256
+-- g.gruvbox_invert_selection = "0"
 
 require("plugins")
 require("lsp")

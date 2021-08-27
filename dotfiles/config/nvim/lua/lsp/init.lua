@@ -34,15 +34,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
   {
-    virtual_text = {
-      prefix = "",
-      spacing = 4
-    },
-    signs = false,
+    virtual_text = false,
+    signs = true,
     update_in_insert = false,
     underline = false
   }
 )
+
+vim.fn.sign_define("LspDiagnosticsSignError", {text = "", texthl = "GruvboxRed"})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", texthl = "GruvboxYellow"})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", texthl = "GruvboxBlue"})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", texthl = "GruvboxAqua"})
 
 -- Handle formatting in a smarter way
 -- If the buffer has been edited before formatting has completed, do not try to

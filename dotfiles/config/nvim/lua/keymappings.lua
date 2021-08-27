@@ -28,3 +28,6 @@ map("n", "n", "nzz", {noremap = true})
 
 -- TroubleToggle
 map("n", "<Leader>t", ":TroubleToggle<CR>", {noremap = true})
+
+-- Show diagnostics in popup
+map("n", "<Leader>d", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", {noremap = true})

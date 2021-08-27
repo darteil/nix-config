@@ -3,11 +3,11 @@ return require("packer").startup(
     use "wbthomason/packer.nvim"
 
     use "ryanoasis/vim-devicons"
-    use "gruvbox-community/gruvbox"
+    use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    --use "gruvbox-community/gruvbox"
     use "jiangmiao/auto-pairs"
     use "mhinz/vim-startify"
     use "tpope/vim-surround"
-    use "airblade/vim-gitgutter"
     use "christoomey/vim-tmux-navigator"
     use "mattn/emmet-vim"
     use "unblevable/quick-scope"
