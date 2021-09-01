@@ -10,11 +10,12 @@ window {
    y-offset: 4;
    padding: 0 0 0 5px;
    background-color: #262626;
+   border: 0;
 }
 
 message {
    padding: 6px 10px;
-   background-color: @blackwidget;
+   background-color: #262626;
 }
 
 prompt {
@@ -39,21 +40,28 @@ listview {
    dynamic: true;
    scrollbar: false;
    spacing: 0px;
+   border: 0;
    padding: 5px 5px 3px 5px;
    background: #262626;
 }
 
-element {
+element.normal.normal {
    padding: 2px 15px;
    background-color: #262626;
    text-color: #eeeeee;
 }
 
-element selected.normal {
+element.alternate.normal {
+   padding: 2px 15px;
+   background-color: #262626;
+   text-color: #eeeeee;
+}
+
+element.selected.normal {
    background-color: #806641;
    text-color:       #eeeeee;
 }
 
-element-icon {
-   size: 1em;
+element-text {
+   padding: 0 0 0 5px;
 }
