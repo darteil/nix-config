@@ -9,8 +9,8 @@ default_border pixel 4
 hide_edge_borders none
 
 ### Gaps ###
-gaps inner 15
-gaps outer 1
+gaps inner 10
+gaps outer 5
 
 bindsym $mod+Shift+0     gaps inner all set 0
 bindsym $mod+Shift+9     gaps inner all set 15

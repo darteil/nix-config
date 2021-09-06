@@ -1,16 +1,19 @@
 * {
-   font: "Roboto 11";
+   font: "NotoSans Nerd Font 11";
    background-color: #262626;
 }
 
 window {
    width: 30em;
-   location: north west;
-   anchor:   north west;
-   y-offset: 4;
+   margin: 200px 0 0 0;
    padding: 0 0 0 5px;
    background-color: #262626;
-   border: 0;
+   border: 2;
+   border-color: #458588;
+}
+
+mainbox {
+  padding: 5px 0 0 0;
 }
 
 message {

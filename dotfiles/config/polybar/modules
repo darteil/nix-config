@@ -17,22 +17,25 @@ reverse-scroll = false
 
 format = <label-state> <label-mode>
 
+format-background = #383838
+format-margin = 1
+
 label-focused = %name%
-label-focused-foreground = #243140
+label-focused-foreground = #383838
 label-focused-background = #fe8019
 label-focused-padding = 3
 
 label-unfocused = %name%
+label-unfocused-foreground = #edecec
+label-unfocused-background = #383838
 label-unfocused-padding = 3
-label-unfocused-background = #665c54
 
 label-visible = %name%
 label-visible-padding = 3
-label-visible-background = #504945
 
 label-urgent = %name%
-label-urgent-foreground = #eeeeee
 label-urgent-background = #d13525
+label-urgent-foreground = #383838
 label-urgent-padding = 3
 
 label-mode-background = #d13525
@@ -46,9 +49,12 @@ label-mode-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-foreground = #eeeeee
-format-padding = 1
-label-layout = "%{T7} %{T-} %name% "
+format-background = #383838
+format-foreground = #edecec
+
+format-margin = 1
+format-padding = 2
+label-layout = "  %name%"
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -60,22 +66,26 @@ label-indicator-background = #d13525
 
 [module/date]
 type = internal/date
-label = " %{T3} %{T-} %date%"
+label = "  %date%"
 date = %d/%m/%Y
 interval = 60
 date-alt = %a, %d %B %Y
 
-format-foreground = #eeeeee
-format-padding = 1
+format-background = #383838
+format-foreground = #edecec
+format-padding = 2
+format-margin = 1
 
 [module/clock]
 type = internal/date
-label = " %{T7} %{T-} %time%"
+label = " %time%"
 time = %H:%M
 interval = 1
 
-format-foreground = #eeeeee
-format-padding = 1
+format-background = #383838
+format-foreground = #edecec
+format-padding = 2
+format-margin = 1
 
 ;=====================================================
 ;     Pulseaudio
@@ -87,15 +97,20 @@ sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 use-ui-max = true
 interval = 5
 
-label-volume-foreground = #eeeeee
-label-volume-padding = 1
+label-volume-background = #383838
+label-volume-foreground = #edecec
+label-volume-padding = 2
+label-volume-margin = 1
 
 format-volume = <label-volume>
-label-volume = "%{T8} %{T-} %percentage%% "
+label-volume = "墳 %percentage%%"
 
-label-muted-foreground = #eeeeee
-label-muted-padding = 1
-label-muted = " %{T8} %{T-}--- "
+label-muted-background = #383838
+label-muted-foreground = #edecec
+label-muted-padding = 2
+label-muted-margin = 1
+
+label-muted = "婢 ----"
 
 ;=====================================================
 ;     USB
@@ -119,6 +134,11 @@ exec = ~/.config/polybar/scripts/moscow-time.sh
 tail = true
 interval = 1
 
+format-background = #383838
+format-foreground = #edecec
+format-padding = 2
+format-margin = 1
+
 ;=====================================================
 ;     Power menu
 ;=====================================================
@@ -128,16 +148,17 @@ type = custom/menu
 
 expand-right = true
 
-label-open = " %{T8}  %{T-} "
-label-close = " %{T8}  %{T-} "
-label-separator = "  "
+label-open = "    "
+label-close = "  "
+label-separator = " / "
 
-menu-0-0 = " shutdown "
+menu-0-0 = "shutdown"
 menu-0-0-exec = shutdown -P now
 
-menu-0-1 = " restart  "
+menu-0-1 = "restart "
 menu-0-1-exec = shutdown -r now
 
 format-background = #458588
 format-foreground = #ebdbb2
+format-margin = 1
 
