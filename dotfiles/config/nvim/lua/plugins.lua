@@ -4,7 +4,6 @@ return require("packer").startup(
 
     use "ryanoasis/vim-devicons"
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    --use "gruvbox-community/gruvbox"
     use "jiangmiao/auto-pairs"
     use "mhinz/vim-startify"
     use "tpope/vim-surround"
