@@ -4,7 +4,7 @@ return require("packer").startup(
 
     use "ryanoasis/vim-devicons"
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    use "jiangmiao/auto-pairs"
+    use "windwp/nvim-autopairs"
     use "mhinz/vim-startify"
     use "tpope/vim-surround"
     use "christoomey/vim-tmux-navigator"
@@ -21,6 +21,7 @@ return require("packer").startup(
     use "jlanzarotta/bufexplorer"
     use "folke/trouble.nvim"
     use "tpope/vim-fugitive"
+    use "lambdalisue/suda.vim"
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}

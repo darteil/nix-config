@@ -19,6 +19,13 @@ require "compe".setup {
   }
 }
 
+-- nvim-autopairs plugin
+require("nvim-autopairs.completion.compe").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true, -- it will auto insert `(` after select function or method item
+  auto_select = false,  -- auto select first item
+})
+
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
