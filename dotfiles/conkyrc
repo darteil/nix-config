@@ -51,7 +51,7 @@ ${fs_bar 7 /home}
 
 ${font Fira Code:Bold:size=10}${color1}CPU $color${font}${offset 1}
 
-Temperatures $alignr ${hwmon 2 temp 1}°C ${hwmon 2 temp 2}°C ${hwmon 2 temp 3}°C ${hwmon 2 temp 4}°C
+Temperatures $alignr ${hwmon 1 temp 1}°C ${hwmon 1 temp 2}°C ${hwmon 1 temp 3}°C ${hwmon 1 temp 4}°C
 
 CPU0: ${cpu cpu0}%${goto 112}${cpubar 7,80 cpu0}${goto 235}CPU4: ${cpu cpu4}%${goto 327}${cpubar 7,80 cpu4}
 CPU1: ${cpu cpu1}%${goto 112}${cpubar 7,80 cpu1}${goto 235}CPU5: ${cpu cpu5}%${goto 327}${cpubar 7,80 cpu5}

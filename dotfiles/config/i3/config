@@ -28,7 +28,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym $mod+d exec \
   "rofi \
   -location 2 \
@@ -151,7 +151,7 @@ bindsym Print exec "flameshot gui"
 bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
 
 exec_always --no-startup-id xfce4-power-manager
-exec_always --no-startup-id xinput --set-prop 13 'libinput Accel Speed' -0.8
+exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id megasync
 exec --no-startup-id i3-msg workspace $ws1
