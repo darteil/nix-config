@@ -22,6 +22,7 @@ return require("packer").startup(
     use "folke/trouble.nvim"
     use "tpope/vim-fugitive"
     use "lambdalisue/suda.vim"
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}
