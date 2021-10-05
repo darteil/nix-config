@@ -45,9 +45,9 @@ cmd("filetype plugin indent on")
 opt.background = 'dark'
 cmd([[colorscheme gruvbox]])
 
--- g.gruvbox_contrast_dark = "medium"
--- g.gruvbox_termcolors = 256
--- g.gruvbox_invert_selection = "0"
+g.gruvbox_contrast_dark = "medium"
+g.gruvbox_termcolors = 256
+g.gruvbox_invert_selection = "1"
 
 require("plugins")
 require("lsp")
@@ -63,5 +63,6 @@ require("colorizer-config")
 require("trouble-config")
 require("nvim-autopairs-config")
 require("dap-config")
+require("FTerm-config")
 require("keymappings")
 require("other-config")
