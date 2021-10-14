@@ -1,6 +1,25 @@
-## ~/.dotfiles
+```
+    ┏━━━┳━━━┳━━━━┳━━━┳━━┳┓╋╋┏━━━┳━━━┓
+    ┗┓┏┓┃┏━┓┃┏┓┏┓┃┏━━┻┫┣┫┃╋╋┃┏━━┫┏━┓┃
+    ╋┃┃┃┃┃╋┃┣┛┃┃┗┫┗━━┓┃┃┃┃╋╋┃┗━━┫┗━━┓
+    ╋┃┃┃┃┃╋┃┃╋┃┃╋┃┏━━┛┃┃┃┃╋┏┫┏━━┻━━┓┃
+    ┏┛┗┛┃┗━┛┃╋┃┃╋┃┃╋╋┏┫┣┫┗━┛┃┗━━┫┗━┛┃
+    ┗━━━┻━━━┛╋┗┛╋┗┛╋╋┗━━┻━━━┻━━━┻━━━┛
+```
 
-#### Programs
+Dotfiles for unix, managed by [GNU stow](https://www.gnu.org/software/stow/).
+
+### Screenshots
+Home
+![](./images/main.png)
+
+Code Editor, system info
+![](./images/code-system.png)
+
+Second monitor
+![](./images/second-monitor.png)
+
+### Programs
 
 | Program                             | Name                                                                     |
 | :---                                | :---                                                                     |
@@ -13,34 +32,21 @@
 | Code Editor                         | [Nvim](https://neovim.io/)                                               |
 | Shell                               | [zsh](https://www.zsh.org/)                                              |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                |
+| File manager                        | [Vifm](https://vifm.info)                                                |
+| System monitor                      | [Conky](https://github.com/brndnmtthws/conky)                            |
 
-#### Dotfiles Manager
+### Dotfiles Manager
 
-Managed using dotdrop.  
-Check out the tool at https://github.com/deadc0de6/dotdrop.
+Tutorials for GNU stow:  
+[Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)  
+[Managing Dotfile Symlinks with GNU Stow](https://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
 
-#### Installation
+### Installation all files
 
 ```
-git clone --recursive https://github.com/darteil/dotfiles ~/dotfiles
-
-cd ~/.dotfiles
-pip3 install --user -r dotdrop/requirements.txt
-
-./dotdrop/bootstrap.sh
-./dotdrop.sh install --profile=default
+./install.sh
 ```
 
-#### Screenshots
-Home
-![](./images/main.png)
-
-Code Editor, system info
-![](./images/code-system.png)
-
-Second monitor
-![](./images/second-monitor.png)
-
-#### License
+### License
 
 MIT License, Copyright (c) 2019-2021 Romanov Yuri
