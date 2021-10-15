@@ -15,4 +15,7 @@ stow -t ~/ nvim
 stow -t ~/ picom
 stow -t ~/ polybar
 stow -t ~/ rofi
-stow -t ~/ vifm
+
+rm -rf ~/.config/vifm/scripts
+rm ~/.config/vifm/vifmrc
+stow -t ~/.config/vifm vifm
