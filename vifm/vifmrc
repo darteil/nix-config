@@ -109,8 +109,8 @@ fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
         \ %pc
         \ kitty icat --clear --silent %pd
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        \ {View in gthumb}
-        \ gthumb %f,
+        \ {View in sxiv}
+        \ sxiv -t -s d %d &,
 
 " OpenRaster
 filextype *.ora

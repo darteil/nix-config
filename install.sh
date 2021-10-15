@@ -1,21 +1,18 @@
 #!/bin/sh
 
-stow -t ~/ zsh
-stow -t ~/ tmux
-stow -t ~/ conky
-stow -t ~/ cheatsheet
-stow -t ~/.oh-my-zsh/ oh-my-zsh
-stow -t ~/.icons cursor
-stow -t ~/ bat
-stow -t ~/ dunst
-stow -t ~/ i3wm
-stow -t ~/ kitty
-stow -t ~/ mpv
-stow -t ~/ nvim
-stow -t ~/ picom
-stow -t ~/ polybar
-stow -t ~/ rofi
-
-rm -rf ~/.config/vifm/scripts
-rm ~/.config/vifm/vifmrc
-stow -t ~/.config/vifm vifm
+stow -v -R -t ~/ zsh
+stow -v -R -t ~/ tmux
+stow -v -R -t ~/ conky
+stow -v -R -t ~/ cheatsheet
+stow -v -R -t ~/ bat
+stow -v -R -t ~/ dunst
+stow -v -R -t ~/ i3wm
+stow -v -R -t ~/ kitty
+stow -v -R -t ~/ mpv
+stow -v -R -t ~/ nvim
+stow -v -R -t ~/ picom
+stow -v -R -t ~/ polybar
+stow -v -R -t ~/ rofi
+stow -v -R -t ~/.oh-my-zsh/ oh-my-zsh
+stow -v -R -t ~/.icons cursor
+stow -v -R -t ~/.config/vifm vifm
