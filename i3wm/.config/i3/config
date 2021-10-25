@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Roboto 10
+font pango:Ubuntu 10
 
 floating_modifier $mod
 
@@ -10,7 +10,10 @@ hide_edge_borders none
 
 ### Gaps ###
 gaps inner 10
-gaps outer 5
+gaps top 0
+gaps right 7
+gaps left 7
+gaps bottom 7
 
 bindsym $mod+Shift+0     gaps inner all set 0
 bindsym $mod+Shift+9     gaps inner all set 15
@@ -22,7 +25,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -39,10 +42,10 @@ bindsym $mod+d exec \
   -show run"
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -131,7 +134,6 @@ mode "resize" {
 for_window [class=kitty-floating] floating enable, resize set 800px 500px, move position 0 40
 
 bindsym $mod+r mode "resize"
-bindsym $mod+m exec kitty --class kitty-floating
 
 # Theme colors
 
@@ -153,7 +155,7 @@ bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id megasync
+#exec --no-startup-id megasync
 exec --no-startup-id i3-msg workspace $ws1
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only

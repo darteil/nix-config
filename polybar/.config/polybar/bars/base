@@ -1,6 +1,6 @@
 radius = 0.0
 fixed-center = false
-background = #262626
+background = #00
 foreground = #edecec
 underline-size = 0
 cursor-click = pointer
@@ -9,5 +9,9 @@ locale = ru_RU.UTF-8
 
 font-0 = Ubuntu Nerd Font:weight=medium:size=12;3
 
-border-size = 6
-border-color = #262626
+border-left-size = 13
+border-right-size = 13
+border-top-size = 6
+border-bottom-size = 0
+
+border-color = #00

@@ -1,23 +1,12 @@
-```
-    ┏━━━┳━━━┳━━━━┳━━━┳━━┳┓╋╋┏━━━┳━━━┓
-    ┗┓┏┓┃┏━┓┃┏┓┏┓┃┏━━┻┫┣┫┃╋╋┃┏━━┫┏━┓┃
-    ╋┃┃┃┃┃╋┃┣┛┃┃┗┫┗━━┓┃┃┃┃╋╋┃┗━━┫┗━━┓
-    ╋┃┃┃┃┃╋┃┃╋┃┃╋┃┏━━┛┃┃┃┃╋┏┫┏━━┻━━┓┃
-    ┏┛┗┛┃┗━┛┃╋┃┃╋┃┃╋╋┏┫┣┫┗━┛┃┗━━┫┗━┛┃
-    ┗━━━┻━━━┛╋┗┛╋┗┛╋╋┗━━┻━━━┻━━━┻━━━┛
-```
+<div align="center">
+    <h1>.dotfiles</h1>
+    <p>
+    <img src="images/dotfiles.png">
+    <br><br>
+    </p>
+</div>
 
 Dotfiles for unix, managed by [GNU stow](https://www.gnu.org/software/stow/).
-
-### Screenshots
-Home
-![](./images/main.png)
-
-Code Editor, system info
-![](./images/code-system.png)
-
-Second monitor
-![](./images/second-monitor.png)
 
 ### Programs
 
@@ -35,17 +24,21 @@ Second monitor
 | File manager                        | [Vifm](https://vifm.info)                                                |
 | System monitor                      | [Conky](https://github.com/brndnmtthws/conky)                            |
 
-### Dotfiles Manager
+### Dotfiles manager
 
 Tutorials for GNU stow:  
 [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)  
 [Managing Dotfile Symlinks with GNU Stow](https://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
 
-### Installation all files
+### Screenshots
+Main
+![](./images/main.png)
 
-```
-./install.sh
-```
+Editor, system info
+![](./images/code-system.png)
+
+Second monitor
+![](./images/second-monitor.png)
 
 ### License
 
