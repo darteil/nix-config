@@ -11,18 +11,24 @@ return require("packer").startup(
     use "mattn/emmet-vim"
     use "unblevable/quick-scope"
     use "neovim/nvim-lspconfig"
-    use "hrsh7th/nvim-compe"
     use "lambdalisue/fern.vim"
     use "antoinemadec/FixCursorHold.nvim"
+
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
+
     use "karb94/neoscroll.nvim"
     use "norcalli/nvim-colorizer.lua"
     use "jlanzarotta/bufexplorer"
     use "folke/trouble.nvim"
     use "tpope/vim-fugitive"
-    use "lambdalisue/suda.vim"
     use "numtostr/FTerm.nvim"
+
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/nvim-cmp"
+    use "onsails/lspkind-nvim"
+
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}

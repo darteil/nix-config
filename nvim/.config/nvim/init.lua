@@ -51,7 +51,7 @@ g.gruvbox_invert_selection = "1"
 
 require("plugins")
 require("lsp")
-require("compe-config")
+require("cmp-config")
 require("treesitter-config")
 require("fzf-config")
 require("startify-config")
