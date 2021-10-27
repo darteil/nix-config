@@ -161,6 +161,5 @@ exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
-exec --no-startup-id conky
 
 exec_always --no-startup-id feh --bg-fill $HOME/Images/fon3.jpg --bg-fill $HOME/Images/dem.jpg
