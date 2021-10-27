@@ -21,7 +21,6 @@ return require("packer").startup(
     use "norcalli/nvim-colorizer.lua"
     use "jlanzarotta/bufexplorer"
     use "folke/trouble.nvim"
-    use "tpope/vim-fugitive"
     use "numtostr/FTerm.nvim"
 
     use "hrsh7th/cmp-nvim-lsp"
@@ -29,7 +28,7 @@ return require("packer").startup(
     use "hrsh7th/nvim-cmp"
     use "onsails/lspkind-nvim"
 
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}

@@ -15,7 +15,7 @@ end
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
-  flags = {debounce_text_changes = 500},
+  flags = {debounce_text_changes = 100},
   filetypes = {
     "javascript",
     "javascriptreact",
