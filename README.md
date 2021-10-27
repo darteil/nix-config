@@ -30,7 +30,7 @@ Tutorials for GNU stow:
 [Managing Dotfile Symlinks with GNU Stow](https://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
 
 ### Screenshots
-Main
+Desktop
 ![](./images/main.png)
 
 Editor, system info
