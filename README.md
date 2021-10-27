@@ -22,7 +22,6 @@ Dotfiles for unix, managed by [GNU stow](https://www.gnu.org/software/stow/).
 | Shell                               | [zsh](https://www.zsh.org/)                                              |
 | Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                |
 | File manager                        | [Vifm](https://vifm.info)                                                |
-| System monitor                      | [Conky](https://github.com/brndnmtthws/conky)                            |
 
 ### Dotfiles manager
 
@@ -36,9 +35,6 @@ Main
 
 Editor, system info
 ![](./images/code-system.png)
-
-Second monitor
-![](./images/second-monitor.png)
 
 ### License
 
