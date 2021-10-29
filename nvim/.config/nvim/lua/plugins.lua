@@ -25,8 +25,11 @@ return require("packer").startup(
 
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
     use "hrsh7th/nvim-cmp"
     use "onsails/lspkind-nvim"
+    use "hrsh7th/cmp-vsnip"
+    use "hrsh7th/vim-vsnip"
 
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
