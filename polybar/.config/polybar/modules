@@ -52,44 +52,25 @@ label-mode-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-background = #689d6a
-format-foreground = #262626
+format = <label-layout><label-indicator>
+format-prefix = ""
+format-prefix-background = #689d6a
+format-prefix-foreground = #262626
+format-prefix-padding = 2
 
-format-margin = 1
-format-padding = 2
-label-layout = "  %name%"
+label-layout = %icon%
+label-layout-background = #a89984
+label-layout-foreground = #262626
+label-layout-padding = 2
+label-layout-margin-right = 1
+
+layout-icon-0 = ru;RU
+layout-icon-1 = us;EN
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = #fb4934
 label-indicator-foreground = #262626
-
-;=====================================================
-;     Date, clock
-;=====================================================
-
-[module/date]
-type = internal/date
-label = "  %date%"
-date = %d/%m/%Y
-interval = 60
-date-alt = %a, %d %B %Y
-
-format-background = #b16286
-format-foreground = #262626
-format-padding = 2
-format-margin = 1
-
-[module/clock]
-type = internal/date
-label = " %time%"
-time = %H:%M
-interval = 1
-
-format-background = #a89984
-format-foreground = #262626
-format-padding = 2
-format-margin = 1
 
 ;=====================================================
 ;     Pulseaudio
@@ -101,20 +82,24 @@ sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 use-ui-max = true
 interval = 5
 
-label-volume-background = #458588
+format-volume = <label-volume>
+format-volume-prefix = "墳"
+format-volume-prefix-foreground = #262626
+format-volume-prefix-background = #458588
+format-volume-prefix-padding = 2
+format-volume-prefix-margin-left = 1
+
+label-volume = "%percentage%%"
+label-volume-background = #a89984
 label-volume-foreground = #262626
 label-volume-padding = 2
-label-volume-margin = 1
+label-volume-margin-right = 1
 
-format-volume = <label-volume>
-label-volume = "墳 %percentage%%"
-
-label-muted-background = #458588
+label-muted = "婢"
+label-muted-background = #fb4934
 label-muted-foreground = #262626
 label-muted-padding = 2
 label-muted-margin = 1
-
-label-muted = "婢 ----"
 
 ;=====================================================
 ;     USB
@@ -127,6 +112,45 @@ tail = true
 click-left = ~/.config/polybar/scripts/system-usb-udev.sh &
 ;click-right = ~/.config/polybar/scripts/system-usb-udev.sh --unmount &
 
+;=====================================================
+;     Date, clock
+;=====================================================
+
+[module/date]
+type = internal/date
+date = %d-%m-%Y
+interval = 60
+date-alt = %a, %d %B %Y
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #262626
+format-prefix-background = #b16286
+format-prefix-padding = 2
+format-prefix-margin-left = 1
+
+label = %date%
+label-background = #a89984
+label-foreground = #262626
+label-padding = 2
+label-margin-right = 1
+
+[module/clock]
+type = internal/date
+time = %H:%M
+interval = 1
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #262626
+format-prefix-background = #95552c
+format-prefix-padding = 2
+format-prefix-margin-left = 1
+
+label = %time%
+label-background = #a89984
+label-foreground = #262626
+label-padding-left = 2
 
 ;=====================================================
 ;     Moscow time
@@ -138,10 +162,17 @@ exec = ~/.config/polybar/scripts/moscow-time.sh
 tail = true
 interval = 1
 
-format-background = #a89984
-format-foreground = #262626
-format-padding = 2
-format-margin = 1
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #262626
+format-prefix-background = #a89984
+format-prefix-padding = 1
+
+label = %output%
+label-background = #a89984
+label-foreground = #262626
+label-padding-right = 2
+label-margin-right = 1
 
 ;=====================================================
 ;     Power menu
@@ -154,12 +185,12 @@ expand-right = true
 
 label-open = "    "
 label-close = "  "
-label-separator = " / "
+label-separator = "  "
 
-menu-0-0 = "shutdown"
+menu-0-0 = "SHUTDOWN"
 menu-0-0-exec = shutdown -P now
 
-menu-0-1 = "restart "
+menu-0-1 = "RESTART   "
 menu-0-1-exec = shutdown -r now
 
 format-background = #fb4934
