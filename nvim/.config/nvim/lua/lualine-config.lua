@@ -1,4 +1,4 @@
-local function getBufLineCount()
+local function get_buf_line_count()
   local excludeBuffers = {"startify", "fern"}
   local currentBufIsExclude = false
   local result = ""
@@ -44,7 +44,7 @@ require "lualine".setup {
     lualine_y = {{"encoding", left_padding = 2}, {"fileformat", icons_enabled = false, right_padding = 2}},
     lualine_z = {
       {
-        getBufLineCount,
+        get_buf_line_count,
         icon = "Lines:"
       }
     }

@@ -22,7 +22,7 @@ opt.backup = false
 opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
-opt.shortmess = "c"
+opt.shortmess = "a"
 opt.clipboard = "unnamedplus"
 opt.lcs = "trail:·"
 
@@ -62,7 +62,7 @@ require("neoscroll-config")
 require("colorizer-config")
 require("trouble-config")
 require("nvim-autopairs-config")
-require("dap-config")
-require("FTerm-config")
+-- require("dap-config")
+require("gitsigns-config")
 require("keymappings")
 require("other-config")
