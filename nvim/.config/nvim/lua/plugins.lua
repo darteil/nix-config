@@ -16,6 +16,7 @@ return require("packer").startup(
     use "norcalli/nvim-colorizer.lua"
     use "jlanzarotta/bufexplorer"
     use "folke/trouble.nvim"
+    use "folke/zen-mode.nvim"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
