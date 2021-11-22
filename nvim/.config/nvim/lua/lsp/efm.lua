@@ -1,9 +1,14 @@
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
+-- local prettier = {
+--   formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+--   formatStdin = true
+-- }
+
 local prettier = {
-  formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
-  formatStdin = true
+  formatCommand = 'prettierd "${INPUT}"',
+  formatStdin = true,
 }
 
 local eslint_d = {
@@ -46,7 +51,7 @@ lspconfig.efm.setup {
     rootMarkers = {"package.json", ".git", ".git/"},
     lintDebounce = 500,
     languages = {
-      typescript = {eslint_d},
+      typescript = {eslint_d, prettier},
       javascript = {eslint_d, prettier},
       typescriptreact = {eslint_d, prettier},
       javascriptreact = {eslint_d, prettier},
