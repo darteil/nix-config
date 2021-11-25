@@ -19,6 +19,7 @@ return require("packer").startup(
     use "folke/zen-mode.nvim"
     use "editorconfig/editorconfig-vim"
     use "nathom/filetype.nvim"
+    use "stevearc/aerial.nvim"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"

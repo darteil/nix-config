@@ -1,3 +1,5 @@
+local aerial = require "aerial"
+
 USER = vim.fn.expand("$USER")
 
 local lspconfig = require "lspconfig"
@@ -5,7 +7,8 @@ local lspconfig = require "lspconfig"
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local on_attach = function(client)
+local on_attach = function(client, server)
+  aerial.on_attach(client, server)
   print("'" .. client.name .. "' server attached")
 end
 
