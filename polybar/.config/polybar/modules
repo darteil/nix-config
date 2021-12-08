@@ -153,6 +153,29 @@ label-foreground = #262626
 label-padding-left = 2
 
 ;=====================================================
+;     CPU, GPU temp
+;=====================================================
+
+[module/temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/core-temp.sh
+tail = true
+interval = 2
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #262626
+format-prefix-background = #b77251
+format-prefix-padding = 2
+format-prefix-margin-left = 1
+
+label = %output%
+label-background = #a89984
+label-foreground = #262626
+label-padding = 2
+label-margin-right = 1
+
+;=====================================================
 ;     Moscow time
 ;=====================================================
 
