@@ -20,6 +20,7 @@ return require("packer").startup(
     use "editorconfig/editorconfig-vim"
     use "nathom/filetype.nvim"
     use "stevearc/aerial.nvim"
+    use "mhartington/formatter.nvim"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
