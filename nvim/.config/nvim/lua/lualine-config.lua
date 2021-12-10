@@ -36,7 +36,7 @@ require "lualine".setup {
     lualine_x = {
       {
         "diagnostics",
-        sources = {"nvim_lsp"},
+        sources = {"nvim_diagnostic"},
         sections = {"error", "warn", "info", "hint"},
         symbols = {error = "E", warn = "W", info = "I", hint = "H"}
       }
