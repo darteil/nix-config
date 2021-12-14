@@ -2,13 +2,14 @@ require("buftabline").setup {
   tab_format = " #{b}#{f} ",
   go_to_maps = false,
   flags = {
-    modified = "+",
+    modified = " +",
     not_modifiable = "-",
     readonly = "RO"
   },
-
   hlgroups = {
-    current = "IncSearch",
-    modified_normal = "Visual"
+    normal = "Folded",
+    current = "TermCursor",
+    modified_normal = "IncSearch",
+    modified_current = "TermCursor"
   }
 }

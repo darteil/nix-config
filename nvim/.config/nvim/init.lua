@@ -42,7 +42,7 @@ opt.splitbelow = true
 
 cmd("filetype plugin indent on")
 
-opt.background = 'dark'
+opt.background = "dark"
 cmd([[colorscheme gruvbox]])
 
 g.gruvbox_contrast_dark = "medium"
