@@ -18,7 +18,7 @@ map("n", "<Leader>f", ":Files<CR>", {noremap = true})
 map("n", "<Tab>", ":BufExplorer<CR>", {noremap = true})
 
 -- Fern
-map("n", "<Leader>e", ":Fern . -reveal=%<CR>", {noremap = true})
+map("n", "<Leader>e", ":NvimTreeToggle<CR>", {noremap = true})
 
 -- Startify
 map("n", "<Leader>st", ":Startify<CR>", {noremap = true})
@@ -35,4 +35,4 @@ map("n", "<Leader>d", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", {no
 -- dap
 -- map('n', '<leader><leader>d', ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>', {noremap = true})
 -- map('n', '<leader><leader>di', ':lua require"dap.ui.widgets".hover()<CR>', {noremap = true})
-map('n', '<leader><leader>db', ':lua require"dap".toggle_breakpoint()<CR>', {noremap = true})
+map("n", "<leader><leader>db", ':lua require"dap".toggle_breakpoint()<CR>', {noremap = true})

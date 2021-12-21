@@ -10,7 +10,6 @@ return require("packer").startup(
     use "mattn/emmet-vim"
     use "unblevable/quick-scope"
     use "neovim/nvim-lspconfig"
-    use "lambdalisue/fern.vim"
     use "antoinemadec/FixCursorHold.nvim"
     use "karb94/neoscroll.nvim"
     use "norcalli/nvim-colorizer.lua"
@@ -40,5 +39,6 @@ return require("packer").startup(
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}
+    use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}}
   end
 )
