@@ -30,11 +30,14 @@ Tutorials for GNU stow:
 [Managing Dotfile Symlinks with GNU Stow](https://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
 
 ### Screenshots
-Desktop
+
 ![](./images/main.png)
 
-Editor, system info
-![](./images/code-system.png)
+![](./images/other.png)
+
+![](./images/nvim.png)
+
+![](./images/rofi.png)
 
 ### License
 
