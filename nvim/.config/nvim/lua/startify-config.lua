@@ -20,6 +20,7 @@ g.startify_custom_header = {
 }
 
 g.startify_bookmarks = {
+  "~/.zshrc",
   "~/.config/nvim/init.lua",
   "/etc/pulse/default.pa"
 }

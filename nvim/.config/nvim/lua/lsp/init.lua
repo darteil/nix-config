@@ -1,9 +1,5 @@
-require("lsp.ts")
-require("lsp.css")
-require("lsp.html")
-require("lsp.lua")
-require("lsp.json")
-require("lsp.efm")
+local lspconfig = require "lspconfig"
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 -- Mappings.
 local function map(mode, key, result, opts)
@@ -20,14 +16,56 @@ local function map(mode, key, result, opts)
   vim.api.nvim_set_keymap(mode, key, result, opts)
 end
 
-local opts = {noremap = true, silent = true}
+local on_attach = function(client)
+  local opts = {noremap = true, silent = true}
 
-map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+  -- Disable Autoformat
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+local servers = {"tsserver", "jsonls", "html", "cssls"}
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150
+    }
+  }
+end
+
+local USER = vim.fn.expand("$USER")
+local sumneko_root_path = "/home/" .. USER .. "/lua/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+
+lspconfig.sumneko_lua.setup {
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150
+  },
+  settings = {
+    Lua = {
+      runtime = {version = "LuaJIT"},
+      diagnostics = {enable = true, globals = {"vim", "use", "lua"}},
+      workspace = {
+        library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true}
+      }
+    }
+  }
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
@@ -40,25 +78,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   }
 )
 
--- Handle formatting in a smarter way
--- If the buffer has been edited before formatting has completed, do not try to
--- apply the changes, by Lukas Reineke
-vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
-  if err ~= nil or result == nil then
-    return
-  end
-
-  -- If the buffer hasn't been modified before the formatting has finished,
-  -- update the buffer
-  if not vim.api.nvim_buf_get_option(bufnr, "modified") then
-    local view = vim.fn.winsaveview()
-    vim.lsp.util.apply_text_edits(result, bufnr)
-    vim.fn.winrestview(view)
-    if bufnr == vim.api.nvim_get_current_buf() then
-      vim.cmd "noautocmd :update"
-
-      -- Trigger post-formatting autocommand which can be used to refresh gitsigns
-      vim.cmd "silent doautocmd <nomodeline> User FormatterPost"
-    end
-  end
-end
+require("lsp.efm")
