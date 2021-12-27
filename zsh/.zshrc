@@ -46,6 +46,7 @@ alias fontsreload='sudo fc-cache -f -v'
 alias cheat='cat /home/darteil/.cheatsheet'
 alias reflector='sudo reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist'
 alias v='nvim'
+alias vc='nvim -u NONE'
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{node_modules,.git}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
