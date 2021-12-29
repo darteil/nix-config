@@ -1,4 +1,4 @@
-require("zen-mode").setup {
+require("zen-mode").setup({
   window = {
     width = 120,
     height = 1,
@@ -25,4 +25,4 @@ require("zen-mode").setup {
       font = "12",
     },
   },
-}
+})

@@ -5,11 +5,11 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file({".eslintrc.js", ".eslintrc.yml", ".eslintrc.json"})
+        return utils.root_has_file({ ".eslintrc.js", ".eslintrc.yml", ".eslintrc.json" })
       end,
     }),
     null_ls.builtins.formatting.prettier.with({
-        prefer_local = "node_modules/.bin",
+      prefer_local = "node_modules/.bin",
     }),
   },
   on_attach = function(client)

@@ -1,23 +1,18 @@
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 -- Mappings.
 local function map(mode, key, result, opts)
-  opts =
-    vim.tbl_extend(
-    "keep",
-    opts or {},
-    {
-      noremap = true,
-      silent = true,
-      expr = false
-    }
-  )
+  opts = vim.tbl_extend("keep", opts or {}, {
+    noremap = true,
+    silent = true,
+    expr = false,
+  })
   vim.api.nvim_set_keymap(mode, key, result, opts)
 end
 
 local on_attach = function(client)
-  local opts = {noremap = true, silent = true}
+  local opts = { noremap = true, silent = true }
 
   map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -35,44 +30,47 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-local servers = {"tsserver", "jsonls", "html", "cssls"}
+local servers = { "tsserver", "jsonls", "html", "cssls" }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
-      debounce_text_changes = 150
-    }
-  }
+      debounce_text_changes = 150,
+    },
+  })
 end
 
 local USER = vim.fn.expand("$USER")
 local sumneko_root_path = "/home/" .. USER .. "/lua/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
-lspconfig.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+lspconfig.sumneko_lua.setup({
+  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
   capabilities = capabilities,
   on_attach = on_attach,
   flags = {
-    debounce_text_changes = 150
+    debounce_text_changes = 150,
   },
   settings = {
     Lua = {
-      runtime = {version = "LuaJIT"},
-      diagnostics = {enable = true, globals = {"vim", "use", "lua"}},
+      runtime = { version = "LuaJIT" },
+      diagnostics = { enable = true, globals = { "vim", "use", "lua" } },
       workspace = {
-        library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true}
-      }
-    }
-  }
-}
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+        },
+      },
+    },
+  },
+})
 
 vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = false,
-    underline = false
+  virtual_text = false,
+  signs = true,
+  update_in_insert = false,
+  underline = false,
 })
 
 require("lsp.null-ls")

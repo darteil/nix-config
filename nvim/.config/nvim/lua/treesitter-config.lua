@@ -1,16 +1,16 @@
-require "nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "javascript",
     "typescript",
     "lua",
     "tsx",
     "html",
-    "css"
+    "css",
   },
   ignore_install = {},
   highlight = {
     enable = true,
-    disable = {}
+    disable = {},
   },
   incremental_selection = {
     enable = true,
@@ -18,7 +18,7 @@ require "nvim-treesitter.configs".setup {
       init_selection = "gnn",
       node_incremental = "grn",
       scope_incremental = "grc",
-      node_decremental = "grm"
-    }
-  }
-}
+      node_decremental = "grm",
+    },
+  },
+})

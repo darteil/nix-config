@@ -1,3 +1,3 @@
-require('neoscroll').setup({
-  easing_function = "sine"
+require("neoscroll").setup({
+  easing_function = "sine",
 })

@@ -1,19 +1,19 @@
 local g = vim.g
-local tree_cb = require "nvim-tree.config".nvim_tree_callback
+local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 local list = {
-  {key = {"l", "<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit")},
-  {key = {"h"}, cb = tree_cb("close_node")}
+  { key = { "l", "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
+  { key = { "h" }, cb = tree_cb("close_node") },
 }
 
 g.nvim_tree_special_files = {}
-g.nvim_tree_window_picker_exclude = {filetype = {}, buftype = {}}
+g.nvim_tree_window_picker_exclude = { filetype = {}, buftype = {} }
 
 g.nvim_tree_show_icons = {
   git = 0,
   folders = 1,
   files = 0,
-  folder_arrows = 1
+  folder_arrows = 1,
 }
 
 g.nvim_tree_icons = {
@@ -27,11 +27,11 @@ g.nvim_tree_icons = {
     empty = "",
     empty_open = "",
     symlink = "",
-    symlink_open = ""
-  }
+    symlink_open = "",
+  },
 }
 
-require "nvim-tree".setup {
+require("nvim-tree").setup({
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
@@ -42,10 +42,10 @@ require "nvim-tree".setup {
   update_cwd = false,
   update_to_buf_dir = {
     enable = true,
-    auto_open = true
+    auto_open = true,
   },
   git = {
-    enable = false
+    enable = false,
   },
   view = {
     width = 40,
@@ -55,14 +55,14 @@ require "nvim-tree".setup {
     auto_resize = false,
     mappings = {
       custom_only = false,
-      list = list
+      list = list,
     },
     number = false,
     relativenumber = false,
-    signcolumn = "yes"
+    signcolumn = "yes",
   },
   trash = {
     cmd = "trash",
-    require_confirm = true
-  }
-}
+    require_confirm = true,
+  },
+})
