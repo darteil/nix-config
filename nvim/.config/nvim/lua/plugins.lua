@@ -18,7 +18,7 @@ return require("packer").startup(
     use "folke/zen-mode.nvim"
     use "editorconfig/editorconfig-vim"
     use "nathom/filetype.nvim"
-    use "mhartington/formatter.nvim"
+    use "jose-elias-alvarez/null-ls.nvim"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
@@ -34,7 +34,6 @@ return require("packer").startup(
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
     use {"sindrets/diffview.nvim", requires = {"nvim-lua/plenary.nvim"}}
-    --use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
     use {"jose-elias-alvarez/buftabline.nvim"}
