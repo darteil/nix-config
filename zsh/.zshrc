@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim;
 export VISUAL=nvim;
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export NVM_DIR=~/.nvm
  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
