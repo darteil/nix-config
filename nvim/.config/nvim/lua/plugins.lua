@@ -3,7 +3,7 @@ return require("packer").startup(function()
 
   use("ryanoasis/vim-devicons")
   use("windwp/nvim-autopairs")
-  use("mhinz/vim-startify")
+  use("goolord/alpha-nvim")
   use("tpope/vim-surround")
   use("christoomey/vim-tmux-navigator")
   use("mattn/emmet-vim")
