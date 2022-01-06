@@ -1,5 +1,12 @@
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local config_status_ok, lspconfig = pcall(require, "lspconfig")
+if not config_status_ok then
+  return
+end
+
+local cmp_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_lsp_status_ok then
+  return
+end
 
 -- Mappings.
 local function map(mode, key, result, opts)
@@ -73,4 +80,4 @@ vim.diagnostic.config({
   underline = false,
 })
 
-require("lsp.null-ls")
+require("configuration.lsp.null-ls")

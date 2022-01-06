@@ -1,10 +1,17 @@
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
+  return
+end
+
+local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_status_ok then
+  return
+end
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      --vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {

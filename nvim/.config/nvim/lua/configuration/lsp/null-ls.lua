@@ -1,14 +1,20 @@
-local null_ls = require("null-ls")
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+if not null_ls_status_ok then
+  return
+end
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.eslint_d.with({
+    formatting.stylua,
+    diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({ ".eslintrc.js", ".eslintrc.yml", ".eslintrc.json" })
       end,
     }),
-    null_ls.builtins.formatting.prettier.with({
+    formatting.prettier.with({
       prefer_local = "node_modules/.bin",
     }),
   },

@@ -1,4 +1,17 @@
-return require("packer").startup(function()
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+packer.init({
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "single" })
+    end,
+  },
+})
+
+return packer.startup(function()
   use("wbthomason/packer.nvim")
 
   use("ryanoasis/vim-devicons")
@@ -14,7 +27,6 @@ return require("packer").startup(function()
   use("norcalli/nvim-colorizer.lua")
   use("jlanzarotta/bufexplorer")
   use("folke/trouble.nvim")
-  use("folke/zen-mode.nvim")
   use("editorconfig/editorconfig-vim")
   use("nathom/filetype.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
