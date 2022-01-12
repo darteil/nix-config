@@ -3,31 +3,13 @@ if not status_ok then
   return
 end
 
-local function get_buf_line_count()
-  local excludeBuffers = { "startify", "fern" }
-  local currentBufIsExclude = false
-  local result = ""
-
-  for _, name in ipairs(excludeBuffers) do
-    if vim.bo.filetype == name then
-      currentBufIsExclude = true
-    end
-  end
-
-  if not currentBufIsExclude then
-    result = tostring(vim.api.nvim_buf_line_count(vim.fn.winbufnr(vim.g.statusline_winid)))
-  end
-
-  return result
-end
-
 lualine.setup({
   options = {
     icons_enabled = true,
     theme = "gruvbox",
     component_separators = { "", "" },
     section_separators = { "", "" },
-    disabled_filetypes = {},
+    disabled_filetypes = { "NvimTree", "alpha", "bufexplorer", "Trouble" },
   },
   sections = {
     lualine_a = { "mode" },
@@ -48,10 +30,7 @@ lualine.setup({
     },
     lualine_y = { { "encoding", left_padding = 2 }, { "fileformat", icons_enabled = false, right_padding = 2 } },
     lualine_z = {
-      {
-        get_buf_line_count,
-        icon = "Lines:",
-      },
+      { "location" },
     },
   },
   inactive_sections = {
