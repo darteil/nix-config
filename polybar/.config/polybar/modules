@@ -21,27 +21,30 @@ format-background = #383838
 format-margin = 1
 
 label-focused = %name%
-label-focused-foreground = #383838
+label-focused-foreground = #282828
 label-focused-background = #fe8019
 label-focused-padding = 3
+label-focused-margin-right = 1
 
 label-unfocused = %name%
-label-unfocused-foreground = #edecec
-label-unfocused-background = #383838
+label-unfocused-foreground = #282828
+label-unfocused-background = #a89984
 label-unfocused-padding = 3
+label-unfocused-margin-right = 1
 
 label-visible = %name%
-label-visible-foreground = #edecec
-label-visible-background = #383838
+label-visible-foreground = #282828
+label-visible-background = #a89984
 label-visible-padding = 3
+label-visible-margin-right = 1
 
 label-urgent = %name%
 label-urgent-background = #d13525
-label-urgent-foreground = #383838
+label-urgent-foreground = #282828
 label-urgent-padding = 3
 
 label-mode-background = #fb4934
-label-mode-foreground = #262626
+label-mode-foreground = #282828
 label-mode-padding = 3
 
 ;=====================================================
@@ -53,15 +56,17 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format = <label-layout><label-indicator>
-format-prefix = ""
-format-prefix-background = #689d6a
-format-prefix-foreground = #262626
-format-prefix-padding = 2
+format-prefix = "%{T2} %{T-}"
+format-prefix-background = #a89984
+format-prefix-foreground = #282828
+format-prefix-padding-left = 2
+format-prefix-padding-right = 1
 
 label-layout = %icon%
 label-layout-background = #a89984
-label-layout-foreground = #262626
-label-layout-padding = 2
+label-layout-foreground = #282828
+label-layout-padding-right = 2
+label-layout-padding-left = 1
 label-layout-margin-right = 1
 
 layout-icon-0 = ru;RU
@@ -70,7 +75,7 @@ layout-icon-1 = us;EN
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = #fb4934
-label-indicator-foreground = #262626
+label-indicator-foreground = #282828
 
 ;=====================================================
 ;     Pulseaudio
@@ -84,20 +89,20 @@ interval = 5
 
 format-volume = <label-volume>
 format-volume-prefix = "墳"
-format-volume-prefix-foreground = #262626
-format-volume-prefix-background = #458588
-format-volume-prefix-padding = 2
+format-volume-prefix-foreground = #282828
+format-volume-prefix-background = #a89984
+format-volume-prefix-padding-left = 2
 format-volume-prefix-margin-left = 1
 
 label-volume = "%percentage%%"
 label-volume-background = #a89984
-label-volume-foreground = #262626
+label-volume-foreground = #282828
 label-volume-padding = 2
 label-volume-margin-right = 1
 
 label-muted = "婢"
 label-muted-background = #fb4934
-label-muted-foreground = #262626
+label-muted-foreground = #282828
 label-muted-padding = 2
 label-muted-margin = 1
 
@@ -124,14 +129,14 @@ date-alt = %a, %d %B %Y
 
 format = <label>
 format-prefix = ""
-format-prefix-foreground = #262626
-format-prefix-background = #b16286
-format-prefix-padding = 2
+format-prefix-foreground = #282828
+format-prefix-background = #a89984
+format-prefix-padding-left = 2
 format-prefix-margin-left = 1
 
 label = %date%
 label-background = #a89984
-label-foreground = #262626
+label-foreground = #282828
 label-padding = 2
 label-margin-right = 1
 
@@ -142,38 +147,15 @@ interval = 1
 
 format = <label>
 format-prefix = ""
-format-prefix-foreground = #262626
-format-prefix-background = #95552c
-format-prefix-padding = 2
+format-prefix-foreground = #282828
+format-prefix-background = #a89984
+format-prefix-padding-left = 2
 format-prefix-margin-left = 1
 
 label = %time%
 label-background = #a89984
-label-foreground = #262626
-label-padding-left = 2
-
-;=====================================================
-;     CPU, GPU temp
-;=====================================================
-
-[module/temp]
-type = custom/script
-exec = ~/.config/polybar/scripts/core-temp.sh
-tail = true
-interval = 2
-
-format = <label>
-format-prefix = ""
-format-prefix-foreground = #262626
-format-prefix-background = #b77251
-format-prefix-padding = 2
-format-prefix-margin-left = 1
-
-label = %output%
-label-background = #a89984
-label-foreground = #262626
-label-padding = 2
-label-margin-right = 1
+label-foreground = #282828
+label-padding-left = 1
 
 ;=====================================================
 ;     Moscow time
@@ -187,14 +169,37 @@ interval = 1
 
 format = <label>
 format-prefix = ""
-format-prefix-foreground = #262626
+format-prefix-foreground = #282828
 format-prefix-background = #a89984
 format-prefix-padding = 1
 
 label = %output%
 label-background = #a89984
-label-foreground = #262626
+label-foreground = #282828
 label-padding-right = 2
+label-margin-right = 1
+
+;=====================================================
+;     CPU, GPU temp
+;=====================================================
+
+[module/temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/core-temp.sh
+tail = true
+interval = 2
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #282828
+format-prefix-background = a89984
+format-prefix-padding-left = 2
+format-prefix-margin-left = 1
+
+label = %output%
+label-background = #a89984
+label-foreground = #282828
+label-padding = 2
 label-margin-right = 1
 
 ;=====================================================
@@ -210,13 +215,13 @@ label-open = "    "
 label-close = "  "
 label-separator = "  "
 
-menu-0-0 = "SHUTDOWN"
+menu-0-0 = "shutdown"
 menu-0-0-exec = shutdown -P now
 
-menu-0-1 = "RESTART   "
+menu-0-1 = "restart   "
 menu-0-1-exec = shutdown -r now
 
 format-background = #fb4934
-format-foreground = #262626
+format-foreground = #282828
 format-margin = 1
 

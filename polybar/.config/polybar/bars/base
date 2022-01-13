@@ -8,7 +8,8 @@ cursor-scroll = ns-resize
 locale = ru_RU.UTF-8
 enable-ipc = true
 
-font-0 = Ubuntu Nerd Font:weight=medium:size=12;3
+font-0 = NotoSans Nerd Font:weight=semibold:size=12;3
+font-1 = NotoSans Nerd Font:weight=semibold:size=16;4
 
 border-left-size = 13
 border-right-size = 13
