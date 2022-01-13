@@ -10,18 +10,18 @@ Dotfiles for unix, managed by [GNU stow](https://www.gnu.org/software/stow/).
 
 ### Programs
 
-| Program                             | Name                                                                     |
-| :---                                | :---                                                                     |
-| Linux Distribution                  | [Arch Linux](https://www.archlinux.org/)                                 |
-| Window Manager                      | [i3-gaps](https://github.com/Airblader/i3)                               |
-| Bar                                 | [polybar](https://github.com/jaagr/polybar)                              |
-| Program Launcher                    | [rofi](https://github.com/DaveDavenport/rofi)                            |
-| Wallpaper Setter                    | [feh](https://github.com/derf/feh)                                       |
-| Web Browser                         | [Vivaldi](https://vivaldi.com)                                           |
-| Code Editor                         | [Nvim](https://neovim.io/)                                               |
-| Shell                               | [zsh](https://www.zsh.org/)                                              |
-| Terminal Emulator                   | [Kitty](https://sw.kovidgoyal.net/kitty/)                                |
-| File manager                        | [Vifm](https://vifm.info)                                                |
+| Program            | Name                                          |
+| :----------------- | :-------------------------------------------- |
+| Linux Distribution | [Arch Linux](https://www.archlinux.org/)      |
+| Window Manager     | [i3-gaps](https://github.com/Airblader/i3)    |
+| Bar                | [polybar](https://github.com/jaagr/polybar)   |
+| Program Launcher   | [rofi](https://github.com/DaveDavenport/rofi) |
+| Wallpaper Setter   | [feh](https://github.com/derf/feh)            |
+| Web Browser        | [Vivaldi](https://vivaldi.com)                |
+| Code Editor        | [Nvim](https://neovim.io/)                    |
+| Shell              | [zsh](https://www.zsh.org/)                   |
+| Terminal Emulator  | [Kitty](https://sw.kovidgoyal.net/kitty/)     |
+| File manager       | [Vifm](https://vifm.info)                     |
 
 ### Dotfiles manager
 
@@ -36,8 +36,6 @@ Tutorials for GNU stow:
 ![](./images/other.png)
 
 ![](./images/nvim.png)
-
-![](./images/rofi.png)
 
 ### License
 
