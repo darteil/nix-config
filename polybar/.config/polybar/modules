@@ -20,7 +20,7 @@ format = <label-state> <label-mode>
 format-background = #383838
 
 label-focused = %name%
-label-focused-background = #e6c077
+label-focused-background = #c8cbd3
 label-focused-foreground = #1b222d
 label-focused-padding = 1
 label-focused-margin-right = 1
@@ -32,8 +32,8 @@ label-unfocused-padding = 1
 label-unfocused-margin-right = 1
 
 label-visible = %name%
-label-visible-background = #a89984
-label-visible-foreground = #282828
+label-visible-background = #575964
+label-visible-foreground = #fefefe
 label-visible-padding = 1
 label-visible-margin-right = 1
 
