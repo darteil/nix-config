@@ -18,34 +18,33 @@ reverse-scroll = false
 format = <label-state> <label-mode>
 
 format-background = #383838
-format-margin = 1
 
 label-focused = %name%
-label-focused-foreground = #282828
-label-focused-background = #fe8019
-label-focused-padding = 3
+label-focused-background = #e6c077
+label-focused-foreground = #1b222d
+label-focused-padding = 1
 label-focused-margin-right = 1
 
 label-unfocused = %name%
-label-unfocused-foreground = #282828
-label-unfocused-background = #a89984
-label-unfocused-padding = 3
+label-unfocused-background = #575964
+label-unfocused-foreground = #fefefe
+label-unfocused-padding = 1
 label-unfocused-margin-right = 1
 
 label-visible = %name%
-label-visible-foreground = #282828
 label-visible-background = #a89984
-label-visible-padding = 3
+label-visible-foreground = #282828
+label-visible-padding = 1
 label-visible-margin-right = 1
 
 label-urgent = %name%
-label-urgent-background = #d13525
-label-urgent-foreground = #282828
-label-urgent-padding = 3
+label-urgent-background = #e78482
+label-urgent-foreground = #1b222d
+label-urgent-padding = 1
 
-label-mode-background = #fb4934
-label-mode-foreground = #282828
-label-mode-padding = 3
+label-mode-background = #e78482
+label-mode-foreground = #1b222d
+label-mode-padding = 1
 
 ;=====================================================
 ;     Keyboard
@@ -55,27 +54,19 @@ label-mode-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format = <label-layout><label-indicator>
-format-prefix = "%{T2} %{T-}"
-format-prefix-background = #a89984
-format-prefix-foreground = #282828
-format-prefix-padding-left = 2
-format-prefix-padding-right = 1
-
-label-layout = %icon%
-label-layout-background = #a89984
-label-layout-foreground = #282828
-label-layout-padding-right = 2
+label-layout = " %icon%"
+label-layout-background = #98c377
+label-layout-foreground = #1b222d
+label-layout-padding-right = 1
 label-layout-padding-left = 1
-label-layout-margin-right = 1
 
 layout-icon-0 = ru;RU
 layout-icon-1 = us;EN
 
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = #fb4934
-label-indicator-foreground = #282828
+label-indicator-padding = 1
+label-indicator-margin-right = 1
+label-indicator-background = #e78482
+label-indicator-foreground = #1b222d
 
 ;=====================================================
 ;     Pulseaudio
@@ -87,23 +78,16 @@ sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 use-ui-max = true
 interval = 5
 
-format-volume = <label-volume>
-format-volume-prefix = "墳"
-format-volume-prefix-foreground = #282828
-format-volume-prefix-background = #a89984
-format-volume-prefix-padding-left = 2
-format-volume-prefix-margin-left = 1
-
-label-volume = "%percentage%%"
-label-volume-background = #a89984
-label-volume-foreground = #282828
-label-volume-padding = 2
-label-volume-margin-right = 1
+label-volume = "%{T2}墳 %{T-}%percentage%%"
+label-volume-background = #ad82cb
+label-volume-foreground = #1b222d
+label-volume-padding = 1
+label-volume-margin = 1
 
 label-muted = "婢"
-label-muted-background = #fb4934
-label-muted-foreground = #282828
-label-muted-padding = 2
+label-muted-background = #e78482
+label-muted-foreground = #1b222d
+label-muted-padding = 1
 label-muted-margin = 1
 
 ;=====================================================
@@ -127,17 +111,10 @@ date = %d-%m-%Y
 interval = 60
 date-alt = %a, %d %B %Y
 
-format = <label>
-format-prefix = ""
-format-prefix-foreground = #282828
-format-prefix-background = #a89984
-format-prefix-padding-left = 2
-format-prefix-margin-left = 1
-
-label = %date%
-label-background = #a89984
-label-foreground = #282828
-label-padding = 2
+label = "%{T2} %{T-}%date%"
+label-background = #6db3ce
+label-foreground = #1b222d
+label-padding = 1
 label-margin-right = 1
 
 [module/clock]
@@ -145,16 +122,9 @@ type = internal/date
 time = %H:%M
 interval = 1
 
-format = <label>
-format-prefix = ""
-format-prefix-foreground = #282828
-format-prefix-background = #a89984
-format-prefix-padding-left = 2
-format-prefix-margin-left = 1
-
-label = %time%
-label-background = #a89984
-label-foreground = #282828
+label = " %time%"
+label-background = #d6b36f
+label-foreground = #1b222d
 label-padding-left = 1
 
 ;=====================================================
@@ -167,16 +137,10 @@ exec = ~/.config/polybar/scripts/moscow-time.sh
 tail = true
 interval = 1
 
-format = <label>
-format-prefix = ""
-format-prefix-foreground = #282828
-format-prefix-background = #a89984
-format-prefix-padding = 1
-
-label = %output%
-label-background = #a89984
-label-foreground = #282828
-label-padding-right = 2
+label = "/%output%"
+label-background = #d6b36f
+label-foreground = #1b222d
+label-padding-right = 1
 label-margin-right = 1
 
 ;=====================================================
@@ -189,39 +153,7 @@ exec = ~/.config/polybar/scripts/core-temp.sh
 tail = true
 interval = 2
 
-format = <label>
-format-prefix = ""
-format-prefix-foreground = #282828
-format-prefix-background = a89984
-format-prefix-padding-left = 2
-format-prefix-margin-left = 1
-
-label = %output%
-label-background = #a89984
-label-foreground = #282828
-label-padding = 2
-label-margin-right = 1
-
-;=====================================================
-;     Power menu
-;=====================================================
-
-[module/menu-power]
-type = custom/menu
-
-expand-right = true
-
-label-open = "    "
-label-close = "  "
-label-separator = "  "
-
-menu-0-0 = "shutdown"
-menu-0-0-exec = shutdown -P now
-
-menu-0-1 = "restart   "
-menu-0-1-exec = shutdown -r now
-
-format-background = #fb4934
-format-foreground = #282828
-format-margin = 1
-
+label = " %output%"
+label-background = #c8cbd3
+label-foreground = #1b222d
+label-padding = 1

@@ -9,4 +9,4 @@ tray-maxsize = 24
 tray-background = #00
 
 modules-left = i3
-modules-right = xkeyboard temp pulseaudio date clock moscow-time menu-power
+modules-right = xkeyboard temp pulseaudio date clock moscow-time
