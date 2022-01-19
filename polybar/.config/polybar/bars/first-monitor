@@ -4,8 +4,8 @@ width = 100%
 height = 28
 
 tray-position = right
-tray-padding = 2
-tray-maxsize = 24
+tray-padding = 5
+tray-maxsize = 22
 tray-background = #00
 
 modules-left = i3

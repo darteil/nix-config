@@ -1,4 +1,16 @@
 ;=====================================================
+;     Variables
+;=====================================================
+
+[colors]
+background = #bdae93
+foreground = #282828
+urgent = #fb4934
+
+[module_indents]
+padding = 2
+
+;=====================================================
 ;     i3WM
 ;=====================================================
 
@@ -17,34 +29,32 @@ reverse-scroll = false
 
 format = <label-state> <label-mode>
 
-format-background = #383838
-
 label-focused = %name%
-label-focused-background = #c8cbd3
-label-focused-foreground = #1b222d
-label-focused-padding = 1
+label-focused-background = #458588
+label-focused-foreground = ${colors.foreground}
+label-focused-padding = 3
 label-focused-margin-right = 1
 
 label-unfocused = %name%
-label-unfocused-background = #575964
-label-unfocused-foreground = #fefefe
-label-unfocused-padding = 1
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-padding = 3
 label-unfocused-margin-right = 1
 
 label-visible = %name%
-label-visible-background = #575964
-label-visible-foreground = #fefefe
-label-visible-padding = 1
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.foreground}
+label-visible-padding = 3
 label-visible-margin-right = 1
 
 label-urgent = %name%
-label-urgent-background = #e78482
-label-urgent-foreground = #1b222d
-label-urgent-padding = 1
+label-urgent-background = ${colors.urgent}
+label-urgent-foreground = ${colors.foreground}
+label-urgent-padding = 3
 
-label-mode-background = #e78482
-label-mode-foreground = #1b222d
-label-mode-padding = 1
+label-mode-background = ${colors.urgent}
+label-mode-foreground = ${colors.foreground}
+label-mode-padding = 3
 
 ;=====================================================
 ;     Keyboard
@@ -55,18 +65,17 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 label-layout = " %icon%"
-label-layout-background = #98c377
-label-layout-foreground = #1b222d
-label-layout-padding-right = 1
-label-layout-padding-left = 1
+label-layout-background = ${colors.background}
+label-layout-foreground = ${colors.foreground}
+label-layout-padding = ${module_indents.padding}
 
 layout-icon-0 = ru;RU
 layout-icon-1 = us;EN
 
-label-indicator-padding = 1
+label-indicator-padding = ${module_indents.padding}
 label-indicator-margin-right = 1
-label-indicator-background = #e78482
-label-indicator-foreground = #1b222d
+label-indicator-background = ${colors.urgent}
+label-indicator-foreground = ${colors.foreground}
 
 ;=====================================================
 ;     Pulseaudio
@@ -78,16 +87,16 @@ sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 use-ui-max = true
 interval = 5
 
-label-volume = "%{T2}墳 %{T-}%percentage%%"
-label-volume-background = #ad82cb
-label-volume-foreground = #1b222d
-label-volume-padding = 1
+label-volume = "墳 %percentage%%"
+label-volume-background = ${colors.background}
+label-volume-foreground = ${colors.foreground}
+label-volume-padding = ${module_indents.padding}
 label-volume-margin = 1
 
 label-muted = "婢"
-label-muted-background = #e78482
-label-muted-foreground = #1b222d
-label-muted-padding = 1
+label-muted-background = ${colors.urgent}
+label-muted-foreground = ${colors.foreground}
+label-muted-padding = ${module_indents.padding}
 label-muted-margin = 1
 
 ;=====================================================
@@ -111,10 +120,10 @@ date = %d-%m-%Y
 interval = 60
 date-alt = %a, %d %B %Y
 
-label = "%{T2} %{T-}%date%"
-label-background = #6db3ce
-label-foreground = #1b222d
-label-padding = 1
+label = " %date%"
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding = ${module_indents.padding}
 label-margin-right = 1
 
 [module/clock]
@@ -123,9 +132,9 @@ time = %H:%M
 interval = 1
 
 label = " %time%"
-label-background = #d6b36f
-label-foreground = #1b222d
-label-padding-left = 1
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding-left = ${module_indents.padding}
 
 ;=====================================================
 ;     Moscow time
@@ -138,9 +147,9 @@ tail = true
 interval = 1
 
 label = "/%output%"
-label-background = #d6b36f
-label-foreground = #1b222d
-label-padding-right = 1
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding-right = ${module_indents.padding}
 label-margin-right = 1
 
 ;=====================================================
@@ -154,6 +163,6 @@ tail = true
 interval = 2
 
 label = " %output%"
-label-background = #c8cbd3
-label-foreground = #1b222d
-label-padding = 1
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding = ${module_indents.padding}

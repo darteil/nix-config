@@ -8,11 +8,10 @@ cursor-scroll = ns-resize
 locale = ru_RU.UTF-8
 enable-ipc = true
 
-font-0 = FiraCode Nerd Font:weight=medium:size=12;3
-font-1 = FiraCode Nerd Font:weight=medium:size=12;2
+font-0 = NotoSans Nerd Font:weight=semibold:size=12;3
 
-border-left-size = 16
-border-right-size = 16
+border-left-size = 17
+border-right-size = 17
 border-top-size = 6
 border-bottom-size = 0
 
