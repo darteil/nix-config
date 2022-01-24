@@ -51,6 +51,7 @@ label-urgent = %name%
 label-urgent-background = ${colors.urgent}
 label-urgent-foreground = ${colors.foreground}
 label-urgent-padding = 3
+label-urgent-margin-right = 1
 
 label-mode-background = ${colors.urgent}
 label-mode-foreground = ${colors.foreground}
