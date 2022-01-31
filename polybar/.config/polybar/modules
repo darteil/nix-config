@@ -30,7 +30,7 @@ reverse-scroll = false
 format = <label-state> <label-mode>
 
 label-focused = %name%
-label-focused-background = #458588
+label-focused-background = #d65d0e
 label-focused-foreground = ${colors.foreground}
 label-focused-padding = 3
 label-focused-margin-right = 1
