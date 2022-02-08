@@ -26,7 +26,6 @@ local on_attach = function(client)
   map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
   map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   map("n", "<Leader>d", "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", opts)
 
   -- Disable Autoformat
@@ -78,6 +77,7 @@ vim.diagnostic.config({
   signs = true,
   update_in_insert = false,
   underline = false,
+  severity_sort = true,
 })
 
 require("configuration.lsp.null-ls")
