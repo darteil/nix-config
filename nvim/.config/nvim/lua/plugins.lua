@@ -38,6 +38,7 @@ return packer.startup(function()
   use("onsails/lspkind-nvim")
   use("hrsh7th/cmp-vsnip")
   use("hrsh7th/vim-vsnip")
+  use("beauwilliams/focus.nvim")
 
   use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })

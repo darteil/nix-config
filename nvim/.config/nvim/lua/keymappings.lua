@@ -28,3 +28,6 @@ map("n", "n", "nzz", { noremap = true })
 
 -- TroubleToggle
 map("n", "<Leader>t", ":TroubleToggle<CR>", { noremap = true })
+
+-- Focus
+map("n", "<Leader>m", ":FocusToggle<CR>", { noremap = true })
