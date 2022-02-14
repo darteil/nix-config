@@ -1,6 +1,5 @@
 radius = 0.0
 fixed-center = false
-background = #00
 foreground = #edecec
 underline-size = 0
 cursor-click = pointer
@@ -8,11 +7,10 @@ cursor-scroll = ns-resize
 locale = ru_RU.UTF-8
 enable-ipc = true
 
-font-0 = NotoSans Nerd Font:weight=semibold:size=12;3
+font-0 = Ubuntu Nerd Font:weight=medium:size=13;3
+font-1 = Ubuntu Nerd Font:weight=medium:size=13;4
 
-border-left-size = 17
-border-right-size = 14
-border-top-size = 6
-border-bottom-size = 0
-
-border-color = #00
+border-left-size = 5
+border-right-size = 5
+border-top-size = 5
+border-bottom-size = 5

@@ -3,8 +3,8 @@
 ;=====================================================
 
 [colors]
-background = #bdae93
-foreground = #282828
+background = #504945
+foreground = #ebdbb2
 urgent = #fb4934
 
 [module_indents]
@@ -30,8 +30,8 @@ reverse-scroll = false
 format = <label-state> <label-mode>
 
 label-focused = %name%
-label-focused-background = #d65d0e
-label-focused-foreground = ${colors.foreground}
+label-focused-background = #fe8019
+label-focused-foreground = #282828
 label-focused-padding = 3
 label-focused-margin-right = 1
 
@@ -65,7 +65,7 @@ label-mode-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-label-layout = " %icon%"
+label-layout = %{T2} %{T-}%icon%
 label-layout-background = ${colors.background}
 label-layout-foreground = ${colors.foreground}
 label-layout-padding = ${module_indents.padding}
