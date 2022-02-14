@@ -31,12 +31,10 @@ Tutorials for GNU stow:
 
 ### Screenshots
 
-![](./images/main.png)
-
-![](./images/other.png)
-
-![](./images/nvim.png)
+<img src="https://raw.githubusercontent.com/darteil/dotfiles/master/images/main.png">
+<img src="https://raw.githubusercontent.com/darteil/dotfiles/master/images/other.png">
+<img src="https://raw.githubusercontent.com/darteil/dotfiles/master/images/nvim.png">
 
 ### License
 
-MIT License, Copyright (c) 2019-2021 Romanov Yuri
+MIT License, Copyright (c) 2019-2022 Romanov Yuri
