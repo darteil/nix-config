@@ -31,11 +31,11 @@ Tutorials for GNU stow:
 
 ### Screenshots
 
-![](./images/main.png)
+![](./images/main0.png)
 
-![](./images/other.png)
+![](./images/other0.png)
 
-![](./images/nvim.png)
+![](./images/nvim0.png)
 
 ### License
 
