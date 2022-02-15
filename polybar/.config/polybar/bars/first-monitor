@@ -9,7 +9,7 @@ border-color = #282828
 tray-position = right
 tray-padding = 5
 tray-maxsize = 22
-tray-background = #282828
+tray-background = #ebdbb2
 
 modules-left = i3
-modules-right = xkeyboard temp pulseaudio date clock moscow-time
+modules-right = xkeyboard temp pulseaudio date clock moscow-time tray-label

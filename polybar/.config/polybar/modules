@@ -3,7 +3,7 @@
 ;=====================================================
 
 [colors]
-background = #504945
+background = #282828
 foreground = #ebdbb2
 urgent = #fb4934
 
@@ -36,8 +36,8 @@ label-focused-padding = 3
 label-focused-margin-right = 1
 
 label-unfocused = %name%
-label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.foreground}
+label-unfocused-foreground = ${colors.background}
 label-unfocused-padding = 3
 label-unfocused-margin-right = 1
 
@@ -49,12 +49,12 @@ label-visible-margin-right = 1
 
 label-urgent = %name%
 label-urgent-background = ${colors.urgent}
-label-urgent-foreground = ${colors.foreground}
+label-urgent-foreground = ${colors.background}
 label-urgent-padding = 3
 label-urgent-margin-right = 1
 
 label-mode-background = ${colors.urgent}
-label-mode-foreground = ${colors.foreground}
+label-mode-foreground = ${colors.background}
 label-mode-padding = 3
 
 ;=====================================================
@@ -65,7 +65,7 @@ label-mode-padding = 3
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-label-layout = %{T2} %{T-}%icon%
+label-layout = "  %icon%"
 label-layout-background = ${colors.background}
 label-layout-foreground = ${colors.foreground}
 label-layout-padding = ${module_indents.padding}
@@ -76,7 +76,7 @@ layout-icon-1 = us;EN
 label-indicator-padding = ${module_indents.padding}
 label-indicator-margin-right = 1
 label-indicator-background = ${colors.urgent}
-label-indicator-foreground = ${colors.foreground}
+label-indicator-foreground = ${colors.background}
 
 ;=====================================================
 ;     Pulseaudio
@@ -151,7 +151,7 @@ label = "/%output%"
 label-background = ${colors.background}
 label-foreground = ${colors.foreground}
 label-padding-right = ${module_indents.padding}
-label-margin-right = 1
+label-margin-right = 2
 
 ;=====================================================
 ;     CPU, GPU temp
@@ -167,3 +167,14 @@ label = " %output%"
 label-background = ${colors.background}
 label-foreground = ${colors.foreground}
 label-padding = ${module_indents.padding}
+
+;=====================================================
+;     Tray label
+;=====================================================
+
+[module/tray-label]
+type = custom/text
+content = "  "
+
+content-background = #8ec07c
+content-foreground = #282828
