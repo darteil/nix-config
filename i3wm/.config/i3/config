@@ -32,20 +32,26 @@ bindsym $mod+v split v
 
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
-bindsym $mod+d exec \
-  "rofi \
+
+bindsym $mod+d exec --no-startup-id \
+  "rofi\
+  -modi 'run,calc,power:~/.config/rofi/powermenu' \
   -location 2 \
   -kb-accept-entry 'Return,KP_Enter' \
   -kb-row-down 'Control+j' \
   -kb-remove-to-eol '' \
   -kb-row-up 'Control+k' \
-  -show run"
+  -sidebar-mode \
+  -show run \
+  calc \
+  -no-sort \
+  -no-show-match \
+  -no-persist-history"
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -138,10 +144,10 @@ bindsym $mod+r mode "resize"
 # Theme colors
 
 # class                 border  bground text    indicator child_border
-client.focused          #FE8019 #FE8019 #243140 #FE8019   #FE8019
-client.focused_inactive #689D6A #689D6A #243140 #689D6A   #689D6A
-client.unfocused        #076678 #BDAE93 #243140 #689D6A   #689D6A
-client.urgent           #2F343A #9D0006 #FFFFFF #9D0006   #9D0006
+client.focused          #458588 #458588 #243140 #458588   #458588
+client.focused_inactive #504945 #504945 #243140 #504945   #504945
+client.unfocused        #076678 #928374 #282828 #504945   #504945
+client.urgent           #2F343A #fb4934 #282828 #fb4934   #fb4934
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #272827

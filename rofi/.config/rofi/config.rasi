@@ -1,70 +1,94 @@
 * {
-   font: "NotoSans Nerd Font 11";
-   background-color: #262626;
+  font: "NotoSans Nerd Font 12";
+  background-color: #262626;
+}
+
+configuration {
+  calc {
+   display-name: "calc";
+  }
 }
 
 window {
-   width: 30em;
-   margin: 200px 0 0 0;
-   padding: 0 0 0 5px;
-   background-color: #262626;
-   border: 2;
-   border-color: #458588;
+  width: 30em;
+  margin: 200px 0 0 0;
+  padding: 0 0 0 5px;
+  background-color: #262626;
+  border: 2;
+  border-color: #458588;
 }
 
 mainbox {
-  padding: 5px 0 0 0;
+  padding: 5px 5px 5px 0;
+  text-color: #eeeeee;
 }
 
 message {
-   padding: 6px 10px;
-   background-color: #262626;
+  border-color: #262626;
+  padding: 6px 10px;
+}
+
+textbox {
+  text-color: #eeeeee;
 }
 
 prompt {
-   padding: 5px 10px 5px 10px;
-   background-color: #fe8019;
-   text-color: #272828;
+  padding: 5px 10px 5px 10px;
+  background-color: #fe8019;
 }
 
 inputbar {
-   background-color: #262626;
-   spacing: 0px;
+  background-color: #262626;
+  spacing: 0px;
 }
 
 entry {
-   padding: 5px 10px 5px 10px;
-   background-color: #262626;
-   text-color: #eeeeee;
+  padding: 5px 10px 5px 10px;
+  background-color: #262626;
+  text-color: #eeeeee;
 }
 
 listview {
-   fixed-height: false;
-   dynamic: true;
-   scrollbar: false;
-   spacing: 0px;
-   border: 0;
-   padding: 5px 5px 3px 5px;
-   background: #262626;
+  fixed-height: false;
+  dynamic: true;
+  scrollbar: false;
+  spacing: 0px;
+  border: 0;
+  padding: 5px 5px 3px 5px;
+  background: #262626;
 }
 
 element.normal.normal {
-   padding: 2px 15px;
-   background-color: #262626;
-   text-color: #eeeeee;
+  padding: 2px 15px;
+  background-color: #262626;
+  text-color: #eeeeee;
 }
 
 element.alternate.normal {
-   padding: 2px 15px;
-   background-color: #262626;
-   text-color: #eeeeee;
+  padding: 2px 15px;
+  background-color: #262626;
+  text-color: #eeeeee;
 }
 
 element.selected.normal {
-   background-color: #806641;
-   text-color:       #eeeeee;
+  background-color: #806641;
+  text-color: #eeeeee;
 }
 
 element-text {
-   padding: 0 0 0 5px;
+  padding: 0 0 0 5px;
+}
+
+inputbar {
+  children: [ prompt,entry,case-indicator ];
+}
+
+button {
+  text-color: #eeeeee;
+  background-color: #458588;
+}
+
+button selected.normal {
+  text-color: #262626;
+  background-color: #fe8019;
 }
