@@ -30,4 +30,5 @@ map("n", "n", "nzz", { noremap = true })
 map("n", "<Leader>t", ":TroubleToggle<CR>", { noremap = true })
 
 -- Focus
-map("n", "<Leader>m", ":FocusToggle<CR>", { noremap = true })
+map("n", "<F5>", ":TZFocus<CR>", { noremap = true })
+map("n", "<F6>", ":TZAtaraxis<CR>", { noremap = true })
