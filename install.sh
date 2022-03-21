@@ -9,7 +9,6 @@ stow -v -R -t ~/ dunst
 stow -v -R -t ~/ i3wm
 stow -v -R -t ~/ kitty
 stow -v -R -t ~/ nvim
-stow -v -R -t ~/ picom
 stow -v -R -t ~/ polybar
 stow -v -R -t ~/ rofi
 stow -v -R -t ~/.oh-my-zsh/ oh-my-zsh
