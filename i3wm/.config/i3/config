@@ -15,9 +15,6 @@ gaps right 7
 gaps left 7
 gaps bottom 7
 
-bindsym $mod+Shift+0     gaps inner all set 0
-bindsym $mod+Shift+9     gaps inner all set 15
-
 # move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -90,15 +87,17 @@ set $ws5 "5:5"
 set $ws6 "6:6"
 set $ws7 "7:7"
 set $ws8 "8:8"
+set $ws9 "9:9"
 
 workspace $ws1 output $firstMonitor
 workspace $ws2 output $firstMonitor
 workspace $ws3 output $firstMonitor
 workspace $ws4 output $firstMonitor
 workspace $ws5 output $firstMonitor
-workspace $ws6 output $secondMonitor
+workspace $ws6 output $firstMonitor
 workspace $ws7 output $secondMonitor
 workspace $ws8 output $secondMonitor
+workspace $ws9 output $secondMonitor
 
 # switch to workspace
 bindsym $mod+1  workspace $ws1;
@@ -109,6 +108,7 @@ bindsym $mod+5  workspace $ws5;
 bindsym $mod+6  workspace $ws6;
 bindsym $mod+7  workspace $ws7;
 bindsym $mod+8  workspace $ws8;
+bindsym $mod+9  workspace $ws9;
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -119,6 +119,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -137,7 +138,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-for_window [class=kitty-floating] floating enable, resize set 800px 500px, move position 0 40
+for_window [class="Osmo"] floating enable, resize set 900px 600px, move position 950 60
 
 bindsym $mod+r mode "resize"
 
@@ -167,6 +168,5 @@ exec --no-startup-id i3-msg workspace $ws1
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id nvidia-settings --load-config-only
 exec --no-startup-id dunst
-exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 exec_always --no-startup-id feh --bg-fill $HOME/Images/fon3.jpg --bg-fill $HOME/Images/dem.jpg
