@@ -1,5 +1,5 @@
 * {
-  font: "NotoSans Nerd Font 12";
+  font: "UbuntuMono Nerd Font 14";
   background-color: #262626;
 }
 
@@ -11,7 +11,7 @@ configuration {
 
 window {
   width: 30em;
-  margin: 200px 0 0 0;
+  y-offset: 200px;
   padding: 0 0 0 5px;
   background-color: #262626;
   border: 2;
