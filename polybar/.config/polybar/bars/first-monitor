@@ -12,4 +12,4 @@ tray-maxsize = 22
 tray-background = #ebdbb2
 
 modules-left = i3
-modules-right = xkeyboard temp pulseaudio date clock moscow-time tray-label
+modules-right = xkeyboard cpu-temp gpu-temp pulseaudio date clock moscow-time tray-label

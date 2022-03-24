@@ -8,7 +8,6 @@ locale = ru_RU.UTF-8
 enable-ipc = true
 
 font-0 = Ubuntu Nerd Font:weight=medium:size=13;3
-font-1 = Ubuntu Nerd Font:weight=medium:size=13;4
 
 border-left-size = 5
 border-right-size = 5

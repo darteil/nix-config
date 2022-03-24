@@ -8,7 +8,7 @@ foreground = #ebdbb2
 urgent = #fb4934
 
 [module_indents]
-padding = 2
+padding = 1
 
 ;=====================================================
 ;     i3WM
@@ -30,32 +30,32 @@ reverse-scroll = false
 format = <label-state> <label-mode>
 
 label-focused = %name%
-label-focused-background = #fe8019
-label-focused-foreground = #282828
-label-focused-padding = 3
+label-focused-background = #d65d0e
+label-focused-foreground = ${colors.background}
+label-focused-padding = 2
 label-focused-margin-right = 1
 
 label-unfocused = %name%
 label-unfocused-background = ${colors.foreground}
 label-unfocused-foreground = ${colors.background}
-label-unfocused-padding = 3
+label-unfocused-padding = 2
 label-unfocused-margin-right = 1
 
 label-visible = %name%
-label-visible-background = #928374
+label-visible-background = #665c54
 label-visible-foreground = ${colors.background}
-label-visible-padding = 3
+label-visible-padding = 2
 label-visible-margin-right = 1
 
 label-urgent = %name%
 label-urgent-background = ${colors.urgent}
 label-urgent-foreground = ${colors.background}
-label-urgent-padding = 3
+label-urgent-padding = 2
 label-urgent-margin-right = 1
 
 label-mode-background = ${colors.urgent}
 label-mode-foreground = ${colors.background}
-label-mode-padding = 3
+label-mode-padding = 2
 
 ;=====================================================
 ;     Keyboard
@@ -93,9 +93,9 @@ label-volume-foreground = ${colors.foreground}
 label-volume-padding = ${module_indents.padding}
 label-volume-margin = 1
 
-label-muted = "婢"
-label-muted-background = ${colors.urgent}
-label-muted-foreground = ${colors.foreground}
+label-muted = "婢 "
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.urgent}
 label-muted-padding = ${module_indents.padding}
 label-muted-margin = 1
 
@@ -153,12 +153,12 @@ label-padding-right = ${module_indents.padding}
 label-margin-right = 2
 
 ;=====================================================
-;     CPU, GPU temp
+;     CPU temp
 ;=====================================================
 
-[module/temp]
+[module/cpu-temp]
 type = custom/script
-exec = ~/.config/polybar/scripts/core-temp.sh
+exec = ~/.config/polybar/scripts/cpu-temp.sh
 tail = true
 interval = 2
 
@@ -167,6 +167,20 @@ label-background = ${colors.background}
 label-foreground = ${colors.foreground}
 label-padding = ${module_indents.padding}
 
+;=====================================================
+;     GPU temp
+;=====================================================
+
+[module/gpu-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/gpu-temp.sh
+tail = true
+interval = 2
+
+label = " %output%"
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-padding = ${module_indents.padding}
 ;=====================================================
 ;     Tray label
 ;=====================================================
