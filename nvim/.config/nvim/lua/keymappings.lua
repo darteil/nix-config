@@ -32,3 +32,9 @@ map("n", "<Leader>t", ":TroubleToggle<CR>", { noremap = true })
 -- Focus
 map("n", "<F5>", ":TZFocus<CR>", { noremap = true })
 map("n", "<F6>", ":TZAtaraxis<CR>", { noremap = true })
+
+-- Navigator
+map("n", "<c-h>", "<CMD>lua require('Navigator').left()<CR>", { noremap = true })
+map("n", "<c-k>", "<CMD>lua require('Navigator').up()<CR>", { noremap = true })
+map("n", "<c-l>", "<CMD>lua require('Navigator').right()<CR>", { noremap = true })
+map("n", "<c-j>", "<CMD>lua require('Navigator').down()<CR>", { noremap = true })

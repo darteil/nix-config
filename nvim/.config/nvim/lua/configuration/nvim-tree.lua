@@ -1,7 +1,6 @@
 local g = vim.g
 
 g.nvim_tree_special_files = {}
-g.nvim_tree_window_picker_exclude = { filetype = {}, buftype = {} }
 
 g.nvim_tree_show_icons = {
   git = 0,
