@@ -155,7 +155,6 @@ client.background       #272827
 
 set $HOME /home/darteil
 
-bindsym $mod+b exec vivaldi-stable
 bindsym Print exec "flameshot gui"
 bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
 bindsym $mod+space exec "polybar-msg cmd toggle"
