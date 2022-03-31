@@ -1,7 +1,7 @@
 #!/bin/bash
 
-option_reboot=" reboot"
-option_shutdown=" shutdown"
+option_reboot="reboot"
+option_shutdown="shutdown"
 
 if [ x"$@" = x"$option_reboot" ]
 then
