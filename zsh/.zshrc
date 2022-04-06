@@ -40,15 +40,14 @@ preexec() { echo -ne '\e[5 q' ;}
 alias ls='lsd -a --group-dirs first'
 alias ll='lsd -lAh --blocks date,permission,size,name  --date relative --group-dirs first'
 alias lt='lsd -a --tree --group-dirs first'
-alias mus='mpsyt pl "https://www.youtube.com/playlist?list=PLbu6xrylxwhUD2V5BMRuKh00fgdlLJ-zT"'
 alias tmdef='tmux attach -t default'
-alias mountdata='sudo mount -t ntfs-3g /dev/sdb1 /mnt/data'
 alias pulserestart='pulseaudio -k'
 alias fontsreload='sudo fc-cache -f -v'
-alias cheat='cat /home/darteil/.cheatsheet'
+alias cheat="cat $HOME/.cheatsheet"
 alias reflector='sudo reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist'
 alias v='nvim'
 alias vc='nvim -u NONE'
+alias timer="node $HOME/Repositories/github/countdown/src/main.mjs"
 
 export DENO_INSTALL="/home/$USER/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
