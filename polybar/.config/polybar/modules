@@ -153,34 +153,24 @@ label-padding-right = ${module_indents.padding}
 label-margin-right = 2
 
 ;=====================================================
-;     CPU temp
+;     CPU
 ;=====================================================
 
-[module/cpu-temp]
-type = custom/script
-exec = ~/.config/polybar/scripts/cpu-temp.sh
-tail = true
-interval = 2
+[module/cpu]
+type = internal/cpu
 
-label = " %output%"
-label-background = ${colors.background}
-label-foreground = ${colors.foreground}
+interval = 0.5
+
+warn-percentage = 95
+
+format = <label>
+
+label = %{T2}  %percentage:3%%%{T-}
+label-background = #83a598
+label-foreground = ${colors.background}
 label-padding = ${module_indents.padding}
+label-margin-right = 2
 
-;=====================================================
-;     GPU temp
-;=====================================================
-
-[module/gpu-temp]
-type = custom/script
-exec = ~/.config/polybar/scripts/gpu-temp.sh
-tail = true
-interval = 2
-
-label = " %output%"
-label-background = ${colors.background}
-label-foreground = ${colors.foreground}
-label-padding = ${module_indents.padding}
 ;=====================================================
 ;     Tray label
 ;=====================================================
