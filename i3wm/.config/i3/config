@@ -95,9 +95,9 @@ workspace $ws3 output $firstMonitor
 workspace $ws4 output $firstMonitor
 workspace $ws5 output $firstMonitor
 workspace $ws6 output $firstMonitor
-workspace $ws7 output $secondMonitor
-workspace $ws8 output $secondMonitor
-workspace $ws9 output $secondMonitor
+workspace $ws7 output $firstMonitor
+workspace $ws8 output $firstMonitor
+workspace $ws9 output $firstMonitor
 
 # switch to workspace
 bindsym $mod+1  workspace $ws1;
