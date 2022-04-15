@@ -128,3 +128,6 @@ super + x
 
 super + e
   tdrop -ma -w -8 -h 800 -x 0 -y 0 -s dropdown kitty
+
+Print
+	flameshot gui
