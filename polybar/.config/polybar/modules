@@ -11,51 +11,38 @@ urgent = #fb4934
 padding = 1
 
 ;=====================================================
-;     i3WM
+;     bspwm
 ;=====================================================
 
-[module/i3]
-type = internal/i3
-
+[module/bspwm]
+type = internal/bspwm
 pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
 
 enable-click = true
-enable-scroll = true
+inline-mode = true
 
-wrapping-scroll = false
-reverse-scroll = false
+format = <label-state>
 
-format = <label-state> <label-mode>
+label-separator = " "
 
-label-focused = %name%
-label-focused-background = #d65d0e
-label-focused-foreground = ${colors.background}
-label-focused-padding = 2
-label-focused-margin-right = 1
+label-focused =  ""
+label-focused-foreground = #d65d0e
+label-focused-padding = 1
+label-focused-margin = 0
 
-label-unfocused = %name%
-label-unfocused-background = ${colors.foreground}
-label-unfocused-foreground = ${colors.background}
-label-unfocused-padding = 2
-label-unfocused-margin-right = 1
+label-occupied = ""
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
+label-occupied-margin = 0
 
-label-visible = %name%
-label-visible-background = #665c54
-label-visible-foreground = ${colors.background}
-label-visible-padding = 2
-label-visible-margin-right = 1
+label-empty = ""
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+label-empty-margin = 0
 
-label-urgent = %name%
-label-urgent-background = ${colors.urgent}
-label-urgent-foreground = ${colors.background}
-label-urgent-padding = 2
-label-urgent-margin-right = 1
-
-label-mode-background = ${colors.urgent}
-label-mode-foreground = ${colors.background}
-label-mode-padding = 2
+label-urgent = ""
+label-urgent-foreground = ${colors.urgent}
+label-urgent-padding = 1
 
 ;=====================================================
 ;     Keyboard
