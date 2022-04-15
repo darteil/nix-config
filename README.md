@@ -13,7 +13,7 @@ Dotfiles for unix, managed by [GNU stow](https://www.gnu.org/software/stow/).
 | Program            | Name                                          |
 | :----------------- | :-------------------------------------------- |
 | Linux Distribution | [Arch Linux](https://www.archlinux.org/)      |
-| Window Manager     | [i3-gaps](https://github.com/Airblader/i3)    |
+| Window Manager     | [bspwm](https://github.com/baskerville/bspwm) |
 | Bar                | [polybar](https://github.com/jaagr/polybar)   |
 | Program Launcher   | [rofi](https://github.com/DaveDavenport/rofi) |
 | Wallpaper Setter   | [feh](https://github.com/derf/feh)            |
