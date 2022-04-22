@@ -48,4 +48,3 @@ cmd([[colorscheme gruvbox]])
 g.gruvbox_contrast_dark = "medium"
 g.gruvbox_termcolors = 256
 g.gruvbox_invert_selection = "1"
-g.did_load_filetypes = 1

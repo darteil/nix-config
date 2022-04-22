@@ -20,9 +20,6 @@ map("n", "<Tab>", ":BufExplorer<CR>", { noremap = true })
 -- Tree
 map("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true })
 
--- Startify
-map("n", "<Leader>st", ":Startify<CR>", { noremap = true })
-
 -- Search in centered
 map("n", "n", "nzz", { noremap = true })
 
