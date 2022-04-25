@@ -31,7 +31,7 @@ super + m
 	bspc desktop -l next
 
 super + {comma, period}
-    bspc node -f {next, prev}.local
+    bspc node -f {next, prev}.local.!hidden.window
 
 # send the newest marked node to the newest preselected node
 super + y
@@ -64,10 +64,6 @@ super + {_,shift + }{h,j,k,l}
 # focus the node for the given path jump
 #super + {p,b,comma,period}
 #	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -124,10 +120,10 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 super + x
-  ~/.config/bspwm/lock.sh
+	~/.config/bspwm/lock.sh
 
 super + e
-  tdrop -ma -w -8 -h 800 -x 0 -y 0 -s dropdown kitty
+	tdrop -ma -w -8 -h 800 -x 0 -y 0 -s dropdown kitty
 
 Print
 	flameshot gui
