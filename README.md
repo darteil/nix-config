@@ -35,8 +35,6 @@ Tutorials for GNU stow:
 
 ![](./images/other.png)
 
-![](./images/nvim.png)
-
 ### License
 
 MIT License, Copyright (c) 2019-2022 Romanov Yuri
