@@ -1,0 +1,18 @@
+#!/bin/bash
+
+option_connect="warp connect"
+option_disconnect="warp disconnect"
+
+if [ x"$@" = x"$option_connect" ]
+then
+  warp-cli connect;
+fi
+
+if [ x"$@" = x"$option_disconnect" ]
+then
+  warp-cli disconnect
+fi
+
+echo $option_connect
+echo $option_disconnect
+
