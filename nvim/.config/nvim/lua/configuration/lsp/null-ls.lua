@@ -9,6 +9,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
   sources = {
     formatting.stylua,
+    formatting.gofmt,
     diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({ ".eslintrc.js", ".eslintrc.yml", ".eslintrc.json" })

@@ -1,27 +1,5 @@
 local g = vim.g
 
-g.nvim_tree_special_files = {}
-
-g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 0,
-  folder_arrows = 1,
-}
-
-g.nvim_tree_icons = {
-  folder = {
-    arrow_open = "",
-    arrow_closed = "",
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-    symlink_open = "",
-  },
-}
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -45,10 +23,34 @@ nvim_tree.setup({
   open_on_setup = false,
   ignore_ft_on_setup = {},
   open_on_tab = false,
-  hijack_cursor = false,
+  hijack_cursor = true,
   update_cwd = true,
+  reload_on_bufenter = true,
   git = {
     enable = false,
+  },
+  renderer = {
+    highlight_opened_files = "all",
+    icons = {
+      show = {
+        git = false,
+        folder = true,
+        file = false,
+        folder_arrow = true,
+      },
+      glyphs = {
+        folder = {
+          arrow_open = "",
+          arrow_closed = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      },
+    },
   },
   view = {
     width = 40,
