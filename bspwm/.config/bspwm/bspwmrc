@@ -21,4 +21,3 @@ bspc config gapless_monocle      false
 
 bspc rule -a Osmo state=floating center=on
 bspc rule -a mpv state=floating center=on
-bspc rule -a crow state=floating center=on
