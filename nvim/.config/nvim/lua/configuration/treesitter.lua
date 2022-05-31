@@ -4,14 +4,6 @@ if not status_ok then
 end
 
 configs.setup({
-  ensure_installed = {
-    "javascript",
-    "typescript",
-    "lua",
-    "tsx",
-    "html",
-    "css",
-  },
   ignore_install = {},
   highlight = {
     enable = true,
