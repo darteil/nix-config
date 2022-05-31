@@ -123,7 +123,7 @@ super + x
 	~/.config/bspwm/lock.sh
 
 super + e
-	tdrop -ma -w -8 -h 800 -x 0 -y 0 -s dropdown kitty
+	tdrop -ma -w 1400 -h 800 -x 260 -y -1084 -s dropdown kitty
 
 Print
 	flameshot gui
