@@ -2,7 +2,7 @@
     monitor = 0
     follow = none
     width = 320
-    offset = 0x37
+    offset = 0x0
     indicate_hidden = yes
     shrink = no
     transparency = 0
