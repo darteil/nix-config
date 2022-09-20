@@ -41,14 +41,12 @@ preexec() { echo -ne '\e[5 q' ;}
 alias ls='lsd -a --group-dirs first'
 alias ll='lsd -lAh --blocks date,permission,size,name  --date relative --group-dirs first'
 alias lt='lsd -a --tree --group-dirs first'
-alias tmdef='tmux attach -t default'
 alias pulserestart='pulseaudio -k'
 alias fontsreload='sudo fc-cache -f -v'
-alias cheat="cat $HOME/.cheatsheet"
 alias reflector='sudo reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist'
-alias v='nvim'
-alias vc='nvim -u NONE'
+alias nvimc='nvim -u NONE'
 alias timer="node $HOME/Repositories/github/countdown/src/main.mjs"
+alias record='ffmpeg -f pulse -i alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.monitor -i <(arecord -f CD) -filter_complex amix -acodec libmp3lame "$(date +%d_%m_%y__%H_%M_%S)".mp3'
 
 export DENO_INSTALL="/home/$USER/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -62,7 +60,7 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{node_modules,.git}"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{node_modules,.git,proc,.icons}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
