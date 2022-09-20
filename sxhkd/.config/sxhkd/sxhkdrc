@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-  rofi -modi 'run,warp:~/.config/rofi/warp,calc,power:~/.config/rofi/powermenu' -location 2 -kb-accept-entry 'Return,KP_Enter' -kb-row-down 'Control+j' -kb-remove-to-eol '' -kb-row-up 'Control+k' -sidebar-mode -show run calc warp -no-sort -no-show-match -no-persist-history
+  rofi -modi 'run,calc,power:~/.config/rofi/powermenu' -location 2 -kb-accept-entry 'Return,KP_Enter' -kb-row-down 'Control+j' -kb-remove-to-eol '' -kb-row-up 'Control+k' -sidebar-mode -show run calc -no-sort -no-show-match -no-persist-history
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -70,8 +70,8 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# super + {grave,Tab}
+# 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -122,8 +122,8 @@ super + {Left,Down,Up,Right}
 super + x
 	~/.config/bspwm/lock.sh
 
-super + e
-	tdrop -ma -w 1400 -h 800 -x 260 -y -1084 -s dropdown kitty
+super + grave
+	xfce4-terminal --drop-down
 
 Print
 	flameshot gui
