@@ -1,7 +1,7 @@
 #Positions for 1920x1080
-i3lock -n -e \
+i3lock -n -i ~/Images/lock.jpg -e \
   --color="#282828" \
-  --inside-color="#282828" \
+  --inside-color="#141516" \
   --ring-color="#ebdbb2" \
   --line-uses-inside \
   --keyhl-color="#458588" \
@@ -25,15 +25,15 @@ i3lock -n -e \
   --radius 20 \
   \
   --time-str="%H:%M" \
-  --date-str="%A %e %B %Y" \
+  --date-str="%A, %m %b %Y" \
   --noinput-text="" \
   --verif-text="" \
   --lock-text="" \
   --wrong-text="" \
   \
-  --time-font="Ubuntu" \
-  --date-font="Ubuntu" \
-  --layout-font="Ubuntu" \
+  --time-font="SF UI Display" \
+  --date-font="SF UI Display" \
+  --layout-font="SF UI Display" \
   \
   --time-size 36 \
   --date-size 18 \
