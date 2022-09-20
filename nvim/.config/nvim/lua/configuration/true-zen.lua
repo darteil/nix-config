@@ -23,8 +23,8 @@ tz.setup({
   },
   modes = {
     ataraxis = {
-      left_padding = 32,
-      right_padding = 32,
+      left_padding = 1,
+      right_padding = 1,
       top_padding = 1,
       bottom_padding = 1,
       ideal_writing_area_width = { 0 },
@@ -61,7 +61,7 @@ tz.setup({
     vim_powerline = false,
     vim_signify = false,
     express_line = false,
-    lualine = false,
+    lualine = true,
     lightline = false,
     feline = false,
   },

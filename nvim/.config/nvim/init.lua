@@ -1,3 +1,4 @@
+require("configuration.gruvbox")
 require("options")
 require("plugins")
 require("keymappings")

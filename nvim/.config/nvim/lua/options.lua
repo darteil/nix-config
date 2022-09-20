@@ -34,7 +34,6 @@ opt.foldnestmax = 10
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.list = true
 
 -- open new split panes to right and below
 opt.splitright = true

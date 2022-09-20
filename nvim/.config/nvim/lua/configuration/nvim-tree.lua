@@ -25,18 +25,29 @@ nvim_tree.setup({
   update_cwd = true,
   reload_on_bufenter = true,
   git = {
-    enable = false,
+    enable = true,
   },
   renderer = {
     highlight_opened_files = "all",
+    group_empty = true,
     icons = {
+      git_placement = "before",
       show = {
-        git = false,
+        git = true,
         folder = true,
-        file = false,
+        file = true,
         folder_arrow = true,
       },
       glyphs = {
+        git = {
+          unstaged = "m",
+          staged = "s",
+          unmerged = "um",
+          renamed = "r",
+          untracked = "ut",
+          deleted = "d",
+          ignored = "i",
+        },
         folder = {
           arrow_open = "",
           arrow_closed = "",
@@ -51,10 +62,9 @@ nvim_tree.setup({
     },
   },
   view = {
-    width = 40,
-    height = 30,
     hide_root_folder = false,
-    side = "left",
+    width = 40,
+    adaptive_size = true,
     mappings = {
       custom_only = false,
       list = list_mappings,

@@ -30,9 +30,7 @@ lualine.setup({
       },
     },
     lualine_y = { { "encoding", left_padding = 2 }, { "fileformat", icons_enabled = false, right_padding = 2 } },
-    lualine_z = {
-      { "location" },
-    },
+    lualine_z = {},
   },
   inactive_sections = {
     lualine_a = {},
