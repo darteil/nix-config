@@ -27,6 +27,7 @@ return packer.startup(function()
   use("jose-elias-alvarez/null-ls.nvim")
   use("Pocco81/TrueZen.nvim")
   use("kovetskiy/sxhkd-vim")
+  use("b0o/schemastore.nvim")
 
   use("junegunn/fzf")
   use("junegunn/fzf.vim")

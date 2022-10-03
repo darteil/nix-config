@@ -29,14 +29,15 @@ local on_attach = function(client)
   map("n", "<Leader>d", "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", opts)
 
   -- Disable Autoformat
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "tsserver", "jsonls", "html", "cssls", "bashls", "gopls" }
+local servers = { "tsserver", "html", "cssls", "bashls", "gopls" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     capabilities = capabilities,
@@ -46,6 +47,20 @@ for _, lsp in ipairs(servers) do
     },
   })
 end
+
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
+})
 
 local USER = vim.fn.expand("$USER")
 local sumneko_root_path = "/home/" .. USER .. "/lua/lua-language-server"
