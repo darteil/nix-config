@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
-xinput --set-prop 14 'libinput Accel Speed' -0.8
+xinput --set-prop 13 'libinput Accel Speed' -0.9
 feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/wall.png
 xfce4-power-manager &
 udiskie -ans &
