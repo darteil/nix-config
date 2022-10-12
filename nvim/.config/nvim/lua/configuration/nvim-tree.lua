@@ -26,12 +26,12 @@ nvim_tree.setup({
   reload_on_bufenter = true,
   git = {
     enable = true,
+    ignore = false,
   },
   renderer = {
-    highlight_opened_files = "all",
     group_empty = true,
     icons = {
-      git_placement = "before",
+      git_placement = "signcolumn",
       show = {
         git = true,
         folder = true,
@@ -40,13 +40,13 @@ nvim_tree.setup({
       },
       glyphs = {
         git = {
-          unstaged = "m",
-          staged = "s",
+          unstaged = "",
+          staged = "",
           unmerged = "um",
-          renamed = "r",
-          untracked = "ut",
-          deleted = "d",
-          ignored = "i",
+          renamed = "rn",
+          untracked = "",
+          deleted = "",
+          ignored = "",
         },
         folder = {
           arrow_open = "",
