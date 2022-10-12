@@ -1,6 +1,8 @@
 local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
 opt.termguicolors = true
 opt.signcolumn = "yes"
@@ -26,10 +28,8 @@ opt.shortmess = "a"
 opt.clipboard = "unnamedplus"
 opt.lcs = "trail:·"
 
-opt.foldmethod = "indent"
-opt.foldenable = false
-opt.foldlevel = 2
-opt.foldnestmax = 10
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 opt.tabstop = 2
 opt.softtabstop = 2
@@ -40,6 +40,11 @@ opt.splitright = true
 opt.splitbelow = true
 
 cmd("filetype plugin indent on")
+
+-- For the folding being open by default
+cmd([[  
+  autocmd BufEnter,BufRead * normal zR
+]])
 
 opt.background = "dark"
 cmd([[colorscheme gruvbox]])
