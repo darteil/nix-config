@@ -28,9 +28,6 @@ opt.shortmess = "a"
 opt.clipboard = "unnamedplus"
 opt.lcs = "trail:·"
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
@@ -40,11 +37,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 cmd("filetype plugin indent on")
-
--- For the folding being open by default
-cmd([[  
-  autocmd BufEnter,BufRead * normal zR
-]])
 
 opt.background = "dark"
 cmd([[colorscheme gruvbox]])
