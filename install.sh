@@ -15,3 +15,4 @@ stow -v -R -t ~/.icons cursor
 stow -v -R -t ~/.config/vifm vifm
 stow -v -R -t ~/ bspwm
 stow -v -R -t ~/ sxhkd
+stow -v -R -t ~/ surfingkeys
