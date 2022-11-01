@@ -2,7 +2,7 @@ export ZSH="/home/darteil/.oh-my-zsh"
 
 ZSH_THEME="my-theme"
 
-plugins=(vi-mode tmux)
+plugins=(vi-mode tmux zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim;
