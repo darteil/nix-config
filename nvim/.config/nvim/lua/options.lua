@@ -1,8 +1,6 @@
 local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
 
 opt.termguicolors = true
 opt.signcolumn = "yes"
@@ -24,7 +22,7 @@ opt.backup = false
 opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
-opt.shortmess = "a"
+opt.shortmess = "aF"
 opt.clipboard = "unnamedplus"
 opt.lcs = "trail:·"
 
