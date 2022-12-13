@@ -62,9 +62,7 @@ nvim_tree.setup({
     },
   },
   view = {
-    hide_root_folder = false,
-    width = 40,
-    adaptive_size = true,
+    hide_root_folder = true,
     mappings = {
       custom_only = false,
       list = list_mappings,
@@ -72,6 +70,18 @@ nvim_tree.setup({
     number = false,
     relativenumber = false,
     signcolumn = "yes",
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "editor",
+        border = "single",
+        width = 90,
+        height = 35,
+        row = 1,
+        col = 1,
+      },
+    },
   },
   trash = {
     cmd = "trash",
