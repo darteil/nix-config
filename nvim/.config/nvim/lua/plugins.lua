@@ -20,7 +20,7 @@ return packer.startup(function()
   use("neovim/nvim-lspconfig")
   use("karb94/neoscroll.nvim")
   use("norcalli/nvim-colorizer.lua")
-  use("jlanzarotta/bufexplorer")
+  -- use("jlanzarotta/bufexplorer")
   use("folke/trouble.nvim")
   use("editorconfig/editorconfig-vim")
   use("nathom/filetype.nvim")
@@ -28,9 +28,12 @@ return packer.startup(function()
   use("Pocco81/TrueZen.nvim")
   use("kovetskiy/sxhkd-vim")
   use("b0o/schemastore.nvim")
-
+  use("nvim-tree/nvim-web-devicons")
+  use("hoob3rt/lualine.nvim")
+  use("kyazdani42/nvim-tree.lua")
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
+  use("j-morano/buffer_manager.nvim")
 
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
@@ -40,12 +43,20 @@ return packer.startup(function()
   use("hrsh7th/cmp-vsnip")
   use("hrsh7th/vim-vsnip")
 
-  use({ "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } })
-  use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use({ "sindrets/diffview.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use("nvim-lua/plenary.nvim")
+  use("rktjmp/lush.nvim")
+
+  use("ellisonleao/gruvbox.nvim")
+  use("lewis6991/gitsigns.nvim")
+  use("sindrets/diffview.nvim")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use({ "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   use({ "jose-elias-alvarez/buftabline.nvim" })
-  use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
   use({ "numToStr/Navigator.nvim", commit = "6bfcf7d" })
+  -- use({
+  --   "folke/noice.nvim",
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "rcarriga/nvim-notify",
+  --   },
+  -- })
 end)

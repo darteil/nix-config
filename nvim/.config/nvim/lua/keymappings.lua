@@ -14,8 +14,8 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 -- Search files
 map("n", "<Leader>f", ":Files<CR>", { noremap = true })
 
--- BufExplorer
-map("n", "<Tab>", ":BufExplorer<CR>", { noremap = true })
+-- buffer manager
+map("n", "<Tab>", "<CMD>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", { noremap = true })
 
 -- Tree
 map("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true })

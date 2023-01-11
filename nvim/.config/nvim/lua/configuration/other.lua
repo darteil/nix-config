@@ -1,9 +1,9 @@
 local g = vim.g
 
 -- BufExplorer
-g.bufExplorerDisableDefaultKeyMapping = 1
-g.bufExplorerShowRelativePath = 1
-g.bufExplorerDefaultHelp = 0
+-- g.bufExplorerDisableDefaultKeyMapping = 1
+-- g.bufExplorerShowRelativePath = 1
+-- g.bufExplorerDefaultHelp = 0
 
 -- =================================================
 -- QuickScope
