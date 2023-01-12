@@ -13,6 +13,8 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 local list_mappings = {
   { key = { "l", "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
   { key = { "h" }, cb = tree_cb("close_node") },
+  { key = "L", action = "vsplit" },
+  { key = "K", action = "split" },
 }
 
 nvim_tree.setup({
