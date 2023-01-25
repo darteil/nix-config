@@ -34,6 +34,7 @@ return packer.startup(function()
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
   use("j-morano/buffer_manager.nvim")
+  use("dnlhc/glance.nvim")
 
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
