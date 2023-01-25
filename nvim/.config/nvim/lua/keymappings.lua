@@ -35,3 +35,9 @@ map("n", "<c-h>", "<CMD>lua require('Navigator').left()<CR>", { noremap = true }
 map("n", "<c-k>", "<CMD>lua require('Navigator').up()<CR>", { noremap = true })
 map("n", "<c-l>", "<CMD>lua require('Navigator').right()<CR>", { noremap = true })
 map("n", "<c-j>", "<CMD>lua require('Navigator').down()<CR>", { noremap = true })
+
+-- Glance
+map("n", "gd", "<CMD>Glance definitions<CR>", { noremap = true })
+map("n", "gr", "<CMD>Glance references<CR>", { noremap = true })
+map("n", "gy", "<CMD>Glance type_definitions<CR>", { noremap = true })
+map("n", "gm", "<CMD>Glance implementations<CR>", { noremap = true })

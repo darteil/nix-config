@@ -21,11 +21,8 @@ end
 local on_attach = function(client)
   local opts = { noremap = true, silent = true }
 
-  map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
   map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  map("n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   map("n", "<Leader>d", "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", opts)
 
   -- Disable Autoformat
