@@ -63,7 +63,7 @@ local USER = vim.fn.expand("$USER")
 local sumneko_root_path = "/home/" .. USER .. "/lua/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
   capabilities = capabilities,
   on_attach = on_attach,
