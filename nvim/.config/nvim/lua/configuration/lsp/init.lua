@@ -34,7 +34,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "tsserver", "html", "cssls", "bashls", "gopls" }
+local servers = { "lua_ls", "tsserver", "html", "cssls", "bashls", "gopls" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     capabilities = capabilities,
@@ -55,31 +55,6 @@ lspconfig.jsonls.setup({
     json = {
       schemas = require("schemastore").json.schemas(),
       validate = { enable = true },
-    },
-  },
-})
-
-local USER = vim.fn.expand("$USER")
-local sumneko_root_path = "/home/" .. USER .. "/lua/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
-
-lspconfig.lua_ls.setup({
-  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
-  capabilities = capabilities,
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT" },
-      diagnostics = { enable = true, globals = { "vim", "use", "lua" } },
-      workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-        },
-      },
     },
   },
 })
