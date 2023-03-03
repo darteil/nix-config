@@ -24,7 +24,7 @@ map("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true })
 map("n", "n", "nzz", { noremap = true })
 
 -- TroubleToggle
-map("n", "<Leader>t", ":TroubleToggle<CR>", { noremap = true })
+map("n", "<Leader>t", "<cmd>TroubleToggle workspace_diagnostics<CR>", { noremap = true })
 
 -- Focus
 map("n", "<F5>", ":TZFocus<CR>", { noremap = true })
