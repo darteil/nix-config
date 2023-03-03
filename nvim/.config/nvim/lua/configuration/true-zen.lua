@@ -23,10 +23,12 @@ tz.setup({
   },
   modes = {
     ataraxis = {
-      left_padding = 1,
-      right_padding = 1,
-      top_padding = 1,
-      bottom_padding = 1,
+      padding = {
+        left = 52,
+        right = 52,
+        top = 0,
+        bottom = 0,
+      },
       ideal_writing_area_width = { 0 },
       auto_padding = false,
       keep_default_fold_fillchars = true,
@@ -34,6 +36,9 @@ tz.setup({
       bg_configuration = true,
       quit = "untoggle",
       ignore_floating_windows = true,
+      minimum_writing_area = {
+        width = 120,
+      },
       affected_higroups = {
         NonText = true,
         FoldColumn = true,
