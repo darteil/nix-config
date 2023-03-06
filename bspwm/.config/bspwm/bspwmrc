@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
 xinput --set-prop 13 'libinput Accel Speed' -0.9
-feh --bg-fill $HOME/Images/fon2.jpg --bg-fill $HOME/Images/wall.png
+feh --bg-fill $HOME/Images/wall2.png --bg-fill $HOME/Images/wall.png
 xfce4-power-manager &
 udiskie -ans &
 dunst &
@@ -11,9 +11,9 @@ dunst &
 bspc monitor -d 1 2 3 4 5
 
 bspc config border_width         4
-bspc config window_gap 0
+bspc config window_gap           0
 bspc config focused_border_color "#458588"
-bspc config normal_border_color "#504945"
+bspc config normal_border_color  "#504945"
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   false
