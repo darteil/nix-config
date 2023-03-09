@@ -37,4 +37,4 @@ Tutorials for GNU stow:
 
 ### License
 
-MIT License, Copyright (c) 2019-2023 Romanov Yuri
+MIT License, Copyright (c) 2019 Romanov Yuri
