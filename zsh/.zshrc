@@ -38,15 +38,17 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
 
-alias ls='lsd -a --group-dirs first'
-alias ll='lsd -lAh --blocks date,permission,size,name  --date relative --group-dirs first'
-alias lt='lsd -a --tree --group-dirs first'
+alias ls='exa --group-directories-first --icons'
+alias ll='exa -lh --sort="name" --group-directories-first --icons --no-user --created --time-style=long-iso'
+alias lt='exa -Ta --icons --sort="name" --group-directories-first --level=5'
+alias la='exa -lha --sort="name" --group-directories-first --icons --no-user --created --time-style=long-iso'
 alias pulserestart='pulseaudio -k'
 alias fontsreload='sudo fc-cache -f -v'
 alias reflector='sudo reflector --verbose -l 5 -p https --sort rate --save /etc/pacman.d/mirrorlist'
 alias nvimc='nvim -u NONE'
 alias timer="node $HOME/Repositories/github/countdown/src/main.mjs"
-alias record='ffmpeg -f pulse -i alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1.monitor -i <(arecord -f CD) -filter_complex amix -acodec libmp3lame "$(date +%d_%m_%y__%H_%M_%S)".mp3'
+alias record='ffmpeg -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -i <(arecord -f CD) -filter_complex amix -acodec libmp3lame "$(date +%d_%m_%y__%H_%M_%S)".mp3'
+alias obsvc="sudo modprobe v4l2loopback exclusive_caps=1 card_label='OBS Virtual Camera'"
 
 export DENO_INSTALL="/home/$USER/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -64,3 +66,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{node_modules,
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias luamake=/home/darteil/lua/lua-language-server/3rd/luamake/luamake
