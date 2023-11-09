@@ -29,12 +29,6 @@ Tutorials for GNU stow:
 [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)  
 [Managing Dotfile Symlinks with GNU Stow](https://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
 
-### Screenshots
-
-![](./images/main.png)
-
-![](./images/other.png)
-
 ### License
 
 MIT License, Copyright (c) 2019 Romanov Yuri
