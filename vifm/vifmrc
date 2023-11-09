@@ -9,7 +9,7 @@ set undolevels=100
 set vimhelp
 set norunexec
 colorscheme gruvbox
-set timefmt=%m/%d\ %H:%M
+set timefmt='[%d-%m-%Y %H:%M]'
 set wildmenu
 set wildstyle=popup
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
@@ -17,16 +17,21 @@ set ignorecase
 set smartcase
 set nohlsearch
 set incsearch
-set scrolloff=4
+set scrolloff=8
 
 if !has('win')
     set slowfs=curlftpfs
 endif
 
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+highlight User1 ctermbg=yellow ctermfg=black
+highlight User2 ctermbg=blue ctermfg=black cterm=bold
+highlight User3 ctermbg=none ctermfg=red cterm=bold
+highlight User4 ctermbg=green ctermfg=black cterm=bold
 
-mark b ~/bin/
+set statusline="%1* %t %2* %s %3* %A %d %= %4* %c / %a "
+
 mark h ~/
+mark d ~/Repositories/github/dotfiles
 
 command! df df -h %m 2> /dev/null
 command! diff vim -d %f %F
@@ -105,9 +110,7 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-        \ kitty +icat --place %pwx%ph@%pxx%py  --silent %c
-        \ %pc
-        \ kitty icat --clear --silent %pd
+        \ file %f
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in sxiv}
         \ sxiv -t -s d %d &,
@@ -227,11 +230,8 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-" Open file in existing instance of gvim
-nnoremap o :!gvim --remote-tab-silent %f<cr>
-
-" Open file in new instance of gvim
-nnoremap O :!gvim %f<cr>
+nnoremap o :!nvim %f<cr>
+nnoremap O :!nvim %f<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
@@ -262,12 +262,12 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap ,t :!kitty &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
 " Open gvim to edit vifmrc
-nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
+nnoremap ,C :!nvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
