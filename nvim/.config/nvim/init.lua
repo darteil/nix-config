@@ -1,24 +1,60 @@
-require("configuration.gruvbox")
-require("options")
-require("plugins")
-require("keymappings")
-require("configuration.lsp")
-require("configuration.cmp")
-require("configuration.treesitter")
-require("configuration.nvim-autopairs")
-require("configuration.fzf")
-require("configuration.lualine")
-require("configuration.buftabline")
-require("configuration.neoscroll")
-require("configuration.colorizer")
-require("configuration.gitsigns")
-require("configuration.nvim-tree")
-require("configuration.other")
-require("configuration.trouble")
-require("configuration.true-zen")
-require("configuration.navigator")
-require("configuration.filetype")
-require("configuration.buffer-manager")
-require("configuration.glance")
-require("configuration.neodev")
-require("configuration.local-highlight")
+require("core")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local status_ok, lazy = pcall(require, "lazy")
+if not status_ok then
+  return
+end
+
+lazy.setup("plugins", {
+  change_detection = {
+    notify = false,
+  },
+  install = { colorscheme = { "gruvbox" } },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "2html_plugin",
+        "tohtml",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "matchit",
+        "tar",
+        "tarPlugin",
+        "rrhelper",
+        "spellfile_plugin",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin",
+        "tutor",
+        "rplugin",
+        "syntax",
+        "synmenu",
+        "optwin",
+        "compiler",
+        "bugreport",
+        "ftplugin",
+      },
+    },
+  },
+})
