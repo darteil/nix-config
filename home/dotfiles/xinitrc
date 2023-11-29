@@ -1,0 +1,6 @@
+xsetroot -cursor_name left_ptr
+
+setxkbmap -layout us,ru
+
+sxhkd &
+exec bspwm
