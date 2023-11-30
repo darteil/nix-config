@@ -1,8 +1,15 @@
 #! /bin/sh
 
+xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
+pgrep -x sxhkd > /dev/null || sxhkd &
+~/.config/polybar/launch.sh &
+xinput --set-prop 12 'libinput Accel Speed' -0.9
+feh --bg-fill ~/desktop-wallpaper-1.png --bg-fill ~/desktop-wallpaper-2.png
+udiskie -ans &
+dunst &
+
 bspc wm -O HDMI-0 HDMI-1
 bspc monitor HDMI-0 -d 1 2 3 4 5
-bspc monitor -d 1 2 3 4 5
 
 bspc config border_width         4
 bspc config window_gap           5
@@ -17,11 +24,3 @@ bspc config gapless_monocle      false
 #bspc rule -a mpv state=floating center=on
 #bspc rule -a 'Crow Translate' state=floating center=on rectangle=800x600+0+0
 #bspc rule -a Xfce4-terminal state=floating
-
-pgrep -x sxhkd > /dev/null || sxhkd &
-~/.config/polybar/launch.sh
-xinput --set-prop 12 'libinput Accel Speed' -0.9
-feh --bg-fill ~/desktop-wallpaper-1.png --bg-fill ~/desktop-wallpaper-2.png
-udiskie -ans &
-dunst &
-
