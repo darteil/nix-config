@@ -1,4 +1,4 @@
-{ config, outputs, ... }:
+{ config, pkgs, outputs, ... }:
 
 let
   username = "darteil";
@@ -32,6 +32,12 @@ in
     homeDirectory = "/home/${username}";
     stateVersion = "22.11";
 
+    pointerCursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Original-Ice";
+      size = 20;
+    };
+
     file = {
       ".config/nvim".source = mkOutOfStoreSymlink "${userDirectory}/nix-config/home/dotfiles/nvim";
       ".vifm".source = mkOutOfStoreSymlink "${userDirectory}/nix-config/home/dotfiles/vifm";
@@ -51,6 +57,28 @@ in
 
     sessionVariables = {
       EDITOR = "nvim";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    font = {
+      package = pkgs.ubuntu_font_family;
+      name = "Ubuntu";
+      size = 10;
+    };
+    theme = {
+      package = pkgs.yaru-theme;
+      name = "Yaru";
+    };
+    iconTheme = {
+      package = pkgs.yaru-theme;
+      name = "Yaru";
+    };
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Original-Ice";
+      size = 20;
     };
   };
 

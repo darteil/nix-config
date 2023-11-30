@@ -14,7 +14,7 @@
     driSupport32Bit = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting = {
       enable = true;
@@ -25,6 +25,7 @@
     };
     open = false;
     nvidiaSettings = true;
+    forceFullCompositionPipeline = true;
   };
 
   boot.loader = {
@@ -96,6 +97,7 @@
       outputs.overlays.unstable-packages
 
       outputs.overlays.polybar
+      outputs.overlays.bspwm-latest
     ];
     config = {
       allowUnfree = true;
@@ -108,7 +110,6 @@
       roboto-mono
       source-code-pro
       corefonts
-      ubuntu_font_family
       (nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
     ];
   };
@@ -121,8 +122,19 @@
     shell = pkgs.fish;
   };
 
+  programs.dconf = {
+    enable = true;
+  };
+
   programs.fish = {
     enable = true;
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+    };
   };
 
   environment.shells = with pkgs; [ fish ];
