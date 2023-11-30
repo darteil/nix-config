@@ -1,5 +1,4 @@
 pkgs: with pkgs; [
-  git
   btop
   tealdeer
   delta
@@ -18,13 +17,11 @@ pkgs: with pkgs; [
   sublime-merge
   firefox
   chromium
-  vivaldi
   obs-studio
   keepassxc
   polybar
   sxhkd
   rofi
-  kitty
   alacritty
   krita
   megacmd
@@ -32,7 +29,6 @@ pkgs: with pkgs; [
   zathura
   pavucontrol
   crow-translate
-  yaru-theme
   thunderbird
   discord
   telegram-desktop
@@ -47,4 +43,6 @@ pkgs: with pkgs; [
   stress
   zig
   nixpkgs-fmt
+  pkgs.unstable.vivaldi
+  pkgs.unstable.kitty
 ]
