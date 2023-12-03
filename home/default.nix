@@ -30,7 +30,7 @@ in
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
-    stateVersion = "22.11";
+    stateVersion = "23.11";
 
     pointerCursor = {
       package = pkgs.bibata-cursors;
