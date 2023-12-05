@@ -42,7 +42,11 @@ pkgs: with pkgs; [
   sxiv
   stress
   zig
+
   nixpkgs-fmt
+  lua-language-server
+  stylua
+
   pkgs.unstable.vivaldi
   pkgs.unstable.kitty
 ]
