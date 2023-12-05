@@ -23,7 +23,8 @@ return {
     local neo_tree = require("neo-tree")
 
     neo_tree.setup({
-      -- popup_border_style = "rounded",
+      popup_border_style = "single",
+      enable_normal_mode_for_inputs = true,
       open_files_do_not_replace_types = { "Trouble", "bufexplorer" },
       source_selector = {
         winbar = false,
@@ -74,7 +75,7 @@ return {
         },
         file_size = {
           enabled = true,
-          required_width = 110,
+          required_width = 64,
         },
         type = {
           enabled = false,
@@ -103,8 +104,8 @@ return {
     vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { link = "GruvboxBlue" })
     vim.api.nvim_set_hl(0, "NeoTreeGitStaged", { link = "GruvboxYellow" })
     vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "GruvboxRed" })
-    vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { link = "GruvboxOrangeSign" })
-    vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { bg = "#83A598", fg = "#282828" })
+    -- vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { link = "GruvboxOrangeSign" })
+    -- vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { bg = "#83A598", fg = "#282828" })
 
     -- vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { link = "NeoTreeFloatNormal" })
   end,

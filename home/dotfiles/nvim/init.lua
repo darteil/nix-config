@@ -20,6 +20,9 @@ if not status_ok then
 end
 
 lazy.setup("plugins", {
+  ui = {
+    border = "single",
+  },
   change_detection = {
     notify = false,
   },
