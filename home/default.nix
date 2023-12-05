@@ -33,8 +33,8 @@ in
     stateVersion = "23.11";
 
     pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Original-Ice";
+      package = pkgs.simp1e-cursors;
+      name = "Simp1e-Adw";
       size = 20;
     };
 
@@ -76,8 +76,8 @@ in
       name = "Yaru";
     };
     cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Original-Ice";
+      package = pkgs.simp1e-cursors;
+      name = "Simp1e-Adw";
       size = 20;
     };
   };
