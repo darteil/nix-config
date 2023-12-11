@@ -9,7 +9,6 @@ pkgs: with pkgs; [
   jq
   feh
   zellij
-  tmux
   pkgs.unstable.eza
 
   neovim
@@ -28,20 +27,21 @@ pkgs: with pkgs; [
   mpv
   zathura
   pavucontrol
-  crow-translate
   thunderbird
   discord
   telegram-desktop
-  zoom
+  zoom-us
   figma-linux
   insomnia
   flameshot
   lxappearance
   pcmanfm
   dunst
+  ffmpeg_5-full
   sxiv
   stress
   zig
+  gitAndTools.gitFull
 
   nixpkgs-fmt
   lua-language-server

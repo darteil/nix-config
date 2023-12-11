@@ -3,29 +3,27 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./audio.nix
   ];
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting = {
+  hardware = {
+    opengl = {
       enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
     };
-    powerManagement = {
-      enable = false;
-      finegrained = false;
+    nvidia = {
+      modesetting = {
+        enable = true;
+      };
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      open = false;
+      nvidiaSettings = true;
+      forceFullCompositionPipeline = true;
     };
-    open = false;
-    nvidiaSettings = true;
-    forceFullCompositionPipeline = true;
   };
 
   boot.loader = {
@@ -73,6 +71,7 @@
 
   services.xserver = {
     enable = true;
+    videoDrivers = [ "nvidia" ];
     displayManager = {
       startx = {
         enable = true;
