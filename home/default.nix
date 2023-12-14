@@ -8,6 +8,7 @@ in
 {
   imports = [
     ./apps/fish.nix
+    ./apps/git.nix
   ];
 
   nixpkgs = {
