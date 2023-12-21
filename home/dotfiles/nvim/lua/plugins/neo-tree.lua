@@ -104,9 +104,7 @@ return {
     vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { link = "GruvboxBlue" })
     vim.api.nvim_set_hl(0, "NeoTreeGitStaged", { link = "GruvboxYellow" })
     vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "GruvboxRed" })
-    -- vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { link = "GruvboxOrangeSign" })
-    -- vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { bg = "#83A598", fg = "#282828" })
 
-    -- vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { link = "NeoTreeFloatNormal" })
+    vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { link = "GruvboxWhite" })
   end,
 }
