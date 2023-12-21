@@ -5,6 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 ~/.config/polybar/launch.sh &
 xinput --set-prop 12 'libinput Accel Speed' -0.9
 feh --bg-fill ~/desktop-wallpaper-1.png --bg-fill ~/desktop-wallpaper-2.png
+xfce4-power-manager &
 udiskie -ans &
 dunst &
 
@@ -20,7 +21,7 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   false
 bspc config gapless_monocle      false
 
-#bspc rule -a Osmo state=floating center=on
-#bspc rule -a mpv state=floating center=on
-#bspc rule -a 'Crow Translate' state=floating center=on rectangle=800x600+0+0
-#bspc rule -a Xfce4-terminal state=floating
+bspc config pointer_follows_focus false
+
+bspc rule -a mpv state=floating center=on
+bspc rule -a Xfce4-terminal state=floating
