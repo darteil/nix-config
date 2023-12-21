@@ -8,12 +8,13 @@ pkgs: with pkgs; [
   xclip
   jq
   feh
+  ripgrep
   zellij
+  stress
   pkgs.unstable.eza
 
   neovim
   vscode
-  sublime-merge
   firefox
   chromium
   obs-studio
@@ -25,8 +26,12 @@ pkgs: with pkgs; [
   krita
   megacmd
   mpv
+  smplayer
   zathura
   pavucontrol
+  xfce.xfconf
+  xfce.xfce4-power-manager
+  xfce.xfce4-terminal
   thunderbird
   discord
   telegram-desktop
@@ -34,16 +39,15 @@ pkgs: with pkgs; [
   figma-linux
   insomnia
   flameshot
-  lxappearance
+  lxappearance-gtk2
   pcmanfm
   dunst
   ffmpeg_5-full
   sxiv
-  stress
   zig
-  gitAndTools.gitFull
 
   nixpkgs-fmt
+  nodePackages.bash-language-server
   lua-language-server
   stylua
 
