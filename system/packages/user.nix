@@ -46,6 +46,7 @@ pkgs: with pkgs; [
   sxiv
   zig
 
+  tree-sitter
   nixpkgs-fmt
   nodePackages.bash-language-server
   lua-language-server
