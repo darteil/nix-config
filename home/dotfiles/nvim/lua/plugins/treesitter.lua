@@ -19,10 +19,10 @@ return {
         "markdown",
         "nix",
       },
-      ignore_install = {},
+      ignore_install = { "vimdoc", "help" },
       highlight = {
         enable = true,
-        disable = {},
+        disable = { "vimdoc", "help" },
       },
       incremental_selection = {
         enable = false,

@@ -9,6 +9,9 @@ return {
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local schemastore = require("schemastore")
 
+    require("lspconfig.ui.windows").default_options.border = "single"
+    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "GruvboxFg1" })
+
     -- Mappings.
     local function map(mode, key, result, opts)
       opts = vim.tbl_extend("keep", opts or {}, {
