@@ -22,7 +22,7 @@ pkgs: with pkgs; [
   polybar
   sxhkd
   rofi
-  alacritty
+  wezterm
   krita
   megacmd
   mpv
