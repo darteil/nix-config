@@ -16,6 +16,7 @@ in
       ".config/kitty".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/kitty";
       ".config/sxhkd".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/sxhkd";
       ".config/zellij".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/zellij";
+      ".config/wezterm".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/wezterm";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/vifm/vifmrc";
       ".vifm/colors".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/vifm/colors";
       ".xinitrc".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/${nixConfigPath}/home/dotfiles/xinitrc";
