@@ -23,10 +23,10 @@ if !has('win')
     set slowfs=curlftpfs
 endif
 
-highlight User1 ctermbg=yellow ctermfg=black
-highlight User2 ctermbg=blue ctermfg=black cterm=bold
-highlight User3 ctermbg=none ctermfg=red cterm=bold
-highlight User4 ctermbg=green ctermfg=black cterm=bold
+highlight User1 ctermbg=yellow ctermfg=235
+highlight User2 ctermbg=blue   ctermfg=235   cterm=bold
+highlight User3 ctermbg=none   ctermfg=red   cterm=bold
+highlight User4 ctermbg=green  ctermfg=235   cterm=bold
 
 set statusline="%1* %t %2* %s %3* %A %d %= %4* %c / %a "
 
