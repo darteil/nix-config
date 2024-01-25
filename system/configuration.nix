@@ -109,7 +109,7 @@
       roboto-mono
       source-code-pro
       corefonts
-      (nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
+      (unstable.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
     ];
   };
 
