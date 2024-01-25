@@ -31,7 +31,6 @@ highlight User4 ctermbg=green  ctermfg=235   cterm=bold
 set statusline="%1* %t %2* %s %3* %A %d %= %4* %c / %a "
 
 mark h ~/
-mark d ~/Repositories/github/dotfiles
 
 command! df df -h %m 2> /dev/null
 command! diff vim -d %f %F
@@ -42,6 +41,7 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
 
+set classify=' :dir:/,? :?:, ::../::'
 
 filextype *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css nvim %f
 fileviewer *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css highlight -O xterm256 -s base16/gruvbox-dark-medium %c
