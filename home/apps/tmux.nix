@@ -18,7 +18,7 @@
         }
       ];
     extraConfig = ''
-      set -sa terminal-features ",wezterm:RGB"
+      set -sa terminal-features "screen-256color"
       set -g base-index 1
       set -s escape-time 0
       set -g mouse on
