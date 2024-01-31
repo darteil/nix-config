@@ -22,7 +22,6 @@ pkgs: with pkgs; [
   polybar
   sxhkd
   rofi
-  wezterm
   krita
   megacmd
   mpv
@@ -52,6 +51,7 @@ pkgs: with pkgs; [
   lua-language-server
   stylua
 
+  pkgs.unstable.wezterm
   pkgs.unstable.vivaldi
   pkgs.unstable.kitty
 ]
