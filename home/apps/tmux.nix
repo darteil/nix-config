@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "wezterm";
+    terminal = "xterm-256color";
     plugins = with pkgs.tmuxPlugins;
       [
         {
@@ -18,7 +18,7 @@
         }
       ];
     extraConfig = ''
-      set -sa terminal-features "screen-256color"
+      set -sa terminal-features ",xterm-256color:RGB"
       set -g base-index 1
       set -s escape-time 0
       set -g mouse on
@@ -76,3 +76,4 @@
     '';
   };
 }
+
