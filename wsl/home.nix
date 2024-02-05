@@ -4,7 +4,7 @@
   imports = [
     ../home/apps/fish.nix
     ../home/apps/tmux.nix
-    #./apps/git.nix
+    ../home/apps/git.nix
     ./dotfiles.nix
   ];
 
