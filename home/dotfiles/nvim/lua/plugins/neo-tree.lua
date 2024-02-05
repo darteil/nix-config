@@ -11,7 +11,7 @@ return {
     {
       "<leader>e",
       function()
-        require("neo-tree.command").execute({ toggle = true, position = "float" })
+        require("neo-tree.command").execute({ toggle = true, position = "left" })
       end,
       desc = "Explorer NeoTree",
     },
