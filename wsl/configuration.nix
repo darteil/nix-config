@@ -5,6 +5,11 @@
   wsl.defaultUser = username;
   wsl.nativeSystemd = true;
 
+  time = {
+    timeZone = "Asia/Tomsk";
+    hardwareClockInLocalTime = true;
+  };
+
   nixpkgs = {
     overlays = [
       # When applied, the unstable nixpkgs set 
