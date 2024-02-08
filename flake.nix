@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -16,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, NixOS-WSL, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, NixOS-WSL, vscode-server, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -38,6 +39,7 @@
           specialArgs = { inherit inputs system outputs username; };
           modules = [
             NixOS-WSL.nixosModules.wsl
+            vscode-server.nixosModules.default
             ./wsl/configuration.nix
           ];
         };

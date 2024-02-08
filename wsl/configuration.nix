@@ -36,6 +36,15 @@
     enable = true;
   };
 
+  programs.nix-ld.enable = true;
+  services.vscode-server.enable = true;
+
+  services.openssh = {
+    enable = true;
+  };
+
+  programs.ssh.startAgent = true;
+
   environment.shells = with pkgs; [ fish ];
   environment.systemPackages = import ./packages.nix pkgs;
 
