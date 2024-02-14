@@ -16,12 +16,18 @@ pkgs: with pkgs; [
   neovim
   gcc9
   home-manager
-  pkgs.unstable.zellij
   pkgs.unstable.eza
-
   tree-sitter
+
+  # Development
+  nodejs_21
+  eslint_d
+  prettierd
+  typescript
   nixpkgs-fmt
+  vscode-langservers-extracted
   nodePackages.bash-language-server
-  #lua-language-server
-  #stylua
+  nodePackages.typescript-language-server
+  lua-language-server
+  stylua
 ]
