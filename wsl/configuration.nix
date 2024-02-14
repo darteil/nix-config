@@ -41,6 +41,13 @@
 
   services.openssh = {
     enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+    authorizedKeysFiles = [
+      "~/.ssh/github_key"
+    ];
   };
 
   programs.ssh.startAgent = true;
