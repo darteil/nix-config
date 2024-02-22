@@ -9,7 +9,11 @@
         {
           plugin = mode-indicator;
           extraConfig = "
-            set -g @mode_indicator_empty_prompt ' NORMAL '
+            set -g @mode_indicator_empty_prompt ' normal '
+            set -g @mode_indicator_prefix_prompt ' wait '
+            set -g @mode_indicator_copy_prompt ' copy '
+            set -g @mode_indicator_sync_prompt ' sync '
+
             set -g @mode_indicator_prefix_mode_style 'bg=#83a598,fg=#282828,bold'
             set -g @mode_indicator_copy_mode_style 'bg=#d79921,fg=#282828,bold'
             set -g @mode_indicator_sync_mode_style 'bg=#fb4934,fg=#282828,bold'
@@ -65,8 +69,9 @@
       set -g pane-border-style 'fg=#fbf0c9'
       set -g pane-active-border-style 'fg=#fbf0c9'
 
+      #time: #[fg=#282828,bold,bg=#689D6A] %R 
       set -g status-left '#[fg=#282828,bold,bg=#fabd2f,bold] TMUX #[fg=default,bold,bg=default] '
-      set -g status-right '#[fg=#282828,bold,bg=#928374,bold] Session: #S #[fg=default,bold,bg=default] #{tmux_mode_indicator} #[fg=#282828,bold,bg=#689D6A] %R '
+      set -g status-right '#[fg=#282828,bold,bg=#928374,bold] Session: #S #[fg=default,bold,bg=default] #{tmux_mode_indicator}'
       #set -g status-right-length 100
       set -g status-style bg='default'
       setw -g window-status-format '#[fg=#a89984,bold,bg=#3a3a3a,bold] #I:#[fg=#a89984,bold,bg=#3a3a3a,bold] #W '
