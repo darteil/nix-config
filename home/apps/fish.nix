@@ -5,13 +5,14 @@
     enable = true;
     shellAbbrs = {
       "ls" = "eza";
-      "ll" = "eza -lhUm --icons='auto' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
-      "la" = "eza -lhUma --icons='auto' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
+      "ll" = "eza -lU --icons='auto' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
+      "la" = "eza -laU --icons='auto' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
       "lt" = "eza -laT --icons='auto' --sort='name' --no-user --no-time --no-permissions --no-filesize --group-directories-first --level='5'";
       "record" = "ffmpeg - f pulse - i alsa_output.pci-0000_00_1f .3.analog-stereo.monitor - i < (arecord - f CD) - filter_complex amix - acodec libmp3lame '$(date +%d_%m_%y__%H_%M_%S)'.mp3";
     };
     shellInit = ''
       set fish_greeting
+      set fish_color_valid_path
       set -g fish_autosuggestion_enabled 1
 
       function fish_user_key_bindings
