@@ -27,11 +27,10 @@ return {
       enable_normal_mode_for_inputs = true,
       open_files_do_not_replace_types = { "Trouble", "bufexplorer" },
       source_selector = {
-        winbar = false,
+        winbar = true,
         statusline = true,
         sources = {
           { source = "filesystem" },
-          { source = "git_status" },
         },
       },
       enable_diagnostics = false,
@@ -39,6 +38,16 @@ return {
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
+        },
+        components = {
+          icon = function(config, node, state)
+            if node.type == "file" then
+              return {
+                text = " ",
+              }
+            end
+            return require("neo-tree.sources.common.components").icon(config, node, state)
+          end,
         },
       },
       default_component_configs = {
@@ -94,17 +103,5 @@ return {
         },
       },
     })
-
-    vim.api.nvim_set_hl(0, "NeoTreeGitAdded", { link = "GruvboxGreen" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { link = "GruvboxRed" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "GruvboxOrange" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitRenamed", { link = "GruvboxAqua" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "GruvboxOrange" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { link = "GruvboxGray" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { link = "GruvboxBlue" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitStaged", { link = "GruvboxYellow" })
-    vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "GruvboxRed" })
-
-    vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { link = "GruvboxWhite" })
   end,
 }

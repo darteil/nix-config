@@ -20,10 +20,20 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          disable_devicons = true,
+        },
+      },
+      pickers = {
+        live_grep = {
+          disable_devicons = true,
+        },
+      },
     })
 
     map("n", "<leader>f", builtin.find_files, {})
-    map("n", "<leader>r", builtin.live_grep, {})
+    map("n", "<leader><leader>", builtin.live_grep, {})
     map("n", "<leader>h", builtin.help_tags, {})
   end,
 }
