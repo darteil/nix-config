@@ -9,15 +9,15 @@
         {
           plugin = mode-indicator;
           extraConfig = "
-            set -g @mode_indicator_empty_prompt ' normal '
-            set -g @mode_indicator_prefix_prompt ' wait '
-            set -g @mode_indicator_copy_prompt ' copy '
-            set -g @mode_indicator_sync_prompt ' sync '
+            set -g @mode_indicator_empty_prompt ' NORMAL '
+            set -g @mode_indicator_prefix_prompt ' WAIT '
+            set -g @mode_indicator_copy_prompt ' COPY '
+            set -g @mode_indicator_sync_prompt ' SYNC '
 
-            set -g @mode_indicator_prefix_mode_style 'bg=#83a598,fg=#282828,bold'
-            set -g @mode_indicator_copy_mode_style 'bg=#d79921,fg=#282828,bold'
-            set -g @mode_indicator_sync_mode_style 'bg=#fb4934,fg=#282828,bold'
-            set -g @mode_indicator_empty_mode_style 'bg=#458588,fg=#282828,bold'
+            set -g @mode_indicator_prefix_mode_style 'bg=colour9,fg=colour0'
+            set -g @mode_indicator_copy_mode_style 'bg=colour11,fg=colour0'
+            set -g @mode_indicator_sync_mode_style 'bg=colour5,fg=colour0'
+            set -g @mode_indicator_empty_mode_style 'bg=colour4,fg=colour0'
           ";
         }
       ];
@@ -32,7 +32,7 @@
       bind C-a send-prefix
 
       # Reload config
-      bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+      bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "~/.config/tmux/tmux.conf reloaded"
 
       # Switch windows
       bind -n M-h previous-window
@@ -41,11 +41,20 @@
       setw -g mode-keys vi
       set-option -s set-clipboard off
       bind P paste-buffer
-      bind-key -T copy-mode-vi v send-keys -X begin-selection
-      bind-key -T copy-mode-vi y send-keys -X rectangle-toggle
       unbind -T copy-mode-vi Enter
-      bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'xclip -se c -i'
-      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'xclip -se c -i'
+
+      # Configure copying for windows
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+      bind-key -T copy-mode-vi Escape send-keys -X cancel
+      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "/mnt/c/Windows/System32/clip.exe"
+      bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "/mnt/c/Windows/System32/clip.exe"
+      bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "/mnt/c/Windows/System32/clip.exe"
+
+      # Configure copying for linux
+      #bind-key -T copy-mode-vi v send-keys -X begin-selection
+      #bind-key -T copy-mode-vi y send-keys -X rectangle-toggle
+      #bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel 'xclip -se c -i'
+      #bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'xclip -se c -i'
 
       bind '\' split-window -h -c "#{pane_current_path}"
       bind - split-window -v -c "#{pane_current_path}"
@@ -66,16 +75,16 @@
       setw -g pane-border-format ""
 
       set -g pane-border-lines 'single'
-      set -g pane-border-style 'fg=#fbf0c9'
-      set -g pane-active-border-style 'fg=#fbf0c9'
+      set -g pane-border-style 'fg=colour8'
+      set -g pane-active-border-style 'fg=colour12'
 
-      #time: #[fg=#282828,bold,bg=#689D6A] %R 
-      set -g status-left '#[fg=#282828,bold,bg=#fabd2f,bold] TMUX #[fg=default,bold,bg=default] '
-      set -g status-right '#[fg=#282828,bold,bg=#928374,bold] Session: #S #[fg=default,bold,bg=default] #{tmux_mode_indicator}'
+      #time: #[fg=colour0,bold,bg=colour8] %R 
+      set -g status-left '#[fg=colour0,bg=colour11] TMUX #[fg=default,bg=default] '
+      set -g status-right '#[fg=colour0,bg=colour8] Session: #S #[fg=default,bg=default] #{tmux_mode_indicator}'
       #set -g status-right-length 100
       set -g status-style bg='default'
-      setw -g window-status-format '#[fg=#a89984,bold,bg=#3a3a3a,bold] #I:#[fg=#a89984,bold,bg=#3a3a3a,bold] #W '
-      setw -g window-status-current-format '#[fg=#3a3a3a,bold,bg=#a89984,bold] #I:#[fg=#3a3a3a,bold,bg=#a89984,bold] #W '
+      setw -g window-status-format '#[fg=colour0,bg=colour8] #I '
+      setw -g window-status-current-format '#[fg=colour0,bg=colour1] #I '
 
       run-shell ${pkgs.tmuxPlugins.mode-indicator}/share/tmux-plugins/mode-indicator/mode_indicator.tmux
     '';
