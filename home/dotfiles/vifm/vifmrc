@@ -8,7 +8,6 @@ set sortnumbers
 set undolevels=100
 set vimhelp
 set norunexec
-colorscheme gruvbox
 set timefmt='[%d-%m-%Y %H:%M]'
 set wildmenu
 set wildstyle=popup
@@ -22,6 +21,12 @@ set scrolloff=8
 if !has('win')
     set slowfs=curlftpfs
 endif
+
+highlight Border      cterm=none   ctermbg=default
+highlight Win         cterm=none   ctermbg=default
+highlight Directory   cterm=none   ctermbg=default
+highlight StatusLine  cterm=none   ctermbg=236
+highlight CmdLine     cterm=none   ctermbg=default
 
 highlight User1 ctermbg=yellow ctermfg=235
 highlight User2 ctermbg=blue   ctermfg=235   cterm=bold
