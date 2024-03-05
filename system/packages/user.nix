@@ -43,7 +43,7 @@ pkgs: with pkgs; [
   dunst
   ffmpeg_5-full
   sxiv
-  zig
+  gcc9
 
   tree-sitter
   nixpkgs-fmt

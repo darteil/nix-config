@@ -32,6 +32,11 @@
     shell = pkgs.fish;
   };
 
+  fonts = {
+    packages = with pkgs; [
+      (unstable.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
+    ];
+  };
   programs.fish = {
     enable = true;
   };
