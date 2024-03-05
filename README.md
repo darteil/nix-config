@@ -14,12 +14,8 @@ Personal nixos, home-manager and dotfiles configurations. Requires [Nix flakes](
 | Web Browser        | [Vivaldi](https://vivaldi.com)                |
 | Code Editor        | [Nvim](https://neovim.io/)                    |
 | Shell              | [fish](https://fishshell.com)                 |
-| Terminal Emulator  | [Wezterm](https://wezfurlong.org/wezterm/)    |
+| Terminal Emulator  | [Kitty](https://sw.kovidgoyal.net/kitty/)     |
 | File manager       | [Vifm](https://vifm.info)                     |
-
-### Screenshots
-
-![Screenshot](/assets/screen.png)
 
 ### License
 
