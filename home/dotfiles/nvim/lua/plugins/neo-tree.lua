@@ -24,13 +24,20 @@ return {
 
     neo_tree.setup({
       popup_border_style = "single",
-      enable_normal_mode_for_inputs = true,
       open_files_do_not_replace_types = { "Trouble", "bufexplorer" },
       source_selector = {
         winbar = true,
-        statusline = true,
+        statusline = false,
         sources = {
           { source = "filesystem" },
+        },
+      },
+      event_handlers = {
+        {
+          event = "neo_tree_popup_input_ready",
+          handler = function(input)
+            vim.cmd("stopinsert")
+          end,
         },
       },
       enable_diagnostics = false,
