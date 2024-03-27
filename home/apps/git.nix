@@ -29,16 +29,10 @@
     aliases = {
       lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
-    delta = {
-      enable = true;
-      options = {
-        syntax-theme = "gruvbox-dark";
-        plus-emph-style = "white bold";
-        line-numbers = true;
-        side-by-side = true;
-      };
-    };
     extraConfig = {
+      diff = {
+        tool = "nvimdiff";
+      };
       core = {
         editor = "nvim";
       };
