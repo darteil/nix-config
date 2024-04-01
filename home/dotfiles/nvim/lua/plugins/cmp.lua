@@ -1,7 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "onsails/lspkind-nvim",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-vsnip",
@@ -11,7 +10,6 @@ return {
   },
   config = function()
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
     vim.opt.completeopt = "menu,menuone,noselect"
@@ -52,47 +50,6 @@ return {
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
       }),
-      formatting = {
-        format = lspkind.cmp_format({
-          with_text = true,
-          menu = {
-            buffer = "[buf]",
-            nvim_lsp = "[LSP]",
-            nvim_lua = "[api]",
-            path = "[path]",
-          },
-          -- symbol_map = {
-          --   Text = "",
-          --   Method = "",
-          --   Function = "",
-          --   Constructor = "",
-          --   Field = "ﰠ",
-          --   Variable = "v",
-          --   Class = "ﴯ",
-          --   Interface = "",
-          --   Module = "",
-          --   Property = "",
-          --   Unit = "塞",
-          --   Value = "",
-          --   Enum = "",
-          --   Keyword = "",
-          --   Snippet = "",
-          --   Color = "",
-          --   File = "",
-          --   Reference = "",
-          --   Folder = "",
-          --   EnumMember = "",
-          --   Constant = "",
-          --   Struct = "פּ",
-          --   Event = "",
-          --   Operator = "",
-          --   TypeParameter = ""
-          -- }
-        }),
-        experimental = {
-          native_menu = false,
-        },
-      },
     })
   end,
 }

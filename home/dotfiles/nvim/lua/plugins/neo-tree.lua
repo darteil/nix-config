@@ -2,7 +2,6 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
   cmd = "Neotree",
@@ -26,7 +25,7 @@ return {
       popup_border_style = "single",
       open_files_do_not_replace_types = { "Trouble", "bufexplorer" },
       source_selector = {
-        winbar = true,
+        winbar = false,
         statusline = false,
         sources = {
           { source = "filesystem" },
@@ -50,7 +49,7 @@ return {
           icon = function(config, node, state)
             if node.type == "file" then
               return {
-                text = " ",
+                text = "",
               }
             end
             return require("neo-tree.sources.common.components").icon(config, node, state)
@@ -60,19 +59,21 @@ return {
       default_component_configs = {
         indent = {
           with_markers = false,
-          with_expanders = true,
-          expander_collapsed = "",
-          expander_expanded = "",
-          expander_highlight = "NeoTreeExpander",
+          with_expanders = false,
+          expander_collapsed = "+",
+          expander_expanded = "-",
+          expander_highlight = "NeoTreeDirectoryName",
         },
         icon = {
-          folder_empty = "󰜌",
-          folder_empty_open = "󰜌",
-          default = "",
+          folder_open = "-",
+          folder_closed = "+",
+          folder_empty = "/",
+          folder_empty_open = "+",
+          default = "*",
         },
         modified = {
-          symbol = "+",
-          highlight = "GruvboxGreen",
+          symbol = "[+]",
+          highlight = "NeoTreeModified",
         },
         git_status = {
           symbols = {

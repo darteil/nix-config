@@ -20,13 +20,33 @@ if not status_ok then
 end
 
 lazy.setup("plugins", {
+  icons = {},
   ui = {
+    icons = {
+      cmd = "cmd ",
+      config = "config ",
+      event = "event ",
+      ft = "ft ",
+      init = "init ",
+      import = "import ",
+      keys = "keys ",
+      lazy = "lazy ",
+
+      loaded = "●",
+      not_loaded = "○",
+      start = "🚀",
+
+      plugin = "plugin ",
+      runtime = "runtime ",
+      require = "require ",
+      source = "source ",
+      task = "task ",
+    },
     border = "single",
   },
   change_detection = {
     notify = false,
   },
-  install = { colorscheme = { "gruvbox" } },
   performance = {
     rtp = {
       disabled_plugins = {

@@ -11,7 +11,7 @@ return {
       defaults = {
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         prompt_prefix = " ",
-        selection_caret = " ",
+        selection_caret = "> ",
         layout_strategy = "flex",
         layout_config = {
           horizontal = {
