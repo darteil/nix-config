@@ -64,7 +64,7 @@ return {
             icon = "BRANCH:",
           },
         },
-        lualine_c = { { "filename", icons_enabled = false } },
+        lualine_c = { { "filename", icons_enabled = false, path = 1 } },
         lualine_x = {
           {
             "diagnostics",
