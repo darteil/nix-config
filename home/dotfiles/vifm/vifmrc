@@ -46,8 +46,6 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
 
-set classify=' :dir:/,? :?:, ::../::'
-
 filextype *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css nvim %f
 fileviewer *.html,*.js,*.ts,*.tsx,*.json,*.jsx,*.css highlight -O xterm256 -s base16/gruvbox-dark-medium %c
 
