@@ -1,6 +1,6 @@
 pkgs: with pkgs; [
   vim
-  git
+  gitFull
   vifm
   curl
   wget
@@ -21,13 +21,13 @@ pkgs: with pkgs; [
 
   # Development
   nodejs_21
-  eslint_d
+  nodejs_21.pkgs.pnpm
   prettierd
   typescript
   nixpkgs-fmt
   vscode-langservers-extracted
   nodePackages.bash-language-server
-  nodePackages.typescript-language-server
+  pkgs.unstable.nodePackages.typescript-language-server
   lua-language-server
   stylua
 ]
