@@ -3,7 +3,7 @@ local opt = vim.opt
 
 opt.termguicolors = true
 opt.signcolumn = "yes"
-opt.mouse = "n"
+opt.mouse = "a"
 opt.encoding = "UTF-8"
 opt.relativenumber = true
 opt.rnu = true
@@ -27,6 +27,7 @@ opt.lcs = "trail:·"
 opt.list = true
 opt.scrolloff = 8
 -- opt.cmdheight = 0
+opt.laststatus = 3
 
 opt.tabstop = 2
 opt.softtabstop = 2
