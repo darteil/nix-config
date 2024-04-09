@@ -75,6 +75,20 @@ return {
       },
     })
 
+    lspconfig.eslint.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
+      },
+      settings = {
+        workingDirectories = { mode = "auto" },
+        experimental = {
+          useFlatConfig = true,
+        },
+      },
+    })
+
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
       border = "single",
     })
@@ -86,7 +100,7 @@ return {
     vim.diagnostic.config({
       virtual_text = false,
       signs = true,
-      underline = false,
+      underline = true,
       severity_sort = true,
       float = {
         border = "single",
