@@ -5,6 +5,8 @@ return {
     "b0o/schemastore.nvim",
   },
   config = function()
+    require("neodev").setup({})
+
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local schemastore = require("schemastore")
