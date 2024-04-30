@@ -4,6 +4,7 @@
   wsl.enable = true;
   wsl.defaultUser = username;
   wsl.nativeSystemd = true;
+  wsl.useWindowsDriver = true;
 
   time = {
     timeZone = "Asia/Tomsk";
@@ -34,10 +35,15 @@
 
   fonts = {
     packages = with pkgs; [
-      (unstable.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
+      jetbrains-mono
     ];
   };
+
   programs.fish = {
+    enable = true;
+  };
+
+  programs.dconf = {
     enable = true;
   };
 

@@ -23,11 +23,18 @@ opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
 opt.clipboard = "unnamedplus"
-opt.lcs = "trail:·"
+
+opt.lcs = {
+  trail = "·",
+}
+
 opt.list = true
 opt.scrolloff = 8
 -- opt.cmdheight = 0
 opt.laststatus = 3
+opt.foldmethod = "indent"
+opt.foldenable = false
+opt.foldlevel = 99
 
 opt.tabstop = 2
 opt.softtabstop = 2

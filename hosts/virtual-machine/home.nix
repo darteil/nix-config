@@ -1,11 +1,11 @@
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, outputs, inputs, ... }:
 
 {
   imports = [
-    ./apps/fish.nix
-    ./apps/git.nix
-    ./apps/tmux.nix
-    ./dotfiles/dotfiles.nix
+    "${inputs.self}/home-manager/programs/fish.nix"
+    "${inputs.self}/home-manager/programs/tmux.nix"
+    "${inputs.self}/home-manager/programs/git.nix"
+    ./dotfiles.nix
   ];
 
   nixpkgs = {

@@ -12,23 +12,10 @@
       driSupport = true;
       driSupport32Bit = true;
     };
-    nvidia = {
-      modesetting = {
-        enable = true;
-      };
-      powerManagement = {
-        enable = false;
-        finegrained = false;
-      };
-      open = false;
-      nvidiaSettings = true;
-      forceFullCompositionPipeline = true;
-    };
   };
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    #supportedFilesystems = [ "ntfs" ];
     grub = {
       enable = true;
       devices = [ "nodev" ];
@@ -71,7 +58,6 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
     displayManager = {
       startx = {
         enable = true;

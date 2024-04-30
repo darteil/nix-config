@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins;
       [
         {

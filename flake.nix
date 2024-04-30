@@ -28,10 +28,10 @@
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
-        default = nixpkgs.lib.nixosSystem {
+        vm = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system outputs; };
           modules = [
-            ./system/configuration.nix
+            ./hosts/virtual-machine/configuration.nix
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
@@ -40,23 +40,23 @@
           modules = [
             NixOS-WSL.nixosModules.wsl
             vscode-server.nixosModules.default
-            ./wsl/configuration.nix
+            ./hosts/wsl/configuration.nix
           ];
         };
       };
       homeConfigurations = {
-        default = home-manager.lib.homeManagerConfiguration {
+        vm = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home
+            ./hosts/virtual-machine/home.nix
           ];
         };
         wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs username; };
           modules = [
-            ./wsl/home.nix
+            ./hosts/wsl/home.nix
           ];
         };
       };

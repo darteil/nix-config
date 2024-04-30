@@ -9,9 +9,7 @@ pkgs: with pkgs; [
   jq
   feh
   ripgrep
-  zellij
   stress
-  pkgs.unstable.eza
 
   neovim
   vscode
@@ -44,14 +42,21 @@ pkgs: with pkgs; [
   ffmpeg_5-full
   sxiv
   gcc9
-
   tree-sitter
+
+  # Development
+  nodejs_21
+  nodejs_21.pkgs.pnpm
+  prettierd
+  typescript
   nixpkgs-fmt
+  vscode-langservers-extracted
   nodePackages.bash-language-server
+  pkgs.unstable.nodePackages.typescript-language-server
   lua-language-server
   stylua
 
-  pkgs.unstable.wezterm
+  pkgs.unstable.eza
   pkgs.unstable.vivaldi
   pkgs.unstable.kitty
 ]

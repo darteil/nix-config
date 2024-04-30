@@ -16,8 +16,9 @@ pkgs: with pkgs; [
   neovim
   gcc9
   home-manager
-  pkgs.unstable.eza
   tree-sitter
+  pkgs.unstable.eza
+  pkgs.unstable.sublime-merge
 
   # Development
   nodejs_21

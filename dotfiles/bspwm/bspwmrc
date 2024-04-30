@@ -1,15 +1,13 @@
 #! /bin/sh
 
-xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal
+xrandr --output Virtual-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 pgrep -x sxhkd > /dev/null || sxhkd &
 ~/.config/polybar/launch.sh &
-xinput --set-prop 12 'libinput Accel Speed' -0.9
-feh --bg-fill ~/desktop-wallpaper-1.png --bg-fill ~/desktop-wallpaper-2.png
-xfce4-power-manager &
+feh --bg-fill ~/desktop-wallpaper-1.png
 udiskie -ans &
 dunst &
 
-bspc monitor HDMI-0 -d 1 2 3 4 5
+bspc monitor Virtual-1 -d 1 2 3 4 5
 
 bspc config border_width         4
 bspc config window_gap           5
