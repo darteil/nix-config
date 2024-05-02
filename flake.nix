@@ -21,7 +21,6 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      username = "darteil";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
@@ -36,10 +35,11 @@
         };
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs system outputs username; };
+          specialArgs = { inherit inputs system outputs; };
           modules = [
             NixOS-WSL.nixosModules.wsl
             vscode-server.nixosModules.default
+            ./modules/settings.nix
             ./hosts/wsl/configuration.nix
           ];
         };
@@ -54,8 +54,9 @@
         };
         wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs username; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
+            ./modules/settings.nix
             ./hosts/wsl/home.nix
           ];
         };

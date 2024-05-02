@@ -1,10 +1,15 @@
-{ config, pkgs, outputs, inputs, username, ... }:
+{ config, pkgs, outputs, inputs, ... }:
 
+let
+  homeDirectoryPath = "/home/${config.settingsModule.username}";
+  # nixConfigAbsolutePath = "${homeDirectoryPath}/${config.settingsModule.nixConfigPath}";
+in
 {
   imports = [
-    "${inputs.self}/home-manager/programs/fish.nix"
-    "${inputs.self}/home-manager/programs/tmux.nix"
-    "${inputs.self}/home-manager/programs/git.nix"
+    #(/. + "${nixConfigAbsolutePath}/home-manager/programs/fish.nix")
+    ../../home-manager/programs/fish.nix
+    ../../home-manager/programs/tmux.nix
+    ../../home-manager/programs/git.nix
     ./dotfiles.nix
   ];
 
@@ -26,8 +31,8 @@
   };
 
   home = {
-    username = username;
-    homeDirectory = "/home/${username}";
+    username = config.settingsModule.username;
+    homeDirectory = homeDirectoryPath;
     stateVersion = "23.11";
 
     pointerCursor = {

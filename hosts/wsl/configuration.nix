@@ -1,8 +1,8 @@
-{ config, lib, pkgs, outputs, username, ... }:
+{ config, lib, pkgs, outputs, ... }:
 
 {
   wsl.enable = true;
-  wsl.defaultUser = username;
+  wsl.defaultUser = config.settingsModule.username;
   wsl.nativeSystemd = true;
   wsl.useWindowsDriver = true;
 
@@ -26,7 +26,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.users."${username}" = {
+  users.users."${config.settingsModule.username}" = {
     isNormalUser = true;
     description = "";
     extraGroups = [ "networkmanager" "wheel" ];
