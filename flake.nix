@@ -42,7 +42,6 @@
           modules = [
             NixOS-WSL.nixosModules.wsl
             vscode-server.nixosModules.default
-            ./modules/settings.nix
             ./hosts/wsl/configuration.nix
           ];
         };
@@ -57,9 +56,8 @@
         };
         wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs nixConfigsPath; };
           modules = [
-            ./modules/settings.nix
             ./hosts/wsl/home.nix
           ];
         };

@@ -2,7 +2,7 @@
 
 {
   wsl.enable = true;
-  wsl.defaultUser = config.settingsModule.username;
+  wsl.defaultUser = "darteil";
   wsl.nativeSystemd = true;
   wsl.useWindowsDriver = true;
 
@@ -26,7 +26,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.users."${config.settingsModule.username}" = {
+  users.users."darteil" = {
     isNormalUser = true;
     description = "";
     extraGroups = [ "networkmanager" "wheel" ];

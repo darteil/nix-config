@@ -1,12 +1,7 @@
 { config, pkgs, outputs, inputs, ... }:
 
-let
-  homeDirectoryPath = "/home/${config.settingsModule.username}";
-  # nixConfigAbsolutePath = "${homeDirectoryPath}/${config.settingsModule.nixConfigPath}";
-in
 {
   imports = [
-    #(/. + "${nixConfigAbsolutePath}/home-manager/programs/fish.nix")
     ../../home-manager/programs/fish.nix
     ../../home-manager/programs/tmux.nix
     ../../home-manager/programs/git.nix
@@ -31,8 +26,8 @@ in
   };
 
   home = {
-    username = config.settingsModule.username;
-    homeDirectory = homeDirectoryPath;
+    username = "darteil";
+    homeDirectory = "/home/darteil";
     stateVersion = "23.11";
 
     pointerCursor = {
