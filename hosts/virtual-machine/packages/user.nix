@@ -12,34 +12,9 @@ pkgs: with pkgs; [
   stress
 
   neovim
-  vscode
   firefox
   chromium
-  obs-studio
-  keepassxc
-  polybar
-  sxhkd
-  rofi
-  krita
-  megacmd
-  mpv
-  smplayer
-  zathura
-  pavucontrol
-  xfce.xfconf
-  xfce.xfce4-power-manager
-  xfce.xfce4-terminal
-  thunderbird
-  discord
-  telegram-desktop
-  zoom-us
-  figma-linux
-  insomnia
-  flameshot
-  lxappearance-gtk2
   pcmanfm
-  dunst
-  ffmpeg_5-full
   sxiv
   gcc9
   tree-sitter
@@ -56,7 +31,6 @@ pkgs: with pkgs; [
   lua-language-server
   stylua
 
+  pkgs.unstable.alacritty
   pkgs.unstable.eza
-  pkgs.unstable.vivaldi
-  pkgs.unstable.kitty
 ]

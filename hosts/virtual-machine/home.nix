@@ -2,9 +2,9 @@
 
 {
   imports = [
-    "${inputs.self}/home-manager/programs/fish.nix"
-    "${inputs.self}/home-manager/programs/tmux.nix"
-    "${inputs.self}/home-manager/programs/git.nix"
+    ../../home-manager/programs/fish.nix
+    ../../home-manager/programs/tmux.nix
+    ../../home-manager/programs/git.nix
     ./dotfiles.nix
   ];
 
@@ -44,17 +44,14 @@
   gtk = {
     enable = true;
     font = {
-      package = pkgs.ubuntu_font_family;
-      name = "Ubuntu";
+      name = "Open Sans Regular";
       size = 10;
     };
     theme = {
-      package = pkgs.yaru-theme;
-      name = "Yaru";
+      name = "io.elementary.stylesheet.mint";
     };
     iconTheme = {
-      package = pkgs.yaru-theme;
-      name = "Yaru";
+      name = "elementary";
     };
     cursorTheme = {
       package = pkgs.simp1e-cursors;

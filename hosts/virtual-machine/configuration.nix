@@ -24,6 +24,8 @@
     };
   };
 
+  virtualisation.vmware.guest.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking = {
@@ -58,13 +60,8 @@
 
   services.xserver = {
     enable = true;
-    displayManager = {
-      startx = {
-        enable = true;
-      };
-    };
-    windowManager = {
-      bspwm = {
+    desktopManager = {
+      pantheon = {
         enable = true;
       };
     };
@@ -72,6 +69,8 @@
     xkbVariant = "";
     xkbOptions = "ctrl:swapcaps,grp:alt_shift_toggle";
   };
+
+  programs.pantheon-tweaks.enable = true;
 
   nixpkgs = {
     overlays = [
@@ -91,17 +90,13 @@
 
   fonts = {
     packages = with pkgs; [
-      roboto
-      roboto-mono
-      source-code-pro
-      corefonts
-      (unstable.nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" ]; })
+      jetbrains-mono
     ];
   };
 
-  users.users.darteil = {
+  users.users."darteil" = {
     isNormalUser = true;
-    description = "darteil";
+    description = "";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = import ./packages/user.nix pkgs;
     shell = pkgs.fish;
@@ -125,5 +120,5 @@
   environment.shells = with pkgs; [ fish ];
   environment.systemPackages = import ./packages/system.nix pkgs;
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

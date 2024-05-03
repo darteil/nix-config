@@ -1,24 +1,19 @@
-{ config, inputs, ... }:
+{ config, inputs, nixConfigsPath, ... }:
 
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
+  nixConfigsAbsolutePath = "${config.home.homeDirectory}/${nixConfigsPath}";
 in
 {
   home = {
     file = {
-      ".config/nvim".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/nvim";
-      ".config/bspwm".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/bspwm";
-      ".config/polybar".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/polybar";
-      ".config/rofi".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/rofi";
-      ".config/bat".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/bat";
-      ".config/dunst".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/dunst";
-      ".config/kitty".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/kitty";
-      ".config/sxhkd".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/sxhkd";
-      ".config/wezterm".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/wezterm";
-      ".vifm/vifmrc".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/vifm/vifmrc";
-      ".vifm/colors".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/vifm/colors";
-      ".xinitrc".source = mkOutOfStoreSymlink "${inputs.self}/dotfiles/xinitrc";
-      "desktop-wallpaper-1.png".source = mkOutOfStoreSymlink "${inputs.self}/home-manager/wallpapers/desktop-wallpaper-1.png";
+      ".config/kitty".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/kitty";
+      ".config/alacritty".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/alacritty";
+      ".config/nvim".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/nvim";
+      ".config/bat".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/bat";
+      ".vifm/vifmrc".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/vifmrc";
+      ".vifm/colors".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/colors";
+      "desktop-wallpaper-1.png".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/home-manager/wallpapers/desktop-wallpaper-1.png";
     };
   };
 }
