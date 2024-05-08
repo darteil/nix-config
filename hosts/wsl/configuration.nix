@@ -43,10 +43,6 @@
     enable = true;
   };
 
-  programs.dconf = {
-    enable = true;
-  };
-
   programs.nix-ld.enable = true;
   services.vscode-server.enable = true;
 
@@ -56,9 +52,9 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
     };
-    authorizedKeysFiles = [
-      "~/.ssh/github_key"
-    ];
+    # authorizedKeysFiles = [
+    #   "~/.ssh/github_key"
+    # ];
   };
 
   programs.ssh.startAgent = true;

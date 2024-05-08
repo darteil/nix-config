@@ -18,7 +18,6 @@ pkgs: with pkgs; [
   home-manager
   tree-sitter
   pkgs.unstable.eza
-  pkgs.unstable.sublime-merge
 
   # Development
   nodejs_21
