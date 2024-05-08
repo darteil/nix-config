@@ -4,13 +4,16 @@ return {
     local trouble = require("trouble")
 
     trouble.setup({
+      icons = false,
+      fold_open = "-",
+      fold_closed = "+",
       height = 20,
       signs = {
         error = "E",
         warning = "W",
         hint = "H",
         information = "I",
-        other = "﫠",
+        other = "O",
       },
     })
 

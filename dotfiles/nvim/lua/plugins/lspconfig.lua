@@ -3,6 +3,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "b0o/schemastore.nvim",
+    "folke/neodev.nvim",
   },
   config = function()
     require("neodev").setup({})
