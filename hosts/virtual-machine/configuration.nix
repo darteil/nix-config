@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./audio.nix
+    ./packages.nix
   ];
 
   hardware = {
@@ -79,9 +79,6 @@
       # Example:
       # pkgs.unstable.bottom
       outputs.overlays.unstable-packages
-
-      outputs.overlays.polybar
-      outputs.overlays.bspwm-latest
     ];
     config = {
       allowUnfree = true;
@@ -98,7 +95,6 @@
     isNormalUser = true;
     description = "";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = import ./packages/user.nix pkgs;
     shell = pkgs.fish;
   };
 
@@ -118,7 +114,5 @@
   };
 
   environment.shells = with pkgs; [ fish ];
-  environment.systemPackages = import ./packages/system.nix pkgs;
-
   system.stateVersion = "23.11";
 }
