@@ -20,8 +20,8 @@ pkgs: with pkgs; [
   pkgs.unstable.eza
 
   # Development
-  nodejs_21
-  nodejs_21.pkgs.pnpm
+  nodejs_22
+  nodejs_22.pkgs.pnpm
   prettierd
   typescript
   nixpkgs-fmt
