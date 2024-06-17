@@ -56,21 +56,26 @@
   };
 
   services.getty.autologinUser = "darteil";
-  services.udisks2.enable = true;
 
   services.xserver = {
     enable = true;
-    desktopManager = {
-      pantheon = {
+    displayManager = {
+      lightdm = {
         enable = true;
       };
     };
-    layout = "us, ru";
-    xkbVariant = "";
-    xkbOptions = "ctrl:swapcaps,grp:alt_shift_toggle";
-  };
 
-  programs.pantheon-tweaks.enable = true;
+    windowManager = {
+      openbox = {
+        enable = true;
+      };
+    };
+    xkb = {
+      layout = "us, ru";
+      variant = "";
+      options = "ctrl:swapcaps,grp:alt_shift_toggle";
+    };
+  };
 
   nixpkgs = {
     overlays = [
@@ -98,10 +103,6 @@
     shell = pkgs.fish;
   };
 
-  programs.dconf = {
-    enable = true;
-  };
-
   programs.fish = {
     enable = true;
   };
@@ -114,5 +115,5 @@
   };
 
   environment.shells = with pkgs; [ fish ];
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

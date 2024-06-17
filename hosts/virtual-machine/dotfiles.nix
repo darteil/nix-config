@@ -7,6 +7,7 @@ in
 {
   home = {
     file = {
+      ".config/openbox".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/openbox";
       ".config/alacritty".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/alacritty";
       ".config/nvim".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/nvim";
       ".config/bat".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/bat";

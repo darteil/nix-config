@@ -28,7 +28,7 @@
   home = {
     username = "darteil";
     homeDirectory = "/home/darteil";
-    stateVersion = "23.11";
+    stateVersion = "24.05";
 
     pointerCursor = {
       package = pkgs.simp1e-cursors;
@@ -38,25 +38,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-    };
-  };
-
-  gtk = {
-    enable = true;
-    font = {
-      name = "Open Sans Regular";
-      size = 10;
-    };
-    theme = {
-      name = "io.elementary.stylesheet.mint";
-    };
-    iconTheme = {
-      name = "elementary";
-    };
-    cursorTheme = {
-      package = pkgs.simp1e-cursors;
-      name = "Simp1e-Adw";
-      size = 20;
     };
   };
 
