@@ -24,10 +24,19 @@ return {
         find_files = {
           disable_devicons = true,
         },
-      },
-      pickers = {
         live_grep = {
           disable_devicons = true,
+        },
+        diagnostics = {
+          disable_devicons = true,
+          layout_strategy = "vertical",
+        },
+        lsp_definitions = {
+          disable_devicons = true,
+        },
+        lsp_references = {
+          disable_devicons = true,
+          show_line = false,
         },
       },
     })
@@ -35,5 +44,10 @@ return {
     map("n", "<leader>f", builtin.find_files, {})
     map("n", "<leader><leader>", builtin.live_grep, {})
     map("n", "<leader>h", builtin.help_tags, {})
+
+    map("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
+    map("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
+
+    map("n", "<leader>t", builtin.diagnostics, {})
   end,
 }
