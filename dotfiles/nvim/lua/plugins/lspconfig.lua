@@ -1,7 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
     "b0o/schemastore.nvim",
     "folke/neodev.nvim",
   },
@@ -13,7 +12,6 @@ return {
     local schemastore = require("schemastore")
 
     require("lspconfig.ui.windows").default_options.border = "single"
-    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "GruvboxFg1" })
 
     -- Mappings.
     local function map(mode, key, result, opts)
@@ -37,10 +35,7 @@ return {
       client.server_capabilities.documentRangeFormattingProvider = false
     end
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-
+    local capabilities = cmp_nvim_lsp.default_capabilities()
     local servers = { "tsserver", "html", "cssls", "bashls", "gopls" }
 
     for _, lsp in ipairs(servers) do
@@ -73,8 +68,12 @@ return {
       flags = {
         debounce_text_changes = 150,
       },
-      diagnostics = {
-        globals = { "vim" },
+      settings = {
+        Lua = {
+          completion = {
+            callSnippet = "Replace",
+          },
+        },
       },
     })
 
