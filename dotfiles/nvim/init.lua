@@ -1,40 +1,37 @@
 require("core")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
 
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+end
 vim.opt.rtp:prepend(lazypath)
 
-local status_ok, lazy = pcall(require, "lazy")
-if not status_ok then
-  return
-end
-
-lazy.setup("plugins", {
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+  },
+  install = { colorscheme = { "kanagawa-dragon" } },
+  checker = { enabled = false },
   icons = {},
   ui = {
     icons = {
       cmd = "cmd ",
+
       config = "config ",
       event = "event ",
       ft = "ft ",
+
       init = "init ",
       import = "import ",
+
       keys = "keys ",
       lazy = "lazy ",
 
       loaded = "●",
       not_loaded = "○",
-      start = "🚀",
+      start = "",
 
       plugin = "plugin ",
       runtime = "runtime ",
@@ -50,33 +47,14 @@ lazy.setup("plugins", {
   performance = {
     rtp = {
       disabled_plugins = {
-        "2html_plugin",
-        "tohtml",
-        "getscript",
-        "getscriptPlugin",
         "gzip",
-        "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
         "matchit",
-        "tar",
+        "matchparen",
+        "netrwPlugin",
         "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
+        "tohtml",
         "tutor",
-        "rplugin",
-        "syntax",
-        "synmenu",
-        "optwin",
-        "compiler",
-        "bugreport",
-        "ftplugin",
+        "zipPlugin",
       },
     },
   },
