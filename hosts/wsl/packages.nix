@@ -13,11 +13,11 @@ pkgs: with pkgs; [
   dua
   bat
   ripgrep
-  neovim
   gcc9
   home-manager
   tree-sitter
   pkgs.unstable.eza
+  pkgs.unstable.neovim
 
   # Development
   nodejs_22
