@@ -47,3 +47,9 @@ opt.splitbelow = true
 cmd("filetype plugin indent on")
 
 opt.background = "dark"
+
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})
