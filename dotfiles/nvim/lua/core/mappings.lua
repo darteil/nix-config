@@ -2,6 +2,7 @@ local map = vim.keymap.set
 local map_arg = { silent = true, noremap = true }
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 map("n", "<C-h>", "<C-w>h", map_arg)
 map("n", "<C-j>", "<C-w>j", map_arg)

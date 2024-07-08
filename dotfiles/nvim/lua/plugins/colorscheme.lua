@@ -6,6 +6,7 @@ return {
     local kanagawa = require("kanagawa")
 
     kanagawa.setup({
+      undercurl = false,
       keywordStyle = { italic = false },
       colors = {
         theme = {
@@ -24,7 +25,6 @@ return {
           FloatTitle = { bg = "none" },
 
           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           WinSeparator = { fg = theme.ui.nontext },
 
           TelescopePromptBorder = { fg = theme.ui.nontext },
