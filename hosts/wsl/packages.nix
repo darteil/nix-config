@@ -10,6 +10,8 @@ pkgs: with pkgs; [
   tealdeer
   delta
   fd
+  jq
+  libxml2
   dua
   bat
   ripgrep
