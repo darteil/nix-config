@@ -20,6 +20,7 @@ pkgs: with pkgs; [
   tree-sitter
   pkgs.unstable.eza
   pkgs.unstable.neovim
+  pkgs.unstable.zellij
 
   # Development
   nodejs_22
