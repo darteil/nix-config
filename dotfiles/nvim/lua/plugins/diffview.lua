@@ -1,5 +1,6 @@
 return {
   "sindrets/diffview.nvim",
+  cmd = "DiffviewOpen",
   config = function()
     local actions = require("diffview.actions")
 
@@ -13,6 +14,11 @@ return {
         fold_closed = "+",
         fold_open = "-",
         done = "✓",
+      },
+      view = {
+        default = {
+          disable_diagnostics = true,
+        },
       },
       keymaps = {
         view = {

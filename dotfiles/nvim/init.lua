@@ -21,6 +21,9 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
+  defaults = {
+    version = false,
+  },
   install = { colorscheme = { "kanagawa-dragon" } },
   checker = { enabled = false },
   icons = {},

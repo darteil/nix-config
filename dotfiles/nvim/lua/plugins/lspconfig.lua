@@ -24,7 +24,7 @@ return {
       local opts = { noremap = true, silent = true }
 
       map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-      map("n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+      map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
       map("n", "<Leader>d", "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", opts)
 
       -- Disable Autoformat
