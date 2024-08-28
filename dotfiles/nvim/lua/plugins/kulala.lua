@@ -11,7 +11,7 @@ return {
           done = "done ",
         },
       },
-      winbar = true
+      winbar = true,
     })
 
     vim.api.nvim_create_user_command("KulalaRun", function()

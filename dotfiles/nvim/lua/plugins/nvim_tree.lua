@@ -53,6 +53,10 @@ return {
 
     require("nvim-tree").setup({
       on_attach = mappings,
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
       update_focused_file = {
         enable = true,
       },
@@ -60,7 +64,7 @@ return {
         enable = true,
       },
       git = {
-        enable = false,
+        enable = true,
       },
       view = {
         float = {
@@ -75,7 +79,7 @@ return {
             file = false,
             folder = false,
             folder_arrow = true,
-            git = false,
+            git = true,
             modified = true,
             hidden = false,
             diagnostics = false,
@@ -97,10 +101,23 @@ return {
               symlink = "",
               symlink_open = "",
             },
+            git = {
+              unstaged = "[m]",
+              staged = "[s]",
+              unmerged = "[c]",
+
+              renamed = "[r]",
+              untracked = "[ut]",
+              deleted = "[d]",
+              ignored = "[i]",
+            },
           },
         },
       },
     })
+
+    local git_ignored_hl = vim.tbl_extend("force", vim.api.nvim_get_hl(0, { name = "Comment" }), { italic = false })
+    vim.api.nvim_set_hl(0, "NvimTreeGitIgnoredIcon", git_ignored_hl)
 
     vim.keymap.set("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
   end,
