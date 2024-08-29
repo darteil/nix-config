@@ -20,7 +20,7 @@ return {
       overrides = function(colors)
         local theme = colors.theme
         return {
-          NormalFloat = { bg = "none" },
+          NormalFloat = { link = "Normal" },
           FloatBorder = { bg = "none" },
           FloatTitle = { bg = "none" },
 
