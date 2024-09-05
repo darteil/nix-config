@@ -18,14 +18,13 @@ return {
         "vimdoc",
         "javascript",
         "html",
-        "markdown",
         "nix",
         "http",
       },
       ignore_install = {},
       highlight = {
         enable = true,
-        disable = { "vimdoc", "help", "luadoc" },
+        disable = {},
       },
       incremental_selection = {
         enable = false,
