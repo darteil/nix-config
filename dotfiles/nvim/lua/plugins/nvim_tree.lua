@@ -65,6 +65,7 @@ return {
       },
       git = {
         enable = true,
+        show_on_dirs = false,
       },
       view = {
         float = {
@@ -85,6 +86,7 @@ return {
             diagnostics = false,
             bookmarks = false,
           },
+          git_placement = "after",
           glyphs = {
             default = "",
             symlink = "",
