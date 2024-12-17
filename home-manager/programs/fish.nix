@@ -9,6 +9,7 @@
       "la" = "eza -laUh --icons='never' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
       "lt" = "eza -laT --icons='never' --sort='name' --no-user --no-time --no-permissions --no-filesize --group-directories-first --level='5'";
       "record" = "ffmpeg - f pulse - i alsa_output.pci-0000_00_1f .3.analog-stereo.monitor - i < (arecord - f CD) - filter_complex amix - acodec libmp3lame '$(date +%d_%m_%y__%H_%M_%S)'.mp3";
+      "nvimlight" = "NVIM_APPNAME=nvim-light nvim";
     };
     shellInit = ''
       set fish_greeting
