@@ -1,15 +1,16 @@
 return {
   "NvChad/nvim-colorizer.lua",
-  opts = {
-    filetypes = {
-      "html",
-      "lua",
-      "javascript",
-      "css",
-    },
-    user_default_options = {
-      mode = "virtualtext",
-      names = false,
-    },
-  },
+  ft = { "javascript", "css", "html" },
+  config = function()
+    local colorizer = require("colorizer")
+
+    colorizer.setup({
+      filetypes = {
+        "css",
+        "javascript",
+        html = { mode = "foreground" },
+      },
+      user_default_options = { mode = "virtualtext", names = false },
+    })
+  end,
 }

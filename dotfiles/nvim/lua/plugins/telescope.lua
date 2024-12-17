@@ -21,6 +21,26 @@ return {
         },
       },
       pickers = {
+        buffers = {
+          path_display = function(opts, path)
+            local tail = require("telescope.utils").path_tail(path)
+            return string.format("%s --> %s", tail, path)
+          end,
+          disable_devicons = true,
+          sorting_strategy = "ascending",
+          layout_strategy = "vertical",
+          previewer = false,
+          layout_config = { width = 0.7, height = 0.6 },
+          sort_mru = true,
+          ignore_current_buffer = true,
+          sort_lastused = true,
+          initial_mode = "normal",
+          mappings = {
+            n = {
+              ["d"] = "delete_buffer",
+            },
+          },
+        },
         find_files = {
           disable_devicons = true,
         },
@@ -30,12 +50,14 @@ return {
         diagnostics = {
           disable_devicons = true,
           layout_strategy = "vertical",
+          initial_mode = "normal",
         },
         lsp_definitions = {
           disable_devicons = true,
         },
         lsp_references = {
           disable_devicons = true,
+          initial_mode = "normal",
           show_line = false,
         },
       },
@@ -49,5 +71,6 @@ return {
     map("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
 
     map("n", "<leader>t", builtin.diagnostics, {})
+    map("n", "<Tab>", builtin.buffers, { noremap = true, silent = true })
   end,
 }

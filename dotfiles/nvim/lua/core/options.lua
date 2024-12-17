@@ -29,6 +29,7 @@ opt.clipboard = "unnamedplus"
 
 opt.lcs = {
   trail = "·",
+  tab = "  ",
 }
 
 opt.list = true
