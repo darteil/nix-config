@@ -13,6 +13,11 @@ return {
         item = { "+", "-" },
         section = { "+", "-" },
       },
+      commit_editor = {
+        kind = "tab",
+        staged_diff_split_kind = "vsplit",
+        spell_check = false,
+      },
     })
   end,
 }
