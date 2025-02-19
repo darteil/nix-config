@@ -1,25 +1,25 @@
 return {
-  "mistweaverco/kulala.nvim",
-  config = function()
-    require("kulala").setup({
-      default_view = "body",
-      default_env = "dev",
-      debug = false,
-      icons = {
-        inlay = {
-          loading = "loading",
-          done = "done ",
-        },
-      },
-      winbar = true,
-    })
+  -- "mistweaverco/kulala.nvim",
+  -- config = function()
+  --   require("kulala").setup({
+  --     default_view = "body",
+  --     default_env = "dev",
+  --     debug = false,
+  --     icons = {
+  --       inlay = {
+  --         loading = "loading",
+  --         done = "done ",
+  --       },
+  --     },
+  --     winbar = true,
+  --   })
 
-    vim.api.nvim_create_user_command("KulalaRun", function()
-      require("kulala").run()
-    end, {})
+  --   vim.api.nvim_create_user_command("KulalaRun", function()
+  --     require("kulala").run()
+  --   end, {})
 
-    vim.api.nvim_create_user_command("KulalaToggle", function()
-      require("kulala").toggle_view()
-    end, {})
-  end,
+  --   vim.api.nvim_create_user_command("KulalaToggle", function()
+  --     require("kulala").toggle_view()
+  --   end, {})
+  -- end,
 }
