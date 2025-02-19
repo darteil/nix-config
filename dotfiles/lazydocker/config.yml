@@ -1,0 +1,11 @@
+gui:
+  border: "single"
+  theme:
+    activeBorderColor:
+      - white
+    inactiveBorderColor:
+      - blue
+    selectedLineBgColor:
+      - reverse
+    optionsTextColor:
+      - yellow
