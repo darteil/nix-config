@@ -3,7 +3,6 @@
 {
   wsl.enable = true;
   wsl.defaultUser = "darteil";
-  wsl.nativeSystemd = true;
   wsl.useWindowsDriver = true;
 
   time = {
@@ -26,10 +25,20 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
+
   users.users."darteil" = {
     isNormalUser = true;
     description = "";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
   };
 

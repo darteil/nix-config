@@ -20,11 +20,11 @@ pkgs: with pkgs; [
   tree-sitter
   pkgs.unstable.eza
   pkgs.unstable.neovim
-  pkgs.unstable.zellij
 
   # Development
-  nodejs_22
-  nodejs_22.pkgs.pnpm
+  nodejs_23
+  nodejs_23.pkgs.pnpm
+  pm2
   prettierd
   typescript
   nixpkgs-fmt
@@ -33,4 +33,6 @@ pkgs: with pkgs; [
   pkgs.unstable.nodePackages.typescript-language-server
   lua-language-server
   stylua
+  pkgs.unstable.lazydocker
+  docker-compose
 ]

@@ -12,6 +12,7 @@ in
       ".config/bat".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/bat";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/vifmrc";
       ".vifm/colors".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/colors";
+      ".config/lazydocker/config.yml".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/lazydocker/config.yml";
     };
   };
 }
