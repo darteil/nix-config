@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   -- version = "*",
-  tag = "v1.6.1",
+  tag = "v1.10.0",
   lazy = false,
   config = function()
     local function mappings(bufnr)

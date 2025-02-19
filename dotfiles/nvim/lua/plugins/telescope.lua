@@ -69,6 +69,7 @@ return {
 
     map("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
     map("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
+    map("n", "gp", "<Cmd>NeovimProjectDiscover<CR>", { noremap = true, silent = true })
 
     map("n", "<leader>t", builtin.diagnostics, {})
     map("n", "<Tab>", builtin.buffers, { noremap = true, silent = true })
