@@ -7,10 +7,25 @@
   ];
 
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+    };
+  };
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    extraConfig.pipewire."92-low-latency" = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "default.clock.quantum" = 512;
+        "default.clock.min-quantum" = 128;
+        "default.clock.max-quantum" = 2048;
+      };
     };
   };
 
@@ -55,25 +70,14 @@
     };
   };
 
-  services.getty.autologinUser = "darteil";
-
-  services.xserver = {
+  services.greetd = {
     enable = true;
-    displayManager = {
-      lightdm = {
-        enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "darteil";
       };
-    };
-
-    windowManager = {
-      openbox = {
-        enable = true;
-      };
-    };
-    xkb = {
-      layout = "us, ru";
-      variant = "";
-      options = "ctrl:swapcaps,grp:alt_shift_toggle";
+      default_session = initial_session;
     };
   };
 
@@ -84,6 +88,7 @@
       # Example:
       # pkgs.unstable.bottom
       outputs.overlays.unstable-packages
+      outputs.overlays.chrome-wayland
     ];
     config = {
       allowUnfree = true;
@@ -92,7 +97,7 @@
 
   fonts = {
     packages = with pkgs; [
-      jetbrains-mono
+      ubuntu_font_family
     ];
   };
 
@@ -101,6 +106,16 @@
     description = "";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.fish;
+  };
+
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland = {
+        enable = false;
+      };
+      package = pkgs.unstable.hyprland;
+    };
   };
 
   programs.fish = {
@@ -115,5 +130,5 @@
   };
 
   environment.shells = with pkgs; [ fish ];
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

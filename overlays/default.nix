@@ -5,6 +5,12 @@
       config.allowUnfree = true;
     };
   };
+  chrome-wayland = final: prev: {
+    google-chrome = prev.google-chrome.override {
+      commandLineArgs =
+        "--ozone-platform='wayland'";
+    };
+  };
   # polybar = final: prev: {
   #   polybar = prev.polybar.override { pulseSupport = true; };
   # };

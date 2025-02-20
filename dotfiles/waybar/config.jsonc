@@ -1,0 +1,66 @@
+{
+    "layer": "top",
+    "height": 25,
+    "spacing": 5,
+    "margin-top" :5,
+    "margin-right" :8,
+    "margin-left" :8,
+
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+
+    "modules-center": [],
+
+    "modules-right": [
+      "cpu",
+      "memory",
+      "clock"
+    ],
+
+    "hyprland/workspaces": {
+      "on-click": "activate",
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": []
+      }
+    },
+
+    "tray": {
+      "icon-size": 15,
+      "spacing": 8
+    },
+
+    "cpu": {
+      "format": "<span color='#181616' bgcolor='#ff9e3b' > Cpu </span> {usage:3}%",
+      "tooltip": false,
+      "interval": 1
+    },
+
+    "clock": {
+      "interval": 1,
+      "format": "<span color='#181616' bgcolor='#87a987' > Clock </span> {:%H:%M:%S (%Z)}",
+      "tooltip": false,
+      "timezones": [
+        "Asia/Tomsk",
+        "Europe/Moscow",
+        "Japan"
+      ],
+      "actions": {
+        "on-click": "tz_up"
+      }
+    },
+
+    "memory": {
+      "format": "<span color='#181616' bgcolor='#72a7bc' > Mem </span> {percentage:3}%",
+      "interval": 2,
+
+      "states": {
+        "critical": 80
+      }
+    }
+}

@@ -7,8 +7,10 @@ in
 {
   home = {
     file = {
-      ".config/openbox".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/openbox";
-      ".config/alacritty".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/alacritty";
+      ".config/foot".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/foot";
+      ".config/hypr".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/hypr";
+      ".config/waybar".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/waybar";
+      ".config/fuzzel".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/fuzzel";
       ".config/nvim".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/nvim";
       ".config/bat".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/bat";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/vifmrc";

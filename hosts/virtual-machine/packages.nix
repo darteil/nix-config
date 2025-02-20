@@ -7,7 +7,6 @@
     vim
     vifm
     htop
-    arandr
     home-manager
     killall
   ];
@@ -20,31 +19,27 @@
       fd
       dua
       bat
-      xclip
       jq
-      feh
       ripgrep
-      stress
 
       neovim
+      # google-chrome
       firefox
-      chromium
-      obconf
-      rofi
-      pcmanfm
       gcc9
       tree-sitter
+      fuzzel
+      waybar
+      hyprpaper
+      hyprpicker
 
       # Development
       nixpkgs-fmt
-      vscode-langservers-extracted
       nodePackages.bash-language-server
       lua-language-server
       stylua
 
-      pkgs.unstable.alacritty
-      pkgs.unstable.rxvt-unicode-unwrapped-emoji
       pkgs.unstable.eza
+      pkgs.unstable.foot
     ];
   };
 }

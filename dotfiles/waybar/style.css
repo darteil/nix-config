@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  border-radius: 0;
+  border: none;
+  text-shadow: none;
+  transition: none;
+  box-shadow: none;
+}
+
+/* the whole window */
+window#waybar {
+  color: #c5c9c5;
+  background: none;
+}
+
+window#waybar.hidden {
+  opacity: 1;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.visible,
+#workspaces button.visible:hover,
+#workspaces button.active,
+#workspaces button.active:hover,
+#workspaces button.urgent,
+#tray,
+#cpu,
+#memory,
+#clock {
+  font-family: "Ubuntu Mono";
+  font-size: 18px;
+  color: #181616;
+  background: #181616;
+  border: 3px solid #181616;
+  border-radius: 3px;
+}
+
+#tray,
+#cpu,
+#memory,
+#clock {
+  padding-right: 4px;
+}
+
+/* ================================ */
+/*       workspaces module          */
+/* ================================ */
+#workspaces {
+  margin: 0px;
+}
+
+#workspaces button {
+  padding: 0 0;
+  margin: 0px 1px;
+  min-width: 20px;
+  color: #181616;
+  background-color: #c5c9c5;
+}
+
+#workspaces button:hover {
+  color: #181616;
+  background-color: #c5c9c5;
+}
+
+#workspaces button.empty {
+  color: #c5c9c5;
+  background: #181616;
+}
+
+#workspaces button.visible {
+  background: #ff9e3b;
+}
+
+#workspaces button.active {
+  color: #181616;
+  background: #ff9e3b;
+}
+
+#workspaces button.active:hover {
+  color: #181616;
+  background: #ff9e3b;
+}
+
+#workspaces button.urgent {
+  background: #e46876;
+}
+
+/* ================================ */
+/*            tray                 */
+/* ================================ */
+
+#tray {
+  padding: 0 6px 0 6px;
+}
+
+/* ================================ */
+/*            cpu                  */
+/* ================================ */
+#cpu {
+  color: #ff9e3b;
+}
+
+/* ================================ */
+/*            memory                */
+/* ================================ */
+#memory {
+  color: #72a7bc;
+}
+
+/* ================================ */
+/*            clock                 */
+/* ================================ */
+#clock {
+  color: #87a987;
+}
