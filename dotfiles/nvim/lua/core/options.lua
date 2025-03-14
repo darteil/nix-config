@@ -25,7 +25,7 @@ opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamedplus"
 
 opt.lcs = {
   trail = "·",

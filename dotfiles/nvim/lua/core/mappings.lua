@@ -20,3 +20,10 @@ map("n", "N", "Nzz", map_arg)
 -- Scrolling in centered
 map("n", "<C-d>", "<C-d>zz", map_arg)
 map("n", "<C-u>", "<C-u>zz", map_arg)
+
+-- Yank into system clipboard
+map({ "n", "v" }, "<leader>y", '"+y')
+map({ "n", "v" }, "<leader>yy", '"+yy')
+
+-- Paste from system clipboard
+map("n", "<leader>p", '"+p')
