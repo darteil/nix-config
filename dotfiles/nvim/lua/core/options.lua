@@ -48,6 +48,8 @@ opt.shiftwidth = 2
 opt.splitright = true
 opt.splitbelow = true
 
+opt.diffopt = "vertical,filler,indent-heuristic,internal,indent-heuristic,algorithm:histogram,closeoff,linematch:60"
+
 cmd("filetype plugin indent on")
 
 opt.background = "dark"
