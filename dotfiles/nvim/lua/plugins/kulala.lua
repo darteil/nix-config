@@ -9,9 +9,9 @@ return {
       ui = {
         icons = {
           inlay = {
-            loading = "⏳",
-            done = "✅",
-            error = "❌",
+            loading = "loading",
+            done = "done",
+            error = "error",
           },
         },
         default_view = "body",
