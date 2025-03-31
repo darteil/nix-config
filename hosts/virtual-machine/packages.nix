@@ -22,8 +22,7 @@
       jq
       ripgrep
 
-      neovim
-      # google-chrome
+      google-chrome
       firefox
       gcc9
       tree-sitter
@@ -40,6 +39,7 @@
 
       pkgs.unstable.eza
       pkgs.unstable.foot
+      pkgs.unstable.neovim
     ];
   };
 }
