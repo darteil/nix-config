@@ -27,6 +27,9 @@ opt.updatetime = 300
 opt.shortmess = "acsCFW"
 -- opt.clipboard = "unnamedplus"
 
+vim.o.spell = true
+vim.o.spelllang = "en_us"
+
 opt.lcs = {
   trail = "·",
   tab = "  ",
