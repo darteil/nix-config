@@ -9,6 +9,9 @@ return {
     require("outline").setup({
       outline_items = {
         auto_set_cursor = false,
+        auto_update_events = {
+          follow = {},
+        },
       },
       symbol_folding = {
         markers = { "+", "-" },
