@@ -23,9 +23,7 @@ return {
     local on_attach = function(client)
       local opts = { noremap = true, silent = true }
 
-      map("n", "K", function()
-        vim.lsp.buf.hover({ border = "single", max_height = 25 })
-      end, opts)
+      map("n", "K", vim.lsp.buf.hover, opts)
       map("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
       map("n", "<Leader>d", function()
         vim.diagnostic.config({
@@ -100,9 +98,16 @@ return {
       signs = true,
       underline = false,
       severity_sort = true,
-      float = {
-        border = "single",
-      },
     })
+
+    local hover = vim.lsp.buf.hover
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.lsp.buf.hover = function()
+      return hover({
+        border = "single",
+        max_width = math.floor(vim.o.columns * 0.7),
+        max_height = math.floor(vim.o.lines * 0.7),
+      })
+    end
   end,
 }
