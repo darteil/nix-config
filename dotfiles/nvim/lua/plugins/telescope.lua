@@ -54,6 +54,8 @@ return {
         },
         lsp_definitions = {
           disable_devicons = true,
+          initial_mode = "normal",
+          show_line = false,
         },
         lsp_references = {
           disable_devicons = true,
