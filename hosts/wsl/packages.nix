@@ -16,6 +16,7 @@ pkgs: with pkgs; [
   bat
   ripgrep
   gcc9
+  gnumake
   home-manager
   tree-sitter
   pkgs.unstable.eza
