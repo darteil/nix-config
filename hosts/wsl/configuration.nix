@@ -4,6 +4,7 @@
   wsl.enable = true;
   wsl.defaultUser = "darteil";
   wsl.useWindowsDriver = true;
+  wsl.interop.includePath = false;
 
   time = {
     timeZone = "Asia/Tomsk";
