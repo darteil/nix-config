@@ -48,6 +48,14 @@ return {
       },
     }
 
+    local function virtual_lines_show_status()
+      if vim.diagnostic.config().virtual_lines then
+        return "diagnostic"
+      else
+        return ""
+      end
+    end
+
     lualine.setup({
       options = {
         icons_enabled = true,
@@ -72,6 +80,7 @@ return {
             sections = { "error", "warn", "info", "hint" },
             symbols = { error = "E", warn = "W", info = "I", hint = "H" },
           },
+          { virtual_lines_show_status, color = { fg = kanagawa_colors.black0, bg = kanagawa_colors.red } },
         },
         lualine_y = { { "encoding", left_padding = 2 }, { "fileformat", icons_enabled = false, right_padding = 2 } },
         lualine_z = {},
