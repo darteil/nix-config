@@ -22,14 +22,12 @@
       jq
       ripgrep
 
-      google-chrome
       firefox
       gcc9
+      gnumake
       tree-sitter
       fuzzel
       waybar
-      hyprpaper
-      hyprpicker
 
       # Development
       nixpkgs-fmt

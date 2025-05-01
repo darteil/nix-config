@@ -74,7 +74,7 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.sway}/bin/sway";
         user = "darteil";
       };
       default_session = initial_session;
@@ -97,6 +97,7 @@
 
   fonts = {
     packages = with pkgs; [
+      jetbrains-mono
       ubuntu_font_family
     ];
   };
@@ -108,18 +109,33 @@
     shell = pkgs.fish;
   };
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland = {
-        enable = false;
-      };
-      package = pkgs.unstable.hyprland;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+  };
+
+  programs.sway = {
+    enable = true;
+    xwayland = {
+      enable = false;
     };
+    wrapperFeatures.gtk = true;
   };
 
   programs.fish = {
     enable = true;
+  };
+
+  services.keyd = {
+    enable = true;
+    keyboards.default = {
+      settings = {
+        main = {
+          capslock = "layer(control)";
+        };
+      };
+    };
   };
 
   services.openssh = {

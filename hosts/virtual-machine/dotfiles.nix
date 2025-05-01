@@ -8,7 +8,7 @@ in
   home = {
     file = {
       ".config/foot".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/foot";
-      ".config/hypr".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/hypr";
+      ".config/sway".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/sway";
       ".config/waybar".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/waybar";
       ".config/fuzzel".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/fuzzel";
       ".config/nvim".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/nvim";
