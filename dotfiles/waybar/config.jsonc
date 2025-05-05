@@ -1,18 +1,22 @@
 {
+    "id": "bar-1",
+    "ipc": true,
     "layer": "top",
-    "height": 25,
+    "height": 28,
     "spacing": 5,
     "margin-top" :5,
     "margin-right" :8,
     "margin-left" :8,
 
     "modules-left": [
-      "sway/workspaces"
+      "sway/workspaces",
+      "sway/mode"
     ],
 
     "modules-center": [],
 
     "modules-right": [
+      "sway/language",
       "cpu",
       "memory",
       "clock"
@@ -28,6 +32,17 @@
         "5": [],
         "6": []
       }
+    },
+
+    "sway/mode": {
+       "format": "<span color='#181616' bgcolor='#72a7bc' > Mode </span> {} ",
+       "max-length": 50
+    },
+
+    "sway/language": {
+      "format": "<span color='#181616' bgcolor='#C0A36E' > Lang </span> {flag} ",
+      "format-ru": "RU",
+      "format-en": "US",
     },
 
     "tray": {

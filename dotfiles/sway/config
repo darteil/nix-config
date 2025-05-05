@@ -12,6 +12,11 @@ gaps inner 10
 output Virtual-1 resolution 1920x1080 position 1920,0
 output * bg ~/Images/bg.jpg fit
 
+input type:keyboard {
+  xkb_layout us,ru
+  xkb_options "grp:alt_shift_toggle,ctrl:swapcaps"
+}
+
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
@@ -20,7 +25,6 @@ floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
@@ -94,7 +98,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym Print exec grim
 
 exec systemctl --user import-environment
-exec waybar
+
+bar {
+  id bar-1
+  swaybar_command waybar
+}

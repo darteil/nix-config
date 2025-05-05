@@ -97,6 +97,7 @@
 
   fonts = {
     packages = with pkgs; [
+      mononoki
       jetbrains-mono
       ubuntu_font_family
     ];
@@ -125,17 +126,6 @@
 
   programs.fish = {
     enable = true;
-  };
-
-  services.keyd = {
-    enable = true;
-    keyboards.default = {
-      settings = {
-        main = {
-          capslock = "layer(control)";
-        };
-      };
-    };
   };
 
   services.openssh = {

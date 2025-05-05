@@ -23,13 +23,14 @@
       ripgrep
 
       firefox
+      google-chrome
       gcc9
       gnumake
-      tree-sitter
       fuzzel
       waybar
 
       # Development
+      tree-sitter
       nixpkgs-fmt
       nodePackages.bash-language-server
       lua-language-server

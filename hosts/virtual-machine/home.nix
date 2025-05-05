@@ -41,6 +41,26 @@
     };
   };
 
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      name = "Qogir";
+      package = pkgs.qogir-icon-theme;
+    };
+
+    theme = {
+      name = "Qogir-Light";
+      package = pkgs.qogir-theme;
+    };
+
+    cursorTheme = {
+      name = "Simp1e-Adw";
+      package = pkgs.simp1e-cursors;
+      size = 20;
+    };
+  };
+
   programs.fzf = {
     enable = true;
   };
