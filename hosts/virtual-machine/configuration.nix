@@ -97,8 +97,6 @@
 
   fonts = {
     packages = with pkgs; [
-      mononoki
-      jetbrains-mono
       ubuntu_font_family
     ];
   };
