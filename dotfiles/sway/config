@@ -8,7 +8,7 @@ set $right l
 set $term foot
 set $menu fuzzel
 
-gaps inner 10
+gaps inner 5
 output Virtual-1 resolution 1920x1080 position 1920,0
 output * bg ~/Images/bg.jpg fit
 

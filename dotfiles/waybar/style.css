@@ -1,5 +1,5 @@
 * {
-  padding: 0;
+  padding: 0 0px;
   margin: 0;
   min-height: 0;
   border-radius: 0;
@@ -9,14 +9,40 @@
   box-shadow: none;
 }
 
-/* the whole window */
 window#waybar {
-  color: #c5c9c5;
   background: none;
 }
 
 window#waybar.hidden {
   opacity: 1;
+}
+#cpu span {
+  border: 5px solid red;
+}
+
+#tray,
+#cpu,
+#memory,
+#mode,
+#language,
+#clock {
+  font-family: "Ubuntu Mono";
+  font-size: 18px;
+  color: #DCD7BA;
+  background: #1F1F28;
+  padding: 2px 5px 2px 2px;
+  border: 1px solid #C8C093;
+}
+
+/* ================================ */
+/*       workspaces module          */
+/* ================================ */
+
+#workspaces {
+  background-color: #1F1F28;
+  font-family: "Ubuntu Mono";
+  font-size: 18px;
+  margin-left: 5px;
 }
 
 #workspaces button,
@@ -25,52 +51,25 @@ window#waybar.hidden {
 #workspaces button.visible:hover,
 #workspaces button.active,
 #workspaces button.active:hover,
-#workspaces button.urgent,
-#tray,
-#cpu,
-#memory,
-#mode,
-#language,
-#clock {
-  font-family: "JetBrains Mono SemiBold";
-  font-size: 16px;
-  color: #181616;
-  background: #181616;
-  border: 3px solid #181616;
-  border-radius: 3px;
-}
-
-#tray,
-#cpu,
-#memory,
-#language,
-#clock {
-  padding-right: 4px;
-}
-
-/* ================================ */
-/*       workspaces module          */
-/* ================================ */
-#workspaces {
-  margin: 0px;
+#workspaces button.urgent
+{
+  margin-right: 2px;
+  border: 1px solid #C8C093;
 }
 
 #workspaces button {
-  padding: 0 0;
-  margin: 0px 1px;
-  min-width: 20px;
   color: #181616;
-  background-color: #c5c9c5;
+  background: #DCD7BA;
 }
 
 #workspaces button:hover {
-  color: #181616;
-  background-color: #c5c9c5;
+  color: #DCD7BA;
+  background: #1F1F28;
 }
 
 #workspaces button.empty {
-  color: #c5c9c5;
-  background: #181616;
+  color: #DCD7BA;
+  background: #1F1F28;
 }
 
 #workspaces button.visible {
@@ -97,46 +96,14 @@ window#waybar.hidden {
   background: #e46876;
 }
 
-/* ================================ */
-/*            tray                 */
-/* ================================ */
-
 #tray {
   padding: 0 6px 0 6px;
 }
 
-/* ================================ */
-/*            cpu                  */
-/* ================================ */
-#cpu {
-  color: #ff9e3b;
-}
-
-/* ================================ */
-/*            memory                */
-/* ================================ */
-#memory {
-  color: #72a7bc;
-}
-
-/* ================================ */
-/*            clock                 */
-/* ================================ */
-#clock {
-  color: #87a987;
-}
-
-/* ================================ */
-/*            mode                  */
-/* ================================ */
-#mode {
-  color: #c5c9c5;
-}
-
-/* ================================ */
-/*            language              */
-/* ================================ */
 #language {
-  color: #C0A36E;
   padding-right: 6px;
+}
+
+#clock {
+  margin-right: 5px;
 }

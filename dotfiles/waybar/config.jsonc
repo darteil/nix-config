@@ -2,11 +2,12 @@
     "id": "bar-1",
     "ipc": true,
     "layer": "top",
-    "height": 28,
-    "spacing": 5,
+    "position": "top",
+    "spacing": 4,
     "margin-top" :5,
-    "margin-right" :8,
-    "margin-left" :8,
+    "margin-right" :0,
+    "margin-left" :0,
+    "margin-bottom" :0,
 
     "modules-left": [
       "sway/workspaces",
@@ -40,7 +41,7 @@
     },
 
     "sway/language": {
-      "format": "<span color='#181616' bgcolor='#C0A36E' > Lang </span> {flag} ",
+      "format": "<span color='#181616' bgcolor='#C0A36E' > Lang </span> {} ",
       "format-ru": "RU",
       "format-en": "US",
     },
