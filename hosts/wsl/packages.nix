@@ -19,6 +19,7 @@ pkgs: with pkgs; [
   gnumake
   home-manager
   tree-sitter
+  tig
   pkgs.unstable.eza
   pkgs.unstable.neovim
 
