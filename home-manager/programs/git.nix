@@ -29,17 +29,18 @@
     aliases = {
       lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
-    delta = {
-      enable = true;
-      options = {
-        syntax-theme = "Kanagawa";
-        line-numbers = true;
-        side-by-side = true;
-      };
-    };
     extraConfig = {
       merge = {
         tool = "nvimdiff";
+      };
+      diff = {
+        tool = "nvimdiff";
+      };
+      difftool = {
+        nvimdiff = {
+          cmd = "NVIM_APPNAME=nvim-light nvim -d \"$LOCAL\" \"$REMOTE\"";
+        };
+        prompt = false;
       };
       core = {
         editor = "nvim";
