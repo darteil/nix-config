@@ -25,7 +25,6 @@ opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
-opt.clipboard = "unnamedplus"
 
 opt.lcs = {
   trail = "·",
@@ -51,9 +50,3 @@ opt.splitbelow = true
 cmd("filetype plugin indent on")
 
 opt.background = "dark"
-
-vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
-})
