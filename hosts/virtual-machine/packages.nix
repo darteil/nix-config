@@ -9,6 +9,7 @@
     htop
     home-manager
     killall
+    pkgs.unstable.tray-tui
   ];
 
   users.users."darteil" = {
