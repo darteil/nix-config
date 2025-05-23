@@ -87,6 +87,20 @@ window#waybar.hidden {
   padding: 0 6px 0 6px;
 }
 
+#tray {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#custom-tray_expand {
+  color: #DCD7BA;
+}
+
+#custom-tray_expand:hover {
+  color: #181616;
+  background-color: #98BB6C;
+}
+
 @keyframes critical-animation {
   from {
     opacity: 1;

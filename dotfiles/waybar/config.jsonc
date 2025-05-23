@@ -24,8 +24,15 @@
       "custom/separator",
       "memory",
       "custom/separator",
-      "clock"
+      "clock",
+      "custom/separator",
+      "group/tray_minimized"
     ],
+
+    "tray": {
+      "icon-size": 18,
+      "spacing": 5
+    },
 
     "sway/workspaces": {
       "on-click": "activate",
@@ -33,6 +40,21 @@
 
     "custom/separator": {
       "format": "|",
+    },
+
+    "custom/tray_expand": {
+      "tooltip": false,
+      "format": " Tray "
+    },
+
+    "group/tray_minimized": {
+      "orientation": "horizontal",
+      "modules": ["custom/tray_expand", "tray"],
+      "drawer": {
+        "click-to-reveal": true,
+        "transition-duration": 0,
+        "children-class": "tray_minimized"
+      }
     },
 
     "sway/mode": {
