@@ -20,12 +20,12 @@ pkgs: with pkgs; [
   home-manager
   tree-sitter
   tig
+  neovim
   pkgs.unstable.eza
-  pkgs.unstable.neovim
 
   # Development
-  nodejs_23
-  nodejs_23.pkgs.pnpm
+  nodejs_24
+  nodejs_24.pkgs.pnpm
   pm2
   prettierd
   typescript
