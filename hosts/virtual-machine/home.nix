@@ -63,6 +63,18 @@
 
   programs.fzf = {
     enable = true;
+    enableFishIntegration = true;
+    defaultOptions = [
+      "--style full"
+      "--no-scrollbar"
+      "--border sharp"
+      "--list-border sharp"
+      "--input-border sharp"
+      "--header-border sharp"
+      "--preview-border sharp"
+      "--layout reverse"
+      "--color=pointer:#76946A"
+    ];
   };
 
   programs.home-manager.enable = true;
