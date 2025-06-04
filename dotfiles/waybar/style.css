@@ -9,14 +9,8 @@
   box-shadow: none;
 }
 
-#custom-separator {
-  font-family: "Ubuntu Mono";
-  font-size: 18px;
-  color: #DCD7BA;
-}
-
 window#waybar {
-  background: #181616;
+  background: none;
 }
 
 window#waybar.hidden {
@@ -30,35 +24,38 @@ window#waybar.hidden {
 #clock {
   font-family: "Ubuntu Mono";
   font-size: 18px;
+  margin: 2px;
+  border: 2px solid #181616;
+  padding: 3px 2px 2px 2px;
+  background: #181616;
 }
 
 #mode {
-  color: #DCD7BA;
+  font-size: 16px;
+  padding-left: 0;
+  color: #dcd7ba;
 }
 
 #workspaces {
   font-family: "Ubuntu Mono";
   font-size: 18px;
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-#workspaces button {
-  margin-right: 2px;
+  margin: 2px 2px 2px 5px;
 }
 
 #workspaces button {
   padding-top: 1px;
-  color: #DCD7BA;
+  margin-right: 3px;
+  border: 2px solid #181616;
+  background-color: #181616;
+  color: #dcd7ba;
 }
 
 #workspaces button:hover {
-  background: none;
 }
 
 #workspaces button.visible {
-  background: #98BB6C;
   color: #181616;
+  background-color: #dcd7ba;
 }
 
 #workspaces button.urgent {
@@ -67,38 +64,37 @@ window#waybar.hidden {
 }
 
 #language {
-  color: #7E9CD8;
+  color: #7e9cd8;
   padding: 0 6px 0 6px;
 }
 
 #clock {
-  color: #98BB6C;
+  color: #98bb6c;
   margin-right: 2px;
   padding: 0 6px 0 6px;
 }
 
 #cpu {
-  color: #FF9E3B;
+  color: #ff9e3b;
   padding: 0 6px 0 6px;
 }
 
 #memory {
-  color: #D27E99;
+  color: #d27e99;
   padding: 0 6px 0 6px;
 }
 
-#tray {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
 #custom-tray_expand {
-  color: #DCD7BA;
+  color: #dcd7ba;
+  margin: 2px 5px 2px 2px;
+  border: 2px solid #181616;
+  padding: 3px 2px 2px 2px;
+  background: #181616;
 }
 
 #custom-tray_expand:hover {
   color: #181616;
-  background-color: #98BB6C;
+  background-color: #98bb6c;
 }
 
 @keyframes critical-animation {

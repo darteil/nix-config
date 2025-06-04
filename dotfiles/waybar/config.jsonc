@@ -4,7 +4,7 @@
     "layer": "top",
     "position": "top",
     "spacing": 0,
-    "height": 24,
+    "height": 30,
     "margin-top" :0,
     "margin-right" :0,
     "margin-left" :0,
@@ -19,13 +19,9 @@
 
     "modules-right": [
       "sway/language",
-      "custom/separator",
       "cpu",
-      "custom/separator",
       "memory",
-      "custom/separator",
       "clock",
-      "custom/separator",
       "group/tray_minimized"
     ],
 
@@ -36,10 +32,6 @@
 
     "sway/workspaces": {
       "on-click": "activate",
-    },
-
-    "custom/separator": {
-      "format": "|",
     },
 
     "custom/tray_expand": {
@@ -63,11 +55,11 @@
     },
 
     "sway/language": {
-      "format": "Lang: {}",
+      "format": "lang: {}",
     },
 
     "cpu": {
-      "format": "Cpu: {usage:3}%",
+      "format": "CPU: {usage:3}%",
       "tooltip": false,
       "interval": 1,
       "states": {
@@ -76,7 +68,7 @@
     },
 
     "memory": {
-      "format": "Mem: {percentage:3}%",
+      "format": "RAM: {percentage:3}%",
       "interval": 5,
 
       "states": {
@@ -86,7 +78,7 @@
 
     "clock": {
       "interval": 1,
-      "format": "{:%H:%M:%S (%Z)}",
+      "format": "Time: {:%H:%M:%S (%Z)}",
       "tooltip": false,
       "timezones": [
         "Asia/Tomsk",
