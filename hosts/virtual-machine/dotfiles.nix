@@ -13,6 +13,7 @@ in
       ".config/fuzzel".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/fuzzel";
       ".config/nvim".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/nvim";
       ".config/bat".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/bat";
+      ".config/rofi".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/rofi";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/vifmrc";
       ".vifm/colors".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/colors";
     };

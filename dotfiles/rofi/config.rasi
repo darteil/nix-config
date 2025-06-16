@@ -1,0 +1,5 @@
+configuration {
+  font: "Ubuntu Mono 16";
+}
+
+@theme "kanagawa-colors-theme"

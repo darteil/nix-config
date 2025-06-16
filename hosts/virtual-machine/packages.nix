@@ -28,6 +28,7 @@
       gcc9
       gnumake
       fuzzel
+      rofi-wayland
       waybar
 
       # Development
