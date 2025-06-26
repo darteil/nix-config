@@ -67,7 +67,7 @@
     defaultOptions = [
       "--style full"
       "--no-scrollbar"
-      "--border sharp"
+      "--border none"
       "--list-border sharp"
       "--input-border sharp"
       "--header-border sharp"
