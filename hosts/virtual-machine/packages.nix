@@ -22,6 +22,7 @@
       bat
       jq
       ripgrep
+      calc
 
       firefox
       google-chrome
