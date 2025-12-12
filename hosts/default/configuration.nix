@@ -3,7 +3,9 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nvidia.nix
     ./packages.nix
+    ./zapret.nix
   ];
 
   hardware = {
@@ -12,34 +14,53 @@
     };
   };
 
+  services.xserver.enable = false;
+  services = {
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  services.gnome.core-apps.enable = false;
+  services.gnome.core-developer-tools.enable = false;
+  services.gnome.games.enable = false;
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  nixpkgs = {
+    overlays = [
+      # When applied, the unstable nixpkgs set 
+      #
+      # Example:
+      # pkgs.unstable.bottom
+      outputs.overlays.unstable-packages
+      outputs.overlays.chrome-wayland
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
-    extraConfig.pipewire."92-low-latency" = {
-      "context.properties" = {
-        "default.clock.rate" = 48000;
-        "default.clock.quantum" = 512;
-        "default.clock.min-quantum" = 128;
-        "default.clock.max-quantum" = 2048;
-      };
-    };
   };
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
-    };
-  };
-
-  virtualisation.vmware.guest.enable = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -70,40 +91,17 @@
     };
   };
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.sway}/bin/sway";
-        user = "darteil";
-      };
-      default_session = initial_session;
-    };
-  };
-
-  nixpkgs = {
-    overlays = [
-      # When applied, the unstable nixpkgs set 
-      #
-      # Example:
-      # pkgs.unstable.bottom
-      outputs.overlays.unstable-packages
-      outputs.overlays.chrome-wayland
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
 
   fonts = {
     packages = with pkgs; [
-      ubuntu_font_family
+      nerd-fonts.ubuntu-sans
+      nerd-fonts.ubuntu-mono
     ];
   };
 
   users.users."darteil" = {
     isNormalUser = true;
-    description = "";
+    description = "Romanov Yuri";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
     shell = pkgs.fish;
   };
@@ -112,14 +110,6 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-  };
-
-  programs.sway = {
-    enable = true;
-    xwayland = {
-      enable = false;
-    };
-    wrapperFeatures.gtk = true;
   };
 
   programs.fish = {
@@ -134,5 +124,5 @@
   };
 
   environment.shells = with pkgs; [ fish ];
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.11";
 }

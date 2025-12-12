@@ -11,6 +11,7 @@
       "nvimlight" = "NVIM_APPNAME=nvim-light nvim";
     };
     shellInit = ''
+      fish_config theme choose "Base16 Default Dark"
       set fish_greeting
       set fish_color_valid_path
       set -g fish_autosuggestion_enabled 1
@@ -26,46 +27,21 @@
       set fish_cursor_visual block
       set fish_vi_force_cursor 1
 
-      set -l foreground DCD7BA normal
-      set -l selection 2D4F67 brcyan
-      set -l comment 727169 brblack
-      set -l red C34043 red
-      set -l orange FF9E64 brred
-      set -l yellow C0A36E yellow
-      set -l green 76946A green
-      set -l purple 957FB8 magenta
-      set -l cyan 7AA89F cyan
-      set -l pink D27E99 brmagenta
-
-      # Syntax Highlighting Colors
-      set -g fish_color_normal $foreground
-      set -g fish_color_command $cyan
-      set -g fish_color_keyword $pink
-      set -g fish_color_quote $yellow
-
-      set -g fish_color_redirection $foreground
-      set -g fish_color_end $orange
-      set -g fish_color_error $red
-      set -g fish_color_param $purple
-      set -g fish_color_comment $comment
-      set -g fish_color_selection --background=$selection
-      set -g fish_color_search_match --background=$selection
-      set -g fish_color_operator $green
-      set -g fish_color_escape $pink
-      set -g fish_color_autosuggestion $comment
-
       # Completion Pager Colors
-      set -g fish_pager_color_progress $comment
-      set -g fish_pager_color_prefix $cyan
-      set -g fish_pager_color_completion $foreground
-      set -g fish_pager_color_description $comment
-
+      set -g fish_pager_color_progress brblack
+      set -g fish_pager_color_prefix magenta
+      set -g fish_pager_color_completion magenta
+      set -g fish_pager_color_description brblack
+      set -g fish_pager_color_selected_completion black
+      set -g fish_pager_color_selected_description black
+      set -g fish_pager_color_selected_prefix black
+      set -g fish_pager_color_selected_background --background=brwhite
 
       function fish_prompt
-        set -l green (set_color 76946A)
-        set -l normal (set_color DCD7BA)
-        set -l yellow (set_color C0A36E)
-        set -l purple (set_color 957FB8)
+        set -l green (set_color green)
+        set -l normal (set_color normal)
+        set -l yellow (set_color yellow)
+        set -l purple (set_color magenta)
 
         set -l nix_shell_info (
           if test -n "$IN_NIX_SHELL"

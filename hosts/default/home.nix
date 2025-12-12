@@ -28,7 +28,7 @@
   home = {
     username = "darteil";
     homeDirectory = "/home/darteil";
-    stateVersion = "24.05";
+    stateVersion = "25.11";
 
     pointerCursor = {
       package = pkgs.simp1e-cursors;
@@ -36,24 +36,32 @@
       size = 20;
     };
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
+    # sessionVariables = {
+    #   EDITOR = "nvim";
+    # };
   };
+
+  home.packages = with pkgs; [
+    gnome-calculator
+    gnome-bluetooth
+    gnome-clocks
+    gnome-tweaks
+    gnome-font-viewer
+    gnome-system-monitor
+    nautilus
+    showtime
+    papers
+    loupe
+
+    gnomeExtensions.arcmenu
+    gnomeExtensions.open-bar
+    gnomeExtensions.status-area-horizontal-spacing
+    gnomeExtensions.appindicator
+    gnomeExtensions.blur-my-shell
+  ];
 
   gtk = {
     enable = true;
-
-    iconTheme = {
-      name = "Qogir";
-      package = pkgs.qogir-icon-theme;
-    };
-
-    theme = {
-      name = "Qogir-Light";
-      package = pkgs.qogir-theme;
-    };
-
     cursorTheme = {
       name = "Simp1e-Adw";
       package = pkgs.simp1e-cursors;
