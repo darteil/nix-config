@@ -58,6 +58,7 @@
     gnomeExtensions.status-area-horizontal-spacing
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.vitals
   ];
 
   gtk = {
