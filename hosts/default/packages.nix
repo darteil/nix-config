@@ -39,6 +39,7 @@
       sublime3
       hydrapaper
       qbittorrent
+      wezterm
 
       # Development
       nodejs_24

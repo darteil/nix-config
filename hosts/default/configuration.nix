@@ -94,7 +94,7 @@
 
   fonts = {
     packages = with pkgs; [
-      nerd-fonts.ubuntu-sans
+      ubuntu-classic
       nerd-fonts.ubuntu-mono
     ];
   };
@@ -114,6 +114,13 @@
 
   programs.fish = {
     enable = true;
+  };
+
+  programs.throne = {
+    enable = true;
+    tunMode = {
+      enable = true;
+    };
   };
 
   services.openssh = {
