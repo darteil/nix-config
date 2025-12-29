@@ -6,8 +6,9 @@ return {
     local kanagawa = require("kanagawa")
 
     kanagawa.setup({
+      statementStyle = { bold = false },
+      typeStyle = { italic = false, bold = false },
       undercurl = false,
-      keywordStyle = { italic = false },
       colors = {
         theme = {
           all = {
@@ -19,17 +20,24 @@ return {
       },
       overrides = function(colors)
         local theme = colors.theme
+
         return {
-          NormalFloat = { link = "Normal" },
-          FloatBorder = { bg = "none" },
+          Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+          PmenuSel = { fg = "none", bg = theme.ui.bg_p2 },
+          PmenuSbar = { bg = theme.ui.bg_m1 },
+          PmenuThumb = { bg = colors.palette.oldWhite },
+
+          NormalFloat = { theme.ui.shade0, bg = theme.ui.bg_p1 },
+          FloatBorder = { bg = theme.ui.bg_p1 },
           FloatTitle = { bg = "none" },
 
-          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-          WinSeparator = { fg = theme.ui.nontext },
+          WinSeparator = { bg = theme.ui.bg_p2 },
 
-          TelescopePromptBorder = { fg = theme.ui.nontext },
-          TelescopeResultsBorder = { fg = theme.ui.nontext },
-          TelescopePreviewBorder = { fg = theme.ui.nontext },
+          Bold = { bold = false },
+          Boolean = { bold = false },
+          CurSearch = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = false },
+          ["@keyword.operator"] = { fg = theme.syn.operator, bold = false },
+          ["@lsp.typemod.function.readonly"] = { fg = theme.syn.fun, bold = false },
         }
       end,
     })

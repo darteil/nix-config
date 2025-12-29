@@ -1,13 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
-  after = { "nvim-cmp" },
+  after = { "blink.cmp" },
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
     "b0o/schemastore.nvim",
   },
   config = function()
-    local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local schemastore = require("schemastore")
 
     -- Mappings.
@@ -36,11 +34,11 @@ return {
       client.server_capabilities.documentRangeFormattingProvider = false
     end
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
     local servers = { "ts_ls", "html", "cssls", "bashls", "gopls" }
 
     for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup({
+      vim.lsp.config(lsp, {
         capabilities = capabilities,
         on_attach = on_attach,
         flags = {
@@ -49,7 +47,7 @@ return {
       })
     end
 
-    lspconfig.jsonls.setup({
+    vim.lsp.config("jsonls", {
       capabilities = capabilities,
       on_attach = on_attach,
       flags = {
@@ -63,7 +61,7 @@ return {
       },
     })
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       on_attach = on_attach,
       flags = {
@@ -74,11 +72,22 @@ return {
           completion = {
             callSnippet = "Replace",
           },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            ignoreDir = { ".git" },
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+              vim.api.nvim_get_runtime_file("lua", true),
+            },
+          },
         },
       },
     })
 
-    lspconfig.eslint.setup({
+    vim.lsp.config("eslint", {
       capabilities = capabilities,
       on_attach = on_attach,
       flags = {
@@ -92,6 +101,15 @@ return {
       },
     })
 
+    vim.lsp.enable("ts_ls")
+    vim.lsp.enable("html")
+    vim.lsp.enable("cssls")
+    vim.lsp.enable("bashls")
+    vim.lsp.enable("jsonls")
+    vim.lsp.enable("eslint")
+    -- vim.lsp.enable("lua_ls")
+    -- vim.lsp.enable("gopls")
+
     vim.diagnostic.config({
       virtual_text = false,
       virtual_lines = false,
@@ -104,9 +122,9 @@ return {
     ---@diagnostic disable-next-line: duplicate-set-field
     vim.lsp.buf.hover = function()
       return hover({
-        border = "single",
-        max_width = math.floor(vim.o.columns * 0.7),
-        max_height = math.floor(vim.o.lines * 0.7),
+        border = "solid",
+        max_width = math.floor(vim.o.columns * 0.5),
+        max_height = math.floor(vim.o.lines * 0.4),
       })
     end
   end,

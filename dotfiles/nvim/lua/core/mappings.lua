@@ -21,6 +21,9 @@ map("n", "N", "Nzz", map_arg)
 map("n", "<C-d>", "<C-d>zz", map_arg)
 map("n", "<C-u>", "<C-u>zz", map_arg)
 
+-- Open buffer in tab
+map("n", "<leader>z", ":tab split<CR>", map_arg)
+
 -- Yank into system clipboard
 map({ "n", "v" }, "<leader>y", '"+y')
 -- map({ "n", "V" }, "<leader>yy", '"+yy')

@@ -8,7 +8,7 @@ return {
       "~/Development/other/*",
     },
     picker = {
-      type = "telescope",
+      type = "fzf-lua",
     },
     last_session_on_startup = false,
   },
