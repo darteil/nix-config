@@ -49,7 +49,7 @@
     gnome-font-viewer
     gnome-system-monitor
     nautilus
-    showtime
+    celluloid
     papers
     loupe
 
