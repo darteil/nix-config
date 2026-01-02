@@ -94,8 +94,11 @@
 
   fonts = {
     packages = with pkgs; [
+      roboto
       ubuntu-classic
       nerd-fonts.ubuntu-mono
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
     ];
   };
 
