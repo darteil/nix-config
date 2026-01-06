@@ -1,5 +1,8 @@
 { config, pkgs, outputs, inputs, ... }:
 
+let
+  vars = import ./variables.nix;
+in
 {
   imports = [
     ../../home-manager/programs/fish.nix
@@ -26,8 +29,8 @@
   };
 
   home = {
-    username = "darteil";
-    homeDirectory = "/home/darteil";
+    username = vars.username;
+    homeDirectory = "/home/${vars.username}";
     stateVersion = "25.11";
 
     pointerCursor = {

@@ -21,7 +21,6 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      nixConfigsPath = "nix-config"; # Path to the directory with nix settings relative to the home directory
     in
     {
       overlays = import ./overlays {
@@ -47,14 +46,14 @@
       homeConfigurations = {
         default = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs nixConfigsPath; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/default/home.nix
           ];
         };
         wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs nixConfigsPath; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/wsl/home.nix
           ];

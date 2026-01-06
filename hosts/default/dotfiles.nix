@@ -1,8 +1,10 @@
-{ config, inputs, nixConfigsPath, ... }:
+{ config, inputs, ... }:
 
 let
+  vars = import ./variables.nix;
+
   inherit (config.lib.file) mkOutOfStoreSymlink;
-  nixConfigsAbsolutePath = "${config.home.homeDirectory}/${nixConfigsPath}";
+  nixConfigsAbsolutePath = "${config.home.homeDirectory}/${vars.nixConfigPath}";
 in
 {
   home = {

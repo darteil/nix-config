@@ -1,5 +1,8 @@
 { config, pkgs, outputs, ... }:
 
+let
+  vars = import ./variables.nix;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -65,7 +68,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking = {
-    hostName = "darteil-pc";
+    hostName = "${vars.username}-pc";
     networkmanager = {
       enable = true;
     };
@@ -102,7 +105,7 @@
     ];
   };
 
-  users.users."darteil" = {
+  users.users.${vars.username} = {
     isNormalUser = true;
     description = "Romanov Yuri";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
