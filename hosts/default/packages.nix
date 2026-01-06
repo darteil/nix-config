@@ -6,9 +6,11 @@
     wget
     vim
     vifm
+    tree
     htop
     home-manager
     killall
+    wl-clipboard
     nix-search-cli
   ];
 

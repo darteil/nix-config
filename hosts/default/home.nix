@@ -53,6 +53,7 @@ in
     gnome-system-monitor
     nautilus
     celluloid
+    decibels
     papers
     loupe
 
