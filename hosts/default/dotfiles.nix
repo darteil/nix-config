@@ -13,7 +13,6 @@ in
       ".config/wezterm".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/wezterm";
       ".config/alacritty".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/alacritty";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/vifmrc";
-      ".vifm/colors".source = mkOutOfStoreSymlink "${nixConfigsAbsolutePath}/dotfiles/vifm/colors";
     };
   };
 }
