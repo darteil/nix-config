@@ -38,7 +38,7 @@
       };
       difftool = {
         nvimdiff = {
-          cmd = "NVIM_APPNAME=nvim-light nvim -d \"$LOCAL\" \"$REMOTE\"";
+          cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
         prompt = false;
       };
