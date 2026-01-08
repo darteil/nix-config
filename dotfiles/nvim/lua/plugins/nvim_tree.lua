@@ -16,7 +16,7 @@ return {
       vim.keymap.set("n", "S", api.node.open.horizontal, opts("Open: Horizontal Split"))
       vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
 
-      vim.keymap.set("n", "l", function()
+      function open_file()
         local node = api.tree.get_node_under_cursor()
 
         if node.type == "file" then
@@ -25,7 +25,10 @@ return {
         elseif node.type == "directory" then
           api.node.open.edit()
         end
-      end, opts("Open"))
+      end
+
+      vim.keymap.set("n", "l", open_file, opts("Open"))
+      vim.keymap.set("n", "<CR>", open_file, opts("Open"))
 
       vim.keymap.set("n", "o", function()
         local node = api.tree.get_node_under_cursor()
