@@ -26,6 +26,7 @@
       ripgrep
       gcc15
       gnumake
+      tig
 
       vscode
       obs-studio

@@ -13,6 +13,7 @@ in
       ".config/bat".source = mkOutOfStoreSymlink "${vars.nixConfigPath}/dotfiles/bat";
       ".config/wezterm".source = mkOutOfStoreSymlink "${vars.nixConfigPath}/dotfiles/wezterm";
       ".vifm/vifmrc".source = mkOutOfStoreSymlink "${vars.nixConfigPath}/dotfiles/vifm/vifmrc";
+      ".config/tig".source = mkOutOfStoreSymlink "${vars.nixConfigPath}/dotfiles/tig";
     };
   };
 }
