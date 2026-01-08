@@ -9,14 +9,9 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    NixOS-WSL = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, NixOS-WSL, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -34,14 +29,6 @@
             ./hosts/default/configuration.nix
           ];
         };
-        wsl = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs system outputs; };
-          modules = [
-            NixOS-WSL.nixosModules.wsl
-            ./hosts/wsl/configuration.nix
-          ];
-        };
       };
       homeConfigurations = {
         default = home-manager.lib.homeManagerConfiguration {
@@ -49,13 +36,6 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/default/home.nix
-          ];
-        };
-        wsl = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/wsl/home.nix
           ];
         };
       };
