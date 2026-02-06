@@ -4,13 +4,6 @@ let
   vars = import ./variables.nix;
 in
 {
-  imports = [
-    ../../home-manager/programs/fish.nix
-    ../../home-manager/programs/tmux.nix
-    ../../home-manager/programs/git.nix
-    ./dotfiles.nix
-  ];
-
   nixpkgs = {
     overlays = [
       # When applied, the unstable nixpkgs set
@@ -27,6 +20,13 @@ in
       allowUnfreePredicate = _: true;
     };
   };
+
+  imports = [
+    ../../home-manager/programs/fish.nix
+    ../../home-manager/programs/tmux.nix
+    ../../home-manager/programs/git.nix
+    ./dotfiles.nix
+  ];
 
   home = {
     username = vars.username;

@@ -4,6 +4,20 @@ let
   vars = import ./variables.nix;
 in
 {
+  nixpkgs = {
+    overlays = [
+      # When applied, the unstable nixpkgs set 
+      #
+      # Example:
+      # pkgs.unstable.bottom
+      outputs.overlays.unstable-packages
+      # outputs.overlays.chrome-wayland
+    ];
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
@@ -17,7 +31,7 @@ in
     };
   };
 
-  services.xserver.enable = false;
+  services.xserver.enable = true;
   services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
@@ -38,20 +52,6 @@ in
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  nixpkgs = {
-    overlays = [
-      # When applied, the unstable nixpkgs set 
-      #
-      # Example:
-      # pkgs.unstable.bottom
-      outputs.overlays.unstable-packages
-      outputs.overlays.chrome-wayland
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
