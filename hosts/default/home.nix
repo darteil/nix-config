@@ -63,6 +63,7 @@ in
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
     gnomeExtensions.vitals
+    gnomeExtensions.just-perfection
   ];
 
   gtk = {
