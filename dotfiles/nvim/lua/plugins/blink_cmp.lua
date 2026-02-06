@@ -4,7 +4,12 @@ return {
   version = "1.*",
   opts = {
     completion = {
-      documentation = { auto_show = false },
+      documentation = {
+        window = {
+          border = "single",
+        },
+        auto_show = false,
+      },
       list = {
         selection = {
           preselect = false,
@@ -12,6 +17,9 @@ return {
         },
       },
       menu = {
+        max_height = 15,
+        border = "single",
+        scrollbar = false,
         draw = {
           columns = {
             { "label", "label_description", gap = 1 },
@@ -21,7 +29,6 @@ return {
       },
     },
     keymap = {
-      -- set to 'none' to disable the 'default' preset
       preset = "default",
 
       ["<Tab>"] = { "select_next", "fallback" },

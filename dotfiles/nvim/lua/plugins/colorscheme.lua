@@ -22,16 +22,17 @@ return {
         local theme = colors.theme
 
         return {
-          Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
-          PmenuSel = { fg = "none", bg = theme.ui.bg_p2 },
-          PmenuSbar = { bg = theme.ui.bg_m1 },
-          PmenuThumb = { bg = colors.palette.oldWhite },
+          BlinkCmpMenu = { fg = colors.palette.dragonWhite, bg = "none" },
+          BlinkCmpMenuBorder = { fg = colors.palette.dragonWhite, bg = "none" },
+          BlinkCmpDocBorder = { fg = colors.palette.dragonWhite, bg = "none" },
+          BlinkCmpMenuSelection = { fg = "none", bg = theme.ui.bg_p2 },
+          BlinkCmpScrollBarThumb = { bg = colors.palette.oldWhite },
 
-          NormalFloat = { theme.ui.shade0, bg = theme.ui.bg_p1 },
-          FloatBorder = { bg = theme.ui.bg_p1 },
+          NormalFloat = { fg = colors.palette.dragonWhite, bg = "none" },
+          FloatBorder = { fg = colors.palette.dragonWhite, bg = "none" },
           FloatTitle = { bg = "none" },
 
-          WinSeparator = { bg = theme.ui.bg_p2 },
+          WinSeparator = { fg = colors.palette.surimiOrange },
 
           Bold = { bold = false },
           Boolean = { bold = false },

@@ -12,23 +12,12 @@ return {
         return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
       api.config.mappings.default_on_attach(bufnr)
-      vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split"))
-      vim.keymap.set("n", "S", api.node.open.horizontal, opts("Open: Horizontal Split"))
       vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
 
-      function open_file()
-        local node = api.tree.get_node_under_cursor()
-
-        if node.type == "file" then
-          api.node.open.edit()
-          api.tree.close()
-        elseif node.type == "directory" then
-          api.node.open.edit()
-        end
-      end
-
-      vim.keymap.set("n", "l", open_file, opts("Open"))
-      vim.keymap.set("n", "<CR>", open_file, opts("Open"))
+      vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+      vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+      vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split"))
+      vim.keymap.set("n", "S", api.node.open.horizontal, opts("Open: Horizontal Split"))
 
       vim.keymap.set("n", "o", function()
         local node = api.tree.get_node_under_cursor()
@@ -45,8 +34,16 @@ return {
       end, opts("Open in oil.nvim"))
     end
 
+    local HEIGHT_RATIO = 0.8 -- You can change this
+    local WIDTH_RATIO = 0.5 -- You can change this too
+
     require("nvim-tree").setup({
       on_attach = mappings,
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
       filters = {
         dotfiles = false,
         git_ignored = false,
@@ -63,12 +60,36 @@ return {
       },
       view = {
         signcolumn = "no",
+        float = {
+          enable = true,
+          open_win_config = function()
+            local screen_w = vim.opt.columns:get()
+            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+            local window_w = screen_w * WIDTH_RATIO
+            local window_h = screen_h * HEIGHT_RATIO
+            local window_w_int = math.floor(window_w)
+            local window_h_int = math.floor(window_h)
+            local center_x = (screen_w - window_w) / 2
+            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+            return {
+              border = "single",
+              relative = "editor",
+              row = center_y,
+              col = center_x,
+              width = window_w_int,
+              height = window_h_int,
+            }
+          end,
+        },
+        width = function()
+          return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+        end,
       },
       renderer = {
         icons = {
           show = {
             file = false,
-            folder = false,
+            folder = true,
             folder_arrow = true,
             git = true,
             modified = true,
@@ -112,7 +133,7 @@ return {
     vim.api.nvim_set_hl(0, "NvimTreeGitIgnoredIcon", git_ignored_hl)
 
     vim.keymap.set("n", "<Leader>e", function()
-      api.tree.toggle({ current_window = true })
+      api.tree.toggle()
     end, { noremap = true, silent = true })
   end,
 }

@@ -33,15 +33,6 @@ return {
           },
         },
       },
-      buffers = {
-        previewer = false,
-        no_term_buffers,
-        winopts = {
-          width = 0.7,
-          height = 0.5,
-          fullscreen = false,
-        },
-      },
     })
 
     map("n", "<leader>f", fzf_lua.files, { noremap = true, silent = true })
@@ -53,6 +44,6 @@ return {
     map("n", "gp", "<cmd>NeovimProjectDiscover<CR>", { noremap = true, silent = true })
 
     map("n", "<leader>t", fzf_lua.diagnostics_document, { noremap = true, silent = true })
-    -- map("n", "<Tab>", fzf_lua.buffers, { noremap = true, silent = true })
+    map("n", "<leader><Tab>", ":b#<cr>", { noremap = true, silent = true })
   end,
 }
