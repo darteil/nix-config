@@ -35,6 +35,7 @@
       figma-linux
       firefox
       vivaldi
+      google-chrome
       telegram-desktop
       neovim
       keepassxc
