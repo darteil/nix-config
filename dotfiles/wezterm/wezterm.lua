@@ -9,8 +9,8 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.freetype_load_flags = "NO_HINTING"
 config.cell_width = 0.90
 config.window_padding = {
-	left = "1cell",
-	right = "1cell",
+	left = 0,
+	right = 0,
 	top = "0.7cell",
 	bottom = 0,
 }
@@ -19,9 +19,13 @@ config.disable_default_key_bindings = true
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1500 }
 
 config.keys = {
+	{ key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
+	{ key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
+	{ key = "0", mods = "CTRL", action = wezterm.action.ResetFontSize },
 	{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 	{ key = "=", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+	-- { key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
 	{ key = ".", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = ",", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
 	{ key = "Insert", mods = "SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
