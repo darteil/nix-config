@@ -15,7 +15,9 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in
     {
       overlays = import ./overlays {
@@ -32,7 +34,7 @@
       };
       homeConfigurations = {
         default = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          inherit pkgs;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/default/home.nix
