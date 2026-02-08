@@ -44,6 +44,5 @@ return {
     map("n", "gp", "<cmd>NeovimProjectDiscover<CR>", { noremap = true, silent = true })
 
     map("n", "<leader>t", fzf_lua.diagnostics_document, { noremap = true, silent = true })
-    map("n", "<leader><Tab>", ":b#<cr>", { noremap = true, silent = true })
   end,
 }
