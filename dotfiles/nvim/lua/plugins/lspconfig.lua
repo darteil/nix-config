@@ -35,7 +35,7 @@ return {
     end
 
     local capabilities = require("blink.cmp").get_lsp_capabilities()
-    local servers = { "ts_ls", "html", "cssls", "bashls", "gopls" }
+    local servers = { "ts_ls", "html", "cssls", "bashls", "gopls", "nixd" }
 
     for _, lsp in ipairs(servers) do
       vim.lsp.config(lsp, {
@@ -107,6 +107,7 @@ return {
     vim.lsp.enable("bashls")
     vim.lsp.enable("jsonls")
     vim.lsp.enable("eslint")
+    vim.lsp.enable("nixd")
     -- vim.lsp.enable("lua_ls")
     -- vim.lsp.enable("gopls")
 

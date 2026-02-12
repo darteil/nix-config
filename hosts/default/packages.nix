@@ -57,6 +57,7 @@
       nodePackages.bash-language-server
       lua-language-server
       stylua
+      nixd
 
       # Unstable packages
       pkgs.unstable.eza
