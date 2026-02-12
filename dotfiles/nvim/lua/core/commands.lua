@@ -4,7 +4,11 @@ local function show_lsp_clients()
   for _, client in ipairs(vim.lsp.get_clients()) do
     table.insert(names, vim.trim(client.name))
   end
-  return table.concat(names, " | ")
+  if next(names) == nil then
+    return "There are no active lsp servers"
+  else
+    return table.concat(names, " | ")
+  end
 end
 
 vim.api.nvim_create_user_command("LspActiveClients", function()
