@@ -81,8 +81,9 @@ return {
             symbols = { error = "E", warn = "W", info = "I", hint = "H" },
           },
           { virtual_lines_show_status, color = { fg = kanagawa_colors.black0, bg = kanagawa_colors.red } },
+          { "progress", color = { fg = kanagawa_colors.black0, bg = kanagawa_colors.green } },
         },
-        lualine_y = { { "encoding", left_padding = 2 }, { "fileformat", icons_enabled = false, right_padding = 2 } },
+        lualine_y = {},
         lualine_z = {},
       },
       inactive_sections = {
