@@ -8,6 +8,8 @@ return {
     kanagawa.setup({
       statementStyle = { bold = false },
       typeStyle = { italic = false, bold = false },
+      commentStyle = { italic = false },
+      keywordStyle = { italic = false },
       undercurl = false,
       colors = {
         theme = {
@@ -39,6 +41,7 @@ return {
           CurSearch = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = false },
           ["@keyword.operator"] = { fg = theme.syn.operator, bold = false },
           ["@lsp.typemod.function.readonly"] = { fg = theme.syn.fun, bold = false },
+          ["@variable.builtin"] = { italic = false },
         }
       end,
     })

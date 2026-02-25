@@ -10,9 +10,14 @@ return {
         },
         auto_show = false,
       },
+      accept = {
+        auto_brackets = {
+          enabled = true,
+        },
+      },
       list = {
         selection = {
-          preselect = false,
+          preselect = true,
           auto_insert = true,
         },
       },
