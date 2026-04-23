@@ -8,6 +8,7 @@
       "ll" = "eza -lUh --icons='never' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
       "la" = "eza -laUh --icons='never' --sort='name' --time-style='long-iso' --no-user --group-directories-first";
       "lt" = "eza -laT --icons='never' --sort='name' --no-user --no-time --no-permissions --no-filesize --group-directories-first --level='5'";
+      "nviml" = "NVIM_APPNAME=nvim-minimal nvim";
     };
     shellInit = ''
       fish_config theme choose "Base16 Default Dark"
