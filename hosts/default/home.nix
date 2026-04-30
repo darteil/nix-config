@@ -1,4 +1,4 @@
-{ config, pkgs, outputs, inputs, ... }:
+{ pkgs, outputs, ... }:
 
 let
   vars = import ./variables.nix;
@@ -56,6 +56,7 @@ in
     decibels
     papers
     loupe
+    eyedropper
 
     gnomeExtensions.arcmenu
     gnomeExtensions.open-bar

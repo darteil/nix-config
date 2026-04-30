@@ -1,4 +1,4 @@
-{ config, pkgs, outputs, ... }:
+{ pkgs, outputs, ... }:
 
 let
   vars = import ./variables.nix;
@@ -74,6 +74,11 @@ in
     };
   };
 
+  # networking.firewall = {
+  #   enable = true;
+  #   allowedTCPPorts = [ 80 443 ];
+  # };
+
   time = {
     timeZone = "Asia/Tomsk";
     hardwareClockInLocalTime = true;
@@ -100,8 +105,11 @@ in
       roboto
       ubuntu-classic
       nerd-fonts.ubuntu-mono
+      nerd-fonts.caskaydia-cove
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+      corefonts
+      vista-fonts
     ];
   };
 

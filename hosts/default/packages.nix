@@ -11,7 +11,6 @@
     home-manager
     killall
     wl-clipboard
-    nix-search-cli
   ];
 
   users.users."darteil" = {
@@ -36,8 +35,6 @@
       firefox
       vivaldi
       google-chrome
-      telegram-desktop
-      neovim
       keepassxc
       thunderbird
       sublime3
@@ -52,18 +49,22 @@
       typescript
       vscode-langservers-extracted
       docker-compose
-      tree-sitter
       nixpkgs-fmt
-      nodePackages.bash-language-server
+      bash-language-server
       lua-language-server
       stylua
       nixd
+      cargo
+      rustc
+      ast-grep
 
-      # Unstable packages
       pkgs.unstable.eza
       pkgs.unstable.foot
-      pkgs.unstable.nodePackages.typescript-language-server
+      pkgs.unstable.typescript-language-server
       pkgs.unstable.lazydocker
+      pkgs.unstable.neovim
+      pkgs.unstable.telegram-desktop
+      pkgs.unstable.tree-sitter
     ];
   };
 }
