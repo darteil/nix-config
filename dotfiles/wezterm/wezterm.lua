@@ -70,7 +70,7 @@ config.colors = {
 
 wezterm.on("format-tab-title", function(tab)
 	return {
-		{ Text = " <Workspace-" .. tab.tab_index + 1 .. "> " },
+		{ Text = " <Tab-" .. tab.tab_index + 1 .. "> " },
 	}
 end)
 
