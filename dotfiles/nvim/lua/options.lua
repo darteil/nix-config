@@ -25,6 +25,7 @@ opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
+opt.winborder = "single"
 -- opt.clipboard = "unnamedplus"
 
 opt.lcs = {
