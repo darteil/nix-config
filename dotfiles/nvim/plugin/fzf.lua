@@ -8,8 +8,10 @@ fzf_lua.setup({
     ["--prompt"] = "> ",
     ["--no-bold"] = true,
   },
-  file_icons = false,
-  git_icons = false,
+  defaults = {
+    file_icons = false,
+    git_icons = false,
+  },
   winopts = {
     border = "none",
     fullscreen = true,
