@@ -14,6 +14,7 @@ in
       #   package = pkgs.unstable.bottom;
       # };
       outputs.overlays.unstable-packages
+      outputs.overlays.gnomeExtensions
     ];
     config = {
       allowUnfree = true;

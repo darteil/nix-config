@@ -24,4 +24,18 @@
   #     };
   #   });
   # };
+  gnomeExtensions = final: prev: {
+    gnomeExtensions = prev.gnomeExtensions // {
+      arcmenu = prev.gnomeExtensions.arcmenu.overrideAttrs (oldAttrs: rec {
+        version = "69.2";
+        src = final.fetchFromGitLab {
+          owner = "arcmenu";
+          repo = "ArcMenu";
+          rev = "v${version}";
+          sha256 = "sha256-BdvFeoXwGxFlBH1JqcSDAKMzN+wBEmZdsz+gXWxQF6Y=";
+        };
+        uuid = "arcmenu@arcmenu.com";
+      });
+    };
+  };
 }
