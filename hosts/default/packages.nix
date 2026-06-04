@@ -43,8 +43,8 @@
       wezterm
 
       # Development
-      nodejs_24
-      nodejs_24.pkgs.pnpm
+      pnpm
+      nodejs-slim_26
       prettierd
       typescript
       vscode-langservers-extracted
