@@ -9,6 +9,8 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -29,6 +31,7 @@
           specialArgs = { inherit inputs system outputs; };
           modules = [
             ./hosts/default/configuration.nix
+            inputs.proxy-suite.nixosModules.default
           ];
         };
       };

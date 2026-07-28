@@ -22,7 +22,7 @@ in
     ./hardware-configuration.nix
     ./nvidia.nix
     ./packages.nix
-    ./zapret.nix
+    ./proxy-suite/default.nix
   ];
 
   hardware = {
@@ -117,8 +117,9 @@ in
     packages = with pkgs; [
       roboto
       ubuntu-classic
+      dejavu_fonts
       nerd-fonts.ubuntu-mono
-      nerd-fonts.caskaydia-cove
+      noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       corefonts
