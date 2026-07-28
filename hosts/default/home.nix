@@ -37,7 +37,7 @@ in
     pointerCursor = {
       package = pkgs.simp1e-cursors;
       name = "Simp1e-Adw";
-      size = 20;
+      size = 22;
     };
 
     # sessionVariables = {
@@ -58,14 +58,16 @@ in
     papers
     loupe
     eyedropper
+    kooha
+    shortwave
 
     gnomeExtensions.arcmenu
-    gnomeExtensions.open-bar
     gnomeExtensions.status-area-horizontal-spacing
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.vitals
     gnomeExtensions.just-perfection
+    gnomeExtensions.uppercase-input-source-indicator
+    gnomeExtensions.quake-terminal
   ];
 
   gtk = {
@@ -73,7 +75,7 @@ in
     cursorTheme = {
       name = "Simp1e-Adw";
       package = pkgs.simp1e-cursors;
-      size = 20;
+      size = 22;
     };
   };
 
