@@ -46,7 +46,7 @@
       pnpm
       nodejs-slim_26
       prettierd
-      typescript
+      typescript-go
       vscode-langservers-extracted
       docker-compose
       nixpkgs-fmt
