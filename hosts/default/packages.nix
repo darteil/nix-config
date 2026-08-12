@@ -30,7 +30,6 @@
       vscode
       obs-studio
       zoom-us
-      krita
       figma-linux
       firefox
       vivaldi
@@ -39,7 +38,6 @@
       thunderbird
       sublime3
       hydrapaper
-      qbittorrent
       wezterm
 
       # Development
