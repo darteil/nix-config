@@ -16,10 +16,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-      };
+      pkgs = import nixpkgs;
     in
     {
       overlays = import ./overlays {
@@ -28,7 +25,7 @@
 
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system outputs; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/default/configuration.nix
             inputs.proxy-suite.nixosModules.default
