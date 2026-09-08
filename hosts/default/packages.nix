@@ -56,13 +56,13 @@
       rustc
       ast-grep
 
-      pkgs.unstable.eza
-      pkgs.unstable.foot
-      pkgs.unstable.typescript-language-server
-      pkgs.unstable.lazydocker
-      pkgs.unstable.neovim
-      pkgs.unstable.telegram-desktop
-      pkgs.unstable.tree-sitter
+      unstable.eza
+      unstable.foot
+      unstable.typescript-language-server
+      unstable.lazydocker
+      unstable.neovim
+      unstable.telegram-desktop
+      unstable.tree-sitter
     ];
   };
 }

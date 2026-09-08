@@ -25,12 +25,6 @@ in
     ./proxy-suite/default.nix
   ];
 
-  hardware = {
-    graphics = {
-      enable = true;
-    };
-  };
-
   services.xserver.enable = true;
   services = {
     displayManager.gdm.enable = true;
@@ -50,8 +44,6 @@ in
       };
     };
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -161,7 +153,7 @@ in
   environment.shells = with pkgs; [ fish ];
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "gtk3";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+    # QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
   };
   system.stateVersion = "25.11";
 }
