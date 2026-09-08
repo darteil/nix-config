@@ -26,7 +26,7 @@ opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
 opt.winborder = "single"
--- opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed"
 
 opt.lcs = {
   trail = "·",
