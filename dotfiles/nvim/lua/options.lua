@@ -27,6 +27,7 @@ opt.updatetime = 300
 opt.shortmess = "acsCFW"
 opt.winborder = "single"
 opt.clipboard = "unnamed"
+opt.fillchars = "eob: "
 
 opt.lcs = {
   trail = "·",

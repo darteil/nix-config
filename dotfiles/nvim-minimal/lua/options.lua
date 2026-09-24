@@ -26,7 +26,8 @@ opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess = "acsCFW"
 opt.winborder = "single"
--- opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed"
+opt.fillchars = "eob: "
 
 opt.lcs = {
   trail = "·",
@@ -54,9 +55,3 @@ opt.diffopt = "vertical,filler,indent-heuristic,internal,indent-heuristic,algori
 cmd("filetype plugin indent on")
 
 opt.background = "dark"
-
-vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
-})
