@@ -52,6 +52,7 @@ in
     gnome-tweaks
     gnome-font-viewer
     gnome-system-monitor
+    gnome-text-editor
     nautilus
     celluloid
     decibels
@@ -68,6 +69,7 @@ in
     gnomeExtensions.just-perfection
     gnomeExtensions.uppercase-input-source-indicator
     gnomeExtensions.quake-terminal
+    gnomeExtensions.tiling-shell
   ];
 
   gtk = {

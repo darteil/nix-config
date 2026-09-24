@@ -36,7 +36,6 @@
       google-chrome
       keepassxc
       thunderbird
-      sublime3
       hydrapaper
       wezterm
 
@@ -55,6 +54,8 @@
       cargo
       rustc
       ast-grep
+      oxlint
+      oxfmt
 
       unstable.eza
       unstable.foot
