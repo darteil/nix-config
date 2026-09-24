@@ -6,20 +6,34 @@ in
   services.proxy-suite = {
     enable = true;
 
-    zapret = {
-      enable = true;
-      configName = "general(ALT)";
-      listGeneral = zapretListGeneral;
-      perApp.enable = false;
+    sshProxy = {
+      enable = false;
     };
 
-    tray = {
+    perAppRouting = {
+      enable = true;
+      zapret = {
+        enable = true;
+      };
+    };
+
+    zapret = {
+      enable = true;
+      zapret-discord-youtube = {
+        configName = "general(ALT)";
+        domains = zapretListGeneral;
+      };
+    };
+
+    gui = {
       enable = false;
     };
 
     tgWsProxy = {
       enable = true;
-      port = 1443;
+      listener = {
+        port = 1443;
+      };
       secret = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     };
   };
