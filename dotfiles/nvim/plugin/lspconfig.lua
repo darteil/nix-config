@@ -35,20 +35,19 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-vim.lsp.config("eslint", {
-  settings = {
-    workingDirectories = { mode = "auto" },
-    experimental = {
-      useFlatConfig = true,
-    },
-  },
-})
+-- vim.lsp.config("eslint", {
+--   settings = {
+--     workingDirectories = { mode = "auto" },
+--     experimental = {
+--       useFlatConfig = true,
+--     },
+--   },
+-- })
 
-local schemastore = require("schemastore")
 vim.lsp.config("jsonls", {
   settings = {
     json = {
-      schemas = schemastore.json.schemas(),
+      schemas = require("schemastore").json.schemas(),
       validate = { enable = true },
     },
   },
@@ -81,5 +80,6 @@ vim.lsp.enable("cssls")
 vim.lsp.enable("bashls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("jsonls")
-vim.lsp.enable("eslint")
+-- vim.lsp.enable("eslint")
 vim.lsp.enable("tsgo")
+vim.lsp.enable("oxlint")

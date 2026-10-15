@@ -1,8 +1,5 @@
-{ pkgs, outputs, ... }:
+{ pkgs, outputs, config, ... }:
 
-let
-  vars = import ./variables.nix;
-in
 {
   nixpkgs = {
     overlays = [
@@ -73,7 +70,7 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking = {
-    hostName = "${vars.username}-pc";
+    hostName = "${config.var.username}-pc";
     networkmanager = {
       enable = true;
     };
@@ -119,7 +116,7 @@ in
     ];
   };
 
-  users.users.${vars.username} = {
+  users.users.${config.var.username} = {
     isNormalUser = true;
     description = "Romanov Yuri";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
@@ -155,6 +152,8 @@ in
   environment.shells = with pkgs; [ fish ];
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "gtk3";
+    MUTTER_DEBUG_DISABLE_HW_CURSORS = 1;
+    XDG_CONFIG_HOME = "$HOME/.config";
     # QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
   };
   system.stateVersion = "25.11";

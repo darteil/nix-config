@@ -34,6 +34,9 @@ kanagawa.setup({
 
       WinSeparator = { fg = colors.palette.surimiOrange },
 
+      NvimTreeNormalFloat = { bg = colors.palette.dragonBlack3 },
+      NvimTreeNormalFloatBorder = { bg = colors.palette.dragonBlack3 },
+
       Bold = { bold = false },
       Boolean = { bold = false },
       CurSearch = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = false },

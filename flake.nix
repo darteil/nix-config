@@ -26,6 +26,7 @@
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            ./vars.nix
             ./hosts/default/configuration.nix
             inputs.proxy-suite.nixosModules.default
           ];
@@ -36,7 +37,8 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./hosts/default/home.nix
+            ./vars.nix
+            ./home-manager/default/default.nix
           ];
         };
       };

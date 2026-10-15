@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    gitFull
     curl
     wget
     vim
@@ -23,46 +22,16 @@
       bat
       jq
       ripgrep
-      gcc15
+      ast-grep
+      gcc16
       gnumake
       tig
-
-      vscode
-      obs-studio
-      zoom-us
-      figma-linux
-      firefox
-      vivaldi
-      google-chrome
-      keepassxc
-      thunderbird
-      hydrapaper
       wezterm
-
-      # Development
-      pnpm
-      nodejs-slim_26
-      prettierd
-      typescript-go
-      vscode-langservers-extracted
       docker-compose
-      nixpkgs-fmt
-      bash-language-server
-      lua-language-server
-      stylua
-      nixd
-      cargo
-      rustc
-      ast-grep
-      oxlint
-      oxfmt
 
       unstable.eza
       unstable.foot
-      unstable.typescript-language-server
       unstable.lazydocker
-      unstable.neovim
-      unstable.telegram-desktop
       unstable.tree-sitter
     ];
   };
