@@ -24,7 +24,7 @@
     zoom-us
     telegram-desktop
     neovim
-    unstable.devenv
+    tig
 
     gnomeExtensions.arcmenu
     gnomeExtensions.status-area-horizontal-spacing

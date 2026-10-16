@@ -25,7 +25,6 @@
       ast-grep
       gcc16
       gnumake
-      tig
       wezterm
       docker-compose
 

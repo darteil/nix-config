@@ -23,6 +23,7 @@
     ./fish.nix
     ./git.nix
     ./programs.nix
+    ./development.nix
     ./dotfiles.nix
   ];
 
