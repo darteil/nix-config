@@ -34,6 +34,18 @@
     gnomeExtensions.uppercase-input-source-indicator
     gnomeExtensions.quake-terminal
     gnomeExtensions.tiling-shell
+
+    # fonts
+    maple-mono.truetype
+    maple-mono.NF-unhinted
+    ioskeley-mono.normal-NL
+    dejavu_fonts
+    nerd-fonts.ubuntu-mono
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    corefonts
+    vista-fonts
   ];
 
   programs.fzf = {

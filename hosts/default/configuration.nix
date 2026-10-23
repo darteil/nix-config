@@ -104,15 +104,7 @@
 
   fonts = {
     packages = with pkgs; [
-      roboto
       ubuntu-classic
-      dejavu_fonts
-      nerd-fonts.ubuntu-mono
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      corefonts
-      vista-fonts
     ];
   };
 
