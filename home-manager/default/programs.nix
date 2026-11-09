@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    papirus-icon-theme
     gnome-calculator
     gnome-bluetooth
     gnome-clocks
@@ -16,10 +17,12 @@
     eyedropper
     kooha
     shortwave
+    qbittorrent
 
     figma-linux
     vivaldi
     google-chrome
+    qutebrowser
     hydrapaper
     zoom-us
     telegram-desktop
@@ -28,12 +31,13 @@
 
     gnomeExtensions.arcmenu
     gnomeExtensions.status-area-horizontal-spacing
-    gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.uppercase-input-source-indicator
     gnomeExtensions.quake-terminal
     gnomeExtensions.tiling-shell
+    gnomeExtensions.draw-on-gnome
+    unstable.gnomeExtensions.status-tray
 
     # fonts
     maple-mono.truetype
@@ -46,6 +50,7 @@
     noto-fonts-cjk-serif
     corefonts
     vista-fonts
+    roboto
   ];
 
   programs.fzf = {
@@ -66,6 +71,7 @@
 
   programs.vscode = {
     enable = true;
+    package = pkgs.unstable.vscode;
   };
 
   programs.obs-studio = {

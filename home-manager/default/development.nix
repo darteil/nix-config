@@ -14,6 +14,7 @@
     rustc
     oxlint
     oxfmt
+    miniserve
     # unstable.typescript-language-server
   ];
 }

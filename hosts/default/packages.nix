@@ -33,6 +33,7 @@
       unstable.lazydocker
       unstable.tree-sitter
       unstable.throne
+      unstable.openmw
     ];
   };
 }
