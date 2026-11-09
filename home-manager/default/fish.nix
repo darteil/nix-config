@@ -43,13 +43,6 @@
         set -l yellow (set_color yellow)
         set -l purple (set_color magenta)
 
-        set -l devenv_info (
-          if set -q DEVENV_ROOT
-            echo -n $purple"(devenv)"$normal
-          end
-        )
-
-        # Временно отключено
         set -l nix_shell_info (
           if test -n "$IN_NIX_SHELL"
             echo -n $purple"[nix-shell]"$normal
@@ -64,7 +57,7 @@
         set -l time $green(date '+%H:%M:%S')$normal
         set -l path $yellow(basename (prompt_pwd))$normal
 
-        echo $time $devenv_info [$path]
+        echo $time $nix_shell_info [$path]
         echo ">> "
       end
     '';

@@ -32,6 +32,7 @@
       unstable.foot
       unstable.lazydocker
       unstable.tree-sitter
+      unstable.throne
     ];
   };
 }

@@ -11,8 +11,8 @@ config.cell_width = 0.90
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = "0.7cell",
-	bottom = 0,
+	top = "0.5cell",
+	bottom = "0cell",
 }
 
 config.disable_default_key_bindings = true

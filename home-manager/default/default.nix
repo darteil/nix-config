@@ -3,13 +3,6 @@
 {
   nixpkgs = {
     overlays = [
-      # When applied, the unstable nixpkgs set
-      #
-      # Example:
-      # programs.bottom = {
-      #   enable = true;
-      #   package = pkgs.unstable.bottom;
-      # };
       outputs.overlays.unstable-packages
       outputs.overlays.gnomeExtensions
     ];
@@ -22,6 +15,7 @@
   imports = [
     ./fish.nix
     ./git.nix
+    ./tmux.nix
     ./programs.nix
     ./development.nix
     ./dotfiles.nix
@@ -38,9 +32,17 @@
       size = 22;
     };
 
-    # sessionVariables = {
-    #   EDITOR = "nvim";
-    # };
+    sessionVariables = {
+      # EDITOR = "nvim";
+      # QT_STYLE_OVERRIDE = "Fusion";
+    };
+  };
+
+  qt = {
+    enable = true;
+    style = {
+      name = "fusion";
+    };
   };
 
   gtk = {
@@ -49,6 +51,18 @@
       name = "Simp1e-Adw";
       package = pkgs.simp1e-cursors;
       size = 22;
+    };
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      font-name = "Roboto 11";
+      document-font-name = "Adwaita Sans 11";
+      monospace-font-name = "Ubuntu Mono 10";
     };
   };
 

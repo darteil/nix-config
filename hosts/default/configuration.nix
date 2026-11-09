@@ -3,10 +3,6 @@
 {
   nixpkgs = {
     overlays = [
-      # When applied, the unstable nixpkgs set 
-      #
-      # Example:
-      # pkgs.unstable.bottom
       outputs.overlays.unstable-packages
       # outputs.overlays.chrome-wayland
     ];
@@ -125,14 +121,13 @@
     enable = true;
   };
 
-  programs.throne = {
+  programs.nix-ld = {
     enable = true;
-    tunMode = {
-      enable = true;
-    };
   };
 
-  programs.nix-ld.enable = true;
+  programs.dconf = {
+    enable = true;
+  };
 
   services.openssh = {
     enable = true;
@@ -141,6 +136,10 @@
     };
   };
 
+  # For org.gtk.Settings.FileChooser error
+  # environment.extraInit = ''
+  #   export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
+  # '';
   environment.shells = with pkgs; [ fish ];
   environment.variables = {
     QT_QPA_PLATFORMTHEME = "gtk3";
