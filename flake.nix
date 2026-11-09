@@ -10,7 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
+    #proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
+    zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -28,7 +29,7 @@
           modules = [
             ./vars.nix
             ./hosts/default/configuration.nix
-            inputs.proxy-suite.nixosModules.default
+            inputs.zapret-discord-youtube.nixosModules.default
           ];
         };
       };

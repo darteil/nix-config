@@ -19,7 +19,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./packages.nix
-    ./proxy-suite/default.nix
+    ./proxy-suite/zapret.nix
   ];
 
   services.xserver.enable = true;
