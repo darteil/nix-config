@@ -28,11 +28,13 @@ treesitter.install({
   "json",
   "typescript",
   "tsx",
+  "jsx",
   "lua",
   "luadoc",
   "vimdoc",
   "javascript",
   "html",
+  "html_tags",
   "nix",
   "http",
 })
